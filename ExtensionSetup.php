@@ -11,6 +11,8 @@
 	# Configuration for ConfirmEdit
 	require_once "$IP/extensions/ConfirmEdit/ConfirmEdit.php";
 	require_once "$IP/extensions/ConfirmEdit/FancyCaptcha.php";
+	$wgCaptchaDirectory = $wmgCaptchaDirectory;
+	$wgCaptchaSecret = $wmgCaptchaSecret;
 	$wgCaptchaClass = 'FancyCaptcha';
 	$wgGroupPermissions['*']['skipcaptcha'] = false;
 	$wgGroupPermissions['user']['skipcaptcha'] = true;
@@ -58,6 +60,7 @@
 
 	# Stop Forum Spam
 	require_once "$IP/extensions/StopForumSpam/StopForumSpam.php";
+	$wgSFSAPIKey = $wmgSFSAPIKey;
 	$wgPutIPinRC = true;
 
 	# GoogleCSE
@@ -86,6 +89,9 @@
 
 	# Add Google-Analytics
 	require_once "$IP/extensions/googleAnalytics/googleAnalytics.php";
+	$wgGoogleAnalyticsAccount = $wmgGoogleAnalyticsAccount;
+	$wgGoogleAnalyticsIgnoreSysops = $wmgGoogleAnalyticsIgnoreSysops;
+	$wgGoogleAnalyticsIgnoreBots = $wmgGoogleAnalyticsIgnoreBots;
 
 	# Mantle for MobileFrontend
 	require_once "$IP/extensions/Mantle/Mantle.php";
@@ -213,6 +219,8 @@
 
 	# GoogleLogin
 	require_once "$IP/extensions/GoogleLogin/GoogleLogin.php";
+	$wgGLSecret = $wmgGLSecret;
+	$wgGLAppId = $wmgGLAppId;
 	$wgGLShowCreateReason = true;
 
 	# CentralNotice - 01.08.2014
