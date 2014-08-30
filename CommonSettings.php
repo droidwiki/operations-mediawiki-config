@@ -244,5 +244,15 @@
 	$wgShowExceptionDetails = false;
 	$wgShowSQLErrors = false;
 
+	# Add go2tech repository to Git viewer list
+	$wgGitRepositoryViewers = array_merge( $wgGitRepositoryViewers,
+		array(
+			'https://(?:[a-z0-9_]+@)?gerrit.go2tech.de/r/(?:p/)?(.*)' =>
+				'http://git.go2tech.de/tree/?r=%r&h=%H',
+			'ssh://(?:[a-z0-9_]+@)?gerrit.go2tech.de:29418/(.*)' =>
+				'http://git.go2tech.de/tree/?r=%r&h=%H'
+		)
+	);
+
 	# load Extension configuration
 	require "$IP/specialsources/mw-config/ExtensionSetup.php";
