@@ -37,7 +37,7 @@
 	## The relative URL path to the logo.  Make sure you change this from the default,
 	## or else you'll overwrite your logo when you upgrade!
 	$wgLogo = 'androide.png';
-	$wgFavicon = 'favicon.ico';
+	$wgFavicon = 'images/favicon.ico';
 
 	## UPO means: this is also a user preference option
 	$wgEnableEmail = true;
