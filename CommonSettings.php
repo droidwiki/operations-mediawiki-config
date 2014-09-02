@@ -211,6 +211,7 @@
 
 	# Enable subpages in the main namespace
 	$wgNamespacesWithSubpages[NS_MAIN] = true;
+	// ToDo: Remove in one of the next MW/wmf releases (gerrit #147229 or #154306)
 	$wgNamespacesWithSubpages[NS_SPECIAL] = true;
 
 	# Spam protection
