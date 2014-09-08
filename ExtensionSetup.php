@@ -213,9 +213,6 @@
 	require_once "$IP/extensions/Maintenance/Maintenance.php";
 	$wgGroupPermissions['developer']['maintenance'] = true;
 
-	# Raffle
-	require_once "$IP/extensions/Raffle/Raffle.php";
-
 	# ExpandTamplates
 	require_once "$IP/extensions/ExpandTemplates/ExpandTemplates.php";
 
