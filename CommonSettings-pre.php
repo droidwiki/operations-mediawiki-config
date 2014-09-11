@@ -15,8 +15,8 @@
 	# load PrivateSettings.php first
 	require "$IP/specialsources/PrivateSettings.php";
 
-	$wgSitename      = "Android Wiki";
-	$wgMetaNamespace = "DroidWiki";
+	$wgSitename      = "Android Test-Wiki";
+	$wgMetaNamespace = "DroidWiki-pre";
 
 	# set correct Timezone
 	$wgLocaltimezone = "Europe/Berlin";
@@ -94,25 +94,25 @@
 	$wgUseRCPatrol = true;
 
 	# Implicit group for all visitors
-	$wgGroupPermissions['*']['createaccount'] = true;
-	$wgGroupPermissions['*']['edit'] = true;
-	$wgGroupPermissions['*']['createpage'] = true;
-	$wgGroupPermissions['*']['createtalk'] = true;
+	$wgGroupPermissions['*']['createaccount'] = false;
+	$wgGroupPermissions['*']['edit'] = false;
+	$wgGroupPermissions['*']['createpage'] = false;
+	$wgGroupPermissions['*']['createtalk'] = false;
 	$wgGroupPermissions['*']['read'] = true;
 
 	# Testuser-gruppe
 	$wgGroupPermissions['Testnutzer'] =  $wgGroupPermissions['user'];
 
 	# Implicit group for all logged-in accounts
-	$wgGroupPermissions['user']['move'] = true;
-	$wgGroupPermissions['user']['read'] = true;
-	$wgGroupPermissions['user']['edit'] = true;
-	$wgGroupPermissions['user']['createpage'] = true;
-	$wgGroupPermissions['user']['createtalk'] = true;
-	$wgGroupPermissions['user']['upload'] = true;
-	$wgGroupPermissions['user']['reupload'] = true;
-	$wgGroupPermissions['user']['reupload-shared'] = true;
-	$wgGroupPermissions['user']['minoredit'] = true;
+	$wgGroupPermissions['user']['move'] = false;
+	$wgGroupPermissions['user']['read'] = false;
+	$wgGroupPermissions['user']['edit'] = false;
+	$wgGroupPermissions['user']['createpage'] = false;
+	$wgGroupPermissions['user']['createtalk'] = false;
+	$wgGroupPermissions['user']['upload'] = false;
+	$wgGroupPermissions['user']['reupload'] = false;
+	$wgGroupPermissions['user']['reupload-shared'] = false;
+	$wgGroupPermissions['user']['minoredit'] = false;
 
 	# Berechtigungen für Nutzer, dessen Änderungen automatisch als kontrolliert markiert werden
 	$wgGroupPermissions['Autopatrol'] = $wgGroupPermissions['user'];
@@ -144,6 +144,15 @@
 	$wgGroupPermissions['bot']['autopatrol'] = true;
 
 	# Most extra permission abilities go to this group
+	$wgGroupPermissions['sysop']['move'] = true;
+	$wgGroupPermissions['sysop']['read'] = true;
+	$wgGroupPermissions['sysop']['edit'] = true;
+	$wgGroupPermissions['sysop']['createpage'] = true;
+	$wgGroupPermissions['sysop']['createtalk'] = true;
+	$wgGroupPermissions['sysop']['upload'] = true;
+	$wgGroupPermissions['sysop']['reupload'] = true;
+	$wgGroupPermissions['sysop']['reupload-shared'] = true;
+	$wgGroupPermissions['sysop']['minoredit'] = true;
 	$wgGroupPermissions['sysop']['block'] = true;
 	$wgGroupPermissions['sysop']['delete'] = true;
 	$wgGroupPermissions['sysop']['deletedhistory'] = true;
