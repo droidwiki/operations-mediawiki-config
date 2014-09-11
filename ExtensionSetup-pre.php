@@ -76,6 +76,8 @@
 	$wgCirrusSearchServers = array( '85.214.215.12' );
 	# Enable the "experimental" highlighter
 	$wgCirrusSearchUseExperimentalHighlighter = true;
+	# Don't update index for pre-Instance, disable Jobs
+	$wgJobRunRate = 0;
 
 	# WikiEditor/graphical Editor
 	require_once "$IP/extensions/WikiEditor/WikiEditor.php";
