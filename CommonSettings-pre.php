@@ -251,7 +251,7 @@
 	$wgMainCacheType = CACHE_DB;
 
 	$wgShowDebug = false;
-	$wgShowExceptionDetails = false;
+	$wgShowExceptionDetails = true;
 	$wgShowSQLErrors = false;
 
 	# Add go2tech repository to Git viewer list
