@@ -15,6 +15,8 @@
 	# load PrivateSettings.php first
 	require "$IP/specialsources/PrivateSettings.php";
 
+	$wgLoadScript = '//bits.go2tech.de/load.php';
+
 	$wgSitename      = "Android Test-Wiki";
 	$wgMetaNamespace = "DroidWiki-pre";
 
@@ -55,7 +57,6 @@
 
 	# MySQL table options to use during installation or update
 	$wgDBTableOptions = "ENGINE=InnoDB, DEFAULT CHARSET=binary";
-
 
 	## If you use ImageMagick (or any other shell command) on a
 	## Linux server, this will need to be set to the name of an
@@ -248,7 +249,10 @@
 
 	$wgHitcounterUpdateFreq = 100;
 	$wgSessionsInObjectCache = true;
-	$wgMainCacheType = CACHE_DB;
+	$wgMainCacheType = CACHE_MEMCACHED;
+	$wgParserCacheType = CACHE_MEMCACHED;
+	$wgMessageCacheType = CACHE_MEMCACHED;
+	$wgMemCachedServers = array( '127.0.0.1:11211' );
 
 	$wgShowDebug = false;
 	$wgShowExceptionDetails = true;
