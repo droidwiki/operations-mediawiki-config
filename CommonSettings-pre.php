@@ -15,8 +15,6 @@
 	# load PrivateSettings.php first
 	require "$IP/specialsources/PrivateSettings.php";
 
-	$wgLoadScript = '//bits.go2tech.de/load.php';
-
 	$wgSitename      = "Android Test-Wiki";
 	$wgMetaNamespace = "DroidWiki-pre";
 
@@ -53,7 +51,10 @@
 	$wgEmailAuthentication = true;
 
 	# MySQL specific settings
-	$wgDBprefix = "wiki_";
+	$wgDBprefix = "";
+
+	# shared login
+	$wgCookieDomain = '.go2tech.de';
 
 	# MySQL table options to use during installation or update
 	$wgDBTableOptions = "ENGINE=InnoDB, DEFAULT CHARSET=binary";
