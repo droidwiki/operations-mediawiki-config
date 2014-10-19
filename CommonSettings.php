@@ -31,6 +31,9 @@
 	$wgUsePathInfo = true;
 	$wgScriptExtension = ".php";
 
+	# LoadScript location
+	$wgLoadScript = '//bits.go2tech.de/load.php';
+
 	## The relative URL path to the skins directory
 	$wgStylePath = "$wgScriptPath/skins";
 
