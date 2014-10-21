@@ -34,6 +34,9 @@
 	# LoadScript location
 	$wgLoadScript = '//bits.go2tech.de/load.php';
 
+	# Enable login on all subdomains
+	$wgCookieDomain = '.droidwiki.de';
+
 	## The relative URL path to the skins directory
 	$wgStylePath = "$wgScriptPath/skins";
 
@@ -54,7 +57,7 @@
 	$wgEmailAuthentication = true;
 
 	# MySQL specific settings
-	$wgDBprefix = "wiki_";
+	$wgDBprefix = "";
 
 	# MySQL table options to use during installation or update
 	$wgDBTableOptions = "ENGINE=InnoDB, DEFAULT CHARSET=binary";
