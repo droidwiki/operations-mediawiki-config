@@ -54,7 +54,10 @@
 	$wgEmailAuthentication = true;
 
 	# MySQL specific settings
-	$wgDBprefix = "wiki_";
+	$wgDBprefix = "";
+
+	# Allow login from subdomains
+	$wgCookieDomain = '.droidwiki.de';
 
 	# MySQL table options to use during installation or update
 	$wgDBTableOptions = "ENGINE=InnoDB, DEFAULT CHARSET=binary";
