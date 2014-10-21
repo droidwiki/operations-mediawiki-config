@@ -53,6 +53,9 @@
 	# MySQL specific settings
 	$wgDBprefix = "";
 
+	# shared login
+	$wgCookieDomain = '.go2tech.de';
+
 	# MySQL table options to use during installation or update
 	$wgDBTableOptions = "ENGINE=InnoDB, DEFAULT CHARSET=binary";
 
@@ -252,9 +255,9 @@
 	$wgMessageCacheType = CACHE_MEMCACHED;
 	$wgMemCachedServers = array( '127.0.0.1:11211' );
 
-	$wgShowDebug = false;
+	$wgShowDebug = true;
 	$wgShowExceptionDetails = true;
-	$wgShowSQLErrors = false;
+	$wgShowSQLErrors = true;
 
 	# Add go2tech repository to Git viewer list
 	$wgGitRepositoryViewers = array_merge( $wgGitRepositoryViewers,
