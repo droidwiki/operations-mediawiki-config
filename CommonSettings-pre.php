@@ -53,6 +53,9 @@
 	# MySQL specific settings
 	$wgDBprefix = "";
 
+	# shared login
+	$wgCookieDomain = '.go2tech.de';
+
 	# MySQL table options to use during installation or update
 	$wgDBTableOptions = "ENGINE=InnoDB, DEFAULT CHARSET=binary";
 

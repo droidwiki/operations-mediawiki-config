@@ -58,11 +58,6 @@
 		),
 	);
 
-	# Stop Forum Spam
-	require_once "$IP/extensions/StopForumSpam/StopForumSpam.php";
-	$wgSFSAPIKey = $wmgSFSAPIKey;
-	$wgPutIPinRC = true;
-
 	# GoogleCSE
 	# require_once "$IP/extensions/GoogleCSE/GoogleCSE.php";
 	# Redirect all Search requests to Google CSE
@@ -230,3 +225,15 @@
 	$wgNoticeInfrastructure = true;
 	$wgNoticeProjects = array( 'droidwiki' );
 	$wgNoticeProject = 'droidwiki';
+
+	$wgEnableWikibaseRepo = false;
+	$wgEnableWikibaseClient = true;
+	require_once "$IP/extensions/Wikibase/client/WikibaseClient.php";
+	require_once "$IP/extensions/Wikibase/client/ExampleSettings.php";
+	$wgWBClientSettings['repoUrl'] = 'http://wiki.go2tech.de';
+	$wgWBClientSettings['repoScriptPath'] = '/d';
+	$wgWBClientSettings['repoArticlePath'] = '/data/$1';
+	$wgWBClientSettings['siteGlobalID'] = 'droidwiki';
+	$wgWBClientSettings['repoDatabase'] = 'go2tech';
+	$wgWBClientSettings['changesDatabase'] = 'go2tech';
+	$wgWBClientSettings['siteGroup'] = 'droidwiki';
