@@ -1,12 +1,6 @@
 <?php
 	# DO NOT PUT PRIVATE INFORMATION HERE!
 
-	# Load Error Handler to handle php errors more beautiful
-	require "$IP/specialsources/errorreporting/errorhandler.php";
-
-	# Load ProfileSettings
-	# require( 'specialsources/mw-config/ProfileSettings.php' );
-
 	# Protect against web entry
 	if ( !defined( 'MEDIAWIKI' ) ) {
 		exit;
@@ -14,6 +8,12 @@
 
 	# load PrivateSettings.php first
 	require "$IP/specialsources/PrivateSettings.php";
+
+	# Load Error Handler to handle php errors more beautiful
+	require "$IP/specialsources/errorreporting/errorhandler.php";
+
+	# Load ProfileSettings
+	# require( 'specialsources/mw-config/ProfileSettings.php' );
 
 	$wgSitename      = "Android Wiki";
 	$wgMetaNamespace = "DroidWiki";
