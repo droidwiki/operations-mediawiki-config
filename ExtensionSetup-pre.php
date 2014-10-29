@@ -77,6 +77,11 @@
 	# WikiEditor/graphical Editor
 	require_once "$IP/extensions/WikiEditor/WikiEditor.php";
 
+	# CodeEditor (extension for WikiEditor
+	require_once "$IP/extensions/CodeEditor/CodeEditor.php";
+	# Enable it on JS/CSS pages
+	$wgCodeEditorEnableCore = true;
+
 	# Cite (ref-tags)
 	require_once "$IP/extensions/Cite/Cite.php";
 
@@ -168,6 +173,7 @@
 	# Scribunto
 	require_once "$IP/extensions/Scribunto/Scribunto.php";
 	$wgScribuntoDefaultEngine = 'luastandalone';
+	$wgScribuntoUseCodeEditor = true;
 
 	# Add's Facebook and G+ buttons to articles
 	require_once "$IP/extensions/SocialButtons/SocialButtons.php";
