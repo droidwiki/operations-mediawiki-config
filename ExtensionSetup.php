@@ -234,3 +234,8 @@
 	$wgNoticeInfrastructure = true;
 	$wgNoticeProjects = array( 'droidwiki' );
 	$wgNoticeProject = 'droidwiki';
+
+	require_once "$IP/extensions/GoogleAPIClient/GoogleAPIClient.php";
+	require_once "$IP/extensions/GoogleAnalyticsTopPages/GoogleAnalyticsTopPages.php";
+	$wgGATPProfileId = $wmgGATPProfileId;
+	$wgGATPServiceAccountName = $wmgGATPServiceAccountName;

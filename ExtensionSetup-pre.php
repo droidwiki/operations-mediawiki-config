@@ -243,3 +243,8 @@
 	$wgWBClientSettings['repoDatabase'] = 'go2tech';
 	$wgWBClientSettings['changesDatabase'] = 'go2tech';
 	$wgWBClientSettings['siteGroup'] = 'droidwiki';
+
+	require_once "$IP/extensions/GoogleAPIClient/GoogleAPIClient.php";
+	require_once "$IP/extensions/GoogleAnalyticsTopPages/GoogleAnalyticsTopPages.php";
+	$wgGATPProfileId = $wmgGATPProfileId;
+	$wgGATPServiceAccountName = $wmgGATPServiceAccountName;
