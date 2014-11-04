@@ -238,4 +238,5 @@
 	require_once "$IP/extensions/GoogleAPIClient/GoogleAPIClient.php";
 	require_once "$IP/extensions/GoogleAnalyticsTopPages/GoogleAnalyticsTopPages.php";
 	$wgGATPProfileId = $wmgGATPProfileId;
+	$wgGATPKeyFileLocation = $wmgGATPKeyFileLocation;
 	$wgGATPServiceAccountName = $wmgGATPServiceAccountName;
