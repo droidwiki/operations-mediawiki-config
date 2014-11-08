@@ -245,7 +245,9 @@
 
 	$wgHitcounterUpdateFreq = 100;
 	$wgSessionsInObjectCache = true;
-	$wgMainCacheType = CACHE_DB;
+	$wgMainCacheType = CACHE_NONE;
+	$wgMessageCacheType = CACHE_DB;
+	$wgParserCacheType = CACHE_DB;
 
 	$wgShowDebug = false;
 	$wgShowExceptionDetails = false;
