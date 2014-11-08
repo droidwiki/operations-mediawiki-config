@@ -248,8 +248,8 @@
 	# MediaWiki UI everywhere
 	$wgUseMediaWikiUIEverywhere = true;
 
-	$wgHitcounterUpdateFreq = 100;
-	$wgSessionsInObjectCache = true;
+	# FIXME: Remove after update to > 1.25wmf5
+	$wgDisableCounters = true;
 	$wgMainCacheType = CACHE_MEMCACHED;
 	$wgParserCacheType = CACHE_MEMCACHED;
 	$wgMessageCacheType = CACHE_MEMCACHED;
