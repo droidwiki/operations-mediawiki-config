@@ -145,9 +145,6 @@
 	# TitleKey
 	require_once "$IP/extensions/TitleKey/TitleKey.php";
 
-	# TopTenPages
-	require_once "$IP/extensions/TopTenPages/TopTenPages.php";
-
 	# NewestPages
 	require_once "$IP/extensions/NewestPages/NewestPages.php";
 
