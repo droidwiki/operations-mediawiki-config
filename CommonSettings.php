@@ -246,7 +246,9 @@
 	# FIXME: Remove after update to > 1.25wmf5
 	$wgDisableCounters = true;
 	$wgSessionsInObjectCache = true;
-	$wgMainCacheType = CACHE_DB;
+	$wgMainCacheType = CACHE_NONE;
+	$wgMessageCacheType = CACHE_DB;
+	$wgParserCacheType = CACHE_DB;
 
 	$wgShowDebug = false;
 	$wgShowExceptionDetails = false;
