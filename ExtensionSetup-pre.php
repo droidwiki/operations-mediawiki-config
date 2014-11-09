@@ -70,7 +70,7 @@
 	$wgSearchType = 'CirrusSearch';
 	$wgCirrusSearchServers = array( '85.214.215.12' );
 	# Enable the "experimental" highlighter
-	$wgCirrusSearchUseExperimentalHighlighter = true;
+	# $wgCirrusSearchUseExperimentalHighlighter = true;
 	# Don't update index for pre-Instance, disable Jobs
 	$wgJobRunRate = 0;
 
