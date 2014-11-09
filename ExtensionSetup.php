@@ -75,7 +75,7 @@
 	$wgSearchType = 'CirrusSearch';
 	$wgCirrusSearchServers = array( '85.214.215.12' );
 	# Enable the "experimental" highlighter
-	$wgCirrusSearchUseExperimentalHighlighter = true;
+	# $wgCirrusSearchUseExperimentalHighlighter = true;
 
 	# WikiEditor/graphical Editor
 	require_once "$IP/extensions/WikiEditor/WikiEditor.php";
