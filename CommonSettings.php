@@ -182,6 +182,11 @@
 
 	# Allow User Scripts
 	$wgAllowUserJs = true;
+
+	# Disable new RC Feed
+	$wgDefaultUserOptions['usenewrc'] = 0;
+
+	# FIXME: This should be in ExtensionSetup
 	$wgDefaultUserOptions['usebetatoolbar'] = 1;
 	$wgDefaultUserOptions['usebetatoolbar-cgd'] = 1;
 	$wgDefaultUserOptions['wikieditor-preview'] = 1;
