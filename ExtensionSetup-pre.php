@@ -145,9 +145,6 @@
 	# TitleKey
 	require_once "$IP/extensions/TitleKey/TitleKey.php";
 
-	# NewestPages
-	require_once "$IP/extensions/NewestPages/NewestPages.php";
-
 	# TagCloud
 	require_once "$IP/extensions/WikiCategoryTagCloud/WikiCategoryTagCloud.php";
 
@@ -235,4 +232,5 @@
 	require_once "$IP/extensions/GoogleAPIClient/GoogleAPIClient.php";
 	require_once "$IP/extensions/GoogleAnalyticsTopPages/GoogleAnalyticsTopPages.php";
 	$wgGATPProfileId = $wmgGATPProfileId;
+	$wgGATPKeyFileLocation = $wmgGATPKeyFileLocation;
 	$wgGATPServiceAccountName = $wmgGATPServiceAccountName;
