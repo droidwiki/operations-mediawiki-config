@@ -148,9 +148,6 @@
 	# TitleKey
 	require_once "$IP/extensions/TitleKey/TitleKey.php";
 
-	# NewestPages
-	require_once "$IP/extensions/NewestPages/NewestPages.php";
-
 	# TagCloud
 	require_once "$IP/extensions/WikiCategoryTagCloud/WikiCategoryTagCloud.php";
 
