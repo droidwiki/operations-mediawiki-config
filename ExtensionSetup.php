@@ -23,7 +23,7 @@
 	$ceAllowConfirmedEmail = true;
 
 	# Trigger for ConfirmEdit
-	$wgCaptchaTriggers['edit'] = true;
+	$wgCaptchaTriggers['edit'] = false;
 	$wgCaptchaTriggers['create'] = true;
 	$wgCaptchaTriggers['addurl'] = true;
 	$wgCaptchaTriggers['createaccount'] = true;
