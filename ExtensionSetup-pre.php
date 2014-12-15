@@ -10,10 +10,9 @@
 
 	# Configuration for ConfirmEdit
 	require_once "$IP/extensions/ConfirmEdit/ConfirmEdit.php";
-	require_once "$IP/extensions/ConfirmEdit/FancyCaptcha.php";
-	$wgCaptchaDirectory = $wmgCaptchaDirectory;
-	$wgCaptchaSecret = $wmgCaptchaSecret;
-	$wgCaptchaClass = 'FancyCaptcha';
+	require_once "$IP/extensions/ConfirmEdit/ReCaptchaNoCaptcha.php";
+	$wgReCaptchaSiteKey = $wmgReCaptchaSiteKey;
+	$wgReCaptchaSecretKey = $wmgReCaptchaSecretKey;
 	$wgGroupPermissions['*']['skipcaptcha'] = false;
 	$wgGroupPermissions['user']['skipcaptcha'] = true;
 	$wgGroupPermissions['autoconfirmed']['skipcaptcha'] = true;
