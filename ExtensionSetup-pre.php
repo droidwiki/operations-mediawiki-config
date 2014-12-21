@@ -67,6 +67,7 @@
 	require_once "$IP/extensions/Elastica/Elastica.php";
 	require_once "$IP/extensions/CirrusSearch/CirrusSearch.php";
 	$wgSearchType = 'CirrusSearch';
+	$wgCirrusSearchPowerSpecialRandom = $wmgCirrusSearchPowerSpecialRandom;
 	$wgCirrusSearchServers = array( '85.214.215.12' );
 	# Enable the "experimental" highlighter
 	# $wgCirrusSearchUseExperimentalHighlighter = true;

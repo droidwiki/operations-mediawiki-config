@@ -123,4 +123,9 @@ $wgConf->settings = array(
 	'wgShowSQLErrors' => array(
 		'default' => false,
 	),
+
+	'wmgCirrusSearchPowerSpecialRandom' => array(
+		'default' => false,
+		'testdroidwiki' => true,
+	),
 );
