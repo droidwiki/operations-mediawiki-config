@@ -110,7 +110,7 @@
 	require_once "$IP/extensions/MobileFrontend/MobileFrontend.php";
 	$wgMobileFrontendLogo = "{$wgScriptPath}androide.png";
 	$wgMFAutodetectMobileView = true;
-	$wgMFAnonymousEditing = true;
+	$wgMFEditorOptions['anonymousEditing'] = true;
 	$wgMFEnableBeta = true;
 
 	# MobileWebAd
