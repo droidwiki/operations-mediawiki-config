@@ -9,6 +9,9 @@
 	# load PrivateSettings.php first
 	require "$IP/specialsources/PrivateSettings.php";
 
+	# Used in errorhandler
+	$wgPHPLogFilePref = $wmgPHPLogFilePref;
+
 	# Load Error Handler to handle php errors more beautiful
 	require "$IP/specialsources/errorreporting/errorhandler.php";
 
