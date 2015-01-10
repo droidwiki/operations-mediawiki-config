@@ -1,6 +1,7 @@
 <?php
 	# DO NOT PUT PRIVATE INFORMATION HERE!
 
+	# Jenkins-Test
 	# Protect against web entry
 	if ( !defined( 'MEDIAWIKI' ) ) {
 		exit;
