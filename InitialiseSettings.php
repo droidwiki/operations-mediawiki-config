@@ -128,4 +128,21 @@ $wgConf->settings = array(
 		'default' => false,
 		'testdroidwiki' => true,
 	),
+
+	'wgCacheDirectory' => array(
+		'default' => false,
+		'droidwiki' => '/var/www/web20/html/localisationCache/',
+	),
+
+	'wgLocalisationCacheConf' => array(
+		'default' => array(
+			'class' => 'LocalisationCache',
+			'store' => 'detect',
+			'storeClass' => false,
+			'manualRecache' => false,
+		),
+		'+droidwiki' => array(
+			'manualRecache' => true,
+		),
+	),
 );
