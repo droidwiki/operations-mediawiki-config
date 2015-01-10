@@ -15,7 +15,7 @@
 	# Load Error Handler to handle php errors more beautiful
 	require "$IP/specialsources/errorreporting/errorhandler.php";
 
-	# wgConf SiteConfiguration
+	# Helper function to load InitialiseSettings when wgConf is ready for initialisation
 	function wmfLoadInitialiseSettings( $conf ) {
 		require "InitialiseSettings.php";
 	}
