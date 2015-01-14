@@ -77,19 +77,8 @@
 
 	$wgDiff3 = "";
 
-	# Special user groups
-	$wgGroupPermissions['Testnutzer'] = $wgGroupPermissions['user'];
-	$wgGroupPermissions['Autopatrol'] = $wgGroupPermissions['user'];
-	$wgGroupPermissions['Moderator'] = $wgGroupPermissions['user'];
-
+	# Autopromote user to emailconfirmed after he confirmed his email address
 	$wgAutopromote['emailconfirmed'] = APCOND_EMAILCONFIRMED;
-
-	$wgGroupPermissions['suppress']['deleterevision'] = true;
-	$wgGroupPermissions['suppress']['suppressrevision'] = true;
-	$wgGroupPermissions['suppress']['deletelogentry'] = true;
-	$wgGroupPermissions['suppress']['deleterevision'] = true;
-	$wgGroupPermissions['suppress']['suppressionlog'] = true;
-	$wgGroupPermissions['suppress']['hideuser'] = true;
 
 	# Disable new RC Feed
 	$wgDefaultUserOptions['usenewrc'] = 0;

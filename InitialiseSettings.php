@@ -41,6 +41,14 @@ $wgConf->settings = array(
 			'bureaucrat' => array(
 				'userrights' => true,
 			),
+			'suppress' => array(
+				'deleterevision' => true,
+				'suppressrevision' => true,
+				'deletelogentry' => true,
+				'deleterevision' => true,
+				'suppressionlog' => true,
+				'hideuser' => true,
+			),
 		),
 		'+droidwiki' => array(
 			'Autopatrol' => array(
@@ -52,6 +60,19 @@ $wgConf->settings = array(
 				'delete' => true,
 				'patrol' => true,
 			),
+			'Testnutzer' => array(),
+		),
+		'+testdroidwiki' => array(
+			'Autopatrol' => array(
+				'autopatrol' => true,
+			),
+			'Moderator' => array(
+				'autopatrol' => true,
+				'proxyunbannable' => true,
+				'delete' => true,
+				'patrol' => true,
+			),
+			'Testnutzer' => array(),
 		),
 	),
 
