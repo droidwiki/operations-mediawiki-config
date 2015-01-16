@@ -236,3 +236,10 @@
 	$wgGATPProfileId = $wmgGATPProfileId;
 	$wgGATPKeyFileLocation = $wmgGATPKeyFileLocation;
 	$wgGATPServiceAccountName = $wmgGATPServiceAccountName;
+
+	# VisualEditor
+	require_once "$IP/extensions/VisualEditor/VisualEditor.php";
+	$wgDefaultUserOptions['visualeditor-enable'] = 1;
+	$wgVisualEditorParsoidURL = 'http://85.214.215.12:8142';
+	$wgVisualEditorParsoidPrefix = 'droidwiki';
+	$wgVisualEditorSupportedSkins = array( 'vector', 'apex', 'monobook', 'minerva', 'droidwiki' );
