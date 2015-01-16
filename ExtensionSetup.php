@@ -2,7 +2,6 @@
 	# DO NOT PUT PRIVATE INFORMATION HERE!
 
 	# Extensions for DoridWiki skin
-	require_once "$IP/extensions/EventLogging/EventLogging.php";
 	require_once "$IP/extensions/VectorBeta/VectorBeta.php";
 	$wgVectorBetaPersonalBar = true;
 	# Hide the preference from beta-settings (it has to be standard in DroidWiki skin)
