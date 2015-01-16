@@ -100,9 +100,6 @@
 	$wgGoogleAnalyticsIgnoreSysops = $wmgGoogleAnalyticsIgnoreSysops;
 	$wgGoogleAnalyticsIgnoreBots = $wmgGoogleAnalyticsIgnoreBots;
 
-	# Mantle for MobileFrontend
-	require_once "$IP/extensions/Mantle/Mantle.php";
-
 	# MobileFrontend
 	require_once "$IP/extensions/MobileFrontend/MobileFrontend.php";
 	$wgMobileFrontendLogo = "{$wgScriptPath}androide.png";
