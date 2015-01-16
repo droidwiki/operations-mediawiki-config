@@ -243,3 +243,4 @@
 	$wgVisualEditorParsoidURL = 'http://85.214.215.12:8142';
 	$wgVisualEditorParsoidPrefix = 'droidwiki';
 	$wgVisualEditorSupportedSkins = array( 'vector', 'apex', 'monobook', 'minerva', 'droidwiki' );
+	$wgVisualEditorNamespaces = array_merge( $wgContentNamespaces, array( NS_USER, NS_PROJECT ) );
