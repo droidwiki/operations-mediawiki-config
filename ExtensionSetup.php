@@ -116,7 +116,6 @@
 	require_once "$IP/extensions/UserDailyContribs/UserDailyContribs.php";
 	require_once "$IP/extensions/ClickTracking/ClickTracking.php";
 	require_once "$IP/extensions/EmailCapture/EmailCapture.php";
-	require_once "$IP/extensions/PrefSwitch/PrefSwitch.php";
 
 	# ArticleFeedback
 	require_once "$IP/extensions/ArticleFeedback/ArticleFeedback.php";
