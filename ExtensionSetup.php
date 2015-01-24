@@ -233,6 +233,9 @@
 	$wgGATPKeyFileLocation = $wmgGATPKeyFileLocation;
 	$wgGATPServiceAccountName = $wmgGATPServiceAccountName;
 
+	# TemplateData
+	require_once "$IP/extensions/TemplateData/TemplateData.php";
+
 	# VisualEditor
 	require_once "$IP/extensions/VisualEditor/VisualEditor.php";
 	$wgDefaultUserOptions['visualeditor-enable'] = 1;
