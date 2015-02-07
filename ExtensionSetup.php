@@ -128,9 +128,6 @@
 	$GoogleRatingUseAF = true;
 	$GoogleRatingMax = '5';
 
-	# Generates a sitemap for search engines
-	require_once "$IP/extensions/ManualSitemap/ManualSitemap.php";
-
 	# Add meta description to articles
 	require_once "$IP/extensions/Description2/Description2.php";
 
