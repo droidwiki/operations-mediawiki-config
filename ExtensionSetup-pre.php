@@ -8,15 +8,15 @@
 	$wgHiddenPrefs[] = 'betafeatures-vector-compact-personal-bar';
 
 	# Configuration for ConfirmEdit
-	require_once "$IP/extensions/ConfirmEdit/ConfirmEdit.php";
-	require_once "$IP/extensions/ConfirmEdit/ReCaptchaNoCaptcha.php";
+	#require_once "$IP/extensions/ConfirmEdit/ConfirmEdit.php";
+	#require_once "$IP/extensions/ConfirmEdit/FancyCaptcha.php";
 	$wgReCaptchaSiteKey = $wmgReCaptchaSiteKey;
 	$wgReCaptchaSecretKey = $wmgReCaptchaSecretKey;
 	$wgGroupPermissions['*']['skipcaptcha'] = false;
 	$wgGroupPermissions['user']['skipcaptcha'] = true;
 	$wgGroupPermissions['autoconfirmed']['skipcaptcha'] = true;
 	$wgGroupPermissions['bot']['skipcaptcha'] = false;
-	$wgGroupPermissions['sysop']['skipcaptcha'] = false;
+	$wgGroupPermissions['sysop']['skipcaptcha'] = true;
 	$wgGroupPermissions['emailconfirmed']['skipcaptcha'] = true;
 	$ceAllowConfirmedEmail = true;
 
@@ -227,3 +227,14 @@
 	$wgGATPProfileId = $wmgGATPProfileId;
 	$wgGATPKeyFileLocation = $wmgGATPKeyFileLocation;
 	$wgGATPServiceAccountName = $wmgGATPServiceAccountName;
+
+	# TemplateData
+	require_once "$IP/extensions/TemplateData/TemplateData.php";
+
+	# VisualEditor
+	require_once "$IP/extensions/VisualEditor/VisualEditor.php";
+	$wgDefaultUserOptions['visualeditor-enable'] = 1;
+	$wgVisualEditorParsoidURL = 'http://85.214.215.12:8142';
+	$wgVisualEditorParsoidPrefix = 'droidwiki';
+	$wgVisualEditorSupportedSkins = array( 'vector', 'apex', 'monobook', 'minerva', 'droidwiki' );
+	$wgVisualEditorNamespaces = array_merge( $wgContentNamespaces, array( NS_USER, NS_PROJECT ) );
