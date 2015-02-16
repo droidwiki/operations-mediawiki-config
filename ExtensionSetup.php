@@ -232,6 +232,7 @@
 
 	# TemplateData
 	require_once "$IP/extensions/TemplateData/TemplateData.php";
+	$wgTemplateDataUseGUI = true;
 
 	# VisualEditor
 	require_once "$IP/extensions/VisualEditor/VisualEditor.php";
