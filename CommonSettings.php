@@ -37,7 +37,7 @@
 	$wgStylePath = "$wgScriptPath/skins";
 
 	$wgLogo = 'androide.png';
-	$wgFavicon = 'images/favicon.ico';
+	$wgFavicon = 'http://www.droidwiki.de/images/favicon.ico';
 
 	$wgEnableEmail = true;
 	$wgEnableUserEmail = true;
