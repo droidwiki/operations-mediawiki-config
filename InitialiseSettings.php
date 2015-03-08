@@ -166,4 +166,19 @@ $wgConf->settings = array(
 			'manualRecache' => true,
 		),
 	),
+	
+	'wgDBerrorLog' => array(
+		'default' => false,
+		'droidwiki' => '/var/www/web20/html/phplog/dberror_droidwiki.log',
+	),
+
+	'wgDebugLogGroups' => array(
+		'default' => array(),
+		'droidwiki' => array(
+			'resourceloader' => '/var/www/web20/html/phplog/resourceloader_droidwiki.log',
+			'exception' => '/var/www/web20/html/phplog/exception_droidwiki.log',
+			'error' => '/var/www/web20/html/phplog/exception_droidwiki.log',
+			'ratelimit' => '/var/www/web20/html/phplog/ratelimit_droidwiki.log',
+		),
+	),
 );
