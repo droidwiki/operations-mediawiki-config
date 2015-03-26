@@ -179,6 +179,7 @@ $wgConf->settings = array(
 			'exception' => '/var/www/web20/html/phplog/exception_droidwiki.log',
 			'error' => '/var/www/web20/html/phplog/exception_droidwiki.log',
 			'ratelimit' => '/var/www/web20/html/phplog/ratelimit_droidwiki.log',
+			'DBPerformance' => '/var/www/web20/html/phplog/dbperformance_droidwiki.log',
 		),
 	),
 );
