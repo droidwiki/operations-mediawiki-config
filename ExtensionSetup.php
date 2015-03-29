@@ -41,8 +41,8 @@
 	$wgGroupPermissions['sysop']['abusefilter-revert'] = true;
 
 	# Spam BL
-	require_once "$IP/extensions/SpamBlacklist/SpamBlacklist.php";
-	$wgSpamBlacklistFiles = array(
+	/*require_once "$IP/extensions/SpamBlacklist/SpamBlacklist.php";
+	/*$wgSpamBlacklistFiles = array(
 		"http://droidwiki.de/index.php?title=Spam_blacklist&action=raw",
 		"http://droidwiki.de/index.php?title=MediaWiki:Spam-blacklist&action=raw"
 	);
@@ -54,7 +54,7 @@
 			'type' => TBLSRC_URL,
 			'src'  => 'http://meta.wikimedia.org/w/index.php?title=Title_blacklist&action=raw',
 		),
-	);
+	);*/
 
 	# Stop Forum Spam
 	require_once "$IP/extensions/StopForumSpam/StopForumSpam.php";
