@@ -216,6 +216,7 @@
 	require_once "$IP/extensions/GoogleLogin/GoogleLogin.php";
 	$wgGLSecret = $wmgGLSecret;
 	$wgGLAppId = $wmgGLAppId;
+	$wgGLAPIKey = $wmgGLAPIKey;
 	$wgGLShowCreateReason = true;
 
 	# CentralNotice - 01.08.2014
