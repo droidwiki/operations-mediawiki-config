@@ -256,3 +256,7 @@
 	);
 
 	require_once "$IP/extensions/DroidWiki/DroidWiki.php";
+
+	// TimedMediaHandler
+	require_once "$IP/extensions/MwEmbedSupport/MwEmbedSupport.php";
+	require_once( "$IP/extensions/TimedMediaHandler/TimedMediaHandler.php" );
