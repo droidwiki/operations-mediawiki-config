@@ -23,7 +23,7 @@ $wgConf->settings = array(
 	),
 
 	'wgDefaultSkin' => array(
-		'default' => 'droidwiki',
+		'default' => 'vector',
 	),
 
 	'wgUseRCPatrol' => array(
