@@ -254,3 +254,5 @@
 			NS_CATEGORY_TALK
 		)
 	);
+
+	require_once "$IP/extensions/DroidWiki/DroidWiki.php";
