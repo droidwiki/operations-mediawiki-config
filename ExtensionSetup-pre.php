@@ -157,9 +157,6 @@
 	# Adds a search field to 404 pages
 	require_once "$IP/extensions/Special404/Special404.php";
 
-	# Provides a contact form
-	require_once "$IP/extensions/Tipp/Tipp.php";
-
 	# Scribunto
 	require_once "$IP/extensions/Scribunto/Scribunto.php";
 	$wgScribuntoDefaultEngine = 'luastandalone';
