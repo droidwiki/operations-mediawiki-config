@@ -153,9 +153,6 @@
 	# Allows to embed YouTube videos into wikipages
 	require_once "$IP/extensions/Embedvideo/EmbedVideo.php";
 
-	# Adds a search field to 404 pages
-	require_once "$IP/extensions/Special404/Special404.php";
-
 	# Scribunto
 	require_once "$IP/extensions/Scribunto/Scribunto.php";
 	$wgScribuntoDefaultEngine = 'luastandalone';
