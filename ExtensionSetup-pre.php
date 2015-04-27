@@ -138,9 +138,6 @@
 	# TitleKey
 	require_once "$IP/extensions/TitleKey/TitleKey.php";
 
-	# TagCloud
-	require_once "$IP/extensions/WikiCategoryTagCloud/WikiCategoryTagCloud.php";
-
 	# OpenGraphMeta-Tag Feature for Social Media
 	require_once "$IP/extensions/OpenGraphMeta/OpenGraphMeta.php";
 
