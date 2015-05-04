@@ -1,44 +1,59 @@
 <?php
 	# DO NOT PUT PRIVATE INFORMATION HERE!
 
+	function wfLoadExtensionFile( $name, $required ) {
+		if ( file_exists( "$IP/$name/$name.php" ) ) {
+			if ( $required ) {
+				require_once "$IP/$name/$name.php";
+			} else {
+				include_once "$IP/$name/$name.php";
+			}
+			return true;
+		}
+		return false;
+	}
+
 	# Extensions for DoridWiki skin
-	require_once "$IP/extensions/VectorBeta/VectorBeta.php";
-	$wgVectorBetaPersonalBar = true;
-	# Hide the preference from beta-settings (it has to be standard in DroidWiki skin)
-	$wgHiddenPrefs[] = 'betafeatures-vector-compact-personal-bar';
+	if ( wfLoadExtensionFile( "VectorBeta", false ) ) {
+		$wgVectorBetaPersonalBar = true;
+		# Hide the preference from beta-settings (it has to be standard in DroidWiki skin)
+		$wgHiddenPrefs[] = 'betafeatures-vector-compact-personal-bar';
+	}
 
 	# Configuration for ConfirmEdit
-	require_once "$IP/extensions/ConfirmEdit/ConfirmEdit.php";
-	require_once "$IP/extensions/ConfirmEdit/ReCaptchaNoCaptcha.php";
-	$wgReCaptchaSiteKey = $wmgReCaptchaSiteKey;
-	$wgReCaptchaSecretKey = $wmgReCaptchaSecretKey;
-	$wgGroupPermissions['*']['skipcaptcha'] = false;
-	$wgGroupPermissions['user']['skipcaptcha'] = true;
-	$wgGroupPermissions['autoconfirmed']['skipcaptcha'] = true;
-	$wgGroupPermissions['bot']['skipcaptcha'] = false;
-	$wgGroupPermissions['sysop']['skipcaptcha'] = false;
-	$wgGroupPermissions['emailconfirmed']['skipcaptcha'] = true;
-	$ceAllowConfirmedEmail = true;
+	if ( wfLoadExtensionFile( "ConfirmEdit", false ) ) {
+		require_once "$IP/extensions/ConfirmEdit/ReCaptchaNoCaptcha.php";
+		$wgReCaptchaSiteKey = $wmgReCaptchaSiteKey;
+		$wgReCaptchaSecretKey = $wmgReCaptchaSecretKey;
+		$wgGroupPermissions['*']['skipcaptcha'] = false;
+		$wgGroupPermissions['user']['skipcaptcha'] = true;
+		$wgGroupPermissions['autoconfirmed']['skipcaptcha'] = true;
+		$wgGroupPermissions['bot']['skipcaptcha'] = false;
+		$wgGroupPermissions['sysop']['skipcaptcha'] = false;
+		$wgGroupPermissions['emailconfirmed']['skipcaptcha'] = true;
+		$ceAllowConfirmedEmail = true;
 
-	# Trigger for ConfirmEdit
-	$wgCaptchaTriggers['edit'] = false;
-	$wgCaptchaTriggers['create'] = true;
-	$wgCaptchaTriggers['addurl'] = true;
-	$wgCaptchaTriggers['createaccount'] = true;
-	$wgCaptchaTriggers['badlogin'] = true;
+		# Trigger for ConfirmEdit
+		$wgCaptchaTriggers['edit'] = false;
+		$wgCaptchaTriggers['create'] = true;
+		$wgCaptchaTriggers['addurl'] = true;
+		$wgCaptchaTriggers['createaccount'] = true;
+		$wgCaptchaTriggers['badlogin'] = true;
+	}
 
 	# AntiSpoof (needed by AbuseFilter)
-	require_once "$IP/extensions/AntiSpoof/AntiSpoof.php";
+	wfLoadExtensionFile( "AntiSpoof", false );
 
 	# AbuseFilter
-	require_once "$IP/extensions/AbuseFilter/AbuseFilter.php";
-	$wgGroupPermissions['sysop']['abusefilter-modify'] = true;
-	$wgGroupPermissions['*']['abusefilter-log-detail'] = true;
-	$wgGroupPermissions['*']['abusefilter-view'] = true;
-	$wgGroupPermissions['*']['abusefilter-log'] = true;
-	$wgGroupPermissions['sysop']['abusefilter-private'] = true;
-	$wgGroupPermissions['sysop']['abusefilter-modify-restricted'] = true;
-	$wgGroupPermissions['sysop']['abusefilter-revert'] = true;
+	if ( wfLoadExtensionFile( "AbuseFilter", false ) ) {
+		$wgGroupPermissions['sysop']['abusefilter-modify'] = true;
+		$wgGroupPermissions['*']['abusefilter-log-detail'] = true;
+		$wgGroupPermissions['*']['abusefilter-view'] = true;
+		$wgGroupPermissions['*']['abusefilter-log'] = true;
+		$wgGroupPermissions['sysop']['abusefilter-private'] = true;
+		$wgGroupPermissions['sysop']['abusefilter-modify-restricted'] = true;
+		$wgGroupPermissions['sysop']['abusefilter-revert'] = true;
+	}
 
 	# Spam BL
 	/*require_once "$IP/extensions/SpamBlacklist/SpamBlacklist.php";
@@ -57,9 +72,10 @@
 	);*/
 
 	# Stop Forum Spam
-	require_once "$IP/extensions/StopForumSpam/StopForumSpam.php";
-	$wgSFSAPIKey = $wmgSFSAPIKey;
-	$wgPutIPinRC = true;
+	if ( wfLoadExtensionFile( "StopForumSpam", false ) ) {
+		$wgSFSAPIKey = $wmgSFSAPIKey;
+		$wgPutIPinRC = true;
+	}
 
 	# GoogleCSE
 	# require_once "$IP/extensions/GoogleCSE/GoogleCSE.php";
@@ -68,189 +84,204 @@
 	# $wgDisableTextSearch = true;
 
 	# Elasticsearch
-	require_once "$IP/extensions/Elastica/Elastica.php";
-	require_once "$IP/extensions/CirrusSearch/CirrusSearch.php";
-	$wgSearchType = 'CirrusSearch';
-	$wgCirrusSearchPowerSpecialRandom = $wmgCirrusSearchPowerSpecialRandom;
-	$wgCirrusSearchServers = array( '85.214.215.12' );
-	# Enable the "experimental" highlighter
-	# $wgCirrusSearchUseExperimentalHighlighter = true;
+	if ( wfLoadExtensionFile( "Elastica", false ) && wfLoadExtensionFile( "CirrusSearch", false ) ) {
+		$wgSearchType = 'CirrusSearch';
+		$wgCirrusSearchPowerSpecialRandom = $wmgCirrusSearchPowerSpecialRandom;
+		$wgCirrusSearchServers = array( '85.214.215.12' );
+		# Enable the "experimental" highlighter
+		# $wgCirrusSearchUseExperimentalHighlighter = true;
+	}
 
 	# WikiEditor/graphical Editor
-	require_once "$IP/extensions/WikiEditor/WikiEditor.php";
-	$wgDefaultUserOptions['usebetatoolbar'] = 1;
-	$wgDefaultUserOptions['usebetatoolbar-cgd'] = 1;
-	$wgDefaultUserOptions['wikieditor-preview'] = 1;
+	if ( wfLoadExtensionFile( "WikiEditor", false ) ) {
+		$wgDefaultUserOptions['usebetatoolbar'] = 1;
+		$wgDefaultUserOptions['usebetatoolbar-cgd'] = 1;
+		$wgDefaultUserOptions['wikieditor-preview'] = 1;
+	}
 
 	# CodeEditor (extension for WikiEditor
-	require_once "$IP/extensions/CodeEditor/CodeEditor.php";
-	# Enable it on JS/CSS pages
-	$wgCodeEditorEnableCore = true;
+	if ( wfLoadExtensionFile( "CodeEditor", false ) ) {
+		# Enable it on JS/CSS pages
+		$wgCodeEditorEnableCore = true;
+	}
 
 	# Cite (ref-tags)
-	require_once "$IP/extensions/Cite/Cite.php";
+	wfLoadExtensionFile( "Cite", false );
 
 	# ParserFunctions
-	require_once "$IP/extensions/ParserFunctions/ParserFunctions.php";
+	wfLoadExtensionFile( "ParserFunctions", false );
 
 	# Syntaxhighlight
-	require_once "extensions/SyntaxHighlight_GeSHi/SyntaxHighlight_GeSHi.php";
+	wfLoadExtensionFile( "SyntaxHighlight_GeSHi", false );
 
 	# Add Google-Analytics
-	require_once "$IP/extensions/googleAnalytics/googleAnalytics.php";
-	$wgGoogleAnalyticsAccount = $wmgGoogleAnalyticsAccount;
-	$wgGoogleAnalyticsIgnoreSysops = $wmgGoogleAnalyticsIgnoreSysops;
-	$wgGoogleAnalyticsIgnoreBots = $wmgGoogleAnalyticsIgnoreBots;
+	if ( wfLoadExtensionFile( "googleAnalytics", false ) ) {
+		$wgGoogleAnalyticsAccount = $wmgGoogleAnalyticsAccount;
+		$wgGoogleAnalyticsIgnoreSysops = $wmgGoogleAnalyticsIgnoreSysops;
+		$wgGoogleAnalyticsIgnoreBots = $wmgGoogleAnalyticsIgnoreBots;
+	}
 
 	# MobileFrontend
-	require_once "$IP/extensions/MobileFrontend/MobileFrontend.php";
-	$wgMobileFrontendLogo = "{$wgScriptPath}androide.png";
-	$wgMFAutodetectMobileView = true;
-	$wgMFEditorOptions['anonymousEditing'] = true;
-	$wgMFEnableBeta = true;
+	if ( wfLoadExtensionFile( "MobileFrontend", false ) ) {
+		$wgMobileFrontendLogo = "{$wgScriptPath}androide.png";
+		$wgMFAutodetectMobileView = true;
+		$wgMFEditorOptions['anonymousEditing'] = true;
+		$wgMFEnableBeta = true;
+	}
 
 	# MobileWebAd
-	require_once "$IP/extensions/MobileWebAd/MobileWebAd.php";
+	wfLoadExtensionFile( "MobileWebAd", false );
 
 	# Extensions needed by ArticleFeedback
-	require_once "$IP/extensions/UserDailyContribs/UserDailyContribs.php";
-	require_once "$IP/extensions/ClickTracking/ClickTracking.php";
-	require_once "$IP/extensions/EmailCapture/EmailCapture.php";
+	wfLoadExtensionFile( "UserDailyContribs", false );
+	wfLoadExtensionFile( "ClickTracking", false );
+	wfLoadExtensionFile( "EmailCapture", false );
 
 	# ArticleFeedback
-	require_once "$IP/extensions/ArticleFeedback/ArticleFeedback.php";
-	$wgArticleFeedbackBlacklistCategories = array( 'KeinVoting' );
-	$wgArticleFeedbackLotteryOdds = 100;
-	$wgArticleFeedbackDashboard = true;
+	if ( wfLoadExtensionFile( "ArticleFeedback", false ) ) {
+		$wgArticleFeedbackBlacklistCategories = array( 'KeinVoting' );
+		$wgArticleFeedbackLotteryOdds = 100;
+		$wgArticleFeedbackDashboard = true;
+	}
 
 	# Googlerating adds rich snippets on base of ArticleFeedback ratings
-	require_once "$IP/extensions/GoogleRating/GoogleRating.php";
-	$GoogleRatingUseAF = true;
-	$GoogleRatingMax = '5';
+	if ( wfLoadExtensionFile( "GoogleRating", false ) ) {
+		$GoogleRatingUseAF = true;
+		$GoogleRatingMax = '5';
+	}
 
 	# Add meta description to articles
-	require_once "$IP/extensions/Description2/Description2.php";
+	wfLoadExtensionFile( "Description2", false );
 
 	# Canonical Links
-	require_once "$IP/extensions/CanonURL/CanonURL.php";
+	wfLoadExtensionFile( "CanonURL", false );
 
 	# InputBox
-	require_once "$IP/extensions/InputBox/InputBox.php";
+	wfLoadExtensionFile( "InputBox", false );
 
 	# TitleKey
-	require_once "$IP/extensions/TitleKey/TitleKey.php";
+	wfLoadExtensionFile( "TitleKey", false );
 
 	# OpenGraphMeta-Tag Feature for Social Media
-	require_once "$IP/extensions/OpenGraphMeta/OpenGraphMeta.php";
+	wfLoadExtensionFile( "OpenGraphMeta", false );
 
 	# MultimediaViwer and CommonsMetadata (replaces FancyBox)
-	require_once "$IP/extensions/MultimediaViewer/MultimediaViewer.php";
-	require_once "$IP/extensions/CommonsMetadata/CommonsMetadata.php";
+	wfLoadExtensionFile( "MultimediaViwer", false );
+	wfLoadExtensionFile( "CommonsMetadata", false );
 
 	# Add amazon id to amazon links
-	require_once "$IP/extensions/Dereferer/Dereferer.php";
+	wfLoadExtensionFile( "Dereferer", false );
 
 	# Allows to embed YouTube videos into wikipages
-	require_once "$IP/extensions/Embedvideo/EmbedVideo.php";
+	wfLoadExtensionFile( "EmbedVideo", false );
 
 	# Scribunto
-	require_once "$IP/extensions/Scribunto/Scribunto.php";
-	$wgScribuntoDefaultEngine = 'luastandalone';
-	$wgScribuntoUseCodeEditor = true;
+	if ( wfLoadExtensionFile( "Scribunto", false ) ) {
+		$wgScribuntoDefaultEngine = 'luastandalone';
+		$wgScribuntoUseCodeEditor = true;
+	}
 
 	# Add's Facebook and G+ buttons to articles
-	require_once "$IP/extensions/SocialButtons/SocialButtons.php";
-	$wgSBDisallowedNamespaces = array('-1', '4', '5', '8', '9', '10', '12', '13');
-	$wgSBDisallowedSiteTitles = array();
+	if ( wfLoadExtensionFile( "SocialButtons", false ) ) {
+		$wgSBDisallowedNamespaces = array('-1', '4', '5', '8', '9', '10', '12', '13');
+		$wgSBDisallowedSiteTitles = array();
+	}
 
 	# Disambiguator
-	require_once "$IP/extensions/Disambiguator/Disambiguator.php";
+	wfLoadExtensionFile( "Disambiguator", false );
 
 	# DynamicPageList
-	require_once "$IP/extensions/intersection/DynamicPageList.php";
+	wfLoadExtensionFile( "DynamicPageList", false );
 
 	# Echo Notifications
-	require_once "$IP/extensions/Echo/Echo.php";
+	wfLoadExtensionFile( "Echo", false );
 
 	# Thanks
-	require_once "$IP/extensions/Thanks/Thanks.php";
-	$wgIncludejQueryMigrate = true;
-	$wgThanksConfirmationRequired = true;
+	if ( wfLoadExtensionFile( "Thanks", false ) ) {
+		$wgIncludejQueryMigrate = true;
+		$wgThanksConfirmationRequired = true;
+	}
 
 	# CMDev loads a list of supported CyanogenMod devices
-	require_once "$IP/extensions/CyanogenModDev/CyanogenModDev.php";
+	wfLoadExtensionFile( "CyanogenModDev", false );
 
 	# BeatFutures
-	require_once "$IP/extensions/BetaFeatures/BetaFeatures.php";
+	wfLoadExtensionFile( "BetaFeatures", false );
 
 	# PageImages (needed by MobileFrontend and HoverCards)
-	require_once "$IP/extensions/PageImages/PageImages.php";
+	wfLoadExtensionFile( "PageImages", false );
 
 	# TextExtracts (needed by MobileFrontend and HoverCards)
-	require_once "$IP/extensions/TextExtracts/TextExtracts.php";
+	wfLoadExtensionFile( "TextExtracts", false );
 
 	# Popups
-	require_once "$IP/extensions/Popups/Popups.php";
+	wfLoadExtensionFile( "Popups", false );
 
 	# MaintenanceShell
-	require_once "$IP/extensions/MaintenanceShell/MaintenanceShell.php";
-	$wgGroupPermissions['developer']['maintenanceshell'] = true;
+	if ( wfLoadExtensionFile( "MaintenanceShell", false ) ) {
+		$wgGroupPermissions['developer']['maintenanceshell'] = true;
+	}
 
 	# Maintenance
-	require_once "$IP/extensions/Maintenance/Maintenance.php";
-	$wgGroupPermissions['developer']['maintenance'] = true;
+	if ( wfLoadExtensionFile( "Maintenance", false ) ) {
+		$wgGroupPermissions['developer']['maintenance'] = true;
+	}
 
 	# ExpandTamplates
-	require_once "$IP/extensions/ExpandTemplates/ExpandTemplates.php";
+	wfLoadExtensionFile( "ExpandTamplates", false );
 
 	# GoogleLogin
-	require_once "$IP/extensions/GoogleLogin/GoogleLogin.php";
-	$wgGLSecret = $wmgGLSecret;
-	$wgGLAppId = $wmgGLAppId;
-	$wgGLAPIKey = $wmgGLAPIKey;
-	$wgGLShowCreateReason = true;
+	if ( wfLoadExtensionFile( "GoogleLogin", false ) ) {
+		$wgGLSecret = $wmgGLSecret;
+		$wgGLAppId = $wmgGLAppId;
+		$wgGLAPIKey = $wmgGLAPIKey;
+		$wgGLShowCreateReason = true;
+	}
 
 	# CentralNotice - 01.08.2014
-	require_once "$IP/extensions/CentralNotice/CentralNotice.php";
-	$wgNoticeInfrastructure = true;
-	$wgNoticeProjects = array( 'droidwiki' );
-	$wgNoticeProject = 'droidwiki';
+	if ( wfLoadExtensionFile( "CentralNotice", false ) ) {
+		$wgNoticeInfrastructure = true;
+		$wgNoticeProjects = array( 'droidwiki' );
+		$wgNoticeProject = 'droidwiki';
+	}
 
-	require_once "$IP/extensions/GoogleAPIClient/GoogleAPIClient.php";
-	require_once "$IP/extensions/GoogleAnalyticsTopPages/GoogleAnalyticsTopPages.php";
-	$wgGATPProfileId = $wmgGATPProfileId;
-	$wgGATPKeyFileLocation = $wmgGATPKeyFileLocation;
-	$wgGATPServiceAccountName = $wmgGATPServiceAccountName;
+	if ( wfLoadExtensionFile ( "GoogleAPIClient", false ) && wfLoadExtensionFile ( "GoogleAnalyticsTopPages", false ) ) {
+		$wgGATPProfileId = $wmgGATPProfileId;
+		$wgGATPKeyFileLocation = $wmgGATPKeyFileLocation;
+		$wgGATPServiceAccountName = $wmgGATPServiceAccountName;
+	}
 
 	# TemplateData
-	require_once "$IP/extensions/TemplateData/TemplateData.php";
-	$wgTemplateDataUseGUI = true;
+	if ( wfLoadExtensionFile( "TemplateData", false ) ) {
+		$wgTemplateDataUseGUI = true;
+	}
 
 	# VisualEditor
-	require_once "$IP/extensions/VisualEditor/VisualEditor.php";
-	$wgDefaultUserOptions['visualeditor-enable'] = 1;
-	$wgVisualEditorParsoidURL = 'http://85.214.215.12:8142';
-	$wgVisualEditorParsoidPrefix = 'droidwiki';
-	$wgVisualEditorSupportedSkins = array( 'vector', 'apex', 'monobook', 'minerva', 'droidwiki' );
-	$wgVisualEditorNamespaces = array_merge(
-		$wgContentNamespaces,
-		array(
-			NS_TALK,
-			NS_USER,
-			NS_USER_TALK,
-			NS_PROJECT,
-			NS_PROJECT_TALK,
-			NS_FILE,
-			NS_FILE_TALK,
-			NS_HELP,
-			NS_HELP_TALK,
-			NS_CATEGORY,
-			NS_CATEGORY_TALK
-		)
-	);
+	if ( wfLoadExtensionFile ( "VisualEditor", false ) ) {
+		$wgDefaultUserOptions['visualeditor-enable'] = 1;
+		$wgVisualEditorParsoidURL = 'http://85.214.215.12:8142';
+		$wgVisualEditorParsoidPrefix = 'droidwiki';
+		$wgVisualEditorSupportedSkins = array( 'vector', 'apex', 'monobook', 'minerva', 'droidwiki' );
+		$wgVisualEditorNamespaces = array_merge(
+			$wgContentNamespaces,
+			array(
+				NS_TALK,
+				NS_USER,
+				NS_USER_TALK,
+				NS_PROJECT,
+				NS_PROJECT_TALK,
+				NS_FILE,
+				NS_FILE_TALK,
+				NS_HELP,
+				NS_HELP_TALK,
+				NS_CATEGORY,
+				NS_CATEGORY_TALK
+			)
+		);
+	}
 
-	require_once "$IP/extensions/DroidWiki/DroidWiki.php";
+	wfLoadExtensionFile ( "DroidWiki", false );
 
 	// TimedMediaHandler
-	require_once "$IP/extensions/MwEmbedSupport/MwEmbedSupport.php";
-	require_once "$IP/extensions/TimedMediaHandler/TimedMediaHandler.php";
+	wfLoadExtensionFile ( "MwEmbedSupport", false );
+	wfLoadExtensionFile ( "TimedMediaHandler", false );
