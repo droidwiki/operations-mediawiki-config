@@ -2,11 +2,11 @@
 	# DO NOT PUT PRIVATE INFORMATION HERE!
 
 	function wfLoadExtensionFile( $name, $required ) {
-		if ( file_exists( "$IP/$name/$name.php" ) ) {
+		if ( file_exists( "$IP/extensions/$name/$name.php" ) ) {
 			if ( $required ) {
-				require_once "$IP/$name/$name.php";
+				require_once "$IP/extensions/$name/$name.php";
 			} else {
-				include_once "$IP/$name/$name.php";
+				include_once "$IP/extensions/$name/$name.php";
 			}
 			return true;
 		}
