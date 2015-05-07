@@ -1,15 +1,86 @@
 <?php
-	# DO NOT PUT PRIVATE INFORMATION HERE!
+# DO NOT PUT PRIVATE INFORMATION HERE!
 
-	# Extensions for DoridWiki skin
-	require_once "$IP/extensions/VectorBeta/VectorBeta.php";
+$extWithoutConfig = array(
+	'AntiSpoof', # needed by AbuseFilter
+	'Cite', # ref-tags
+	'ParserFunctions',
+	'SyntaxHighlight_GeSHi',
+	'MobileWebAd',
+	'UserDailyContribs', # needed by ArticleFeedback
+	'ClickTracking', # needed by ArticleFeedback
+	'EmailCapture', # needed by ArticleFeedback
+	'Description2',
+	'CanonURL',
+	'InputBox',
+	'TitleKey',
+	'OpenGraphMeta',
+	'MultimediaViwer',
+	'CommonsMetadata',
+	'Dereferer',
+	'EmbedVideo', # Allows to embed YouTube videos into wikipages
+	'Disambiguator',
+	'DynamicPageList',
+	'Echo',
+	'CyanogenModDev',
+	'BetaFeatures',
+	'PageImages', # PageImages (needed by MobileFrontend and HoverCards)
+	'TextExtracts', # TextExtracts (needed by MobileFrontend and HoverCards)
+	'Popups',
+	'ExpandTamplates',
+	'DroidWiki',
+	'MwEmbedSupport',
+	'TimedMediaHandler',
+	'VectorBeta',
+	'ConfirmEdit',
+	'AbuseFilter',
+	'StopForumSpam',
+	'Elastica',
+	'CirrusSearch',
+	'WikiEditor',
+	'CodeEditor',
+	'googleAnalytics',
+	'MobileFrontend',
+	'ArticleFeedback',
+	'GoogleRating',
+	'Scribunto',
+	'SocialButtons',
+	'Thanks',
+	'MaintenanceShell',
+	'Maintenance',
+	'GoogleLogin',
+	'CentralNotice',
+	'GoogleAPIClient',
+	'GoogleAnalyticsTopPages',
+	'TemplateData',
+	'VisualEditor',
+);
+
+foreach ( $extWithoutConfig as $name ) {
+	global $wmgExtensionsPath;
+
+	if ( wfExtensionExists( $name ) ) {
+		require_once "$IP/$wmgExtensionsPath/$name/$name.php";
+	}
+}
+function wfExtensionExists( $name ) {
+	global $IP, $wmgExtensionsPath;
+
+	if ( file_exists( "$IP/$wmgExtensionsPath/$name/$name.php" ) ) {
+		return true;
+	}
+	return false;
+}
+
+# Extensions for DoridWiki skin
+if ( wfExtensionExists( "VectorBeta" ) ) {
 	$wgVectorBetaPersonalBar = true;
 	# Hide the preference from beta-settings (it has to be standard in DroidWiki skin)
 	$wgHiddenPrefs[] = 'betafeatures-vector-compact-personal-bar';
+}
 
-	# Configuration for ConfirmEdit
-	require_once "$IP/extensions/ConfirmEdit/ConfirmEdit.php";
-	require_once "$IP/extensions/ConfirmEdit/ReCaptchaNoCaptcha.php";
+# Configuration for ConfirmEdit
+if ( wfExtensionExists( "ConfirmEdit" ) ) {
 	$wgReCaptchaSiteKey = $wmgReCaptchaSiteKey;
 	$wgReCaptchaSecretKey = $wmgReCaptchaSecretKey;
 	$wgGroupPermissions['*']['skipcaptcha'] = false;
@@ -26,12 +97,10 @@
 	$wgCaptchaTriggers['addurl'] = true;
 	$wgCaptchaTriggers['createaccount'] = true;
 	$wgCaptchaTriggers['badlogin'] = true;
+}
 
-	# AntiSpoof (needed by AbuseFilter)
-	require_once "$IP/extensions/AntiSpoof/AntiSpoof.php";
-
-	# AbuseFilter
-	require_once "$IP/extensions/AbuseFilter/AbuseFilter.php";
+# AbuseFilter
+if ( wfExtensionExists( "AbuseFilter" ) ) {
 	$wgGroupPermissions['sysop']['abusefilter-modify'] = true;
 	$wgGroupPermissions['*']['abusefilter-log-detail'] = true;
 	$wgGroupPermissions['*']['abusefilter-view'] = true;
@@ -39,201 +108,152 @@
 	$wgGroupPermissions['sysop']['abusefilter-private'] = true;
 	$wgGroupPermissions['sysop']['abusefilter-modify-restricted'] = true;
 	$wgGroupPermissions['sysop']['abusefilter-revert'] = true;
+}
 
-	# Spam BL
-	/*require_once "$IP/extensions/SpamBlacklist/SpamBlacklist.php";
-	$wgSpamBlacklistFiles = array(
-		"http://droidwiki.de/index.php?title=Spam_blacklist&action=raw",
-		"http://droidwiki.de/index.php?title=MediaWiki:Spam-blacklist&action=raw"
-	);
+# Spam BL
+/*require_once "$IP/extensions/SpamBlacklist/SpamBlacklist.php";
+$wgSpamBlacklistFiles = array(
+	"http://droidwiki.de/index.php?title=Spam_blacklist&action=raw",
+	"http://droidwiki.de/index.php?title=MediaWiki:Spam-blacklist&action=raw"
+);
 
-	# Title BL
-	require_once "$IP/extensions/TitleBlacklist/TitleBlacklist.php";
-	$wgTitleBlacklistSources = array(
-		array(
-			'type' => TBLSRC_URL,
-			'src'  => 'http://meta.wikimedia.org/w/index.php?title=Title_blacklist&action=raw',
-		),
-	);*/
+# Title BL
+require_once "$IP/extensions/TitleBlacklist/TitleBlacklist.php";
+$wgTitleBlacklistSources = array(
+	array(
+		'type' => TBLSRC_URL,
+		'src'  => 'http://meta.wikimedia.org/w/index.php?title=Title_blacklist&action=raw',
+	),
+);*/
 
-	# Stop Forum Spam
-	require_once "$IP/extensions/StopForumSpam/StopForumSpam.php";
+# Stop Forum Spam
+if ( wfExtensionExists( "StopForumSpam" ) ) {
 	$wgSFSAPIKey = $wmgSFSAPIKey;
 	$wgPutIPinRC = true;
+}
 
-	# GoogleCSE
-	# require_once "$IP/extensions/GoogleCSE/GoogleCSE.php";
-	# Redirect all Search requests to Google CSE
-	# $wgSearchForwardUrl = 'http://www.droidwiki.de/Spezial:GoogleCSE?q=$1';
-	# $wgDisableTextSearch = true;
+# GoogleCSE
+# require_once "$IP/extensions/GoogleCSE/GoogleCSE.php";
+# Redirect all Search requests to Google CSE
+# $wgSearchForwardUrl = 'http://www.droidwiki.de/Spezial:GoogleCSE?q=$1';
+# $wgDisableTextSearch = true;
 
-	# Elasticsearch
-	require_once "$IP/extensions/Elastica/Elastica.php";
-	require_once "$IP/extensions/CirrusSearch/CirrusSearch.php";
+# Elasticsearch
+if ( wfExtensionExists( "Elastica" ) && wfExtensionExists( "CirrusSearch" ) ) {
 	$wgSearchType = 'CirrusSearch';
 	$wgCirrusSearchPowerSpecialRandom = $wmgCirrusSearchPowerSpecialRandom;
 	$wgCirrusSearchServers = array( '85.214.215.12' );
 	# Enable the "experimental" highlighter
 	# $wgCirrusSearchUseExperimentalHighlighter = true;
+}
 
-	# WikiEditor/graphical Editor
-	require_once "$IP/extensions/WikiEditor/WikiEditor.php";
+# WikiEditor/graphical Editor
+if ( wfExtensionExists( "WikiEditor" ) ) {
 	$wgDefaultUserOptions['usebetatoolbar'] = 1;
 	$wgDefaultUserOptions['usebetatoolbar-cgd'] = 1;
 	$wgDefaultUserOptions['wikieditor-preview'] = 1;
+}
 
-	# CodeEditor (extension for WikiEditor
-	require_once "$IP/extensions/CodeEditor/CodeEditor.php";
+# CodeEditor (extension for WikiEditor
+if ( wfExtensionExists( "CodeEditor" ) ) {
 	# Enable it on JS/CSS pages
 	$wgCodeEditorEnableCore = true;
+}
 
-	# Cite (ref-tags)
-	require_once "$IP/extensions/Cite/Cite.php";
-
-	# ParserFunctions
-	require_once "$IP/extensions/ParserFunctions/ParserFunctions.php";
-
-	# Syntaxhighlight
-	require_once "extensions/SyntaxHighlight_GeSHi/SyntaxHighlight_GeSHi.php";
-
-	# Add Google-Analytics
-	require_once "$IP/extensions/googleAnalytics/googleAnalytics.php";
+# Add Google-Analytics
+if ( wfExtensionExists( "googleAnalytics" ) ) {
 	$wgGoogleAnalyticsAccount = $wmgGoogleAnalyticsAccount;
 	$wgGoogleAnalyticsIgnoreSysops = $wmgGoogleAnalyticsIgnoreSysops;
 	$wgGoogleAnalyticsIgnoreBots = $wmgGoogleAnalyticsIgnoreBots;
+}
 
-	# MobileFrontend
-	require_once "$IP/extensions/MobileFrontend/MobileFrontend.php";
+# MobileFrontend
+if ( wfExtensionExists( "MobileFrontend" ) ) {
 	$wgMobileFrontendLogo = "{$wgScriptPath}androide.png";
 	$wgMFAutodetectMobileView = true;
 	$wgMFEditorOptions['anonymousEditing'] = true;
 	$wgMFEnableBeta = true;
+}
 
-	# MobileWebAd
-	require_once "$IP/extensions/MobileWebAd/MobileWebAd.php";
-
-	# Extensions needed by ArticleFeedback
-	require_once "$IP/extensions/UserDailyContribs/UserDailyContribs.php";
-	require_once "$IP/extensions/ClickTracking/ClickTracking.php";
-	require_once "$IP/extensions/EmailCapture/EmailCapture.php";
-
-	# ArticleFeedback
-	require_once "$IP/extensions/ArticleFeedback/ArticleFeedback.php";
+# ArticleFeedback
+if ( wfExtensionExists( "ArticleFeedback" ) ) {
 	$wgArticleFeedbackBlacklistCategories = array( 'KeinVoting' );
 	$wgArticleFeedbackLotteryOdds = 100;
 	$wgArticleFeedbackDashboard = true;
+}
 
-	# Googlerating adds rich snippets on base of ArticleFeedback ratings
-	require_once "$IP/extensions/GoogleRating/GoogleRating.php";
+# Googlerating adds rich snippets on base of ArticleFeedback ratings
+if ( wfExtensionExists( "GoogleRating" ) ) {
 	$GoogleRatingUseAF = true;
 	$GoogleRatingMax = '5';
+}
 
-	# Add meta description to articles
-	require_once "$IP/extensions/Description2/Description2.php";
-
-	# Canonical Links
-	require_once "$IP/extensions/CanonURL/CanonURL.php";
-
-	# InputBox
-	require_once "$IP/extensions/InputBox/InputBox.php";
-
-	# TitleKey
-	require_once "$IP/extensions/TitleKey/TitleKey.php";
-
-	# OpenGraphMeta-Tag Feature for Social Media
-	require_once "$IP/extensions/OpenGraphMeta/OpenGraphMeta.php";
-
-	# MultimediaViwer and CommonsMetadata (replaces FancyBox)
-	require_once "$IP/extensions/MultimediaViewer/MultimediaViewer.php";
-	require_once "$IP/extensions/CommonsMetadata/CommonsMetadata.php";
-
-	# Add amazon id to amazon links
-	require_once "$IP/extensions/Dereferer/Dereferer.php";
-
-	# Allows to embed YouTube videos into wikipages
-	require_once "$IP/extensions/Embedvideo/EmbedVideo.php";
-
-	# Scribunto
-	require_once "$IP/extensions/Scribunto/Scribunto.php";
+# Scribunto
+if ( wfExtensionExists( "Scribunto" ) ) {
 	$wgScribuntoDefaultEngine = 'luastandalone';
 	$wgScribuntoUseCodeEditor = true;
+}
 
-	# Add's Facebook and G+ buttons to articles
-	require_once "$IP/extensions/SocialButtons/SocialButtons.php";
+# Add's Facebook and G+ buttons to articles
+if ( wfExtensionExists( "SocialButtons" ) ) {
 	$wgSBDisallowedNamespaces = array('-1', '4', '5', '8', '9', '10', '12', '13');
 	$wgSBDisallowedSiteTitles = array();
+}
 
-	# Disambiguator
-	require_once "$IP/extensions/Disambiguator/Disambiguator.php";
-
-	# DynamicPageList
-	require_once "$IP/extensions/intersection/DynamicPageList.php";
-
-	# Echo Notifications
-	require_once "$IP/extensions/Echo/Echo.php";
-
-	# Thanks
-	require_once "$IP/extensions/Thanks/Thanks.php";
+# Thanks
+if ( wfExtensionExists( "Thanks" ) ) {
 	$wgIncludejQueryMigrate = true;
 	$wgThanksConfirmationRequired = true;
+}
 
-	# CMDev loads a list of supported CyanogenMod devices
-	require_once "$IP/extensions/CyanogenModDev/CyanogenModDev.php";
-
-	# BeatFutures
-	require_once "$IP/extensions/BetaFeatures/BetaFeatures.php";
-
-	# PageImages (needed by MobileFrontend and HoverCards)
-	require_once "$IP/extensions/PageImages/PageImages.php";
-
-	# TextExtracts (needed by MobileFrontend and HoverCards)
-	require_once "$IP/extensions/TextExtracts/TextExtracts.php";
-
-	# Popups
-	require_once "$IP/extensions/Popups/Popups.php";
-
-	# MaintenanceShell
-	require_once "$IP/extensions/MaintenanceShell/MaintenanceShell.php";
+# MaintenanceShell
+if ( wfExtensionExists( "MaintenanceShell" ) ) {
 	$wgGroupPermissions['developer']['maintenanceshell'] = true;
+}
 
-	# Maintenance
-	require_once "$IP/extensions/Maintenance/Maintenance.php";
+# Maintenance
+if ( wfExtensionExists( "Maintenance" ) ) {
 	$wgGroupPermissions['developer']['maintenance'] = true;
+}
 
-	# ExpandTamplates
-	require_once "$IP/extensions/ExpandTemplates/ExpandTemplates.php";
-
-	# GoogleLogin
-	require_once "$IP/extensions/GoogleLogin/GoogleLogin.php";
+# GoogleLogin
+if ( wfExtensionExists( "GoogleLogin" ) ) {
 	$wgGLSecret = $wmgGLSecret;
 	$wgGLAppId = $wmgGLAppId;
 	$wgGLAPIKey = $wmgGLAPIKey;
 	$wgGLShowCreateReason = true;
+}
 
-	# CentralNotice - 01.08.2014
-	require_once "$IP/extensions/CentralNotice/CentralNotice.php";
+# CentralNotice - 01.08.2014
+if ( wfExtensionExists( "CentralNotice" ) ) {
 	$wgNoticeInfrastructure = true;
 	$wgNoticeProjects = array( 'droidwiki' );
 	$wgNoticeProject = 'droidwiki';
+}
 
+if (
+	wfExtensionExists ( "GoogleAPIClient" ) &&
+	wfExtensionExists ( "GoogleAnalyticsTopPages" )
+) {
 	require_once "$IP/extensions/GoogleAPIClient/GoogleAPIClient.php";
-	require_once "$IP/extensions/GoogleAnalyticsTopPages/GoogleAnalyticsTopPages.php";
 	$wgGATPProfileId = $wmgGATPProfileId;
 	$wgGATPKeyFileLocation = $wmgGATPKeyFileLocation;
 	$wgGATPServiceAccountName = $wmgGATPServiceAccountName;
+}
 
-	# TemplateData
-	require_once "$IP/extensions/TemplateData/TemplateData.php";
+# TemplateData
+if ( wfExtensionExists( "TemplateData" ) ) {
 	$wgTemplateDataUseGUI = true;
+}
 
-	# VisualEditor
-	require_once "$IP/extensions/VisualEditor/VisualEditor.php";
+# VisualEditor
+if ( wfExtensionExists ( "VisualEditor" ) ) {
 	$wgDefaultUserOptions['visualeditor-enable'] = 1;
 	$wgVisualEditorParsoidURL = 'http://85.214.215.12:8142';
 	$wgVisualEditorParsoidPrefix = 'droidwiki';
 	$wgVisualEditorSupportedSkins = array( 'vector', 'apex', 'monobook', 'minerva', 'droidwiki' );
 	$wgVisualEditorNamespaces = array_merge(
-		$wgContentNamespaces,
+	$wgContentNamespaces,
 		array(
 			NS_TALK,
 			NS_USER,
@@ -248,9 +268,4 @@
 			NS_CATEGORY_TALK
 		)
 	);
-
-	require_once "$IP/extensions/DroidWiki/DroidWiki.php";
-
-	// TimedMediaHandler
-	require_once "$IP/extensions/MwEmbedSupport/MwEmbedSupport.php";
-	require_once "$IP/extensions/TimedMediaHandler/TimedMediaHandler.php";
+}

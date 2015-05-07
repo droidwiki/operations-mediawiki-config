@@ -137,10 +137,4 @@
 		)
 	);
 
-	# load Extension configuration
-	if ( $wmgWikiName === 'testdroidwiki' ) {
-		$extSuffix = '-pre';
-	} else {
-		$extSuffix = '';
-	}
-	require "$IP/specialsources/mw-config/ExtensionSetup{$extSuffix}.php";
+	require "$IP/specialsources/mw-config/ExtensionSetup.php";
