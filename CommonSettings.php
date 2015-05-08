@@ -127,6 +127,10 @@
 	# MediaWiki UI everywhere
 	$wgUseMediaWikiUIEverywhere = true;
 
+	# Performance things
+	$wgResourceLoaderStorageEnabled = true;
+	$wgMiserMode = true;
+
 	# Add go2tech repository to Git viewer list
 	$wgGitRepositoryViewers = array_merge( $wgGitRepositoryViewers,
 		array(
