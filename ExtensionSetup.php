@@ -15,7 +15,7 @@ $extWithoutConfig = array(
 	'InputBox',
 	'TitleKey',
 	'OpenGraphMeta',
-	'MultimediaViwer',
+	'MultimediaViewer',
 	'CommonsMetadata',
 	'Dereferer',
 	'EmbedVideo', # Allows to embed YouTube videos into wikipages

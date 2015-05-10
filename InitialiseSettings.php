@@ -19,6 +19,7 @@ $wgConf->settings = array(
 	'wgCookieDomain' => array(
 		'default' => '',
 		'droidwiki' => '.droidwiki.de',
+		'droid.wiki' => '.droid.wiki',
 		'testdroidwiki' => '.go2tech.de',
 	),
 
@@ -62,6 +63,18 @@ $wgConf->settings = array(
 			),
 			'Testnutzer' => array(),
 		),
+		'+droid.wiki' => array(
+			'Autopatrol' => array(
+				'autopatrol' => true,
+			),
+			'Moderator' => array(
+				'autopatrol' => true,
+				'proxyunbannable' => true,
+				'delete' => true,
+				'patrol' => true,
+			),
+			'Testnutzer' => array(),
+		),
 		'+testdroidwiki' => array(
 			'Autopatrol' => array(
 				'autopatrol' => true,
@@ -79,6 +92,7 @@ $wgConf->settings = array(
 	'wgAllowUserJs' => array(
 		'default' => false,
 		'droidwiki' => true,
+		'droid.wiki' => true,
 	),
 
 	'wgMaxImageArea' => array(
@@ -103,29 +117,34 @@ $wgConf->settings = array(
 
 	'wgMainCacheType' => array(
 		'default' => CACHE_NONE,
+		'droid.wiki' => CACHE_MEMCACHED,
 		'testdroidwiki' => CACHE_MEMCACHED,
 	),
 
 	'wgParserCacheType' => array(
 		'default' => CACHE_NONE,
 		'droidwiki' => CACHE_DB,
+		'droid.wiki' => CACHE_MEMCACHED,
 		'testdroidwiki' => CACHE_MEMCACHED,
 	),
 
 	'wgMessageCacheType' => array(
 		'default' => CACHE_NONE,
 		'droidwiki' => CACHE_DB,
+		'droid.wiki' => CACHE_MEMCACHED,
 		'testdroidwiki' => CACHE_MEMCACHED,
 	),
 
 	'wgSessionCacheType' => array(
 		'default' => CACHE_NONE,
 		'droidwiki' => CACHE_DB,
+		'droid.wiki' => CACHE_MEMCACHED,
 	),
 
 	'wgSessionsInObjectCache' => array(
 		'default' => false,
 		'droidwiki' => true,
+		'droid.wiki' => true,
 	),
 
 	'wgMemCachedServers' => array(
@@ -153,6 +172,7 @@ $wgConf->settings = array(
 	'wgCacheDirectory' => array(
 		'default' => false,
 		'droidwiki' => '/var/www/web20/html/localisationCache/',
+		'droid.wiki' => '/data/www/droid.wiki/localisationCache/',
 	),
 
 	'wgLocalisationCacheConf' => array(
