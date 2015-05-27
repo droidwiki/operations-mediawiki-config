@@ -81,6 +81,7 @@ if ( wfExtensionExists( "VectorBeta" ) ) {
 
 # Configuration for ConfirmEdit
 if ( wfExtensionExists( "ConfirmEdit" ) ) {
+	require_once "$IP/extensions/ConfirmEdit/ReCaptchaNoCaptcha.php";
 	$wgReCaptchaSiteKey = $wmgReCaptchaSiteKey;
 	$wgReCaptchaSecretKey = $wmgReCaptchaSecretKey;
 	$wgGroupPermissions['*']['skipcaptcha'] = false;
