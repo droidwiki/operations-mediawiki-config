@@ -54,6 +54,7 @@ $extWithoutConfig = array(
 	'GoogleAnalyticsTopPages',
 	'TemplateData',
 	'VisualEditor',
+	'OOJsUIAjaxLogin',
 );
 
 foreach ( $extWithoutConfig as $name ) {
@@ -151,7 +152,7 @@ if ( wfExtensionExists( "Elastica" ) && wfExtensionExists( "CirrusSearch" ) ) {
 if ( wfExtensionExists( "WikiEditor" ) ) {
 	$wgDefaultUserOptions['usebetatoolbar'] = 1;
 	$wgDefaultUserOptions['usebetatoolbar-cgd'] = 1;
-	$wgDefaultUserOptions['wikieditor-preview'] = 1;
+	$wgDefaultUserOptions['wikieditor-preview'] = 0;
 }
 
 # CodeEditor (extension for WikiEditor
