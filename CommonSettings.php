@@ -7,20 +7,21 @@
 	}
 
 	# load PrivateSettings.php first
-	require "$IP/specialsources/PrivateSettings.php";
+	require __DIR__ . "/../private/PrivateSettings.php";
 
 	# Used in errorhandler
 	$wgPHPLogFilePref = $wmgPHPLogFilePref;
 
 	# Load Error Handler to handle php errors more beautiful
-	require "$IP/specialsources/errorreporting/errorhandler.php";
+	require __DIR__ . "/../errorreporting/errorhandler.php";
 
 	# Helper function to load InitialiseSettings when wgConf is ready for initialisation
 	function wmfLoadInitialiseSettings( $conf ) {
 		require "InitialiseSettings.php";
 	}
 
-	require "$IP/specialsources/mw-config/wgConf.php";
+	require __DIR__ . "/wgConf.php";
+
 
 	# Load ProfileSettings
 	# require( 'specialsources/mw-config/ProfileSettings.php' );
@@ -29,15 +30,17 @@
 	$wgArticlePath = "$wgScriptPath/$1";
 	$wgUsePathInfo = true;
 	$wgScriptExtension = ".php";
+	$wgServer = "//www.droidwiki.de";
 
-	if( $wmgWikiName !== 'testdroidwiki' ) {
-		$wgLoadScript = '//bits.go2tech.de/load.php';
-	}
+	# Varnish things
+	$wgUseSquid = true;
+	$wgSquidServers = array( '127.0.0.1' );
+	$wgUseGzip = true;
 
 	$wgStylePath = "$wgScriptPath/skins";
 
-	$wgLogo = 'androide.png';
-	$wgFavicon = 'http://www.droidwiki.de/images/favicon.ico';
+	$wgLogo = '/images/androide.png';
+	$wgFavicon = '//www.droidwiki.de/images/favicon.ico';
 
 	$wgEnableEmail = true;
 	$wgEnableUserEmail = true;
@@ -141,4 +144,4 @@
 		)
 	);
 
-	require "$IP/specialsources/mw-config/ExtensionSetup.php";
+	require __DIR__ . "/ExtensionSetup.php";
