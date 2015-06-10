@@ -1,0 +1,2 @@
+<?php
+$whitespace = 'test'; 
