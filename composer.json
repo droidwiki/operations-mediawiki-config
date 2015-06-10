@@ -1,0 +1,19 @@
+{
+	"name": "droidwiki/operations/mediawiki-config",
+	"description": "Repository holding the MediaWiki configuration for droidwiki.de projects.",
+	"keywords": ["mediawiki", "wiki", "droidwiki"],
+	"homepage": "https://www.droidwiki.de/",
+	"require-dev": {
+		"jakub-onderka/php-parallel-lint": "~0.8",
+		"phpunit/phpunit": "~4.5",
+		"mediawiki/mediawiki-codesniffer": "0.1.0"
+	},
+	"scripts": {
+		"lint": "parallel-lint . --exclude vendor",
+		"phpcs": "phpcs $PHPCS_ARGS -s --standard=vendor/mediawiki/mediawiki-codesniffer/MediaWiki --ignore=vendor --encoding=utf-8 --extensions=php,php5,inc,sample .",
+		"test": [
+			"composer lint",
+			"composer phpcs"
+		]
+	}
+}
