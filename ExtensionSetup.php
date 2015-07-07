@@ -176,6 +176,7 @@ if ( wfExtensionExists( "MobileFrontend" ) ) {
 	$wgMFAutodetectMobileView = true;
 	$wgMFEditorOptions['anonymousEditing'] = true;
 	$wgMFEnableBeta = true;
+	$wgMFNoLoginOverride = true;
 }
 
 # ArticleFeedback
