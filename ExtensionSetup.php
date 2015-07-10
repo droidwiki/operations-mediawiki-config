@@ -54,7 +54,6 @@ $extWithoutConfig = array(
 	'GoogleAnalyticsTopPages',
 	'TemplateData',
 	'VisualEditor',
-	'OOJsUIAjaxLogin',
 );
 
 foreach ( $extWithoutConfig as $name ) {
