@@ -13,7 +13,6 @@ $extWithoutConfig = array(
 	'Description2',
 	'CanonURL',
 	'InputBox',
-	'TitleKey',
 	'OpenGraphMeta',
 	'MultimediaViewer',
 	'CommonsMetadata',
@@ -31,7 +30,6 @@ $extWithoutConfig = array(
 	'DroidWiki',
 	'MwEmbedSupport',
 	'TimedMediaHandler',
-	'VectorBeta',
 	'ConfirmEdit',
 	'AbuseFilter',
 	'StopForumSpam',
@@ -46,8 +44,6 @@ $extWithoutConfig = array(
 	'Scribunto',
 	'SocialButtons',
 	'Thanks',
-	'MaintenanceShell',
-	'Maintenance',
 	'GoogleLogin',
 	'CentralNotice',
 	'GoogleAPIClient',
@@ -70,13 +66,6 @@ function wfExtensionExists( $name ) {
 		return true;
 	}
 	return false;
-}
-
-# Extensions for DoridWiki skin
-if ( wfExtensionExists( "VectorBeta" ) ) {
-	$wgVectorBetaPersonalBar = true;
-	# Hide the preference from beta-settings (it has to be standard in DroidWiki skin)
-	$wgHiddenPrefs[] = 'betafeatures-vector-compact-personal-bar';
 }
 
 # Configuration for ConfirmEdit
@@ -207,16 +196,6 @@ if ( wfExtensionExists( "SocialButtons" ) ) {
 if ( wfExtensionExists( "Thanks" ) ) {
 	$wgIncludejQueryMigrate = true;
 	$wgThanksConfirmationRequired = true;
-}
-
-# MaintenanceShell
-if ( wfExtensionExists( "MaintenanceShell" ) ) {
-	$wgGroupPermissions['developer']['maintenanceshell'] = true;
-}
-
-# Maintenance
-if ( wfExtensionExists( "Maintenance" ) ) {
-	$wgGroupPermissions['developer']['maintenance'] = true;
 }
 
 # GoogleLogin
