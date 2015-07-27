@@ -16,6 +16,7 @@ $extWithoutConfig = array(
 	'OpenGraphMeta',
 	'MultimediaViewer',
 	'CommonsMetadata',
+	'CookieWarning',
 	'Dereferer',
 	'EmbedVideo', # Allows to embed YouTube videos into wikipages
 	'Disambiguator',
@@ -254,4 +255,9 @@ if ( wfExtensionExists ( "VisualEditor" ) ) {
 			NS_CATEGORY_TALK
 		)
 	);
+}
+
+// don't enable CookieWarning before September, 30 2015
+if ( wfExtensionExists ( "CookieWarning" ) && time() > '1443564000' ) {
+	$wgCookieWarningEnabled = true;
 }
