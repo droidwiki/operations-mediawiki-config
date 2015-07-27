@@ -51,6 +51,7 @@ $extWithoutConfig = array(
 	'GoogleAnalyticsTopPages',
 	'TemplateData',
 	'VisualEditor',
+	'QuickSearchLookup',
 );
 
 foreach ( $extWithoutConfig as $name ) {
