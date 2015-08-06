@@ -59,12 +59,8 @@
 
 	$wgLanguageCode = "de";
 
-	# DroidWiki Design
-	require_once ( "$IP/skins/droidwiki/DroidWiki.php" );
-
 	# Additional, alternative skins
-	require_once ( "$IP/skins/Vector/Vector.php" );
-	require_once ( "$IP/skins/MonoBook/MonoBook.php" );
+	wfLoadSkins( array( 'Vector', 'MonoBook' ) );
 
 	# Do not show adbanners on this sites
 	$wgNoAdSites = array(
