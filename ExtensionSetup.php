@@ -191,7 +191,7 @@ if ( wfExtensionExists( "Scribunto" ) ) {
 # Add's Facebook and G+ buttons to articles
 if ( wfExtensionExists( "SocialButtons" ) ) {
 	$wgSBDisallowedNamespaces = array('-1', '4', '5', '8', '9', '10', '12', '13');
-	$wgSBDisallowedSiteTitles = array();
+	$wgSBDisallowedSiteTitles = array( 'Hauptseite' );
 }
 
 # Thanks
