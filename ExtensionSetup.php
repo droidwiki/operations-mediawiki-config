@@ -239,22 +239,19 @@ if ( wfExtensionExists ( "VisualEditor" ) ) {
 	$wgDefaultUserOptions['visualeditor-enable'] = 1;
 	$wgVisualEditorParsoidURL = 'http://85.214.215.12:8142';
 	$wgVisualEditorParsoidPrefix = 'droidwiki';
-	$wgVisualEditorSupportedSkins = array( 'vector', 'apex', 'monobook', 'minerva', 'droidwiki' );
-	$wgVisualEditorNamespaces = array_merge(
-	$wgContentNamespaces,
-		array(
-			NS_TALK,
-			NS_USER,
-			NS_USER_TALK,
-			NS_PROJECT,
-			NS_PROJECT_TALK,
-			NS_FILE,
-			NS_FILE_TALK,
-			NS_HELP,
-			NS_HELP_TALK,
-			NS_CATEGORY,
-			NS_CATEGORY_TALK
-		)
+	$wgVisualEditorSupportedSkins = array( 'vector', 'apex', 'monobook', 'minerva' );
+	$wgVisualEditorAvailableNamespaces = array(
+		NS_TALK => true,
+		NS_USER => true,
+		NS_USER_TALK => true,
+		NS_PROJECT => true,
+		NS_PROJECT_TALK => true,
+		NS_FILE => true,
+		NS_FILE_TALK => true,
+		NS_HELP => true,
+		NS_HELP_TALK => true,
+		NS_CATEGORY => true,
+		NS_CATEGORY_TALK => true,
 	);
 }
 
