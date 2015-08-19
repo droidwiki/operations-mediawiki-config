@@ -52,6 +52,7 @@ $extWithoutConfig = array(
 	'TemplateData',
 	'VisualEditor',
 	'QuickSearchLookup',
+	'UserMerge',
 );
 
 foreach ( $extWithoutConfig as $name ) {
@@ -270,7 +271,11 @@ if ( wfExtensionExists ( "VisualEditor" ) ) {
 }
 
 // don't enable CookieWarning before September, 30 2015
-if ( wfExtensionExists ( "CookieWarning" ) && time() > '1443564000' ) {
+if ( wfExtensionExists ( 'CookieWarning' ) && time() > '1443564000' ) {
 	$wgCookieWarningEnabled = true;
 	$wgCookieWarningMoreUrl = 'https://www.droidwiki.de/DroidWiki:Impressum#Verwendung_von_Cookies';
+}
+
+if ( wfExtensionExists ( 'UserMerge' ) ) {
+	$wgGroupPermissions['bureaucrat']['usermerge'] = true;
 }
