@@ -1,0 +1,7 @@
+Code-Review+2: Florian Schmidt <florian.schmidt.welzow@t-online.de>
+Verified+1: Jenkins CI <zuul@go2tech.de>
+Submitted-by: Jenkins CI <zuul@go2tech.de>
+Submitted-at: Thu, 20 Aug 2015 20:58:03 +0200
+Reviewed-on: http://gerrit.go2tech.de/793
+Project: droidwiki/operations/mediawiki-config
+Branch: refs/heads/master
