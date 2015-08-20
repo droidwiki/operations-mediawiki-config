@@ -123,9 +123,6 @@
 	# Do not restrict DISPLAYTITLE
 	$wgRestrictDisplayTitle = false;
 
-	# MediaWiki UI everywhere
-	$wgUseMediaWikiUIEverywhere = true;
-
 	# Performance things
 	$wgResourceLoaderStorageEnabled = true;
 	$wgMiserMode = true;
