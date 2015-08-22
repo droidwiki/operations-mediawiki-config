@@ -176,4 +176,9 @@ $wgConf->settings = array(
 			'DBPerformance' => '/data/www/droid.wiki/phplog/dbperformance_droidwiki.log',
 		),
 	),
+
+	'wgDebugLogFile' => array(
+                'default' => '',
+                'droidwiki' => '/data/www/droid.wiki/phplog/debug_droidwiki.log',
+        ),
 );
