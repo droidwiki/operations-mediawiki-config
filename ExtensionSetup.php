@@ -53,6 +53,7 @@ $extWithoutConfig = array(
 	'VisualEditor',
 	'QuickSearchLookup',
 	'UserMerge',
+	'Gadgets',
 );
 
 foreach ( $extWithoutConfig as $name ) {
