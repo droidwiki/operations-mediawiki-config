@@ -54,6 +54,7 @@ $extWithoutConfig = array(
 	'QuickSearchLookup',
 	'UserMerge',
 	'Gadgets',
+	'Citoid',
 );
 
 foreach ( $extWithoutConfig as $name ) {
@@ -279,4 +280,10 @@ if ( wfExtensionExists ( 'CookieWarning' ) && time() > '1443564000' ) {
 
 if ( wfExtensionExists ( 'UserMerge' ) ) {
 	$wgGroupPermissions['bureaucrat']['usermerge'] = true;
+}
+
+if ( wfExtensionExists( 'Citoid' ) ) {
+	// provisional re-use of wikimedia's citoid endpoint api
+	// until we have our own
+	$wgCitoidServiceUrl = 'https://citoid.wikimedia.org/api';
 }
