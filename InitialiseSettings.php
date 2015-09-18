@@ -61,6 +61,9 @@ $wgConf->settings = array(
 				'patrol' => true,
 			),
 			'Testnutzer' => array(),
+			'ipblock-exempt' => array(
+				'ipblock-exempt' => true,
+			),
 		),
 		'+testdroidwiki' => array(
 			'Autopatrol' => array(
