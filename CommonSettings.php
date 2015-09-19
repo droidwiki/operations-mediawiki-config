@@ -42,6 +42,15 @@
 	$wgLogo = '/images/androide.png';
 	$wgFavicon = '//www.droidwiki.de/images/favicon.ico';
 
+        $wgSMTP = array(
+                'host'     => 'bits.go2tech.de',
+                'IDHost'   => 'droidwiki.de',
+                'port'     => 587,
+                'auth'     => true,
+                'username' => $wmgEmailUser,
+                'password' => $wmgEmailPassword,
+        );
+
 	$wgEnableEmail = true;
 	$wgEnableUserEmail = true;
 
