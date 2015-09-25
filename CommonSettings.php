@@ -104,7 +104,8 @@
 		'pdf',
 		'pptx',
 		'zip',
-		'svg'
+		'svg',
+		'ico',
 	);
 
 	# Enable subpages in the main namespace
