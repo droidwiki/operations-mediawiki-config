@@ -279,7 +279,8 @@ if ( wfExtensionExists ( "VisualEditor" ) ) {
 // don't enable CookieWarning before September, 30 2015
 if ( wfExtensionExists ( 'CookieWarning' ) && time() > '1443564000' ) {
 	$wgCookieWarningEnabled = true;
-	$wgCookieWarningMoreUrl = 'https://www.droidwiki.de/DroidWiki:Impressum#Verwendung_von_Cookies';
+	$wgCookieWarningMoreUrl =
+		'https://www.droidwiki.de/DroidWiki:Impressum#Verwendung_von_Cookies_.28Cookie-Policy.29';
 }
 
 if ( wfExtensionExists ( 'UserMerge' ) ) {
