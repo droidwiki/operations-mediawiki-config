@@ -81,8 +81,6 @@
 		'DroidWiki:Impressum'
 	);
 
-	$wgGPlusId = "103862846105145420159";
-
 	$wgDiff3 = "";
 
 	# Autopromote user to emailconfirmed after he confirmed his email address
