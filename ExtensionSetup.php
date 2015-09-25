@@ -142,19 +142,11 @@ if ( wfExtensionExists( "StopForumSpam" ) ) {
 	$wgPutIPinRC = true;
 }
 
-# GoogleCSE
-# require_once "$IP/extensions/GoogleCSE/GoogleCSE.php";
-# Redirect all Search requests to Google CSE
-# $wgSearchForwardUrl = 'http://www.droidwiki.de/Spezial:GoogleCSE?q=$1';
-# $wgDisableTextSearch = true;
-
 # Elasticsearch
 if ( wfExtensionExists( "Elastica" ) && wfExtensionExists( "CirrusSearch" ) ) {
 	$wgSearchType = 'CirrusSearch';
 	$wgCirrusSearchPowerSpecialRandom = $wmgCirrusSearchPowerSpecialRandom;
 	$wgCirrusSearchServers = array( '85.214.215.12' );
-	# Enable the "experimental" highlighter
-	# $wgCirrusSearchUseExperimentalHighlighter = true;
 }
 
 # WikiEditor/graphical Editor
