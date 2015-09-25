@@ -40,7 +40,7 @@
 	$wgStylePath = "$wgScriptPath/skins";
 
 	$wgLogo = '/images/androide.png';
-	$wgFavicon = '//www.droidwiki.de/images/favicon.ico';
+	$wgFavicon = '//www.droidwiki.de/images/favicon_with_W.ico';
 
         $wgSMTP = array(
                 'host'     => 'bits.go2tech.de',
