@@ -10,7 +10,6 @@ $extWithoutConfig = array(
 	'UserDailyContribs', # needed by ArticleFeedback
 	'ClickTracking', # needed by ArticleFeedback
 	'EmailCapture', # needed by ArticleFeedback
-	'Description2',
 	'CanonURL',
 	'InputBox',
 	'OpenGraphMeta',
