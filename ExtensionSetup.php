@@ -54,6 +54,7 @@ $extWithoutConfig = array(
 	'UserMerge',
 	'Gadgets',
 	'Citoid',
+	'Interwiki',
 );
 
 foreach ( $extWithoutConfig as $name ) {
@@ -282,4 +283,8 @@ if ( wfExtensionExists( 'Citoid' ) ) {
 	// provisional re-use of wikimedia's citoid endpoint api
 	// until we have our own
 	$wgCitoidServiceUrl = 'https://citoid.wikimedia.org/api';
+}
+
+if ( wfExtensionExists( 'Interwiki' ) ) {
+	$wgGroupPermissions['sysop']['interwiki'] = true;
 }
