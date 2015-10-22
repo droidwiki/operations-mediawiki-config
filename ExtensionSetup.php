@@ -55,6 +55,7 @@ $extWithoutConfig = array(
 	'Gadgets',
 	'Citoid',
 	'Interwiki',
+	'TemplateSandbox',
 );
 
 foreach ( $extWithoutConfig as $name ) {
