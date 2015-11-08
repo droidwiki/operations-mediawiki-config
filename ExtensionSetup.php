@@ -147,7 +147,7 @@ if ( wfExtensionExists( "StopForumSpam" ) ) {
 if ( wfExtensionExists( "Elastica" ) && wfExtensionExists( "CirrusSearch" ) ) {
 	$wgSearchType = 'CirrusSearch';
 	$wgCirrusSearchPowerSpecialRandom = $wmgCirrusSearchPowerSpecialRandom;
-	$wgCirrusSearchServers = array( '85.214.215.12' );
+	$wgCirrusSearchServers = array( '188.68.49.74' );
 }
 
 # WikiEditor/graphical Editor
