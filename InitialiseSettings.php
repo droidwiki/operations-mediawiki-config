@@ -5,11 +5,18 @@ global $wgConf;
 $wgConf->settings = array(
 	'wgSitename' => array(
 		'default' => 'Android Wiki',
+		'opswiki' => 'DroidWiki Operations',
 		'testdroidwiki' => 'Android Test-Wiki',
 	),
 
 	'wgMetaNamespace' => array(
 		'default' => 'DroidWiki',
+		'opswiki' => 'Project',
+	),
+
+	'wgServer' => array(
+		'droidwiki' => '//droidwiki.de',
+		'opswiki' => '//ops.go2tech.de',
 	),
 
 	'wgLocaltimezone' => array(
@@ -20,6 +27,7 @@ $wgConf->settings = array(
 		'default' => '',
 		'droidwiki' => '.droidwiki.de',
 		'testdroidwiki' => '.go2tech.de',
+		'opswiki' => '.ops.go2tech.de',
 	),
 
 	'wgDefaultSkin' => array(
@@ -79,6 +87,18 @@ $wgConf->settings = array(
 		),
 	),
 
+	'groupOverrides' => array(
+		// don't change the default value
+		'default' => array(),
+		'opswiki' => array(
+			'*' => array(
+				'read' => false,
+				'edit' => false,
+				'createaccount' => false
+			),
+		),
+	),
+
 	'wgAllowUserJs' => array(
 		'default' => false,
 		'droidwiki' => true,
@@ -90,6 +110,7 @@ $wgConf->settings = array(
 
 	'wgUseInstantCommons' => array(
 		'default' => true,
+		'opswiki' => false,
 	),
 
 	'wgSVGConverters' => array(
@@ -150,6 +171,10 @@ $wgConf->settings = array(
 	'wgCacheDirectory' => array(
 		'default' => false,
 		'droidwiki' => '/data/mediawiki/localisationCache/',
+	),
+
+	'wgGitInfoCacheDirectory' => array(
+		'droidwiki' => '/data/mediawiki/main/cache/gitinfo',
 	),
 
 	'wgLocalisationCacheConf' => array(
