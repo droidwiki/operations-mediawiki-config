@@ -4,6 +4,7 @@ $wgConf = new SiteConfiguration;
 
 $wgLocalDatabases = array(
 	'droidwiki',
+	'opswiki',
 	'testdroidwiki',
 );
 

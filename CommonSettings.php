@@ -6,6 +6,10 @@
 		exit;
 	}
 
+	require_once __DIR__ . '/multiversion/MWMultiVersion.php';
+
+	$multiversion = MWMultiVersion::getInstance();
+
 	# load PrivateSettings.php first
 	require __DIR__ . "/../private/PrivateSettings.php";
 
@@ -22,15 +26,26 @@
 
 	require __DIR__ . "/wgConf.php";
 
+	// apply group overrides as aerly as possible
+	foreach ( $groupOverrides as $group => $permissions ) {
+		if ( !array_key_exists( $group, $wgGroupPermissions ) ) {
+			$wgGroupPermissions[$group] = array();
+		}
+		$wgGroupPermissions[$group] = $permissions + $wgGroupPermissions[$group];
+	}
 
 	# Load ProfileSettings
 	# require( 'specialsources/mw-config/ProfileSettings.php' );
 
-	$wgScriptPath = "";
-	$wgArticlePath = "$wgScriptPath/$1";
+	if ( $wgDBname === 'droidwiki' ) {
+		$wgScriptPath = "";
+		$wgArticlePath = "$wgScriptPath/$1";
+	} else {
+		$wgArticlePath = "/wiki/$1";
+		$wgScriptPath = "/w";
+	}
 	$wgUsePathInfo = true;
 	$wgScriptExtension = ".php";
-	$wgServer = "//www.droidwiki.de";
 
 	# Varnish things
 	$wgUseSquid = true;
