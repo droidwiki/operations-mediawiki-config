@@ -169,8 +169,7 @@ $wgConf->settings = array(
 	),
 
 	'wgCacheDirectory' => array(
-		'default' => false,
-		'droidwiki' => '/data/mediawiki/localisationCache/',
+		'default' => '/data/mediawiki/localisationCache/',
 	),
 
 	'wgGitInfoCacheDirectory' => array(
@@ -182,9 +181,6 @@ $wgConf->settings = array(
 			'class' => 'LocalisationCache',
 			'store' => 'detect',
 			'storeClass' => false,
-			'manualRecache' => false,
-		),
-		'+droidwiki' => array(
 			'manualRecache' => true,
 		),
 	),
