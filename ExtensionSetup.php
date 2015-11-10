@@ -56,12 +56,14 @@ $extWithoutConfig = array(
 	'Citoid',
 	'Interwiki',
 	'TemplateSandbox',
+	'LdapAuthentication',
 );
 
 foreach ( $extWithoutConfig as $name ) {
 	global $wmgExtensionsPath;
 
-	if ( wfExtensionExists( $name ) ) {
+	$extname = 'wmgUse' + $name;
+	if ( ( !isset( $extname ) || $$extname ) && wfExtensionExists( $name ) ) {
 		require_once "$IP/$wmgExtensionsPath/$name/$name.php";
 	}
 }
@@ -288,4 +290,40 @@ if ( wfExtensionExists( 'Citoid' ) ) {
 
 if ( wfExtensionExists( 'Interwiki' ) ) {
 	$wgGroupPermissions['sysop']['interwiki'] = true;
+}
+
+if ( $wmgUseLdapAuthentication && wfExtensionExists( 'LdapAuthentication' ) ) {
+	require_once 'includes/AuthPlugin.php';
+	$wgAuth = new LdapAuthenticationPlugin();
+	$wgLDAPDomainNames = array(
+	        'go2tech.de',
+	);
+	$wgLDAPServerNames = array(
+	        'go2tech.de' => 'localhost',
+	);
+	$wgLDAPUseLocal = false;
+	$wgLDAPEncryptionType = array(
+	        'go2tech.de' => 'clear',
+	);
+	$wgLDAPPort = array(
+	        'go2tech.de' => 389,
+	);
+	$wgLDAPSearchAttributes = array(
+	        'go2tech.de' => 'uid',
+	);
+	$wgLDAPBaseDNs = array(
+	        'go2tech.de' => 'dc=go2tech,dc=de',
+	);
+	$wgLDAPPreferences = array(
+	        'go2tech.de' => array( 'email' => 'mail'),
+	);
+	$wgLDAPGroupUseFullDN = array( "go2tech.de" => false );
+	$wgLDAPGroupObjectclass = array( "go2tech.de" => "posixgroup" );
+	$wgLDAPGroupAttribute = array( "go2tech.de" => "memberuid" );
+	$wgLDAPGroupSearchNestedGroups = array( "go2tech.de" => false );
+	$wgLDAPGroupNameAttribute = array( "go2tech.de" => "cn" );
+	$wgLDAPRequiredGroups = array( "go2tech.de" => array( "cn=opswiki,ou=Groups,dc=go2tech,dc=de" ) );
+	$wgLDAPLowerCaseUsername = array(
+	        'go2tech.de' => true,
+	);
 }
