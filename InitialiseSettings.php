@@ -205,4 +205,14 @@ $wgConf->settings = array(
 		'default' => '',
 		'droidwiki' => '/data/www/droid.wiki/phplog/debug_droidwiki.log',
 	),
+
+	'wmgUseLdapAuthentication' => array(
+		'default' => false,
+		'opswiki' => true,
+	),
+
+	'wmgUseGoogleLogin' => array(
+		'default' => true,
+		'opswiki' => false,
+	),
 );
