@@ -15,7 +15,7 @@ $wgConf->settings = array(
 	),
 
 	'wgServer' => array(
-		'droidwiki' => '//droidwiki.de',
+		'droidwiki' => '//www.droidwiki.de',
 		'opswiki' => '//ops.go2tech.de',
 	),
 
