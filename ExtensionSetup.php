@@ -293,7 +293,6 @@ if ( wfExtensionExists( 'Interwiki' ) ) {
 }
 
 if ( $wmgUseLdapAuthentication && wfExtensionExists( 'LdapAuthentication' ) ) {
-	require_once 'includes/AuthPlugin.php';
 	$wgAuth = new LdapAuthenticationPlugin();
 	$wgLDAPDomainNames = array(
 	        'go2tech.de',
