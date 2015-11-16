@@ -19,6 +19,11 @@ $wgConf->settings = array(
 		'opswiki' => '//ops.go2tech.de',
 	),
 
+	'wgLogo' => array(
+		'default' => '',
+		'droidwiki' => '/static/images/project-logos/androide.png',
+	),
+
 	'wgLocaltimezone' => array(
 		'default' => 'Europe/Berlin',
 	),

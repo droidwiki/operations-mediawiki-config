@@ -54,7 +54,7 @@
 
 	$wgStylePath = "$wgScriptPath/skins";
 
-	$wgLogo = '/images/androide.png';
+	// FIXME: Move this config to InitialiseSettings and the favicon to static/ - T8
 	$wgFavicon = '//www.droidwiki.de/images/favicon_with_W.ico';
 
         $wgSMTP = array(
