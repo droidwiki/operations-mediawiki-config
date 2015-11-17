@@ -40,7 +40,6 @@ $extWithoutConfig = array(
 	'googleAnalytics',
 	'MobileFrontend',
 	'ArticleFeedback',
-	'GoogleRating',
 	'Scribunto',
 	'SocialButtons',
 	'Thanks',
@@ -186,12 +185,6 @@ if ( wfExtensionExists( "ArticleFeedback" ) ) {
 	$wgArticleFeedbackBlacklistCategories = array( 'KeinVoting' );
 	$wgArticleFeedbackLotteryOdds = 100;
 	$wgArticleFeedbackDashboard = true;
-}
-
-# Googlerating adds rich snippets on base of ArticleFeedback ratings
-if ( wfExtensionExists( "GoogleRating" ) ) {
-	$GoogleRatingUseAF = true;
-	$GoogleRatingMax = '5';
 }
 
 # Scribunto
