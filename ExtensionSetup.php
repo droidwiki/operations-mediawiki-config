@@ -7,9 +7,6 @@ $extWithoutConfig = array(
 	'ParserFunctions',
 	'SyntaxHighlight_GeSHi',
 	'MobileWebAd',
-	'UserDailyContribs', # needed by ArticleFeedback
-	'ClickTracking', # needed by ArticleFeedback
-	'EmailCapture', # needed by ArticleFeedback
 	'CanonURL',
 	'InputBox',
 	'OpenGraphMeta',
@@ -39,7 +36,6 @@ $extWithoutConfig = array(
 	'CodeEditor',
 	'googleAnalytics',
 	'MobileFrontend',
-	'ArticleFeedback',
 	'Scribunto',
 	'SocialButtons',
 	'Thanks',
@@ -178,13 +174,6 @@ if ( wfExtensionExists( "MobileFrontend" ) ) {
 	$wgMFEditorOptions['anonymousEditing'] = true;
 	$wgMFEnableBeta = true;
 	$wgMFNoLoginOverride = true;
-}
-
-# ArticleFeedback
-if ( wfExtensionExists( "ArticleFeedback" ) ) {
-	$wgArticleFeedbackBlacklistCategories = array( 'KeinVoting' );
-	$wgArticleFeedbackLotteryOdds = 100;
-	$wgArticleFeedbackDashboard = true;
 }
 
 # Scribunto
