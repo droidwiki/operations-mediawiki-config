@@ -211,6 +211,17 @@ $wgConf->settings = array(
 		'droidwiki' => '/data/www/droid.wiki/phplog/debug_droidwiki.log',
 	),
 
+	'wgRightsText' => array(
+		'default' => null,
+		'droidwiki' => 'Creative Commons Attribution-Share Alike 3.0',
+	),
+
+	'wgRightsIcon' => array(
+		'default' => null,
+		'droidwiki' => '//creativecommons.org/images/public/somerights20.png',
+	),
+
+	// usage of extensions
 	'wmgUseLdapAuthentication' => array(
 		'default' => false,
 		'opswiki' => true,
