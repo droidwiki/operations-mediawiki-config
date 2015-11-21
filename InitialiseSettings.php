@@ -226,6 +226,40 @@ $wgConf->settings = array(
 		'droidwiki' => '//creativecommons.org/images/public/somerights20.png',
 	),
 
+	'+wgObjectCaches' => array(
+		'default' => array(),
+		'droidwiki' => array(
+			'redis' => array(
+				'class' => 'RedisBagOStuff',
+		                'servers' => array( '127.0.0.1:6379' ),
+			),
+		),
+	),
+
+	'wgJobTypeConf' => array(
+		'droidwiki' => array(
+			'default' => array(
+				'class' => 'JobQueueRedis',
+		                'redisServer' => '127.0.0.1:6379',
+                		'redisConfig' => array(),
+        	        	'claimTTL' => 3600,
+		                'daemonized' => true,
+			),
+		),
+	),
+
+	'wgJobQueueAggregator' => array(
+			'droidwiki' => array(
+				'class'        => 'JobQueueAggregatorRedis',
+                		'redisServers' => array(
+        	        	        'localhost',
+		                ),
+        	        	'redisConfig'  => array(
+        		                'connectTimeout' => 2,
+	                	),
+		),
+	),
+
 	// usage of extensions
 	'wmgUseLdapAuthentication' => array(
 		'default' => false,
