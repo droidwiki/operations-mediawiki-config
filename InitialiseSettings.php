@@ -21,7 +21,7 @@ $wgConf->settings = array(
 
 	'wgLogo' => array(
 		'default' => '',
-		'droidwiki' => '/static/images/project-logos/androide.png',
+		'droidwiki' => '/static/images/project-logos/androide_ch.png',
 	),
 
 	'wgLocaltimezone' => array(
