@@ -50,6 +50,8 @@ $wgConf->settings = array(
 			),
 			'sysop' => array(
 				'upload_by_url' => true,
+				// this should  be an own group "Translation admin"
+				'pagelang' => true,
 			),
 			'bureaucrat' => array(
 				'userrights' => true,
@@ -95,6 +97,15 @@ $wgConf->settings = array(
 	'groupOverrides' => array(
 		// don't change the default value
 		'default' => array(),
+		'droidwiki' => array(
+			'*' => array(
+				'translate' => true,
+			),
+			'sysop' => array(
+				'pagetranslation' => true,
+				'translate-manage' => true,
+			),
+		),
 		'opswiki' => array(
 			'*' => array(
 				'read' => false,
@@ -269,5 +280,11 @@ $wgConf->settings = array(
 	'wmgUseGoogleLogin' => array(
 		'default' => true,
 		'opswiki' => false,
+	),
+
+	// needed for Translate extension to change the language on-wiki
+	'wgPageLanguageUseDB' => array(
+		'default' => false,
+		'droidwiki' => true,
 	),
 );

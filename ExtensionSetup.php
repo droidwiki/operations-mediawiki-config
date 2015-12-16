@@ -52,6 +52,9 @@ $extWithoutConfig = array(
 	'Interwiki',
 	'TemplateSandbox',
 	'LdapAuthentication',
+	'Gewinnspiel',
+	'UniversalLanguageSelector',
+	'Translate',
 );
 
 foreach ( $extWithoutConfig as $name ) {
