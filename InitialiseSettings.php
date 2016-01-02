@@ -20,8 +20,11 @@ $wgConf->settings = array(
 	),
 
 	'wgLogo' => array(
+		// possible values:
+		// androide.png -> blank DroidWiki logo
+		// androide_ch.png -> DroidWiki logo with christmas hat
 		'default' => '',
-		'droidwiki' => '/static/images/project-logos/androide_ch.png',
+		'droidwiki' => '/static/images/project-logos/androide.png',
 	),
 
 	'wgLocaltimezone' => array(
