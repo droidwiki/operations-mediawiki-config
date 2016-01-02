@@ -311,3 +311,17 @@ if ( $wmgUseLdapAuthentication && wfExtensionExists( 'LdapAuthentication' ) ) {
 	        'go2tech.de' => true,
 	);
 }
+
+if ( wfExtensionExists( 'Translate' ) ) {
+	$wgTranslateTranslationServices = array(
+		'Yandexm' => array(
+			'key' => $wmgTranslateTranslationServicesKeys['Yandex'],
+			'url' => 'https://translate.yandex.net/api/v1.5/tr.json/translate',
+			'pairs' => 'https://translate.yandex.net/api/v1.5/tr.json/getLangs',
+			'timeout' => 3,
+			'langorder' => array( 'en', 'ru', 'uk', 'de', 'fr', 'pl', 'it', 'es', 'tr' ),
+			'langlimit' => 1,
+			'type' => 'yandex',
+		),
+	);
+}
