@@ -290,4 +290,9 @@ $wgConf->settings = array(
 		'default' => false,
 		'droidwiki' => true,
 	),
+
+	'wgStatsdServer' => array(
+		'default' => false,
+		'droidwiki' => '188.68.49.74:8125',
+	),
 );
