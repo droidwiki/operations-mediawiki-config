@@ -55,6 +55,7 @@ $extWithoutConfig = array(
 	'Gewinnspiel',
 	'UniversalLanguageSelector',
 	'Translate',
+	'GoogleSiteLinksSearchBox',
 );
 
 foreach ( $extWithoutConfig as $name ) {
