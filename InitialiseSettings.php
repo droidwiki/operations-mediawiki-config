@@ -285,6 +285,11 @@ $wgConf->settings = array(
 		'opswiki' => false,
 	),
 
+	'wmgUsegoogleAnalytics' => array(
+		'default' => false,
+		'droidwiki' => true,
+	),
+
 	// needed for Translate extension to change the language on-wiki
 	'wgPageLanguageUseDB' => array(
 		'default' => false,
