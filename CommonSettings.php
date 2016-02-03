@@ -160,4 +160,14 @@
 		)
 	);
 
+	if ( $wmgUseParsoid ) {
+		$wgVirtualRestConfig['modules']['parsoid'] = array(
+			'url' => 'http://37.120.178.25:8142',
+			'prefix' => $wgDBname, // deprecated
+			'domain' => $wgCanonicalServer,
+			'restbaseCompat' => false,
+			'forwardCookies' => $wmgParsoidForwardCookies,
+		);
+	}
+
 	require __DIR__ . "/ExtensionSetup.php";

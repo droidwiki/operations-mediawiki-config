@@ -235,12 +235,6 @@ if ( wfExtensionExists( "TemplateData" ) ) {
 # VisualEditor
 if ( wfExtensionExists ( "VisualEditor" ) ) {
 	$wgDefaultUserOptions['visualeditor-enable'] = 1;
-	// FIXME: This should be in InitialiseSettings.php
-	$wgVirtualRestConfig['modules']['parsoid'] = array(
-		'url' => 'http://localhost:8142',
-		'domain' => 'droidwiki',
-		'prefix' => 'droidwiki',
-	);
 	$wgVisualEditorSupportedSkins = array( 'vector', 'apex', 'monobook', 'minerva' );
 	$wgVisualEditorAvailableNamespaces = array(
 		NS_TALK => true,

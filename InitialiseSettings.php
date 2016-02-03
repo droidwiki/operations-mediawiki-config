@@ -19,6 +19,11 @@ $wgConf->settings = array(
 		'opswiki' => '//ops.go2tech.de',
 	),
 
+	'wgCanonicalServer' => array(
+		'droidwiki' => 'https://www.droidwiki.de',
+		'opswiki' => 'http://ops.go2tech.de',
+	),
+
 	'wgLogo' => array(
 		// possible values:
 		// androide.png -> blank DroidWiki logo
@@ -299,5 +304,14 @@ $wgConf->settings = array(
 	'wgStatsdServer' => array(
 		'default' => false,
 		'droidwiki' => '188.68.49.74:8125',
+	),
+
+	'wmgUseParsoid' => array(
+		'default' => true,
+	),
+
+	'wmgParsoidForwardCookies' => array(
+		'default' => false,
+		'opswiki' => true,
 	),
 );
