@@ -259,23 +259,23 @@ $wgConf->settings = array(
 		'droidwiki' => array(
 			'default' => array(
 				'class' => 'JobQueueRedis',
-		                'redisServer' => '127.0.0.1:6379',
-                		'redisConfig' => array(),
-        	        	'claimTTL' => 3600,
-		                'daemonized' => true,
+				'redisServer' => '127.0.0.1:6379',
+				'redisConfig' => array(),
+				'claimTTL' => 3600,
+				'daemonized' => true,
 			),
 		),
 	),
 
 	'wgJobQueueAggregator' => array(
-			'droidwiki' => array(
-				'class'        => 'JobQueueAggregatorRedis',
-                		'redisServers' => array(
-        	        	        'localhost',
-		                ),
-        	        	'redisConfig'  => array(
-        		                'connectTimeout' => 2,
-	                	),
+		'droidwiki' => array(
+			'class'        => 'JobQueueAggregatorRedis',
+			'redisServers' => array(
+				'localhost',
+			),
+			'redisConfig'  => array(
+				'connectTimeout' => 2,
+			),
 		),
 	),
 

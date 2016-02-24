@@ -50,7 +50,9 @@ class MWMultiVersion {
 
 	public function loadDBFromServerName() {
 		$wiki = 'emptywiki';
-		if ( preg_match( '/^([a-zA-Z1-9]*)\./', $this->serverName, $matches ) ) {
+		$serverName = $this->serverName;
+		$serverName = preg_replace( '/(^www.)/', '', $serverName );
+		if ( preg_match( '/^([a-zA-Z1-9]*)\./', $serverName, $matches ) ) {
 			$wiki = $matches[1];
 		}
 		$this->wiki = $wiki;
