@@ -30,6 +30,7 @@ class MWMultiVersion {
 				exit;
 			}
 			self::$instance->setWikiName( $wikiname );
+			self::$instance->setDBName( $wikiname );
 		}
 		return self::$instance;
 	}
@@ -61,6 +62,9 @@ class MWMultiVersion {
 	}
 
 	public function getDBName() {
+		if ( $this->db ) {
+			return $this->db;
+		}
 		if ( $this->wiki ) {
 			return $this->wiki . 'wiki';
 		}
@@ -69,6 +73,10 @@ class MWMultiVersion {
 
 	public function setWikiName( $wikiName ) {
 		$this->wiki = $wikiName;
+	}
+
+	public function setDBName( $dbname ) {
+		$this->db = $dbname;
 	}
 
 	public function getWikiName() {
