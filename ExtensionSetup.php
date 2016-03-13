@@ -173,7 +173,7 @@ if ( wfExtensionExists( "googleAnalytics" ) ) {
 
 # MobileFrontend
 if ( wfExtensionExists( "MobileFrontend" ) ) {
-	$wgMobileFrontendLogo = "{$wgScriptPath}androide.png";
+	$wgMobileFrontendLogo = "{$wgScriptPath}/static/images/project-logos/androide.png";
 	$wgMFAutodetectMobileView = true;
 	$wgMFEditorOptions['anonymousEditing'] = true;
 	$wgMFEnableBeta = true;
