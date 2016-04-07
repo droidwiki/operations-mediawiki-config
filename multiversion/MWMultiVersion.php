@@ -3,6 +3,9 @@
 class MWMultiVersion {
 	private static $instance = null;
 
+	private $db = null;
+	private $wiki = null;
+
 	public static function getInstance() {
 		if ( !self::$instance ) {
 			self::$instance = self::factory( @$_SERVER['SERVER_NAME'] );
