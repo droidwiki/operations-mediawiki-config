@@ -207,6 +207,7 @@ if ( wfExtensionExists( "GoogleLogin" ) ) {
 	// FIXME: reset these two to default value, after mw-ui buttons fixed in HTMLForm
 	$wgGLShowKeepLogin = false;
 	$wgGLForceKeepLogin = true;
+	$wgGLAllowAccountCreation = true;
 }
 
 # CentralNotice - 01.08.2014
