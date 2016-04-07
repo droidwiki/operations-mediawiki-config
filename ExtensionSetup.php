@@ -41,7 +41,6 @@ $extWithoutConfig = array(
 	'Thanks',
 	'GoogleLogin',
 	'CentralNotice',
-	'GoogleAPIClient',
 	'GoogleAnalyticsTopPages',
 	'TemplateData',
 	'VisualEditor',
@@ -217,11 +216,7 @@ if ( wfExtensionExists( "CentralNotice" ) ) {
 	$wgNoticeProject = 'droidwiki';
 }
 
-if (
-	wfExtensionExists ( "GoogleAPIClient" ) &&
-	wfExtensionExists ( "GoogleAnalyticsTopPages" )
-) {
-	require_once "$IP/extensions/GoogleAPIClient/GoogleAPIClient.php";
+if ( wfExtensionExists ( "GoogleAnalyticsTopPages" ) ) {
 	$wgGATPProfileId = $wmgGATPProfileId;
 	$wgGATPKeyFileLocation = $wmgGATPKeyFileLocation;
 	$wgGATPServiceAccountName = $wmgGATPServiceAccountName;
