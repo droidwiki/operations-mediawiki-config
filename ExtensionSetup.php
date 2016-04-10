@@ -49,7 +49,6 @@ $extWithoutConfig = array(
 	'Interwiki',
 	'TemplateSandbox',
 	'LdapAuthentication',
-	'Gewinnspiel',
 	'UniversalLanguageSelector',
 	'Translate',
 	'GoogleSiteLinksSearchBox',

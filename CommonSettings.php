@@ -154,9 +154,9 @@
 	$wgGitRepositoryViewers = array_merge( $wgGitRepositoryViewers,
 		array(
 			'https://(?:[a-z0-9_\-]+@)?gerrit.go2tech.de/r/(?:p/)?(.*)' =>
-				'http://git.go2tech.de/?p=%r&a=commit&h=%H',
+				'http://git.go2tech.de/?p=%r.git&a=commit&h=%H',
 			'ssh://(?:[a-z0-9_\-]+@)?gerrit.go2tech.de:29418/(.*)' =>
-				'http://git.go2tech.de/?p=%r&a=commit&h=%H'
+				'http://git.go2tech.de/?p=%r.git&a=commit&h=%H'
 		)
 	);
 
