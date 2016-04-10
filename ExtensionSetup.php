@@ -24,7 +24,6 @@ $extWithoutConfig = array(
 	'TextExtracts', # TextExtracts (needed by MobileFrontend and HoverCards)
 	'Popups',
 	'ExpandTamplates',
-	'DroidWiki',
 	'MwEmbedSupport',
 	'TimedMediaHandler',
 	'ConfirmEdit',
@@ -37,7 +36,6 @@ $extWithoutConfig = array(
 	'googleAnalytics',
 	'MobileFrontend',
 	'Scribunto',
-	'SocialButtons',
 	'Thanks',
 	'GoogleLogin',
 	'CentralNotice',
@@ -186,9 +184,15 @@ if ( wfExtensionExists( "Scribunto" ) ) {
 }
 
 # Add's Facebook and G+ buttons to articles
-if ( wfExtensionExists( "SocialButtons" ) ) {
+if ( $wmgUseSocialButtons && wfExtensionExists( "SocialButtons" ) ) {
+	require_once "$IP/extensions/SocialButtons/SocialButtons.php";
 	$wgSBDisallowedNamespaces = array('-1', '4', '5', '8', '9', '10', '12', '13');
 	$wgSBDisallowedSiteTitles = array( 'Hauptseite' );
+}
+
+if ( $wmgUseDroidWiki && wfExtensionExists( "DroidWiki" ) ) {
+	require_once "$IP/extensions/DroidWiki/DroidWiki.php";
+	$wgDroidWikiAdDisallowedNamespaces = array( 120, 121, 122, 123 );
 }
 
 # Thanks
@@ -300,7 +304,7 @@ if ( $wmgUseLdapAuthentication && wfExtensionExists( 'LdapAuthentication' ) ) {
 	);
 }
 
-if ( wfExtensionExists( 'Translate' ) ) {
+if ( $wmgUseTranslate && wfExtensionExists( 'Translate' ) ) {
 	$wgTranslateTranslationServices = array(
 		'Yandexm' => array(
 			'key' => $wmgTranslateTranslationServicesKeys['Yandex'],
@@ -312,4 +316,40 @@ if ( wfExtensionExists( 'Translate' ) ) {
 			'type' => 'yandex',
 		),
 	);
+}
+
+if ( $wmgUseWikibaseRepo ) {
+	$wgEnableWikibaseRepo = true;
+	require_once "$IP/extensions/Wikibase/repo/Wikibase.php";
+	#require_once "$IP/extensions/Wikibase/repo/ExampleSettings.php";
+
+	$wgContentHandlerUseDB = true;
+	$baseNs = 120;
+	// Define custom namespaces. Use these exact constant names.
+	define( 'WB_NS_ITEM', $baseNs );
+	define( 'WB_NS_ITEM_TALK', $baseNs + 1 );
+	define( 'WB_NS_PROPERTY', $baseNs + 2 );
+	define( 'WB_NS_PROPERTY_TALK', $baseNs + 3 );
+	// Register extra namespaces.
+	$wgExtraNamespaces[WB_NS_ITEM] = 'Item';
+	$wgExtraNamespaces[WB_NS_ITEM_TALK] = 'Item_talk';
+	$wgExtraNamespaces[WB_NS_PROPERTY] = 'Property';
+	$wgExtraNamespaces[WB_NS_PROPERTY_TALK] = 'Property_talk';
+	// Tell Wikibase which namespace to use for which kind of entity
+	$wgWBRepoSettings['entityNamespaces'][CONTENT_MODEL_WIKIBASE_ITEM] = WB_NS_ITEM;
+	$wgWBRepoSettings['entityNamespaces'][CONTENT_MODEL_WIKIBASE_PROPERTY] = WB_NS_PROPERTY;
+	// Make sure we use the same keys on repo and clients, so we can share cached objects.
+	$wgWBRepoSettings['sharedCacheKeyPrefix'] = $wgDBname . ':WBL/' . rawurlencode( WBL_VERSION );
+	// NOTE: no need to set up $wgNamespaceContentModels, Wikibase will do that automatically based on $wgWBRepoSettings
+	// Tell MediaWIki to search the item namespace
+	$wgNamespacesToBeSearchedDefault[WB_NS_ITEM] = true;
+	// the special group includes all the sites in the specialSiteLinkGroups,
+	// grouped together in a 'Pages linked to other sites' section.
+	$wgWBRepoSettings['siteLinkGroups'] = array(
+		'droidwiki',
+		'wikipedia',
+		'special'
+	);
+	// these are the site_group codes as listed in the sites table
+	$wgWBRepoSettings['specialSiteLinkGroups'] = array( 'commons', 'wikidata' );
 }

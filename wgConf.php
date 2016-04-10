@@ -6,6 +6,7 @@ $wgLocalDatabases = array(
 	'droidwiki',
 	'opswiki',
 	'testdroidwiki',
+	'datawiki',
 );
 
 $wgConf->wikis = $wgLocalDatabases;

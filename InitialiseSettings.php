@@ -7,21 +7,25 @@ $wgConf->settings = array(
 		'default' => 'Android Wiki',
 		'opswiki' => 'DroidWiki Operations',
 		'testdroidwiki' => 'Android Test-Wiki',
+		'datawiki' => 'DroidWiki Data',
 	),
 
 	'wgMetaNamespace' => array(
 		'default' => 'DroidWiki',
 		'opswiki' => 'Project',
+		'datawiki' => 'Data',
 	),
 
 	'wgServer' => array(
-		'droidwiki' => '//www.droidwiki.de',
+		'droidwiki' => 'https://www.droidwiki.de',
 		'opswiki' => '//ops.go2tech.de',
+		'datawiki' => 'https://data.droidwiki.de',
 	),
 
 	'wgCanonicalServer' => array(
 		'droidwiki' => 'https://www.droidwiki.de',
 		'opswiki' => 'http://ops.go2tech.de',
+		'datawiki' => 'https://data.droidwiki.de',
 	),
 
 	'wgLogo' => array(
@@ -30,6 +34,7 @@ $wgConf->settings = array(
 		// androide_ch.png -> DroidWiki logo with christmas hat
 		'default' => '',
 		'droidwiki' => '/static/images/project-logos/androide.png',
+		'datawiki' => '/static/images/project-logos/androide.png',
 	),
 
 	'wgLocaltimezone' => array(
@@ -39,6 +44,7 @@ $wgConf->settings = array(
 	'wgCookieDomain' => array(
 		'default' => '',
 		'droidwiki' => '.droidwiki.de',
+		'datawiki' => '.droidwiki.de',
 		'testdroidwiki' => '.go2tech.de',
 		'opswiki' => '.ops.go2tech.de',
 	),
@@ -168,6 +174,7 @@ $wgConf->settings = array(
 	'wgSessionsInObjectCache' => array(
 		'default' => false,
 		'droidwiki' => true,
+		'datawiki' => true,
 	),
 
 	'wgMemCachedServers' => array(
@@ -181,6 +188,7 @@ $wgConf->settings = array(
 	'wgShowExceptionDetails' => array(
 		'default' => false,
 		'testdroidwiki' => true,
+		'datawiki' => true,
 	),
 
 	'wgShowSQLErrors' => array(
@@ -194,10 +202,13 @@ $wgConf->settings = array(
 
 	'wgCacheDirectory' => array(
 		'default' => '/data/mediawiki/localisationCache/',
+		'datawiki' => '/data/mediawiki/localisationCache/datawiki/',
+		'droidwiki' => '/data/mediawiki/localisationCache/droidwiki/',
 	),
 
 	'wgGitInfoCacheDirectory' => array(
 		'droidwiki' => '/data/mediawiki/main/cache/gitinfo',
+		'datawiki' => '/data/mediawiki/main/cache/gitinfo',
 	),
 
 	'wgLocalisationCacheConf' => array(
@@ -233,16 +244,19 @@ $wgConf->settings = array(
 	'wgRightsUrl' => array(
 		'default' => null,
 		'droidwiki' => '//creativecommons.org/licenses/by-sa/3.0/',
+		'datawiki' => '//creativecommons.org/licenses/by-sa/3.0/',
 	),
 
 	'wgRightsText' => array(
 		'default' => null,
 		'droidwiki' => 'Creative Commons Attribution-Share Alike 3.0',
+		'datawiki' => 'Creative Commons Attribution-Share Alike 3.0',
 	),
 
 	'wgRightsIcon' => array(
 		'default' => null,
 		'droidwiki' => '//creativecommons.org/images/public/somerights20.png',
+		'datawiki' => '//creativecommons.org/images/public/somerights20.png',
 	),
 
 	'+wgObjectCaches' => array(
@@ -253,6 +267,12 @@ $wgConf->settings = array(
 		                'servers' => array( '127.0.0.1:6379' ),
 			),
 		),
+		'datawiki' => array(
+                        'redis' => array(
+                                'class' => 'RedisBagOStuff',
+                                'servers' => array( '127.0.0.1:6379' ),
+                        ),
+                ),
 	),
 
 	'wgJobTypeConf' => array(
@@ -265,6 +285,15 @@ $wgConf->settings = array(
 				'daemonized' => true,
 			),
 		),
+		'datawiki' => array(
+                        'default' => array(
+                                'class' => 'JobQueueRedis',
+                                'redisServer' => '127.0.0.1:6379',
+                                'redisConfig' => array(),
+                                'claimTTL' => 3600,
+                                'daemonized' => true,
+                        ),
+                ),
 	),
 
 	'wgJobQueueAggregator' => array(
@@ -277,6 +306,15 @@ $wgConf->settings = array(
 				'connectTimeout' => 2,
 			),
 		),
+		'datawiki' => array(
+                        'class'        => 'JobQueueAggregatorRedis',
+                        'redisServers' => array(
+                                'localhost',
+                        ),
+                        'redisConfig'  => array(
+                                'connectTimeout' => 2,
+                        ),
+                ),
 	),
 
 	// usage of extensions
@@ -295,6 +333,25 @@ $wgConf->settings = array(
 		'droidwiki' => true,
 	),
 
+	'wmgUseTranslate' => array(
+		'default' => false,
+		'droidwiki' => true,
+	),
+
+	'wmgUseWikibaseRepo' => array(
+		'default' => false,
+		'datawiki' => true,
+	),
+
+	'wmgUseSocialButtons' => array(
+		'default' => true,
+		'datawiki' => false,
+	),
+
+	'wmgUseDroidWiki' => array(
+		'default' => true,
+	),
+
 	// needed for Translate extension to change the language on-wiki
 	'wgPageLanguageUseDB' => array(
 		'default' => false,
@@ -304,6 +361,16 @@ $wgConf->settings = array(
 	'wgStatsdServer' => array(
 		'default' => false,
 		'droidwiki' => '188.68.49.74:8125',
+	),
+
+	'wgSharedDB' => array(
+		'default' => null,
+		'datawiki' => 'droidwikiwiki',
+	),
+
+	'wgSharedTables' => array(
+		'default' => array( 'user', 'user_properties' ),
+		'+datawiki' => array( 'user_google_user', 'user_groups' ),
 	),
 
 	'wmgUseParsoid' => array(
