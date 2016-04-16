@@ -6,6 +6,18 @@
 		exit;
 	}
 
+	function wfApplyUserRightOverrides() {
+		global $groupOverrides, $wgGroupPermissions;
+
+		// apply group overrides as aerly as possible
+		foreach ( $groupOverrides as $group => $permissions ) {
+			if ( !array_key_exists( $group, $wgGroupPermissions ) ) {
+				$wgGroupPermissions[$group] = array();
+			}
+			$wgGroupPermissions[$group] = $permissions + $wgGroupPermissions[$group];
+		}
+	}
+
 	require_once __DIR__ . '/multiversion/MWMultiVersion.php';
 
 	$multiversion = MWMultiVersion::getInstance();
@@ -26,13 +38,7 @@
 
 	require __DIR__ . "/wgConf.php";
 
-	// apply group overrides as aerly as possible
-	foreach ( $groupOverrides as $group => $permissions ) {
-		if ( !array_key_exists( $group, $wgGroupPermissions ) ) {
-			$wgGroupPermissions[$group] = array();
-		}
-		$wgGroupPermissions[$group] = $permissions + $wgGroupPermissions[$group];
-	}
+	wfApplyUserRightOverrides();
 
 	# Load ProfileSettings
 	# require( 'specialsources/mw-config/ProfileSettings.php' );
@@ -171,3 +177,5 @@
 	}
 
 	require __DIR__ . "/ExtensionSetup.php";
+
+	wfApplyUserRightOverrides();

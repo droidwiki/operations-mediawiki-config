@@ -320,7 +320,6 @@ if ( $wmgUseTranslate && wfExtensionExists( 'Translate' ) ) {
 if ( $wmgUseWikibaseRepo ) {
 	$wgEnableWikibaseRepo = true;
 	require_once "$IP/extensions/Wikibase/repo/Wikibase.php";
-	#require_once "$IP/extensions/Wikibase/repo/ExampleSettings.php";
 
 	$wgContentHandlerUseDB = true;
 	$baseNs = 120;
@@ -351,4 +350,16 @@ if ( $wmgUseWikibaseRepo ) {
 	);
 	// these are the site_group codes as listed in the sites table
 	$wgWBRepoSettings['specialSiteLinkGroups'] = array( 'commons', 'wikidata' );
+
+	$wgWBRepoSettings['statementSections'] = array(
+		'item' => array(
+			'statements' => null,
+			'identifiers' => array(
+				'type' => 'dataType',
+				'dataTypes' => array( 'external-id' ),
+			),
+		),
+	);
+
+	$wgWBRepoSettings['formatterUrlProperty'] = 'P9';
 }

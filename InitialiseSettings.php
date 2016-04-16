@@ -120,6 +120,14 @@ $wgConf->settings = array(
 				'translate-manage' => true,
 			),
 		),
+		'datawiki' => array(
+			'*' => array(
+				'property-create' => false,
+			),
+			'sysop' => array(
+				'property-create' => true,
+			),
+		),
 		'opswiki' => array(
 			'*' => array(
 				'read' => false,
