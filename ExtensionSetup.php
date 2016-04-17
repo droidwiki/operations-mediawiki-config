@@ -363,3 +363,36 @@ if ( $wmgUseWikibaseRepo ) {
 
 	$wgWBRepoSettings['formatterUrlProperty'] = 'P9';
 }
+
+if ( $wmgUseWikibaseClient ) {
+	$wgEnableWikibaseClient = true;
+	require_once "$IP/extensions/Wikibase/client/WikibaseClient.php";
+
+	$wgWBClientSettings['siteGlobalID'] = 'droidwiki';
+	$wgWBClientSettings['siteGroup'] = 'wikipedia';
+	$wgWBClientSettings['repoUrl'] = 'https://data.droidwiki.de';
+	$wgWBClientSettings['repoArticlePath'] = '/wiki/$1';
+	$wgWBClientSettings['repoScriptPath'] = '/w';
+	$wgWBClientSettings['repoDatabase'] = 'datawiki';
+
+	$wgWBClientSettings['repoNamespaces'] = array(
+		'wikibase-item' => 'Item',
+		'wikibase-property' => 'Property',
+	);
+
+	$wgWBClientSettings['languageLinkSiteGroup'] = 'null';
+	$wgWBClientSettings['repoSiteName'] = 'DroidWiki';
+	$wgWBClientSettings['otherProjectsLinks'] = array( 'wikidatawiki', 'commonswiki', 'dewiki', 'enwiki' );
+	$wgWBClientSettings['otherProjectsLinksByDefault'] = true;
+
+	$wgHooks['WikibaseClientOtherProjectsSidebar'][] = function ( Wikibase\DataModel\Entity\ItemId $itemId, array &$sidebar ) {
+		foreach ( $sidebar as $id => &$group ) {
+			foreach ( $group as $siteId => &$attributes ) {
+				if ( isset( $attributes['hreflang'] ) ) {
+					$attributes['msg'] = $attributes['msg'] . '-' . $attributes['hreflang'];
+				}
+			}
+		}
+		return true;
+        };
+}

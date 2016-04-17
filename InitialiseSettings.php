@@ -196,11 +196,16 @@ $wgConf->settings = array(
 	'wgShowExceptionDetails' => array(
 		'default' => false,
 		'testdroidwiki' => true,
-		'datawiki' => true,
 	),
 
 	'wgShowSQLErrors' => array(
 		'default' => false,
+	),
+
+	'wgCrossSiteAJAXdomains' => array(
+		'default' => array(),
+		'droidwiki' => array( '*.droidwiki.de' ),
+		'datawiki' => array( '*.droidwiki.de' ),
 	),
 
 	'wmgCirrusSearchPowerSpecialRandom' => array(
@@ -350,6 +355,11 @@ $wgConf->settings = array(
 		'default' => false,
 		'datawiki' => true,
 	),
+
+        'wmgUseWikibaseClient' => array(
+                'default' => false,
+                'droidwiki' => true,
+        ),
 
 	'wmgUseSocialButtons' => array(
 		'default' => true,
