@@ -362,6 +362,7 @@ if ( $wmgUseWikibaseRepo ) {
 	);
 
 	$wgWBRepoSettings['formatterUrlProperty'] = 'P9';
+	$wgContentNamespaces = array_merge( $wgContentNamespaces, array( WB_NS_ITEM, WB_NS_PROPERTY ) );
 }
 
 if ( $wmgUseWikibaseClient ) {
