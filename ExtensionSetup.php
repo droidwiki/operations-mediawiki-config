@@ -171,9 +171,12 @@ if ( wfExtensionExists( "googleAnalytics" ) ) {
 if ( wfExtensionExists( "MobileFrontend" ) ) {
 	$wgMobileFrontendLogo = "{$wgScriptPath}/static/images/project-logos/androide.png";
 	$wgMFAutodetectMobileView = true;
-	$wgMFEditorOptions['anonymousEditing'] = true;
 	$wgMFEnableBeta = true;
-	$wgMFNoLoginOverride = true;
+
+	if ( $wmgUseWikibaseClient ) {
+		$wgMFUseWikibaseDescription = true;
+		$wgMFDisplayWikibaseDescription = true;
+	}
 }
 
 # Scribunto
