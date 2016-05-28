@@ -182,6 +182,7 @@ if ( wfExtensionExists( "MobileFrontend" ) ) {
 # Scribunto
 if ( wfExtensionExists( "Scribunto" ) ) {
 	$wgScribuntoDefaultEngine = 'luastandalone';
+	$wgScribuntoUseGeSHi = true;
 	$wgScribuntoUseCodeEditor = true;
 }
 
@@ -318,6 +319,10 @@ if ( $wmgUseTranslate && wfExtensionExists( 'Translate' ) ) {
 			'type' => 'yandex',
 		),
 	);
+}
+
+if ( wfExtensionExists( 'TemplateSandbox' ) ) {
+	$wgTemplateSandboxEditNamespaces[] = 828;
 }
 
 if ( $wmgUseWikibaseRepo ) {

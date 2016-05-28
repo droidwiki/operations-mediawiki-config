@@ -236,6 +236,7 @@ $wgConf->settings = array(
 	'wgDBerrorLog' => array(
 		'default' => false,
 		'droidwiki' => '/data/www/droid.wiki/phplog/dberror_droidwiki.log',
+		'datawiki' => '/data/www/droid.wiki/phplog/dberror_datawiki.log',
 	),
 
 	'wgDebugLogGroups' => array(
@@ -246,6 +247,13 @@ $wgConf->settings = array(
 			'error' => '/data/www/droid.wiki/phplog/exception_droidwiki.log',
 			'ratelimit' => '/data/www/droid.wiki/phplog/ratelimit_droidwiki.log',
 			'DBPerformance' => '/data/www/droid.wiki/phplog/dbperformance_droidwiki.log',
+		),
+		'datawiki' => array(
+			'resourceloader' => '/data/www/droid.wiki/phplog/resourceloader_datawiki.log',
+                        'exception' => '/data/www/droid.wiki/phplog/exception_datawiki.log',
+                        'error' => '/data/www/droid.wiki/phplog/exception_datawiki.log',
+                        'ratelimit' => '/data/www/droid.wiki/phplog/ratelimit_datawiki.log',
+                        'DBPerformance' => '/data/www/droid.wiki/phplog/dbperformance_datawiki.log',
 		),
 	),
 
