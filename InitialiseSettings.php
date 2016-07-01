@@ -341,6 +341,8 @@ $wgConf->settings = array(
 	// temporary, should be removed when all authentication providers used, switched to AuthManager
 	'wgDisableAuthManager' => array(
 		'default' => true,
+		'opswiki' => false,
+		'datawiki' => false,
 	),
 
 	// usage of extensions
