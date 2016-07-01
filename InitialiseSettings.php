@@ -383,6 +383,10 @@ $wgConf->settings = array(
 		'default' => true,
 	),
 
+	'wmfUseOATHAuth' => array(
+		'default' => true,
+	),
+
 	// needed for Translate extension to change the language on-wiki
 	'wgPageLanguageUseDB' => array(
 		'default' => false,

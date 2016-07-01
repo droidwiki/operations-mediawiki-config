@@ -52,6 +52,7 @@ $extWithoutConfig = array(
 	'UniversalLanguageSelector',
 	'Translate',
 	'GoogleSiteLinksSearchBox',
+	'OATHAuth',
 );
 
 foreach ( $extWithoutConfig as $name ) {
@@ -410,4 +411,8 @@ if ( $wmgUseWikibaseClient ) {
 		}
 		return true;
         };
+}
+
+if ( $wmgUseOATHAuth && wfExtensionExists( 'OATHAuth' ) ) {
+	$wgSharedTables[] = 'oathauth_users';
 }
