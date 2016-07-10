@@ -173,6 +173,7 @@ if ( wfExtensionExists( "MobileFrontend" ) ) {
 	$wgMobileFrontendLogo = "{$wgScriptPath}/static/images/project-logos/androide.png";
 	$wgMFAutodetectMobileView = true;
 	$wgMFEnableBeta = true;
+	$wgMFSpecialCaseMainPage = true;
 
 	if ( $wmgUseWikibaseClient ) {
 		$wgMFUseWikibaseDescription = true;
