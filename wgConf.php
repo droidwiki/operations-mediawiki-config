@@ -2,16 +2,16 @@
 
 $wgConf = new SiteConfiguration;
 
-$wgLocalDatabases = array(
+$wgLocalDatabases = [
 	'droidwiki',
 	'opswiki',
 	'testdroidwiki',
 	'datawiki',
-);
+];
 
 $wgConf->wikis = $wgLocalDatabases;
-$wgConf->suffixes = array( 'wiki' );
-$wgConf->localVHosts = array( 'localhost' );
+$wgConf->suffixes = [ 'wiki' ];
+$wgConf->localVHosts = [ 'localhost' ];
 
 $wgConf->fullLoadCallback = 'wmfLoadInitialiseSettings';
 $wgConf->suffixes = $wgLocalDatabases;

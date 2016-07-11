@@ -1,7 +1,7 @@
 <?php
 # DO NOT PUT PRIVATE INFORMATION HERE!
 
-$extToLoad = array(
+$extToLoad = [
 	'AntiSpoof', # needed by AbuseFilter
 	'Cite', # ref-tags
 	'ParserFunctions',
@@ -53,9 +53,9 @@ $extToLoad = array(
 	'Translate',
 	'GoogleSiteLinksSearchBox',
 	'OATHAuth',
-);
+];
 
-$extensionsToLoadWithExtensionregistration = array();
+$extensionsToLoadWithExtensionregistration = [];
 foreach ( $extToLoad as $name ) {
 	global $wmgExtensionsPath;
 
@@ -85,10 +85,10 @@ function wfExtensionExists( $name ) {
 function wfGetExtensionInformation( $name ) {
 	global $IP, $wmgExtensionsPath;
 
-	$retval = array(
+	$retval = [
 		'exists' => false,
 		'installType' => null,
-	);
+	];
 	if ( file_exists( "$IP/$wmgExtensionsPath/$name/$name.php" ) ) {
 		$retval['exists'] = true;
 		$retval['installType'] = 'php';
@@ -173,7 +173,7 @@ if ( wfExtensionExists( "StopForumSpam" ) ) {
 if ( wfExtensionExists( "Elastica" ) && wfExtensionExists( "CirrusSearch" ) ) {
 	$wgSearchType = 'CirrusSearch';
 	$wgCirrusSearchPowerSpecialRandom = $wmgCirrusSearchPowerSpecialRandom;
-	$wgCirrusSearchServers = array( '188.68.49.74' );
+	$wgCirrusSearchServers = [ '188.68.49.74' ];
 }
 
 # WikiEditor/graphical Editor
@@ -219,13 +219,13 @@ if ( wfExtensionExists( "Scribunto" ) ) {
 # Add's Facebook and G+ buttons to articles
 if ( $wmgUseSocialButtons && wfExtensionExists( "SocialButtons" ) ) {
 	require_once "$IP/extensions/SocialButtons/SocialButtons.php";
-	$wgSBDisallowedNamespaces = array('-1', '4', '5', '8', '9', '10', '12', '13');
-	$wgSBDisallowedSiteTitles = array( 'Hauptseite' );
+	$wgSBDisallowedNamespaces = [ '-1', '4', '5', '8', '9', '10', '12', '13' ];
+	$wgSBDisallowedSiteTitles = [ 'Hauptseite' ];
 }
 
 if ( $wmgUseDroidWiki && wfExtensionExists( "DroidWiki" ) ) {
 	require_once "$IP/extensions/DroidWiki/DroidWiki.php";
-	$wgDroidWikiAdDisallowedNamespaces = array( 120, 121, 122, 123 );
+	$wgDroidWikiAdDisallowedNamespaces = [ 120, 121, 122, 123 ];
 }
 
 # Thanks
@@ -250,7 +250,7 @@ if ( wfExtensionExists( "GoogleLogin" ) ) {
 # CentralNotice - 01.08.2014
 if ( wfExtensionExists( "CentralNotice" ) ) {
 	$wgNoticeInfrastructure = true;
-	$wgNoticeProjects = array( 'droidwiki' );
+	$wgNoticeProjects = [ 'droidwiki' ];
 	$wgNoticeProject = 'droidwiki';
 }
 
@@ -268,8 +268,8 @@ if ( wfExtensionExists( "TemplateData" ) ) {
 # VisualEditor
 if ( wfExtensionExists ( "VisualEditor" ) ) {
 	$wgDefaultUserOptions['visualeditor-enable'] = 1;
-	$wgVisualEditorSupportedSkins = array( 'vector', 'apex', 'monobook', 'minerva' );
-	$wgVisualEditorAvailableNamespaces = array(
+	$wgVisualEditorSupportedSkins = [ 'vector', 'apex', 'monobook', 'minerva' ];
+	$wgVisualEditorAvailableNamespaces = [
 		NS_TALK => true,
 		NS_USER => true,
 		NS_USER_TALK => true,
@@ -281,7 +281,7 @@ if ( wfExtensionExists ( "VisualEditor" ) ) {
 		NS_HELP_TALK => true,
 		NS_CATEGORY => true,
 		NS_CATEGORY_TALK => true,
-	);
+	];
 }
 
 if ( wfExtensionExists ( 'CookieWarning' ) ) {
@@ -304,51 +304,51 @@ if ( wfExtensionExists( 'Interwiki' ) ) {
 
 if ( $wmgUseLdapAuthentication && wfExtensionExists( 'LdapAuthentication' ) ) {
 	$wgAuth = new LdapAuthenticationPlugin();
-	$wgLDAPDomainNames = array(
+	$wgLDAPDomainNames = [
 	        'go2tech.de',
-	);
-	$wgLDAPServerNames = array(
+	];
+	$wgLDAPServerNames = [
 	        'go2tech.de' => 'localhost',
-	);
+	];
 	$wgLDAPUseLocal = false;
-	$wgLDAPEncryptionType = array(
+	$wgLDAPEncryptionType = [
 	        'go2tech.de' => 'clear',
-	);
-	$wgLDAPPort = array(
+	];
+	$wgLDAPPort = [
 	        'go2tech.de' => 389,
-	);
-	$wgLDAPSearchAttributes = array(
+	];
+	$wgLDAPSearchAttributes = [
 	        'go2tech.de' => 'uid',
-	);
-	$wgLDAPBaseDNs = array(
+	];
+	$wgLDAPBaseDNs = [
 	        'go2tech.de' => 'dc=go2tech,dc=de',
-	);
-	$wgLDAPPreferences = array(
-	        'go2tech.de' => array( 'email' => 'mail'),
-	);
-	$wgLDAPGroupUseFullDN = array( "go2tech.de" => false );
-	$wgLDAPGroupObjectclass = array( "go2tech.de" => "posixgroup" );
-	$wgLDAPGroupAttribute = array( "go2tech.de" => "memberuid" );
-	$wgLDAPGroupSearchNestedGroups = array( "go2tech.de" => false );
-	$wgLDAPGroupNameAttribute = array( "go2tech.de" => "cn" );
-	$wgLDAPRequiredGroups = array( "go2tech.de" => array( "cn=opswiki,ou=Groups,dc=go2tech,dc=de" ) );
-	$wgLDAPLowerCaseUsername = array(
+	];
+	$wgLDAPPreferences = [
+	        'go2tech.de' => [ 'email' => 'mail' ],
+	];
+	$wgLDAPGroupUseFullDN = [ "go2tech.de" => false ];
+	$wgLDAPGroupObjectclass = [ "go2tech.de" => "posixgroup" ];
+	$wgLDAPGroupAttribute = [ "go2tech.de" => "memberuid" ];
+	$wgLDAPGroupSearchNestedGroups = [ "go2tech.de" => false ];
+	$wgLDAPGroupNameAttribute = [ "go2tech.de" => "cn" ];
+	$wgLDAPRequiredGroups = [ "go2tech.de" => [ "cn=opswiki,ou=Groups,dc=go2tech,dc=de" ] ];
+	$wgLDAPLowerCaseUsername = [
 	        'go2tech.de' => true,
-	);
+	];
 }
 
 if ( $wmgUseTranslate && wfExtensionExists( 'Translate' ) ) {
-	$wgTranslateTranslationServices = array(
-		'Yandexm' => array(
+	$wgTranslateTranslationServices = [
+		'Yandexm' => [
 			'key' => $wmgTranslateTranslationServicesKeys['Yandex'],
 			'url' => 'https://translate.yandex.net/api/v1.5/tr.json/translate',
 			'pairs' => 'https://translate.yandex.net/api/v1.5/tr.json/getLangs',
 			'timeout' => 3,
-			'langorder' => array( 'en', 'ru', 'uk', 'de', 'fr', 'pl', 'it', 'es', 'tr' ),
+			'langorder' => [ 'en', 'ru', 'uk', 'de', 'fr', 'pl', 'it', 'es', 'tr' ],
 			'langlimit' => 1,
 			'type' => 'yandex',
-		),
-	);
+		],
+	];
 }
 
 if ( wfExtensionExists( 'TemplateSandbox' ) ) {
@@ -382,26 +382,26 @@ if ( $wmgUseWikibaseRepo ) {
 	$wgNamespacesToBeSearchedDefault[WB_NS_ITEM] = true;
 	// the special group includes all the sites in the specialSiteLinkGroups,
 	// grouped together in a 'Pages linked to other sites' section.
-	$wgWBRepoSettings['siteLinkGroups'] = array(
+	$wgWBRepoSettings['siteLinkGroups'] = [
 		'droidwiki',
 		'wikipedia',
 		'special'
-	);
+	];
 	// these are the site_group codes as listed in the sites table
-	$wgWBRepoSettings['specialSiteLinkGroups'] = array( 'commons', 'wikidata' );
+	$wgWBRepoSettings['specialSiteLinkGroups'] = [ 'commons', 'wikidata' ];
 
-	$wgWBRepoSettings['statementSections'] = array(
-		'item' => array(
+	$wgWBRepoSettings['statementSections'] = [
+		'item' => [
 			'statements' => null,
-			'identifiers' => array(
+			'identifiers' => [
 				'type' => 'dataType',
-				'dataTypes' => array( 'external-id' ),
-			),
-		),
-	);
+				'dataTypes' => [ 'external-id' ],
+			],
+		],
+	];
 
 	$wgWBRepoSettings['formatterUrlProperty'] = 'P9';
-	$wgContentNamespaces = array_merge( $wgContentNamespaces, array( WB_NS_ITEM, WB_NS_PROPERTY ) );
+	$wgContentNamespaces = array_merge( $wgContentNamespaces, [ WB_NS_ITEM, WB_NS_PROPERTY ] );
 }
 
 if ( $wmgUseWikibaseClient ) {
@@ -415,19 +415,19 @@ if ( $wmgUseWikibaseClient ) {
 	$wgWBClientSettings['repoScriptPath'] = '/w';
 	$wgWBClientSettings['repoDatabase'] = 'datawiki';
 
-	$wgWBClientSettings['repoNamespaces'] = array(
+	$wgWBClientSettings['repoNamespaces'] = [
 		'wikibase-item' => 'Item',
 		'wikibase-property' => 'Property',
-	);
+	];
 
-	$wgWBClientSettings['entityNamespaces'] = array(
+	$wgWBClientSettings['entityNamespaces'] = [
                 'wikibase-item' => $wmgWikibaseBaseNs,
                 'wikibase-property' => $wmgWikibaseBaseNs + 2,
-        );
+	];
 
 	$wgWBClientSettings['languageLinkSiteGroup'] = 'null';
 	$wgWBClientSettings['repoSiteName'] = 'DroidWiki';
-	$wgWBClientSettings['otherProjectsLinks'] = array( 'wikidatawiki', 'commonswiki', 'dewiki', 'enwiki' );
+	$wgWBClientSettings['otherProjectsLinks'] = [ 'wikidatawiki', 'commonswiki', 'dewiki', 'enwiki' ];
 	$wgWBClientSettings['otherProjectsLinksByDefault'] = true;
 
 	$wgHooks['WikibaseClientOtherProjectsSidebar'][] = function ( Wikibase\DataModel\Entity\ItemId $itemId, array &$sidebar ) {

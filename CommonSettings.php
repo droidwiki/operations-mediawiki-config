@@ -12,7 +12,7 @@
 		// apply group overrides as aerly as possible
 		foreach ( $groupOverrides as $group => $permissions ) {
 			if ( !array_key_exists( $group, $wgGroupPermissions ) ) {
-				$wgGroupPermissions[$group] = array();
+				$wgGroupPermissions[$group] = [];
 			}
 			$wgGroupPermissions[$group] = $permissions + $wgGroupPermissions[$group];
 		}
@@ -55,7 +55,7 @@
 
 	# Varnish things
 	$wgUseSquid = true;
-	$wgSquidServers = array( '127.0.0.1' );
+	$wgSquidServers = [ '127.0.0.1' ];
 	$wgUseGzip = true;
 
 	$wgStylePath = "$wgScriptPath/skins";
@@ -63,14 +63,14 @@
 	// FIXME: Move this config to InitialiseSettings and the favicon to static/ - T8
 	$wgFavicon = '//www.droidwiki.de/images/favicon_with_W.ico';
 
-        $wgSMTP = array(
+        $wgSMTP = [
                 'host'     => 'bits.go2tech.de',
                 'IDHost'   => 'droidwiki.de',
                 'port'     => 587,
                 'auth'     => true,
                 'username' => $wmgEmailUser,
                 'password' => $wmgEmailPassword,
-        );
+		];
 
 	$wgEnableEmail = true;
 	$wgEnableUserEmail = true;
@@ -90,17 +90,17 @@
 	$wgLanguageCode = "de";
 
 	# Additional, alternative skins
-	wfLoadSkins( array( 'Vector', 'MonoBook' ) );
+	wfLoadSkins( [ 'Vector', 'MonoBook' ] );
 
 	# Do not show adbanners on this sites
-	$wgNoAdSites = array(
+	$wgNoAdSites = [
 		'Hauptseite',
 		'',
 		'Spezial:Anmelden',
 		'Spezial:GoogleCSE',
 		'Spezial:Raffle',
 		'DroidWiki:Impressum'
-	);
+	];
 
 	$wgDiff3 = "";
 
@@ -115,7 +115,7 @@
 	$wgEnableUploads  = true;
 	$wgAllowExternalImages = true;
 
-	$wgFileExtensions = array(
+	$wgFileExtensions = [
 		'png',
 		'gif',
 		'jpg',
@@ -125,7 +125,7 @@
 		'zip',
 		'svg',
 		'ico',
-	);
+	];
 
 	# Enable subpages in the main namespace
 	$wgNamespacesWithSubpages[NS_MAIN] = true;
@@ -134,10 +134,10 @@
 
 	# Spam protection
 	$wgEnableDnsBlacklist = true;
-	$wgDnsBlacklistUrls = array(
+	$wgDnsBlacklistUrls = [
 		'xbl.spamhaus.org',
 		'opm.tornevall.org'
-	);
+	];
 
 	# AJAX Search Suggestions
 	$wgEnableMWSuggest = true;
@@ -158,22 +158,22 @@
 
 	# Add go2tech repository to Git viewer list
 	$wgGitRepositoryViewers = array_merge( $wgGitRepositoryViewers,
-		array(
+		[
 			'https://(?:[a-z0-9_\-]+@)?gerrit.go2tech.de/r/(?:p/)?(.*)' =>
 				'http://git.go2tech.de/?p=%r.git&a=commit&h=%H',
 			'ssh://(?:[a-z0-9_\-]+@)?gerrit.go2tech.de:29418/(.*)' =>
 				'http://git.go2tech.de/?p=%r.git&a=commit&h=%H'
-		)
+		]
 	);
 
 	if ( $wmgUseParsoid ) {
-		$wgVirtualRestConfig['modules']['parsoid'] = array(
+		$wgVirtualRestConfig['modules']['parsoid'] = [
 			'url' => 'http://37.120.178.25:8142',
 			'prefix' => $wgDBname, // deprecated
 			'domain' => $wgCanonicalServer,
 			'restbaseCompat' => false,
 			'forwardCookies' => $wmgParsoidForwardCookies,
-		);
+		];
 	}
 
 	require __DIR__ . "/ExtensionSetup.php";
