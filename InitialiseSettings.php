@@ -37,6 +37,22 @@ $wgConf->settings = [
 		'datawiki' => '/static/images/project-logos/androide.png',
 	],
 
+	'wgFavicon' => [
+		'default' => '/static/images/favicons/favicon_with_W.ico',
+	],
+
+	'wgEmergencyContact' => [
+		'default' => 'info@go2tech.de',
+		'droidwiki' => 'info@droidwiki.de',
+		'datawiki' => 'info@droidwiki.de',
+	],
+
+	'wgPasswordSender' => [
+		'default' => 'info@go2tech.de',
+		'droidwiki' => 'info@droidwiki.de',
+		'datawiki' => 'info@droidwiki.de',
+	],
+
 	'wgLocaltimezone' => [
 		'default' => 'Europe/Berlin',
 	],

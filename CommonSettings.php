@@ -53,15 +53,9 @@
 	$wgUsePathInfo = true;
 	$wgScriptExtension = ".php";
 
-	# Varnish things
-	$wgUseSquid = true;
-	$wgSquidServers = [ '127.0.0.1' ];
 	$wgUseGzip = true;
 
 	$wgStylePath = "$wgScriptPath/skins";
-
-	// FIXME: Move this config to InitialiseSettings and the favicon to static/ - T8
-	$wgFavicon = '//www.droidwiki.de/images/favicon_with_W.ico';
 
 	$wgSMTP = [
 		'host'     => 'bits.go2tech.de',
@@ -74,9 +68,6 @@
 
 	$wgEnableEmail = true;
 	$wgEnableUserEmail = true;
-
-	$wgEmergencyContact = "info@droidwiki.de";
-	$wgPasswordSender = "info@droidwiki.de";
 
 	$wgEnotifUserTalk = false;
 	$wgEnotifWatchlist = false;
@@ -138,10 +129,6 @@
 		'xbl.spamhaus.org',
 		'opm.tornevall.org'
 	];
-
-	# AJAX Search Suggestions
-	$wgEnableMWSuggest = true;
-	$wgEnableOpenSearchSuggest = true;
 
 	# Open links in new window
 	$wgExternalLinkTarget = '_blank';
