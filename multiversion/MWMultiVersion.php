@@ -8,7 +8,12 @@ class MWMultiVersion {
 
 	public static function getInstance() {
 		if ( !self::$instance ) {
-			self::$instance = self::factory( @$_SERVER['SERVER_NAME'] );
+			if ( !isset( $_SERVER['SERVER_NAME'] ) ) {
+				throw new LogicException( 'Could not determine server name. If you run a' .
+					' maintenance script, you should use getInstanceForMaintenance() instead of ' .
+					__METHOD__ );
+			}
+			self::$instance = self::factory( $_SERVER['SERVER_NAME'] );
 		}
 		return self::$instance;
 	}
@@ -40,7 +45,8 @@ class MWMultiVersion {
 
 	private static function factory( $serverName ) {
 		$mwmv = new self();
-		$mwmv->setServerName( $serverName )
+		$mwmv
+			->setServerName( $serverName )
 			->loadDBFromServerName();
 
 		return $mwmv;
@@ -56,10 +62,14 @@ class MWMultiVersion {
 		$wiki = 'emptywiki';
 		$serverName = $this->serverName;
 		$serverName = preg_replace( '/(^www.)/', '', $serverName );
-		if ( preg_match( '/^([a-zA-Z1-9]*)\./', $serverName, $matches ) ) {
-			$wiki = $matches[1];
+		if ( !preg_match( '/^([a-zA-Z1-9]*)\./', $serverName, $matches ) ) {
+			throw new LogicException( 'Could not parse wiki-name: ' . $serverName );
 		}
-		$this->wiki = $wiki;
+		if ( !isset( $matches[1] ) ) {
+			throw new DomainException( 'Expected an array with at least two matches, but got one' .
+				' with less values.' );
+		}
+		$this->wiki = $matches[1];
 
 		return $this;
 	}
