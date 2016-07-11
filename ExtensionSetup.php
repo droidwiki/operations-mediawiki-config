@@ -1,7 +1,7 @@
 <?php
 # DO NOT PUT PRIVATE INFORMATION HERE!
 
-$extWithoutConfig = array(
+$extToLoad = array(
 	'AntiSpoof', # needed by AbuseFilter
 	'Cite', # ref-tags
 	'ParserFunctions',
@@ -55,21 +55,49 @@ $extWithoutConfig = array(
 	'OATHAuth',
 );
 
-foreach ( $extWithoutConfig as $name ) {
+$extensionsToLoadWithExtensionregistration = array();
+foreach ( $extToLoad as $name ) {
 	global $wmgExtensionsPath;
 
-	$extname = 'wmgUse' . $name;
-	if ( ( !isset( $$extname ) || ( isset( $$extname ) && $$extname ) ) && wfExtensionExists( $name ) ) {
-		require_once "$IP/$wmgExtensionsPath/$name/$name.php";
+	$useExtensionConfigName = 'wmgUse' . $name;
+	if ( isset( $$useExtensionConfigName ) && !$$useExtensionConfigName ) {
+		continue;
+	}
+
+	$extensionInformation = wfGetExtensionInformation( $name );
+	if ( $extensionInformation['exists'] ) {
+		switch( $extensionInformation['installType'] ) {
+			case 'json':
+				$extensionsToLoadWithExtensionregistration[] = $name;
+				break;
+			default:
+				require_once "$IP/$wmgExtensionsPath/$name/$name.php";
+		}
 	}
 }
+
+wfLoadExtensions( $extensionsToLoadWithExtensionregistration );
+
 function wfExtensionExists( $name ) {
+	return wfGetExtensionInformation( $name )['exists'];
+}
+
+function wfGetExtensionInformation( $name ) {
 	global $IP, $wmgExtensionsPath;
 
+	$retval = array(
+		'exists' => false,
+		'installType' => null,
+	);
 	if ( file_exists( "$IP/$wmgExtensionsPath/$name/$name.php" ) ) {
-		return true;
+		$retval['exists'] = true;
+		$retval['installType'] = 'php';
 	}
-	return false;
+	if ( file_exists( "$IP/$wmgExtensionsPath/$name/extension.json" ) ) {
+		$retval['exists'] = true;
+		$retval['installType'] = 'json';
+	}
+	return  $retval;
 }
 
 # Configuration for ConfirmEdit
