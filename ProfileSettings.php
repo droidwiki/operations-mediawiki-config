@@ -1,5 +1,5 @@
 <?php
 
 $wgProfiler['class'] = 'ProfilerXhprof';
-$wgProfiler['output'] = array( 'ProfilerOutputStats' );
+$wgProfiler['output'] = [ 'ProfilerOutputStats' ];
 $wgProfiler['sampling'] = 50;

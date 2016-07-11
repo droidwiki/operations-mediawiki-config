@@ -2,418 +2,418 @@
 
 global $wgConf;
 
-$wgConf->settings = array(
-	'wgSitename' => array(
+$wgConf->settings = [
+	'wgSitename' => [
 		'default' => 'Android Wiki',
 		'opswiki' => 'DroidWiki Operations',
 		'testdroidwiki' => 'Android Test-Wiki',
 		'datawiki' => 'DroidWiki Data',
-	),
+	],
 
-	'wgMetaNamespace' => array(
+	'wgMetaNamespace' => [
 		'default' => 'DroidWiki',
 		'opswiki' => 'Project',
 		'datawiki' => 'Data',
-	),
+	],
 
-	'wgServer' => array(
+	'wgServer' => [
 		'droidwiki' => 'https://www.droidwiki.de',
 		'opswiki' => '//ops.go2tech.de',
 		'datawiki' => 'https://data.droidwiki.de',
-	),
+	],
 
-	'wgCanonicalServer' => array(
+	'wgCanonicalServer' => [
 		'droidwiki' => 'https://www.droidwiki.de',
 		'opswiki' => 'http://ops.go2tech.de',
 		'datawiki' => 'https://data.droidwiki.de',
-	),
+	],
 
-	'wgLogo' => array(
+	'wgLogo' => [
 		// possible values:
 		// androide.png -> blank DroidWiki logo
 		// androide_ch.png -> DroidWiki logo with christmas hat
 		'default' => '',
 		'droidwiki' => '/static/images/project-logos/androide.png',
 		'datawiki' => '/static/images/project-logos/androide.png',
-	),
+	],
 
-	'wgLocaltimezone' => array(
+	'wgLocaltimezone' => [
 		'default' => 'Europe/Berlin',
-	),
+	],
 
-	'wgCookieDomain' => array(
+	'wgCookieDomain' => [
 		'default' => '',
 		'droidwiki' => '.droidwiki.de',
 		'datawiki' => '.droidwiki.de',
 		'testdroidwiki' => '.go2tech.de',
 		'opswiki' => '.ops.go2tech.de',
-	),
+	],
 
-	'wgDefaultSkin' => array(
+	'wgDefaultSkin' => [
 		'default' => 'vector',
-	),
+	],
 
-	'wgUseRCPatrol' => array(
+	'wgUseRCPatrol' => [
 		'default' => true,
-	),
+	],
 
-	'+wgGroupPermissions' => array(
-		'default' => array(
-			'emailconfirmed' => array(
+	'+wgGroupPermissions' => [
+		'default' => [
+			'emailconfirmed' => [
 				'emailconfirmed' => true,
-			),
-			'sysop' => array(
+			],
+			'sysop' => [
 				'upload_by_url' => true,
 				// this should  be an own group "Translation admin"
 				'pagelang' => true,
-			),
-			'bureaucrat' => array(
+			],
+			'bureaucrat' => [
 				'userrights' => true,
-			),
-			'suppress' => array(
+			],
+			'suppress' => [
 				'deleterevision' => true,
 				'suppressrevision' => true,
 				'deletelogentry' => true,
 				'deleterevision' => true,
 				'suppressionlog' => true,
 				'hideuser' => true,
-			),
-		),
-		'+droidwiki' => array(
-			'Autopatrol' => array(
+			],
+		],
+		'+droidwiki' => [
+			'Autopatrol' => [
 				'autopatrol' => true,
-			),
-			'Moderator' => array(
+			],
+			'Moderator' => [
 				'autopatrol' => true,
 				'proxyunbannable' => true,
 				'delete' => true,
 				'patrol' => true,
-			),
-			'Testnutzer' => array(),
-			'ipblock-exempt' => array(
+			],
+			'Testnutzer' => [],
+			'ipblock-exempt' => [
 				'ipblock-exempt' => true,
-			),
-		),
-		'+testdroidwiki' => array(
-			'Autopatrol' => array(
+			],
+		],
+		'+testdroidwiki' => [
+			'Autopatrol' => [
 				'autopatrol' => true,
-			),
-			'Moderator' => array(
+			],
+			'Moderator' => [
 				'autopatrol' => true,
 				'proxyunbannable' => true,
 				'delete' => true,
 				'patrol' => true,
-			),
-			'Testnutzer' => array(),
-		),
-	),
+			],
+			'Testnutzer' => [],
+		],
+	],
 
-	'groupOverrides' => array(
+	'groupOverrides' => [
 		// don't change the default value
-		'default' => array(),
-		'droidwiki' => array(
-			'*' => array(
+		'default' => [],
+		'droidwiki' => [
+			'*' => [
 				'translate' => true,
-			),
-			'sysop' => array(
+			],
+			'sysop' => [
 				'pagetranslation' => true,
 				'translate-manage' => true,
-			),
-		),
-		'datawiki' => array(
-			'*' => array(
+			],
+		],
+		'datawiki' => [
+			'*' => [
 				'property-create' => false,
-			),
-			'sysop' => array(
+			],
+			'sysop' => [
 				'property-create' => true,
-			),
-		),
-		'opswiki' => array(
-			'*' => array(
+			],
+		],
+		'opswiki' => [
+			'*' => [
 				'read' => false,
 				'edit' => false,
 				'createaccount' => false
-			),
-		),
-	),
+			],
+		],
+	],
 
-	'wgAllowUserJs' => array(
+	'wgAllowUserJs' => [
 		'default' => false,
 		'droidwiki' => true,
-	),
+	],
 
-	'wgMaxImageArea' => array(
+	'wgMaxImageArea' => [
 		'default' => 5e7,
-	),
+	],
 
-	'wgUseInstantCommons' => array(
+	'wgUseInstantCommons' => [
 		'default' => true,
 		'opswiki' => false,
-	),
+	],
 
-	'wgSVGConverters' => array(
-		'default' => array( 'ImageMagick' => '/usr/bin/convert $input -background transparent $output' ),
-	),
+	'wgSVGConverters' => [
+		'default' => [ 'ImageMagick' => '/usr/bin/convert $input -background transparent $output' ],
+	],
 
-	'wgSVGConverter' => array(
+	'wgSVGConverter' => [
 		'default' => 'ImageMagick',
-	),
+	],
 
-	'wgSVGConverterPath' => array(
+	'wgSVGConverterPath' => [
 		'default' => '/usr/bin/',
-	),
+	],
 
-	'wgMainCacheType' => array(
+	'wgMainCacheType' => [
 		'default' => CACHE_MEMCACHED,
-	),
+	],
 
-	'wgParserCacheType' => array(
+	'wgParserCacheType' => [
 		'default' => CACHE_MEMCACHED,
-	),
+	],
 
-	'wgMessageCacheType' => array(
+	'wgMessageCacheType' => [
 		'default' => CACHE_MEMCACHED,
-	),
+	],
 
-	'wgSessionCacheType' => array(
+	'wgSessionCacheType' => [
 		'default' => CACHE_MEMCACHED,
-	),
+	],
 
-	'wgSessionsInObjectCache' => array(
+	'wgSessionsInObjectCache' => [
 		'default' => false,
 		'droidwiki' => true,
 		'datawiki' => true,
-	),
+	],
 
-	'wgMemCachedServers' => array(
-		'default' => array( '127.0.0.1:11211' ),
-	),
+	'wgMemCachedServers' => [
+		'default' => [ '127.0.0.1:11211' ],
+	],
 
-	'wgShowDebug' => array(
+	'wgShowDebug' => [
 		'default' => false,
-	),
+	],
 
-	'wgShowExceptionDetails' => array(
-		'default' => false,
-		'testdroidwiki' => true,
-	),
-
-	'wgShowSQLErrors' => array(
-		'default' => false,
-	),
-
-	'wgCrossSiteAJAXdomains' => array(
-		'default' => array(),
-		'droidwiki' => array( '*.droidwiki.de' ),
-		'datawiki' => array( '*.droidwiki.de' ),
-	),
-
-	'wmgCirrusSearchPowerSpecialRandom' => array(
+	'wgShowExceptionDetails' => [
 		'default' => false,
 		'testdroidwiki' => true,
-	),
+	],
 
-	'wgCacheDirectory' => array(
+	'wgShowSQLErrors' => [
+		'default' => false,
+	],
+
+	'wgCrossSiteAJAXdomains' => [
+		'default' => [],
+		'droidwiki' => [ '*.droidwiki.de' ],
+		'datawiki' => [ '*.droidwiki.de' ],
+	],
+
+	'wmgCirrusSearchPowerSpecialRandom' => [
+		'default' => false,
+		'testdroidwiki' => true,
+	],
+
+	'wgCacheDirectory' => [
 		'default' => '/data/mediawiki/localisationCache/',
 		'datawiki' => '/data/mediawiki/localisationCache/datawiki/',
 		'droidwiki' => '/data/mediawiki/localisationCache/droidwiki/',
-	),
+	],
 
-	'wgGitInfoCacheDirectory' => array(
+	'wgGitInfoCacheDirectory' => [
 		'droidwiki' => '/data/mediawiki/main/cache/gitinfo',
 		'datawiki' => '/data/mediawiki/main/cache/gitinfo',
-	),
+	],
 
-	'wgLocalisationCacheConf' => array(
-		'default' => array(
+	'wgLocalisationCacheConf' => [
+		'default' => [
 			'class' => 'LocalisationCache',
 			'store' => 'detect',
 			'storeClass' => false,
 			'manualRecache' => true,
-		),
-	),
+		],
+	],
 
-	'wgDBerrorLog' => array(
+	'wgDBerrorLog' => [
 		'default' => false,
 		'droidwiki' => '/data/www/droid.wiki/phplog/dberror_droidwiki.log',
 		'datawiki' => '/data/www/droid.wiki/phplog/dberror_datawiki.log',
-	),
+	],
 
-	'wgDebugLogGroups' => array(
-		'default' => array(),
-		'droidwiki' => array(
+	'wgDebugLogGroups' => [
+		'default' => [],
+		'droidwiki' => [
 			'resourceloader' => '/data/www/droid.wiki/phplog/resourceloader_droidwiki.log',
 			'exception' => '/data/www/droid.wiki/phplog/exception_droidwiki.log',
 			'error' => '/data/www/droid.wiki/phplog/exception_droidwiki.log',
 			'ratelimit' => '/data/www/droid.wiki/phplog/ratelimit_droidwiki.log',
 			'DBPerformance' => '/data/www/droid.wiki/phplog/dbperformance_droidwiki.log',
-		),
-		'datawiki' => array(
+		],
+		'datawiki' => [
 			'resourceloader' => '/data/www/droid.wiki/phplog/resourceloader_datawiki.log',
                         'exception' => '/data/www/droid.wiki/phplog/exception_datawiki.log',
                         'error' => '/data/www/droid.wiki/phplog/exception_datawiki.log',
                         'ratelimit' => '/data/www/droid.wiki/phplog/ratelimit_datawiki.log',
                         'DBPerformance' => '/data/www/droid.wiki/phplog/dbperformance_datawiki.log',
-		),
-	),
+		],
+	],
 
-	'wgDebugLogFile' => array(
+	'wgDebugLogFile' => [
 		'default' => '',
 		'droidwiki' => '/data/www/droid.wiki/phplog/debug_droidwiki.log',
-	),
+	],
 
-	'wgRightsUrl' => array(
+	'wgRightsUrl' => [
 		'default' => null,
 		'droidwiki' => '//creativecommons.org/licenses/by-sa/3.0/',
 		'datawiki' => '//creativecommons.org/licenses/by-sa/3.0/',
-	),
+	],
 
-	'wgRightsText' => array(
+	'wgRightsText' => [
 		'default' => null,
 		'droidwiki' => 'Creative Commons Attribution-Share Alike 3.0',
 		'datawiki' => 'Creative Commons Attribution-Share Alike 3.0',
-	),
+	],
 
-	'wgRightsIcon' => array(
+	'wgRightsIcon' => [
 		'default' => null,
 		'droidwiki' => '//creativecommons.org/images/public/somerights20.png',
 		'datawiki' => '//creativecommons.org/images/public/somerights20.png',
-	),
+	],
 
-	'+wgObjectCaches' => array(
-		'default' => array(),
-		'droidwiki' => array(
-			'redis' => array(
+	'+wgObjectCaches' => [
+		'default' => [],
+		'droidwiki' => [
+			'redis' => [
 				'class' => 'RedisBagOStuff',
-		                'servers' => array( '127.0.0.1:6379' ),
-			),
-		),
-		'datawiki' => array(
-                        'redis' => array(
-                                'class' => 'RedisBagOStuff',
-                                'servers' => array( '127.0.0.1:6379' ),
-                        ),
-                ),
-	),
+		                'servers' => [ '127.0.0.1:6379' ],
+			],
+		],
+		'datawiki' => [
+			'redis' => [
+				'class' => 'RedisBagOStuff',
+				'servers' => [ '127.0.0.1:6379' ],
+			],
+		],
+	],
 
-	'wgJobTypeConf' => array(
-		'droidwiki' => array(
-			'default' => array(
+	'wgJobTypeConf' => [
+		'droidwiki' => [
+			'default' => [
 				'class' => 'JobQueueRedis',
 				'redisServer' => '127.0.0.1:6379',
-				'redisConfig' => array(),
+				'redisConfig' => [],
 				'claimTTL' => 3600,
 				'daemonized' => true,
-			),
-		),
-		'datawiki' => array(
-                        'default' => array(
-                                'class' => 'JobQueueRedis',
-                                'redisServer' => '127.0.0.1:6379',
-                                'redisConfig' => array(),
-                                'claimTTL' => 3600,
-                                'daemonized' => true,
-                        ),
-                ),
-	),
+			],
+		],
+		'datawiki' => [
+			'default' => [
+				'class' => 'JobQueueRedis',
+				'redisServer' => '127.0.0.1:6379',
+				'redisConfig' => [],
+				'claimTTL' => 3600,
+				'daemonized' => true,
+			],
+		],
+	],
 
-	'wgJobQueueAggregator' => array(
-		'droidwiki' => array(
+	'wgJobQueueAggregator' => [
+		'droidwiki' => [
 			'class'        => 'JobQueueAggregatorRedis',
-			'redisServers' => array(
+			'redisServers' => [
 				'localhost',
-			),
-			'redisConfig'  => array(
+			],
+			'redisConfig'  => [
 				'connectTimeout' => 2,
-			),
-		),
-		'datawiki' => array(
-                        'class'        => 'JobQueueAggregatorRedis',
-                        'redisServers' => array(
-                                'localhost',
-                        ),
-                        'redisConfig'  => array(
-                                'connectTimeout' => 2,
-                        ),
-                ),
-	),
+			],
+		],
+		'datawiki' => [
+			'class' => 'JobQueueAggregatorRedis',
+			'redisServers' => [
+				'localhost',
+			],
+			'redisConfig'  => [
+				'connectTimeout' => 2,
+			],
+		],
+	],
 
 	// temporary, should be removed when all authentication providers used, switched to AuthManager
-	'wgDisableAuthManager' => array(
+	'wgDisableAuthManager' => [
 		'default' => false,
-	),
+	],
 
 	// usage of extensions
-	'wmgUseLdapAuthentication' => array(
+	'wmgUseLdapAuthentication' => [
 		'default' => false,
 		'opswiki' => true,
-	),
+	],
 
-	'wmgUseGoogleLogin' => array(
+	'wmgUseGoogleLogin' => [
 		'default' => true,
 		'opswiki' => false,
-	),
+	],
 
-	'wmgUsegoogleAnalytics' => array(
+	'wmgUsegoogleAnalytics' => [
 		'default' => false,
 		'droidwiki' => true,
-	),
+	],
 
-	'wmgUseTranslate' => array(
+	'wmgUseTranslate' => [
 		'default' => false,
 		'droidwiki' => true,
-	),
+	],
 
-	'wmgUseWikibaseRepo' => array(
+	'wmgUseWikibaseRepo' => [
 		'default' => false,
 		'datawiki' => true,
-	),
+	],
 
-        'wmgUseWikibaseClient' => array(
-                'default' => false,
-                'droidwiki' => true,
-        ),
-
-	'wmgUseSocialButtons' => array(
-		'default' => true,
-		'datawiki' => false,
-	),
-
-	'wmgUseDroidWiki' => array(
-		'default' => true,
-	),
-
-	'wmfUseOATHAuth' => array(
-		'default' => true,
-	),
-
-	// needed for Translate extension to change the language on-wiki
-	'wgPageLanguageUseDB' => array(
+	'wmgUseWikibaseClient' => [
 		'default' => false,
 		'droidwiki' => true,
-	),
+	],
 
-	'wgStatsdServer' => array(
+	'wmgUseSocialButtons' => [
+		'default' => true,
+		'datawiki' => false,
+	],
+
+	'wmgUseDroidWiki' => [
+		'default' => true,
+	],
+
+	'wmfUseOATHAuth' => [
+		'default' => true,
+	],
+
+	// needed for Translate extension to change the language on-wiki
+	'wgPageLanguageUseDB' => [
+		'default' => false,
+		'droidwiki' => true,
+	],
+
+	'wgStatsdServer' => [
 		'default' => false,
 		'droidwiki' => '188.68.49.74:8125',
-	),
+	],
 
-	'wgSharedDB' => array(
+	'wgSharedDB' => [
 		'default' => null,
 		'datawiki' => 'droidwikiwiki',
-	),
+	],
 
-	'wgSharedTables' => array(
-		'default' => array( 'user', 'user_properties' ),
-		'+datawiki' => array( 'user_google_user', 'user_groups' ),
-	),
+	'wgSharedTables' => [
+		'default' => [ 'user', 'user_properties' ],
+		'+datawiki' => [ 'user_google_user', 'user_groups' ],
+	],
 
-	'wmgUseParsoid' => array(
+	'wmgUseParsoid' => [
 		'default' => true,
-	),
+	],
 
-	'wmgParsoidForwardCookies' => array(
+	'wmgParsoidForwardCookies' => [
 		'default' => false,
 		'opswiki' => true,
-	),
-);
+	],
+];
