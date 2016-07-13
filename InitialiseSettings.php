@@ -251,31 +251,31 @@ $wgConf->settings = [
 
 	'wgDBerrorLog' => [
 		'default' => false,
-		'droidwiki' => '/data/www/droid.wiki/phplog/dberror_droidwiki.log',
-		'datawiki' => '/data/www/droid.wiki/phplog/dberror_datawiki.log',
+		'droidwiki' => '/data/www/droidwiki.de/phplog/dberror_droidwiki.log',
+		'datawiki' => '/data/www/droidwiki.de/phplog/dberror_datawiki.log',
 	],
 
 	'wgDebugLogGroups' => [
 		'default' => [],
 		'droidwiki' => [
-			'resourceloader' => '/data/www/droid.wiki/phplog/resourceloader_droidwiki.log',
-			'exception' => '/data/www/droid.wiki/phplog/exception_droidwiki.log',
-			'error' => '/data/www/droid.wiki/phplog/exception_droidwiki.log',
-			'ratelimit' => '/data/www/droid.wiki/phplog/ratelimit_droidwiki.log',
-			'DBPerformance' => '/data/www/droid.wiki/phplog/dbperformance_droidwiki.log',
+			'resourceloader' => '/data/www/droidwiki.de/phplog/resourceloader_droidwiki.log',
+			'exception' => '/data/www/droidwiki.de/phplog/exception_droidwiki.log',
+			'error' => '/data/www/droidwiki.de/phplog/exception_droidwiki.log',
+			'ratelimit' => '/data/www/droidwiki.de/phplog/ratelimit_droidwiki.log',
+			'DBPerformance' => '/data/www/droidwiki.de/phplog/dbperformance_droidwiki.log',
 		],
 		'datawiki' => [
-			'resourceloader' => '/data/www/droid.wiki/phplog/resourceloader_datawiki.log',
-                        'exception' => '/data/www/droid.wiki/phplog/exception_datawiki.log',
-                        'error' => '/data/www/droid.wiki/phplog/exception_datawiki.log',
-                        'ratelimit' => '/data/www/droid.wiki/phplog/ratelimit_datawiki.log',
-                        'DBPerformance' => '/data/www/droid.wiki/phplog/dbperformance_datawiki.log',
+			'resourceloader' => '/data/www/droidwiki.de/phplog/resourceloader_datawiki.log',
+                        'exception' => '/data/www/droidwiki.de/phplog/exception_datawiki.log',
+                        'error' => '/data/www/droidwiki.de/phplog/exception_datawiki.log',
+                        'ratelimit' => '/data/www/droidwiki.de/phplog/ratelimit_datawiki.log',
+                        'DBPerformance' => '/data/www/droidwiki.de/phplog/dbperformance_datawiki.log',
 		],
 	],
 
 	'wgDebugLogFile' => [
 		'default' => '',
-		'droidwiki' => '/data/www/droid.wiki/phplog/debug_droidwiki.log',
+		'droidwiki' => '/data/www/droidwiki.de/phplog/debug_droidwiki.log',
 	],
 
 	'wgRightsUrl' => [
