@@ -43,13 +43,9 @@
 	# Load ProfileSettings
 	# require( 'specialsources/mw-config/ProfileSettings.php' );
 
-	if ( $wgDBname === 'droidwikiwiki' ) {
-		$wgScriptPath = "";
-		$wgArticlePath = "$wgScriptPath/$1";
-	} else {
-		$wgArticlePath = "/wiki/$1";
-		$wgScriptPath = "/w";
-	}
+	$wgArticlePath = "/wiki/$1";
+	$wgScriptPath = "/w";
+
 	$wgUsePathInfo = true;
 	$wgScriptExtension = ".php";
 
