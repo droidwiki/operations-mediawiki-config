@@ -53,6 +53,7 @@ $extToLoad = [
 	'Translate',
 	'GoogleSiteLinksSearchBox',
 	'OATHAuth',
+	'GeoData',
 ];
 
 $extensionsToLoadWithExtensionregistration = [];
@@ -444,4 +445,8 @@ if ( $wmgUseWikibaseClient ) {
 
 if ( $wmgUseOATHAuth && wfExtensionExists( 'OATHAuth' ) ) {
 	$wgSharedTables[] = 'oathauth_users';
+}
+
+if ( wfExtensionExists( 'GeoData' ) ) {
+	$wgGeoDataBackend = 'elastic';
 }
