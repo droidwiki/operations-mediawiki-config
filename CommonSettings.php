@@ -25,12 +25,6 @@
 	# load PrivateSettings.php first
 	require __DIR__ . "/../private/PrivateSettings.php";
 
-	# Used in errorhandler
-	$wgPHPLogFilePref = $wmgPHPLogFilePref;
-
-	# Load Error Handler to handle php errors more beautiful
-	require __DIR__ . "/../errorreporting/errorhandler.php";
-
 	# Helper function to load InitialiseSettings when wgConf is ready for initialisation
 	function wmfLoadInitialiseSettings( $conf ) {
 		require "InitialiseSettings.php";
