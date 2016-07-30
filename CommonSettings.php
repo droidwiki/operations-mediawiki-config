@@ -43,6 +43,8 @@
 	# Load ProfileSettings
 	# require( 'specialsources/mw-config/ProfileSettings.php' );
 
+	$wgDBname = $multiversion->getDBName();
+
 	$wgArticlePath = "/wiki/$1";
 	$wgScriptPath = "/w";
 

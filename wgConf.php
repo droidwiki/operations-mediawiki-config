@@ -14,5 +14,5 @@ $wgConf->localVHosts = [ 'localhost' ];
 $wgConf->fullLoadCallback = 'wmfLoadInitialiseSettings';
 $wgConf->suffixes = $wgConf->wikis;
 $wgConf->loadFullData();
-$wgConf->extractAllGlobals( $wmgWikiName );
+$wgConf->extractAllGlobals( $multiversion->getWikiName() );
 
