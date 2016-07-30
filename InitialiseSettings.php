@@ -421,7 +421,7 @@ $wgConf->settings = [
 
 	'wgSharedTables' => [
 		'default' => [ 'user', 'user_properties' ],
-		'+datawiki' => [ 'user_google_user', 'user_groups' ],
+		'+datawiki' => [ 'user_google_user', 'user_groups', 'oathauth_users' ],
 	],
 
 	'wmgUseParsoid' => [
