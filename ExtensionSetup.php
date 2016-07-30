@@ -58,8 +58,6 @@ $extToLoad = [
 
 $extensionsToLoadWithExtensionregistration = [];
 foreach ( $extToLoad as $name ) {
-	global $wmgExtensionsPath;
-
 	$useExtensionConfigName = 'wmgUse' . $name;
 	if ( isset( $$useExtensionConfigName ) && !$$useExtensionConfigName ) {
 		continue;
@@ -72,7 +70,7 @@ foreach ( $extToLoad as $name ) {
 				$extensionsToLoadWithExtensionregistration[] = $name;
 				break;
 			default:
-				require_once "$IP/$wmgExtensionsPath/$name/$name.php";
+				require_once "$IP/extensions/$name/$name.php";
 		}
 	}
 }
@@ -84,17 +82,17 @@ function wfExtensionExists( $name ) {
 }
 
 function wfGetExtensionInformation( $name ) {
-	global $IP, $wmgExtensionsPath;
+	global $IP;
 
 	$retval = [
 		'exists' => false,
 		'installType' => null,
 	];
-	if ( file_exists( "$IP/$wmgExtensionsPath/$name/$name.php" ) ) {
+	if ( file_exists( "$IP/extensions/$name/$name.php" ) ) {
 		$retval['exists'] = true;
 		$retval['installType'] = 'php';
 	}
-	if ( file_exists( "$IP/$wmgExtensionsPath/$name/extension.json" ) ) {
+	if ( file_exists( "$IP/extensions/$name/extension.json" ) ) {
 		$retval['exists'] = true;
 		$retval['installType'] = 'json';
 	}
