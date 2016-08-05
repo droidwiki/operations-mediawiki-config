@@ -104,7 +104,7 @@ if ( wfExtensionExists( "ConfirmEdit" ) ) {
 	// The DroidWiki app can't handle client side JavaScript (on which reCaptcha is based on)
 	// Check, if the request is made via the api (and assume, that this is the app or any other client that
 	// needs machine readable format's) and use the FancyCaptcha plugin instead of reCaptcha.
-	if ( $_SERVER['SCRIPT_NAME'] !== '/api.php' && strpos( $_GET['title'], 'Captcha/image' ) === false ) {
+	if ( $_SERVER['SCRIPT_NAME'] !== '/api.php' && isset( $_GET['title'] ) && strpos( $_GET['title'], 'Captcha/image' ) === false ) {
 		require_once "$IP/extensions/ConfirmEdit/ReCaptchaNoCaptcha/ReCaptchaNoCaptcha.php";
 		$wgReCaptchaSiteKey = $wmgReCaptchaSiteKey;
 		$wgReCaptchaSecretKey = $wmgReCaptchaSecretKey;

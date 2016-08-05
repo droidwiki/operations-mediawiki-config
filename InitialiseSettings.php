@@ -399,7 +399,7 @@ $wgConf->settings = [
 		'default' => true,
 	],
 
-	'wmfUseOATHAuth' => [
+	'wmgUseOATHAuth' => [
 		'default' => true,
 	],
 
