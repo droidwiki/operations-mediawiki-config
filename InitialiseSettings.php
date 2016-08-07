@@ -122,6 +122,12 @@ $wgConf->settings = [
 			],
 			'Testnutzer' => [],
 		],
+		'+opswiki' => [
+			'Operations' => [
+				'read' => true,
+				'edit' => true,
+			],
+		],
 	],
 
 	'groupOverrides' => [
@@ -148,9 +154,25 @@ $wgConf->settings = [
 			'*' => [
 				'read' => false,
 				'edit' => false,
-				'createaccount' => false
+				'createaccount' => false,
+				'autocreateaccount' => true,
+			],
+			'user' => [
+				'read' => false,
+				'edit' => false,
+				'createaccount' => 'false',
+			],
+			'autoconfirmed' => [
+				'read' => false,
+				'edit' => false,
+				'createaccount' => false,
 			],
 		],
+	],
+
+	'wgWhitelistRead' => [
+		'default' => false,
+		'opswiki' => [ 'Hauptseite', 'Spezial:Einstellungen', 'Spezial:ChangeCredentials', 'Spezial:OATH', 'Spezial:E-Mail-Adresse_ändern', 'Spezial:E-Mail_bestätigen', ],
 	],
 
 	'wgAllowUserJs' => [
