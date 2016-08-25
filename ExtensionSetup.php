@@ -445,6 +445,7 @@ if ( $wmgUseWikibaseClient ) {
 	$wgWBClientSettings['repoSiteName'] = 'DroidWiki';
 	$wgWBClientSettings['otherProjectsLinks'] = [ 'wikidatawiki', 'commonswiki', 'dewiki', 'enwiki' ];
 	$wgWBClientSettings['otherProjectsLinksByDefault'] = true;
+	$wgWBClientSettings['sendEchoNotification'] = true;
 
 	$wgHooks['WikibaseClientOtherProjectsSidebar'][] = function ( Wikibase\DataModel\Entity\ItemId $itemId, array &$sidebar ) {
 		foreach ( $sidebar as $id => &$group ) {
