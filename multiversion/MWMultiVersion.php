@@ -38,7 +38,11 @@ class MWMultiVersion {
 				exit;
 			}
 			self::$instance->setWikiName( $wikiname );
-			self::$instance->setDBName( $wikiname );
+			if ( $wikiname === 'droidwiki' ) {
+				self::$instance->setDBName( 'droidwikiwiki' );
+			} else {
+				self::$instance->setDBName( $wikiname );
+			}
 		}
 		return self::$instance;
 	}
