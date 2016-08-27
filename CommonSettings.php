@@ -35,7 +35,7 @@
 	wfApplyUserRightOverrides();
 
 	# Load ProfileSettings
-	# require( 'specialsources/mw-config/ProfileSettings.php' );
+	require_once 'ProfileSettings.php';
 
 	$wgDBname = $multiversion->getDBName();
 
