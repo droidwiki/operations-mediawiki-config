@@ -23,14 +23,14 @@
 	$multiversion = MWMultiVersion::getInstance();
 
 	# load PrivateSettings.php first
-	require __DIR__ . "/../private/PrivateSettings.php";
+	require_once __DIR__ . '/../private/PrivateSettings.php';
 
 	# Helper function to load InitialiseSettings when wgConf is ready for initialisation
 	function wmfLoadInitialiseSettings( $conf ) {
-		require "InitialiseSettings.php";
+		require_once 'InitialiseSettings.php';
 	}
 
-	require __DIR__ . "/wgConf.php";
+	require_once __DIR__ . '/wgConf.php';
 
 	wfApplyUserRightOverrides();
 
@@ -39,11 +39,11 @@
 
 	$wgDBname = $multiversion->getDBName();
 
-	$wgArticlePath = "/wiki/$1";
-	$wgScriptPath = "/w";
+	$wgArticlePath = '/wiki/$1';
+	$wgScriptPath = '/w';
 
 	$wgUsePathInfo = true;
-	$wgScriptExtension = ".php";
+	$wgScriptExtension = '.php';
 
 	$wgUseGzip = true;
 
@@ -65,12 +65,12 @@
 	$wgEnotifWatchlist = false;
 	$wgEmailAuthentication = true;
 
-	$wgDBprefix = "";
-	$wgDBTableOptions = "ENGINE=InnoDB, DEFAULT CHARSET=binary";
+	$wgDBprefix = '';
+	$wgDBTableOptions = 'ENGINE=InnoDB, DEFAULT CHARSET=binary';
 
-	$wgShellLocale = "en_US.utf8";
+	$wgShellLocale = 'en_US.utf8';
 
-	$wgLanguageCode = "de";
+	$wgLanguageCode = 'de';
 
 	# Additional, alternative skins
 	wfLoadSkins( [ 'Vector', 'MonoBook' ] );
@@ -155,6 +155,6 @@
 		];
 	}
 
-	require __DIR__ . "/ExtensionSetup.php";
+	require_once __DIR__ . '/ExtensionSetup.php';
 
 	wfApplyUserRightOverrides();
