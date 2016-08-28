@@ -15,7 +15,7 @@ if ( isset( $_SERVER['HTTP_X_DROIDWIKI_DEBUG'] ) ) {
 
 if (
 	ini_get( 'hhvm.stats.enable_hot_profiler' ) &&
-	( isset( $XWD['profile'] ) || mt_rand( 1, 1000 ) === 1 )
+	( isset( $XWD['profile'] ) || mt_rand( 1, 100000 ) === 1 )
 ) {
 	xhprof_enable( XHPROF_FLAGS_CPU | XHPROF_FLAGS_MEMORY | XHPROF_FLAGS_NO_BUILTINS );
 
