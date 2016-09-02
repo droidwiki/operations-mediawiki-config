@@ -6,7 +6,6 @@ $extToLoad = [
 	'Cite', # ref-tags
 	'ParserFunctions',
 	'SyntaxHighlight_GeSHi',
-	'MobileWebAd',
 	'CanonURL',
 	'InputBox',
 	'OpenGraphMeta',
