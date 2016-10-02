@@ -471,6 +471,6 @@ if ( $wmgUseXenForoAuth && wfExtensionExists( 'XenForoAuth' ) ) {
 	$wgXenForoAuthBaseUrl = 'http://android-hilfe.de/api/';
 	$wgXenForoAuthClientId = 'ca9why0jle';
 	$wgXenForoAuthClientSecret = $wmgXenForoAuthClientSecret;
-	$wgXenForoAuthButtonIcon = '\'../../../static/images/android-hilfe_logo.png\'';
+	$wgXenForoAuthButtonIcon = '\'../../../static/images/android-hilfe_xenforoauth_logo.png\'';
 	$wgXenForoAuthAutoCreate = true;
 }

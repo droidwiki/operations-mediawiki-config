@@ -426,8 +426,8 @@ $wgConf->settings = [
 	],
 
 	'wmgUseXenForoAuth' => [
-		'default' => false,
-		'opswiki' => true,
+		'default' => true,
+		'opswiki' => false,
 	],
 
 	// needed for Translate extension to change the language on-wiki
@@ -448,7 +448,7 @@ $wgConf->settings = [
 
 	'wgSharedTables' => [
 		'default' => [ 'user', 'user_properties' ],
-		'+datawiki' => [ 'user_google_user', 'user_groups', 'oathauth_users' ],
+		'+datawiki' => [ 'user_google_user', 'user_xenforo_user', 'user_groups', 'oathauth_users' ],
 	],
 
 	'wmgUseParsoid' => [
