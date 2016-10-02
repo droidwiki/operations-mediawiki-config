@@ -53,6 +53,7 @@ $extToLoad = [
 	'GoogleSiteLinksSearchBox',
 	'OATHAuth',
 	'GeoData',
+	'XenForoAuth',
 ];
 
 $extensionsToLoadWithExtensionregistration = [];
@@ -464,4 +465,12 @@ if ( $wmgUseOATHAuth && wfExtensionExists( 'OATHAuth' ) ) {
 
 if ( wfExtensionExists( 'GeoData' ) ) {
 	$wgGeoDataBackend = 'elastic';
+}
+
+if ( $wmgUseXenForoAuth && wfExtensionExists( 'XenForoAuth' ) ) {
+	$wgXenForoAuthBaseUrl = 'http://android-hilfe.de/api/';
+	$wgXenForoAuthClientId = 'ca9why0jle';
+	$wgXenForoAuthClientSecret = $wmgXenForoAuthClientSecret;
+	$wgXenForoAuthButtonIcon = '\'../../../static/images/android-hilfe_logo.png\'';
+	$wgXenForoAuthAutoCreate = true;
 }

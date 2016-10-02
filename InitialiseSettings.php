@@ -425,6 +425,11 @@ $wgConf->settings = [
 		'default' => true,
 	],
 
+	'wmgUseXenForoAuth' => [
+		'default' => false,
+		'opswiki' => true,
+	],
+
 	// needed for Translate extension to change the language on-wiki
 	'wgPageLanguageUseDB' => [
 		'default' => false,
