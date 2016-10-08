@@ -269,6 +269,7 @@ if ( wfExtensionExists( "TemplateData" ) ) {
 if ( wfExtensionExists ( "VisualEditor" ) ) {
 	$wgDefaultUserOptions['visualeditor-enable'] = 1;
 	$wgVisualEditorSupportedSkins = [ 'vector', 'apex', 'monobook', 'minerva' ];
+	$wgVisualEditorEnableWikitext = true;
 	$wgVisualEditorAvailableNamespaces = [
 		NS_TALK => true,
 		NS_USER => true,
