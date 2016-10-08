@@ -248,9 +248,10 @@ if ( wfExtensionExists( "GoogleLogin" ) ) {
 
 # CentralNotice - 01.08.2014
 if ( wfExtensionExists( "CentralNotice" ) ) {
-	$wgNoticeInfrastructure = true;
-	$wgNoticeProjects = [ 'droidwiki' ];
-	$wgNoticeProject = 'droidwiki';
+	$wgCentralDBname = 'droidwikiwiki';
+	$wgNoticeInfrastructure = $multiversion->getDBName() === $wgCentralDBname;
+	$wgNoticeProjects = [ 'droidwiki', 'datawiki' ];
+	$wgNoticeProject = $multiversion->getWikiName();
 }
 
 if ( wfExtensionExists ( "GoogleAnalyticsTopPages" ) ) {
