@@ -249,7 +249,11 @@ if ( wfExtensionExists( "GoogleLogin" ) ) {
 # CentralNotice - 01.08.2014
 if ( wfExtensionExists( "CentralNotice" ) ) {
 	$wgCentralDBname = 'droidwikiwiki';
-	$wgNoticeInfrastructure = $multiversion->getDBName() === $wgCentralDBname;
+	if ( $multiversion->getDBName() === $wgCentralDBname ) {
+		$wgNoticeInfrastructure = true;
+	}
+	$wgCentralPagePath = "//www.droidwiki.de/w/index.php";
+	$wgCentralSelectedBannerDispatcher = "//www.droidwiki.de/w/index.php?title=Special:BannerLoader";
 	$wgNoticeProjects = [ 'droidwiki', 'datawiki' ];
 	$wgNoticeProject = $multiversion->getWikiName();
 }
