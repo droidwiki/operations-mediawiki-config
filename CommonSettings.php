@@ -19,6 +19,7 @@
 	}
 
 	require_once __DIR__ . '/multiversion/MWMultiVersion.php';
+	require_once __DIR__ . '/logging.php';
 
 	$multiversion = MWMultiVersion::getInstance();
 
