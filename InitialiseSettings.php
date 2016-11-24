@@ -436,11 +436,6 @@ $wgConf->settings = [
 		'droidwiki' => true,
 	],
 
-	'wgStatsdServer' => [
-		'default' => false,
-		'droidwiki' => '188.68.49.74:8125',
-	],
-
 	'wgSharedDB' => [
 		'default' => null,
 		'datawiki' => 'droidwikiwiki',
