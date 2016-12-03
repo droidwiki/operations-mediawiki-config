@@ -438,13 +438,13 @@ if ( $wmgUseWikibaseClient ) {
 	$wgWBClientSettings['repoDatabase'] = 'datawiki';
 
 	$wgWBClientSettings['repoNamespaces'] = [
-		'wikibase-item' => 'Item',
-		'wikibase-property' => 'Property',
+		'item' => 'Item',
+		'property' => 'Property',
 	];
 
 	$wgWBClientSettings['entityNamespaces'] = [
-		'wikibase-item' => $wmgWikibaseBaseNs,
-		'wikibase-property' => $wmgWikibaseBaseNs + 2,
+		'item' => $wmgWikibaseBaseNs,
+		'property' => $wmgWikibaseBaseNs + 2,
 	];
 
 	$wgWBClientSettings['languageLinkSiteGroup'] = 'null';
