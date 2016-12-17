@@ -39,7 +39,7 @@ $wgMWLoggerDefaultSpi = array(
         'handlers' => array(
             'default' => array(
                 'class' => '\\MediaWiki\\Logger\\Monolog\\LegacyHandler',
-                'args' => array( '/var/log/mediawiki/monolog-'.date('Ymd').'.log' ),
+                'args' => array( '/data/log/mediawiki/monolog-'.date('Ymd').'.log' ),
                 'formatter' => 'line',
             ),
             'redis' => array(
@@ -56,7 +56,7 @@ $wgMWLoggerDefaultSpi = array(
             ),
             'profiler' => array(
                 'class' => '\\MediaWiki\\Logger\\Monolog\\LegacyHandler',
-                'args' => array( '/var/log/mediawiki/profiler-'.date('Ymd').'.log' ),
+                'args' => array( '/data/log/mediawiki/profiler-'.date('Ymd').'.log' ),
                 'formatter' => 'profiler',
             ),
         ),
