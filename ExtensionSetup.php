@@ -54,6 +54,7 @@ $extToLoad = [
 	'OATHAuth',
 	'GeoData',
 	'XenForoAuth',
+	'CiteThisPage',
 ];
 
 $extensionsToLoadWithExtensionregistration = [];
