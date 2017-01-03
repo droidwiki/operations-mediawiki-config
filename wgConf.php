@@ -3,9 +3,8 @@
 $wgConf = new SiteConfiguration;
 
 $wgConf->wikis = [
-	'droidwiki',
+	'droidwikiwiki',
 	'opswiki',
-	'testdroidwiki',
 	'datawiki',
 ];
 

@@ -17,13 +17,13 @@ $wgConf->settings = [
 	],
 
 	'wgServer' => [
-		'droidwiki' => 'https://www.droidwiki.de',
+		'droidwikiwiki' => 'https://www.droidwiki.de',
 		'opswiki' => '//ops.go2tech.de',
 		'datawiki' => 'https://data.droidwiki.de',
 	],
 
 	'wgCanonicalServer' => [
-		'droidwiki' => 'https://www.droidwiki.de',
+		'droidwikiwiki' => 'https://www.droidwiki.de',
 		'opswiki' => 'http://ops.go2tech.de',
 		'datawiki' => 'https://data.droidwiki.de',
 	],
@@ -33,7 +33,7 @@ $wgConf->settings = [
 		// androide.png -> blank DroidWiki logo
 		// androide_ch.png -> DroidWiki logo with christmas hat
 		'default' => '',
-		'droidwiki' => '/static/images/project-logos/androide_ch.png',
+		'droidwikiwiki' => '/static/images/project-logos/androide_ch.png',
 		'datawiki' => '/static/images/project-logos/androide_ch.png',
 	],
 
@@ -43,13 +43,13 @@ $wgConf->settings = [
 
 	'wgEmergencyContact' => [
 		'default' => 'info@go2tech.de',
-		'droidwiki' => 'info@droidwiki.de',
+		'droidwikiwiki' => 'info@droidwiki.de',
 		'datawiki' => 'info@droidwiki.de',
 	],
 
 	'wgPasswordSender' => [
 		'default' => 'info@go2tech.de',
-		'droidwiki' => 'info@droidwiki.de',
+		'droidwikiwiki' => 'info@droidwiki.de',
 		'datawiki' => 'info@droidwiki.de',
 	],
 
@@ -59,7 +59,7 @@ $wgConf->settings = [
 
 	'wgCookieDomain' => [
 		'default' => '',
-		'droidwiki' => '.droidwiki.de',
+		'droidwikiwiki' => '.droidwiki.de',
 		'datawiki' => '.droidwiki.de',
 		'testdroidwiki' => '.go2tech.de',
 		'opswiki' => '.ops.go2tech.de',
@@ -133,7 +133,7 @@ $wgConf->settings = [
 	'groupOverrides' => [
 		// don't change the default value
 		'default' => [],
-		'droidwiki' => [
+		'droidwikiwiki' => [
 			'*' => [
 				'translate' => true,
 			],
@@ -177,7 +177,7 @@ $wgConf->settings = [
 
 	'wgAllowUserJs' => [
 		'default' => false,
-		'droidwiki' => true,
+		'droidwikiwiki' => true,
 	],
 
 	'wgMaxImageArea' => [
@@ -219,7 +219,7 @@ $wgConf->settings = [
 
 	'wgSessionsInObjectCache' => [
 		'default' => false,
-		'droidwiki' => true,
+		'droidwikiwiki' => true,
 		'datawiki' => true,
 	],
 
@@ -242,7 +242,7 @@ $wgConf->settings = [
 
 	'wgCrossSiteAJAXdomains' => [
 		'default' => [],
-		'droidwiki' => [ '*.droidwiki.de' ],
+		'droidwikiwiki' => [ '*.droidwiki.de' ],
 		'datawiki' => [ '*.droidwiki.de' ],
 	],
 
@@ -254,11 +254,11 @@ $wgConf->settings = [
 	'wgCacheDirectory' => [
 		'default' => '/data/mediawiki/localisationCache/',
 		'datawiki' => '/data/mediawiki/localisationCache/datawiki/',
-		'droidwiki' => '/data/mediawiki/localisationCache/droidwiki/',
+		'droidwikiwiki' => '/data/mediawiki/localisationCache/droidwiki/',
 	],
 
 	'wgGitInfoCacheDirectory' => [
-		'droidwiki' => '/data/mediawiki/main/cache/gitinfo',
+		'droidwikiwiki' => '/data/mediawiki/main/cache/gitinfo',
 		'datawiki' => '/data/mediawiki/main/cache/gitinfo',
 	],
 
@@ -273,25 +273,25 @@ $wgConf->settings = [
 
 	'wgRightsUrl' => [
 		'default' => null,
-		'droidwiki' => '//creativecommons.org/licenses/by-sa/3.0/',
+		'droidwikiwiki' => '//creativecommons.org/licenses/by-sa/3.0/',
 		'datawiki' => '//creativecommons.org/licenses/by-sa/3.0/',
 	],
 
 	'wgRightsText' => [
 		'default' => null,
-		'droidwiki' => 'Creative Commons Attribution-Share Alike 3.0',
+		'droidwikiwiki' => 'Creative Commons Attribution-Share Alike 3.0',
 		'datawiki' => 'Creative Commons Attribution-Share Alike 3.0',
 	],
 
 	'wgRightsIcon' => [
 		'default' => null,
-		'droidwiki' => '//creativecommons.org/images/public/somerights20.png',
+		'droidwikiwiki' => '//creativecommons.org/images/public/somerights20.png',
 		'datawiki' => '//creativecommons.org/images/public/somerights20.png',
 	],
 
 	'+wgObjectCaches' => [
 		'default' => [],
-		'droidwiki' => [
+		'droidwikiwiki' => [
 			'redis' => [
 				'class' => 'RedisBagOStuff',
 		                'servers' => [ '127.0.0.1:6379' ],
@@ -306,7 +306,7 @@ $wgConf->settings = [
 	],
 
 	'wgJobTypeConf' => [
-		'droidwiki' => [
+		'droidwikiwiki' => [
 			'default' => [
 				'class' => 'JobQueueRedis',
 				'redisServer' => '127.0.0.1:6379',
@@ -327,7 +327,7 @@ $wgConf->settings = [
 	],
 
 	'wgJobQueueAggregator' => [
-		'droidwiki' => [
+		'droidwikiwiki' => [
 			'class'        => 'JobQueueAggregatorRedis',
 			'redisServers' => [
 				'localhost',
@@ -365,12 +365,12 @@ $wgConf->settings = [
 
 	'wmgUsegoogleAnalytics' => [
 		'default' => false,
-		'droidwiki' => true,
+		'droidwikiwiki' => true,
 	],
 
 	'wmgUseTranslate' => [
 		'default' => false,
-		'droidwiki' => true,
+		'droidwikiwiki' => true,
 	],
 
 	'wmgUseWikibaseRepo' => [
@@ -380,7 +380,7 @@ $wgConf->settings = [
 
 	'wmgUseWikibaseClient' => [
 		'default' => false,
-		'droidwiki' => true,
+		'droidwikiwiki' => true,
 	],
 
 	'wmgUseSocialButtons' => [
@@ -404,7 +404,7 @@ $wgConf->settings = [
 	// needed for Translate extension to change the language on-wiki
 	'wgPageLanguageUseDB' => [
 		'default' => false,
-		'droidwiki' => true,
+		'droidwikiwiki' => true,
 	],
 
 	'wgSharedDB' => [

@@ -255,7 +255,7 @@ if ( wfExtensionExists( "CentralNotice" ) ) {
 	}
 	$wgCentralPagePath = "//www.droidwiki.de/w/index.php";
 	$wgCentralSelectedBannerDispatcher = "//www.droidwiki.de/w/index.php?title=Special:BannerLoader";
-	$wgNoticeProjects = [ 'droidwiki', 'datawiki' ];
+	$wgNoticeProjects = [ 'droidwikiwiki', 'datawiki' ];
 	$wgNoticeProject = $multiversion->getWikiName();
 }
 
