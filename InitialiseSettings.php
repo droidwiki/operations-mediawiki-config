@@ -33,8 +33,8 @@ $wgConf->settings = [
 		// androide.png -> blank DroidWiki logo
 		// androide_ch.png -> DroidWiki logo with christmas hat
 		'default' => '',
-		'droidwiki' => '/static/images/project-logos/androide_ch.png',
-		'datawiki' => '/static/images/project-logos/androide_ch.png',
+		'droidwiki' => '/static/images/project-logos/androide.png',
+		'datawiki' => '/static/images/project-logos/androide.png',
 	],
 
 	'wgFavicon' => [
