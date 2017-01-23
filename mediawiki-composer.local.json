@@ -6,5 +6,12 @@
 		"pear/mail_mime-decode": "*",
 		"pear/net_smtp": "*",
 		"pear/auth_sasl": "dev-master"
+	},
+	"extra": {
+		"merge-plugin": {
+			"include": [
+				"extensions/*/composer.json"
+			]
+		}
 	}
 }
