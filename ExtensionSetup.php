@@ -253,8 +253,8 @@ if ( wfExtensionExists( "CentralNotice" ) ) {
 	if ( $multiversion->getDBName() === $wgCentralDBname ) {
 		$wgNoticeInfrastructure = true;
 	}
-	$wgCentralPagePath = "//www.droidwiki.de/w/index.php";
-	$wgCentralSelectedBannerDispatcher = "//www.droidwiki.de/w/index.php?title=Special:BannerLoader";
+	$wgCentralPagePath = "//www.droidwiki.org/w/index.php";
+	$wgCentralSelectedBannerDispatcher = "//www.droidwiki.org/w/index.php?title=Special:BannerLoader";
 	$wgNoticeProjects = [ 'droidwikiwiki', 'datawiki' ];
 	$wgNoticeProject = $multiversion->getWikiName();
 }
@@ -293,7 +293,7 @@ if ( wfExtensionExists ( "VisualEditor" ) ) {
 if ( wfExtensionExists ( 'CookieWarning' ) ) {
 	$wgCookieWarningEnabled = true;
 	$wgCookieWarningMoreUrl =
-		'https://www.droidwiki.de/DroidWiki:Impressum#Verwendung_von_Cookies_.28Cookie-Policy.29';
+		'https://www.droidwiki.org/DroidWiki:Impressum#Verwendung_von_Cookies_.28Cookie-Policy.29';
 }
 
 if ( wfExtensionExists ( 'UserMerge' ) ) {

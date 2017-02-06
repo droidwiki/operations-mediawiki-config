@@ -17,13 +17,13 @@ $wgConf->settings = [
 	],
 
 	'wgServer' => [
-		'droidwikiwiki' => 'https://www.droidwiki.de',
+		'droidwikiwiki' => 'https://www.droidwiki.org',
 		'opswiki' => '//ops.go2tech.de',
 		'datawiki' => 'https://data.droidwiki.de',
 	],
 
 	'wgCanonicalServer' => [
-		'droidwikiwiki' => 'https://www.droidwiki.de',
+		'droidwikiwiki' => 'https://www.droidwiki.org',
 		'opswiki' => 'http://ops.go2tech.de',
 		'datawiki' => 'https://data.droidwiki.de',
 	],
@@ -59,7 +59,7 @@ $wgConf->settings = [
 
 	'wgCookieDomain' => [
 		'default' => '',
-		'droidwikiwiki' => '.droidwiki.de',
+		'droidwikiwiki' => '.droidwiki.org',
 		'datawiki' => '.droidwiki.de',
 		'testdroidwiki' => '.go2tech.de',
 		'opswiki' => '.ops.go2tech.de',
@@ -242,8 +242,8 @@ $wgConf->settings = [
 
 	'wgCrossSiteAJAXdomains' => [
 		'default' => [],
-		'droidwikiwiki' => [ '*.droidwiki.de' ],
-		'datawiki' => [ '*.droidwiki.de' ],
+		'droidwikiwiki' => [ '*.droidwiki.de', '*.droidwiki.org' ],
+		'datawiki' => [ '*.droidwiki.de', '*.droidwiki.org' ],
 	],
 
 	'wmgCirrusSearchPowerSpecialRandom' => [
