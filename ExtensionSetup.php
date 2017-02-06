@@ -433,7 +433,7 @@ if ( $wmgUseWikibaseClient ) {
 
 	$wgWBClientSettings['siteGlobalID'] = 'droidwiki';
 	$wgWBClientSettings['siteGroup'] = 'wikipedia';
-	$wgWBClientSettings['repoUrl'] = 'https://data.droidwiki.de';
+	$wgWBClientSettings['repoUrl'] = 'https://data.droidwiki.org';
 	$wgWBClientSettings['repoArticlePath'] = '/wiki/$1';
 	$wgWBClientSettings['repoScriptPath'] = '/w';
 	$wgWBClientSettings['repoDatabase'] = 'datawiki';

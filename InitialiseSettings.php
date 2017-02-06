@@ -19,13 +19,13 @@ $wgConf->settings = [
 	'wgServer' => [
 		'droidwikiwiki' => 'https://www.droidwiki.org',
 		'opswiki' => '//ops.go2tech.de',
-		'datawiki' => 'https://data.droidwiki.de',
+		'datawiki' => 'https://data.droidwiki.org',
 	],
 
 	'wgCanonicalServer' => [
 		'droidwikiwiki' => 'https://www.droidwiki.org',
 		'opswiki' => 'http://ops.go2tech.de',
-		'datawiki' => 'https://data.droidwiki.de',
+		'datawiki' => 'https://data.droidwiki.org',
 	],
 
 	'wgLogo' => [
@@ -60,7 +60,7 @@ $wgConf->settings = [
 	'wgCookieDomain' => [
 		'default' => '',
 		'droidwikiwiki' => '.droidwiki.org',
-		'datawiki' => '.droidwiki.de',
+		'datawiki' => '.droidwiki.org',
 		'testdroidwiki' => '.go2tech.de',
 		'opswiki' => '.ops.go2tech.de',
 	],
