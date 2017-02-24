@@ -437,6 +437,7 @@ if ( $wmgUseWikibaseClient ) {
 	$wgWBClientSettings['repoArticlePath'] = '/wiki/$1';
 	$wgWBClientSettings['repoScriptPath'] = '/w';
 	$wgWBClientSettings['repoDatabase'] = 'datawiki';
+	$wgWBClientSettings['changesDatabase'] = 'datawiki';
 
 	$wgWBClientSettings['repoNamespaces'] = [
 		'item' => 'Item',
