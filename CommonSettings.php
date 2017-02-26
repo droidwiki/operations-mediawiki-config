@@ -40,28 +40,7 @@
 
 	$wgDBname = $multiversion->getDBName();
 
-	$wgDBservers = [
-		// master
-		[
-			'host' => 'donut.dwnet',
-			'dbname' => $multiversion->getDBName(),
-			'user' => $wmgDatabaseUser,
-			'password' => $wmgDatabasePassword,
-			'type' => 'mysql',
-			'flags' => DBO_DEFAULT,
-			'load' => 0,
-		],
-		// slave
-		[
-			'host' => 'eclair.dwnet',
-			'dbname' => $multiversion->getDBName(),
-			'user' => $wmgDatabaseUser,
-			'password' => $wmgDatabasePassword,
-			'type' => 'mysql',
-			'flags' => DBO_DEFAULT,
-			'load' => 1,
-		],
-	];
+	require_once __DIR__ . '/db.php';
 
 	$wgShowHostnames = true;
 
