@@ -395,9 +395,13 @@ if ( $wmgUseWikibaseRepo ) {
 	$wgExtraNamespaces[WB_NS_ITEM_TALK] = 'Item_talk';
 	$wgExtraNamespaces[WB_NS_PROPERTY] = 'Property';
 	$wgExtraNamespaces[WB_NS_PROPERTY_TALK] = 'Property_talk';
+
+	$wgWBRepoSettings['entityNamespaces'] = [
+		'item' => WB_NS_ITEM,
+		'property' => WB_NS_PROPERTY
+	];
+
 	// Tell Wikibase which namespace to use for which kind of entity
-	$wgWBRepoSettings['entityNamespaces'][CONTENT_MODEL_WIKIBASE_ITEM] = WB_NS_ITEM;
-	$wgWBRepoSettings['entityNamespaces'][CONTENT_MODEL_WIKIBASE_PROPERTY] = WB_NS_PROPERTY;
 	// Make sure we use the same keys on repo and clients, so we can share cached objects.
 	$wgWBRepoSettings['sharedCacheKeyPrefix'] = $wgDBname . ':WBL/' . rawurlencode( WBL_VERSION );
 	// NOTE: no need to set up $wgNamespaceContentModels, Wikibase will do that automatically based on $wgWBRepoSettings
@@ -431,6 +435,10 @@ if ( $wmgUseWikibaseClient ) {
 	$wgEnableWikibaseClient = true;
 	require_once "$IP/extensions/Wikibase/client/WikibaseClient.php";
 
+	$wgWBClientSettings['entityNamespaces'] = [
+		'item' => WB_NS_ITEM,
+		'property' => WB_NS_PROPERTY
+	];
 	$wgWBClientSettings['siteGlobalID'] = 'droidwiki';
 	$wgWBClientSettings['siteGroup'] = 'wikipedia';
 	$wgWBClientSettings['repoUrl'] = 'https://data.droidwiki.org';
