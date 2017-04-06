@@ -16,6 +16,12 @@ $wgConf->settings = [
 		'datawiki' => 'Data',
 	],
 
+	'+wgNamespaceContentModels' => [
+		'+opswiki' => [
+			NS_TALK => 'flow-board',
+		],
+	],
+
 	'wgServer' => [
 		'droidwikiwiki' => 'https://www.droidwiki.org',
 		'opswiki' => '//ops.go2tech.de',
@@ -399,6 +405,11 @@ $wgConf->settings = [
 	'wmgUseXenForoAuth' => [
 		'default' => true,
 		'opswiki' => false,
+	],
+
+	'wmgUseFlow' => [
+		'default' => false,
+		'opswiki' => true,
 	],
 
 	// needed for Translate extension to change the language on-wiki

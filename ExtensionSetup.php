@@ -55,6 +55,7 @@ $extToLoad = [
 	'GeoData',
 	'XenForoAuth',
 	'CiteThisPage',
+	'Flow',
 ];
 
 $extensionsToLoadWithExtensionregistration = [];
