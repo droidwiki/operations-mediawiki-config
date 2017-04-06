@@ -379,17 +379,17 @@ if ( wfExtensionExists( 'TemplateSandbox' ) ) {
 }
 
 $wmgWikibaseBaseNs = 120;
+// Define custom namespaces. Use these exact constant names.
+define( 'WB_NS_ITEM', $wmgWikibaseBaseNs );
+define( 'WB_NS_ITEM_TALK', $wmgWikibaseBaseNs + 1 );
+define( 'WB_NS_PROPERTY', $wmgWikibaseBaseNs + 2 );
+define( 'WB_NS_PROPERTY_TALK', $wmgWikibaseBaseNs + 3 );
 
 if ( $wmgUseWikibaseRepo ) {
 	$wgEnableWikibaseRepo = true;
 	require_once "$IP/extensions/Wikibase/repo/Wikibase.php";
 
 	$wgContentHandlerUseDB = true;
-	// Define custom namespaces. Use these exact constant names.
-	define( 'WB_NS_ITEM', $wmgWikibaseBaseNs );
-	define( 'WB_NS_ITEM_TALK', $wmgWikibaseBaseNs + 1 );
-	define( 'WB_NS_PROPERTY', $wmgWikibaseBaseNs + 2 );
-	define( 'WB_NS_PROPERTY_TALK', $wmgWikibaseBaseNs + 3 );
 	// Register extra namespaces.
 	$wgExtraNamespaces[WB_NS_ITEM] = 'Item';
 	$wgExtraNamespaces[WB_NS_ITEM_TALK] = 'Item_talk';
