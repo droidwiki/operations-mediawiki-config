@@ -66,7 +66,7 @@ $wgMWLoggerDefaultSpi = array(
                 'class' => '\\Monolog\\Formatter\\LineFormatter',
             ),
             'logstash' => array(
-                'class' => '\\Monolog\\Formatter\\LogstashFormatter',
+                'class' => '\\MediaWiki\\Logger\\Monolog\\LogstashFormatter',
                 'args'  => array( 'mediawiki', php_uname( 'n' ), null, '', 1 ),
             ),
             'profiler' => array(
