@@ -95,7 +95,7 @@ $wgConf->settings = [
 				'hideuser' => true,
 			],
 		],
-		'+droidwiki' => [
+		'+droidwikiwiki' => [
 			'Autopatrol' => [
 				'autopatrol' => true,
 			],
