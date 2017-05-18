@@ -302,7 +302,7 @@ if ( wfExtensionExists ( 'UserMerge' ) ) {
 }
 
 if ( wfExtensionExists( 'Citoid' ) ) {
-	$wgCitoidServiceUrl = 'https://citoid.wikimedia.org/api';
+	$wgCitoidServiceUrl = 'https://go2tech.de/citoid/api';
 }
 
 if ( wfExtensionExists( 'Interwiki' ) ) {
