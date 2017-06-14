@@ -403,8 +403,7 @@ $wgConf->settings = [
 	],
 
 	'wmgUseXenForoAuth' => [
-		'default' => true,
-		'opswiki' => false,
+		'default' => false,
 	],
 
 	'wmgUseFlow' => [
