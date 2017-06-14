@@ -436,6 +436,8 @@ if ( $wmgUseWikibaseClient ) {
 	$wgEnableWikibaseClient = true;
 	require_once "$IP/extensions/Wikibase/client/WikibaseClient.php";
 
+	wfLoadExtension( 'WikibaseCreateLink' );
+
 	$wgWBClientSettings['entityNamespaces'] = [
 		'item' => WB_NS_ITEM,
 		'property' => WB_NS_PROPERTY
