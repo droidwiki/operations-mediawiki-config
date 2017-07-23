@@ -204,6 +204,7 @@ if ( wfExtensionExists( "MobileFrontend" ) ) {
 	$wgMFAutodetectMobileView = true;
 	$wgMFEnableBeta = true;
 	$wgMFSpecialCaseMainPage = true;
+	$wgMFAllowNonJavaScriptEditing = true;
 
 	if ( $wmgUseWikibaseClient ) {
 		$wgMFUseWikibaseDescription = true;
