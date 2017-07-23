@@ -199,6 +199,7 @@ if ( wfExtensionExists( "googleAnalytics" ) ) {
 
 # MobileFrontend
 if ( wfExtensionExists( "MobileFrontend" ) ) {
+	wfLoadSkin( 'MinervaNeue' );
 	$wgMobileFrontendLogo = "{$wgScriptPath}/static/images/project-logos/androide.png";
 	$wgMFAutodetectMobileView = true;
 	$wgMFEnableBeta = true;
