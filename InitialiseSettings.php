@@ -389,11 +389,6 @@ $wgConf->settings = [
 		'droidwikiwiki' => true,
 	],
 
-	'wmgUseSocialButtons' => [
-		'default' => true,
-		'datawiki' => false,
-	],
-
 	'wmgUseDroidWiki' => [
 		'default' => true,
 	],

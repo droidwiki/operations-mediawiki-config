@@ -219,13 +219,6 @@ if ( wfExtensionExists( "Scribunto" ) ) {
 	$wgScribuntoUseCodeEditor = true;
 }
 
-# Add's Facebook and G+ buttons to articles
-if ( $wmgUseSocialButtons && wfExtensionExists( "SocialButtons" ) ) {
-	require_once "$IP/extensions/SocialButtons/SocialButtons.php";
-	$wgSBDisallowedNamespaces = [ '-1', '4', '5', '8', '9', '10', '12', '13' ];
-	$wgSBDisallowedSiteTitles = [ 'Hauptseite' ];
-}
-
 if ( $wmgUseDroidWiki && wfExtensionExists( "DroidWiki" ) ) {
 	require_once "$IP/extensions/DroidWiki/DroidWiki.php";
 	$wgDroidWikiAdDisallowedNamespaces = [ 120, 121, 122, 123 ];
