@@ -38,9 +38,11 @@ $wgConf->settings = [
 		// possible values:
 		// androide.png -> blank DroidWiki logo
 		// androide_ch.png -> DroidWiki logo with christmas hat
+		// androide_cog.png -> black/white DroidWiki logo with half cog (opswiki)
 		'default' => '',
 		'droidwikiwiki' => '/static/images/project-logos/androide.png',
 		'datawiki' => '/static/images/project-logos/androide.png',
+		"opswiki" => '/statis/images/project-logos/androide_cog.png',
 	],
 
 	'wgFavicon' => [
