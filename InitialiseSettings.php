@@ -42,7 +42,7 @@ $wgConf->settings = [
 		'default' => '',
 		'droidwikiwiki' => '/static/images/project-logos/androide.png',
 		'datawiki' => '/static/images/project-logos/androide.png',
-		"opswiki" => '/statis/images/project-logos/androide_cog.png',
+		"opswiki" => '/static/images/project-logos/androide_cog.png',
 	],
 
 	'wgFavicon' => [
