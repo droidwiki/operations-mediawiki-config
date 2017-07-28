@@ -423,6 +423,9 @@ if ( $wmgUseWikibaseRepo ) {
 		],
 	];
 
+	$wgWBRepoSettings['localClientDatabases'] = [
+		'droidwiki' => 'droidwikiwiki',
+	];
 	$wgWBRepoSettings['formatterUrlProperty'] = 'P9';
 	$wgContentNamespaces = array_merge( $wgContentNamespaces, [ WB_NS_ITEM, WB_NS_PROPERTY ] );
 }
@@ -444,6 +447,7 @@ if ( $wmgUseWikibaseClient ) {
 	$wgWBClientSettings['repoScriptPath'] = '/w';
 	$wgWBClientSettings['repoDatabase'] = 'datawiki';
 	$wgWBClientSettings['changesDatabase'] = 'datawiki';
+	$wgWBCLientSettings['injectRecentChanges'] = true;
 
 	$wgWBClientSettings['repoNamespaces'] = [
 		'item' => 'Item',
@@ -456,7 +460,7 @@ if ( $wmgUseWikibaseClient ) {
 	];
 
 	$wgWBClientSettings['languageLinkSiteGroup'] = 'null';
-	$wgWBClientSettings['repoSiteName'] = 'DroidWiki';
+	$wgWBClientSettings['repoSiteName'] = 'DroidWiki Data';
 	$wgWBClientSettings['otherProjectsLinks'] = [ 'wikidatawiki', 'commonswiki', 'dewiki', 'enwiki' ];
 	$wgWBClientSettings['otherProjectsLinksByDefault'] = true;
 	$wgWBClientSettings['sendEchoNotification'] = true;
