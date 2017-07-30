@@ -443,6 +443,18 @@ $wgConf->settings = [
 		'default' => true,
 	],
 
+	'wmgUseRestbase' => [
+		'default' => false,
+		'endroidwikiwiki' => true,
+		'droidwikiwiki' => true,
+	],
+
+	'wmgRestbaseDomain' => [
+		'default' => '',
+		'endroidwikiwiki' => 'en.droidwiki.org',
+		'droidwikiwiki' => 'www.droidwiki.org',
+	],
+
 	'wmgParsoidForwardCookies' => [
 		'default' => false,
 		'opswiki' => true,

@@ -450,6 +450,7 @@ if ( $wmgUseWikibaseClient ) {
 	$wgWBClientSettings['repoDatabase'] = 'datawiki';
 	$wgWBClientSettings['changesDatabase'] = 'datawiki';
 	$wgWBCLientSettings['injectRecentChanges'] = true;
+	$wgWBClientSettings['languageLinkSiteGroup'] = 'droidwiki';
 
 	$wgWBClientSettings['repoNamespaces'] = [
 		'item' => 'Item',
@@ -461,7 +462,6 @@ if ( $wmgUseWikibaseClient ) {
 		'property' => $wmgWikibaseBaseNs + 2,
 	];
 
-	$wgWBClientSettings['languageLinkSiteGroup'] = 'null';
 	$wgWBClientSettings['repoSiteName'] = 'DroidWiki Data';
 	$wgWBClientSettings['otherProjectsLinks'] = [ 'wikidatawiki', 'commonswiki', 'dewiki', 'enwiki' ];
 	$wgWBClientSettings['otherProjectsLinksByDefault'] = true;
@@ -493,4 +493,27 @@ if ( $wmgUseXenForoAuth && wfExtensionExists( 'XenForoAuth' ) ) {
 	$wgXenForoAuthClientSecret = $wmgXenForoAuthClientSecret;
 	$wgXenForoAuthButtonIcon = '\'../../../static/images/android-hilfe_xenforoauth_logo.png\'';
 	$wgXenForoAuthAutoCreate = true;
+}
+
+if ( $wmgUseContentTranslation && wfExtensionExists( 'ContentTranslation' ) ) {
+	$wgContentTranslationRESTBase = [
+		'url' => 'https://www.droidwiki.org/api/v1',
+		'fixedUrl' => true,
+		'timeout' => 100000,
+		'HTTPProxy' => false,
+		'forwardCookies' => false,
+	];
+	$wgContentTranslationDatabase = 'droidwikiwiki';
+	$wgContentTranslationSiteTemplates = [
+		'view' => '//$1.droidwiki.org/wiki/$2',
+		'action' => '//$1.droidwiki.org/w/index.php?title=$2',
+		'api' => '//$1.droidwiki.org/w/api.php',
+		'cx' => 'https://go2tech.de/cxserver/v1',
+		'cookieDomain' => '.droidwiki.org',
+		'restbase' => '//$1.droidwiki.org/api/v1',
+	];
+	$wgContentTranslationDefaultSourceLanguage = 'de';
+	$wgContentTranslationDomainCodeMapping = [
+		'de' => 'www',
+	];
 }
