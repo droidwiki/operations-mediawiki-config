@@ -56,6 +56,7 @@ $extToLoad = [
 	'XenForoAuth',
 	'CiteThisPage',
 	'Flow',
+	'ContentTranslation',
 ];
 
 $extensionsToLoadWithExtensionregistration = [];
@@ -425,6 +426,7 @@ if ( $wmgUseWikibaseRepo ) {
 
 	$wgWBRepoSettings['localClientDatabases'] = [
 		'droidwiki' => 'droidwikiwiki',
+		'endroidwiki' => 'endroidwikiwiki',
 	];
 	$wgWBRepoSettings['formatterUrlProperty'] = 'P9';
 	$wgContentNamespaces = array_merge( $wgContentNamespaces, [ WB_NS_ITEM, WB_NS_PROPERTY ] );
@@ -440,8 +442,8 @@ if ( $wmgUseWikibaseClient ) {
 		'item' => WB_NS_ITEM,
 		'property' => WB_NS_PROPERTY
 	];
-	$wgWBClientSettings['siteGlobalID'] = 'droidwiki';
-	$wgWBClientSettings['siteGroup'] = 'wikipedia';
+	$wgWBClientSettings['siteGlobalID'] = substr( $wgDBname, 0, -4 );
+	$wgWBClientSettings['siteGroup'] = 'droidwiki';
 	$wgWBClientSettings['repoUrl'] = 'https://data.droidwiki.org';
 	$wgWBClientSettings['repoArticlePath'] = '/wiki/$1';
 	$wgWBClientSettings['repoScriptPath'] = '/w';

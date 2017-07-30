@@ -75,8 +75,6 @@
 
 	$wgShellLocale = 'en_US.utf8';
 
-	$wgLanguageCode = 'de';
-
 	# Additional, alternative skins
 	wfLoadSkins( [ 'Vector', 'MonoBook' ] );
 

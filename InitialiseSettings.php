@@ -22,14 +22,21 @@ $wgConf->settings = [
 		],
 	],
 
+	'wgLanguageCode' => [
+		'default' => 'de',
+		'endroidwikiwiki' => 'en',
+	],
+
 	'wgServer' => [
 		'droidwikiwiki' => 'https://www.droidwiki.org',
+		'endroidwikiwiki' => 'https://en.droidwiki.org',
 		'opswiki' => '//ops.go2tech.de',
 		'datawiki' => 'https://data.droidwiki.org',
 	],
 
 	'wgCanonicalServer' => [
 		'droidwikiwiki' => 'https://www.droidwiki.org',
+		'endroidwikiwiki' => 'https://en.droidwiki.org',
 		'opswiki' => 'http://ops.go2tech.de',
 		'datawiki' => 'https://data.droidwiki.org',
 	],
@@ -41,6 +48,7 @@ $wgConf->settings = [
 		// androide_cog.png -> black/white DroidWiki logo with half cog (opswiki)
 		'default' => '',
 		'droidwikiwiki' => '/static/images/project-logos/androide.png',
+		'endroidwikiwiki' => '/static/images/project-logos/androide.png',
 		'datawiki' => '/static/images/project-logos/androide.png',
 		"opswiki" => '/static/images/project-logos/androide_cog.png',
 	],
@@ -50,15 +58,13 @@ $wgConf->settings = [
 	],
 
 	'wgEmergencyContact' => [
-		'default' => 'info@go2tech.de',
-		'droidwikiwiki' => 'info@droidwiki.de',
-		'datawiki' => 'info@droidwiki.de',
+		'default' => 'info@droidwiki.org',
+		'opswiki' => 'info@go2tech.de',
 	],
 
 	'wgPasswordSender' => [
-		'default' => 'info@go2tech.de',
-		'droidwikiwiki' => 'info@droidwiki.de',
-		'datawiki' => 'info@droidwiki.de',
+		'default' => 'info@droidwiki.org',
+		'opswiki' => 'info@go2tech.de',
 	],
 
 	'wgLocaltimezone' => [
@@ -69,6 +75,7 @@ $wgConf->settings = [
 		'default' => '',
 		'droidwikiwiki' => '.droidwiki.org',
 		'datawiki' => '.droidwiki.org',
+		'endroidwikiwiki' => '.droidwiki.org',
 		'testdroidwiki' => '.go2tech.de',
 		'opswiki' => '.ops.go2tech.de',
 	],
@@ -226,9 +233,8 @@ $wgConf->settings = [
 	],
 
 	'wgSessionsInObjectCache' => [
-		'default' => false,
-		'droidwikiwiki' => true,
-		'datawiki' => true,
+		'default' => true,
+		'opswiki' => false,
 	],
 
 	'wgMemCachedServers' => [
@@ -249,9 +255,8 @@ $wgConf->settings = [
 	],
 
 	'wgCrossSiteAJAXdomains' => [
-		'default' => [],
-		'droidwikiwiki' => [ '*.droidwiki.de', '*.droidwiki.org' ],
-		'datawiki' => [ '*.droidwiki.de', '*.droidwiki.org' ],
+		'default' => [ '*.droidwiki.de', '*.droidwiki.org' ],
+		'opswiki' => [],
 	],
 
 	'wmgCirrusSearchPowerSpecialRandom' => [
@@ -263,11 +268,13 @@ $wgConf->settings = [
 		'default' => '/data/mediawiki/localisationCache/',
 		'datawiki' => '/data/mediawiki/localisationCache/datawiki/',
 		'droidwikiwiki' => '/data/mediawiki/localisationCache/droidwiki/',
+		'endroidwikiwiki' => '/data/mediawiki/localisationCache/endroidwiki/',
 	],
 
 	'wgGitInfoCacheDirectory' => [
 		'droidwikiwiki' => '/data/mediawiki/main/cache/gitinfo',
 		'datawiki' => '/data/mediawiki/main/cache/gitinfo',
+		'endroidwikiwiki' => '/data/mediawiki/main/cache/gitinfo',
 	],
 
 	'wgLocalisationCacheConf' => [
@@ -280,35 +287,25 @@ $wgConf->settings = [
 	],
 
 	'wgRightsUrl' => [
-		'default' => null,
-		'droidwikiwiki' => '//creativecommons.org/licenses/by-sa/3.0/',
-		'datawiki' => '//creativecommons.org/licenses/by-sa/3.0/',
+		'opswiki' => null,
+		'default' => '//creativecommons.org/licenses/by-sa/3.0/',
 	],
 
 	'wgRightsText' => [
-		'default' => null,
-		'droidwikiwiki' => 'Creative Commons Attribution-Share Alike 3.0',
-		'datawiki' => 'Creative Commons Attribution-Share Alike 3.0',
+		'opswiki' => null,
+		'default' =>  '//creativecommons.org/licenses/by-sa/3.0/',
 	],
 
 	'wgRightsIcon' => [
-		'default' => null,
-		'droidwikiwiki' => '//creativecommons.org/images/public/somerights20.png',
-		'datawiki' => '//creativecommons.org/images/public/somerights20.png',
+		'opswiki' => null,
+		'default' => '//creativecommons.org/images/public/somerights20.png',
 	],
 
 	'+wgObjectCaches' => [
-		'default' => [],
-		'droidwikiwiki' => [
+		'default' => [
 			'redis' => [
 				'class' => 'RedisBagOStuff',
 		                'servers' => [ '127.0.0.1:6379' ],
-			],
-		],
-		'datawiki' => [
-			'redis' => [
-				'class' => 'RedisBagOStuff',
-				'servers' => [ '127.0.0.1:6379' ],
 			],
 		],
 	],
@@ -324,6 +321,15 @@ $wgConf->settings = [
 			],
 		],
 		'datawiki' => [
+			'default' => [
+				'class' => 'JobQueueRedis',
+				'redisServer' => '127.0.0.1:6379',
+				'redisConfig' => [],
+				'claimTTL' => 3600,
+				'daemonized' => true,
+			],
+		],
+		'endroidwikiwiki' => [
 			'default' => [
 				'class' => 'JobQueueRedis',
 				'redisServer' => '127.0.0.1:6379',
@@ -353,11 +359,15 @@ $wgConf->settings = [
 				'connectTimeout' => 2,
 			],
 		],
-	],
-
-	// temporary, should be removed when all authentication providers used, switched to AuthManager
-	'wgDisableAuthManager' => [
-		'default' => false,
+		'endroidwikiwiki' => [
+			'class' => 'JobQueueAggregatorRedis',
+			'redisServers' => [
+				'localhost',
+			],
+			'redisConfig'  => [
+				'connectTimeout' => 2,
+			],
+		],
 	],
 
 	// usage of extensions
@@ -374,6 +384,8 @@ $wgConf->settings = [
 	'wmgUsegoogleAnalytics' => [
 		'default' => false,
 		'droidwikiwiki' => true,
+		'datawiki' => true,
+		'endroidwikiwiki' => true,
 	],
 
 	'wmgUseTranslate' => [
@@ -389,6 +401,7 @@ $wgConf->settings = [
 	'wmgUseWikibaseClient' => [
 		'default' => false,
 		'droidwikiwiki' => true,
+		'endroidwikiwiki' => true,
 	],
 
 	'wmgUseDroidWiki' => [
@@ -417,11 +430,13 @@ $wgConf->settings = [
 	'wgSharedDB' => [
 		'default' => null,
 		'datawiki' => 'droidwikiwiki',
+		'endroidwikiwiki' => 'droidwikiwiki',
 	],
 
 	'wgSharedTables' => [
 		'default' => [ 'user', 'user_properties' ],
 		'+datawiki' => [ 'user_google_user', 'user_xenforo_user', 'user_groups', 'oathauth_users' ],
+		'+endroidwikiwiki' => [ 'user_google_user', 'user_xenforo_user', 'user_groups', 'oathauth_users' ],
 	],
 
 	'wmgUseParsoid' => [
@@ -431,5 +446,11 @@ $wgConf->settings = [
 	'wmgParsoidForwardCookies' => [
 		'default' => false,
 		'opswiki' => true,
+	],
+
+	'wmgUseContentTranslation' => [
+		'default' => false,
+		'droidwikiwiki' => true,
+		'endroidwikiwiki' => true,
 	],
 ];
