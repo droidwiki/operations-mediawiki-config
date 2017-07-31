@@ -75,8 +75,6 @@
 
 	$wgShellLocale = 'en_US.utf8';
 
-	$wgLanguageCode = 'de';
-
 	# Additional, alternative skins
 	wfLoadSkins( [ 'Vector', 'MonoBook' ] );
 
@@ -158,6 +156,15 @@
 			'restbaseCompat' => false,
 			'forwardCookies' => $wmgParsoidForwardCookies,
 		];
+	}
+
+	if ( $wmgUseRestbase ) {
+		$wgVirtualRestConfig['modules']['restbase'] = array(
+			'url' => 'http://localhost:7231',
+			'domain' => $wmgRestbaseDomain,
+			'forwardCookies' => false,
+			'parsoidCompat' => false
+		);
 	}
 
 	require_once __DIR__ . '/ExtensionSetup.php';
