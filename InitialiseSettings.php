@@ -41,6 +41,14 @@ $wgConf->settings = [
 		'datawiki' => 'https://data.droidwiki.org',
 	],
 
+	'wgArticlePath' => [
+		'default' => '/wiki/$1',
+	],
+
+	'wgScriptPath' => [
+		'default' => '/w',
+	],
+
 	'wgLogo' => [
 		// possible values:
 		// androide.png -> blank DroidWiki logo
@@ -464,5 +472,11 @@ $wgConf->settings = [
 		'default' => false,
 		'droidwikiwiki' => true,
 		'endroidwikiwiki' => true,
+	],
+
+	'wmgUseDroidWikiForeignRepo' => [
+		'default' => true,
+		'droidwikiwiki' => false,
+		'opswiki' => false,
 	],
 ];

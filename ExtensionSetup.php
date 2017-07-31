@@ -57,6 +57,7 @@ $extToLoad = [
 	'CiteThisPage',
 	'Flow',
 	'ContentTranslation',
+	'GlobalUsage',
 ];
 
 $extensionsToLoadWithExtensionregistration = [];
@@ -516,4 +517,8 @@ if ( $wmgUseContentTranslation && wfExtensionExists( 'ContentTranslation' ) ) {
 	$wgContentTranslationDomainCodeMapping = [
 		'de' => 'www',
 	];
+}
+
+if ( wfExtensionExists( 'GlobalUsage' ) ) {
+	$wgGlobalUsageDatabase = 'droidwikiwiki';
 }

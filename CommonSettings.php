@@ -44,9 +44,6 @@
 
 	$wgShowHostnames = true;
 
-	$wgArticlePath = '/wiki/$1';
-	$wgScriptPath = '/w';
-
 	$wgUsePathInfo = true;
 	$wgScriptExtension = '.php';
 
@@ -165,6 +162,22 @@
 			'forwardCookies' => false,
 			'parsoidCompat' => false
 		);
+	}
+
+	$wgGenerateThumbnailOnParse = false;
+	if ( $wmgUseDroidWikiForeignRepo ) {
+		$wgUseSharedUploads = true;
+		$wgSharedUploadPath = 'https://www.droidwiki.org/w/images';
+		$wgSharedUploadDirectory = '/data/www/images/';
+		$wgHashedSharedUploadDirectory = true;
+		$wgFetchCommonsDescriptions = true;
+		$wgSharedUploadDBname = 'droidwikiwiki';
+		$wgSharedUploadDBprefix = '';
+		$wgRepositoryBaseUrl = 'https://www.droidwiki.org/wiki/File:';
+		$wgDBuser = $wmgDatabaseUser;
+		$wgDBpassword = $wmgDatabasePassword;
+		$wgUploadNavigationUrl = 'https://www.droidwiki.org/wiki/Special:Upload';
+		$wgEnableUploads = false;
 	}
 
 	require_once __DIR__ . '/ExtensionSetup.php';
