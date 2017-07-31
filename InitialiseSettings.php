@@ -465,4 +465,10 @@ $wgConf->settings = [
 		'droidwikiwiki' => true,
 		'endroidwikiwiki' => true,
 	],
+
+	'wmgUseDroidWikiForeignRepo' => [
+		'default' => true,
+		'droidwikiwiki' => false,
+		'opswiki' => false,
+	],
 ];
