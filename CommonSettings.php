@@ -44,9 +44,6 @@
 
 	$wgShowHostnames = true;
 
-	$wgArticlePath = '/wiki/$1';
-	$wgScriptPath = '/w';
-
 	$wgUsePathInfo = true;
 	$wgScriptExtension = '.php';
 
@@ -168,15 +165,15 @@
 	}
 
 	$wgGenerateThumbnailOnParse = false;
-	$wgUseSharedUploads = true;
-	$wgSharedUploadPath = 'https://www.droidwiki.org/images';
-	$wgSharedUploadDirectory = '/data/www/images/';
-	$wgHashedSharedUploadDirectory = true;
-	$wgFetchCommonsDescriptions = true;
-	$wgSharedUploadDBname = 'droidwikiwiki';
-	$wgSharedUploadDBprefix = '';
-	$wgRepositoryBaseUrl = 'https://www.droidwiki.org/wiki/File:';
 	if ( $wmgUseDroidWikiForeignRepo ) {
+		$wgUseSharedUploads = true;
+		$wgSharedUploadPath = 'https://www.droidwiki.org/images';
+		$wgSharedUploadDirectory = '/data/www/images/';
+		$wgHashedSharedUploadDirectory = true;
+		$wgFetchCommonsDescriptions = true;
+		$wgSharedUploadDBname = 'droidwikiwiki';
+		$wgSharedUploadDBprefix = '';
+		$wgRepositoryBaseUrl = 'https://www.droidwiki.org/wiki/File:';
 		$wgDBuser = $wmgDatabaseUser;
 		$wgDBpassword = $wmgDatabasePassword;
 		$wgUploadNavigationUrl = 'https://www.droidwiki.org/wiki/Special:Upload';
