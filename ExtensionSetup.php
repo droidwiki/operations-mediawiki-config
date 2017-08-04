@@ -514,6 +514,7 @@ if ( $wmgUseContentTranslation && wfExtensionExists( 'ContentTranslation' ) ) {
 		'restbase' => '//$1.droidwiki.org/api/v1',
 	];
 	$wgContentTranslationDefaultSourceLanguage = 'de';
+	$wgContentTranslationTranslateInTarget = true;
 	$wgContentTranslationDomainCodeMapping = [
 		'de' => 'www',
 	];
