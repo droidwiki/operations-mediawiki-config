@@ -71,7 +71,7 @@ class MWMultiVersion {
 			throw new DomainException( 'Expected an array with at least two matches, but got one' .
 				' with less values.' );
 		}
-		if ( $matches[1] !== 'droidwiki' && $matches[1] !== 'data' ) {
+		if ( !in_array( $matches[1], [ 'droidwiki', 'data', 'ops' ] ) ) {
 			$matches[1] .= 'droidwiki';
 		}
 		$this->wiki = $matches[1];
