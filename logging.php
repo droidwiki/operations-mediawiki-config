@@ -47,7 +47,7 @@ $wgMWLoggerDefaultSpi = array(
                 'args' => array(
                     function() {
                         $redis = new Redis();
-                        $redis->connect( '188.68.49.74', 6379 );
+                        $redis->connect( '37.120.178.25', 6379 );
                         return $redis;
                     },
                     'logstash'

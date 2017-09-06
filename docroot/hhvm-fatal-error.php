@@ -37,10 +37,6 @@ div.footer { text-align: center; position: absolute; background: rgba(245, 245, 
 	$parts = explode( "\n", $message );
 	$message = $parts[0];
 	$message = preg_replace( "/^.*?exception '.*?' with message '(.*?)'.*$/im", '\1', $message );
-	// Increment a counter.
-	$sock = socket_create( AF_INET, SOCK_DGRAM, SOL_UDP );
-	$stat = 'MediaWiki.errors.fatal:1|c';
-	socket_sendto( $sock, $stat, strlen( $stat ), 0, '188.68.49.74', 8125 );
         ?>: <br/>
         <?php echo htmlspecialchars( $message ); ?>
 </div>
