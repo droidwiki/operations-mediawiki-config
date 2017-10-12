@@ -1,0 +1,16 @@
+dist: trusty
+language: php
+php:
+  - '5.6'
+  - '7.0'
+  - hhvm # on Trusty only
+  - nightly
+
+install:
+    # flags to pass to install
+    - flags="--ansi --prefer-dist --no-interaction --optimize-autoloader --no-suggest --no-progress"
+    # install dependencies using system provided composer binary
+    - composer install $flags
+
+script:
+    - composer test

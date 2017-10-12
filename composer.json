@@ -1,0 +1,22 @@
+{
+	"name": "droidwiki/mediawiki-config",
+	"description": "MediaWiki configuration for DroidWiki.",
+	"require": {
+		"mongofill/mongofill": "dev-master",
+		"perftools/xhgui": "dev-master"
+	},
+	"config": {
+		"classmap-authoritative": true,
+		"optimize-autoloader": true,
+		"prepend-autoloader": false,
+		"vendor-dir": "multiversion/vendor"
+	},
+	"require-dev": {
+		"jakub-onderka/php-parallel-lint": "^0.9.2"
+	},
+	"scripts": {
+		"test": [
+			"parallel-lint . --exclude multiversion/vendor"
+		]
+	}
+}
