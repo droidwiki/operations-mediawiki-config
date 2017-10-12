@@ -1,4 +1,2 @@
-/vendor/*
+/multiversion/vendor/
 /composer.lock
-/composer.json
-/multiversion/vendor/slim/slim/tests/templates/test.php
