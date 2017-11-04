@@ -273,10 +273,7 @@ $wgConf->settings = [
 	],
 
 	'wgCacheDirectory' => [
-		'default' => '/data/mediawiki/localisationCache/',
-		'datawiki' => '/data/mediawiki/localisationCache/datawiki/',
-		'droidwikiwiki' => '/data/mediawiki/localisationCache/droidwiki/',
-		'endroidwikiwiki' => '/data/mediawiki/localisationCache/endroidwiki/',
+		'default' => '/data/mediawiki/cache/',
 	],
 
 	'wgGitInfoCacheDirectory' => [
@@ -313,7 +310,7 @@ $wgConf->settings = [
 		'default' => [
 			'redis' => [
 				'class' => 'RedisBagOStuff',
-		                'servers' => [ '127.0.0.1:6379' ],
+		                'servers' => [ '37.120.178.25:6379' ],
 			],
 		],
 	],
@@ -322,7 +319,7 @@ $wgConf->settings = [
 		'droidwikiwiki' => [
 			'default' => [
 				'class' => 'JobQueueRedis',
-				'redisServer' => '127.0.0.1:6379',
+				'redisServer' => '37.120.178.25:6379',
 				'redisConfig' => [],
 				'claimTTL' => 3600,
 				'daemonized' => true,
@@ -331,7 +328,7 @@ $wgConf->settings = [
 		'datawiki' => [
 			'default' => [
 				'class' => 'JobQueueRedis',
-				'redisServer' => '127.0.0.1:6379',
+				'redisServer' => '37.120.178.25:6379',
 				'redisConfig' => [],
 				'claimTTL' => 3600,
 				'daemonized' => true,
@@ -340,7 +337,7 @@ $wgConf->settings = [
 		'endroidwikiwiki' => [
 			'default' => [
 				'class' => 'JobQueueRedis',
-				'redisServer' => '127.0.0.1:6379',
+				'redisServer' => '37.120.178.25:6379',
 				'redisConfig' => [],
 				'claimTTL' => 3600,
 				'daemonized' => true,
@@ -352,7 +349,7 @@ $wgConf->settings = [
 		'droidwikiwiki' => [
 			'class'        => 'JobQueueAggregatorRedis',
 			'redisServers' => [
-				'localhost',
+				'37.120.178.25',
 			],
 			'redisConfig'  => [
 				'connectTimeout' => 2,
@@ -361,7 +358,7 @@ $wgConf->settings = [
 		'datawiki' => [
 			'class' => 'JobQueueAggregatorRedis',
 			'redisServers' => [
-				'localhost',
+				'37.120.178.25',
 			],
 			'redisConfig'  => [
 				'connectTimeout' => 2,
@@ -370,7 +367,7 @@ $wgConf->settings = [
 		'endroidwikiwiki' => [
 			'class' => 'JobQueueAggregatorRedis',
 			'redisServers' => [
-				'localhost',
+				'37.120.178.25',
 			],
 			'redisConfig'  => [
 				'connectTimeout' => 2,

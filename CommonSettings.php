@@ -75,6 +75,8 @@
 	# Additional, alternative skins
 	wfLoadSkins( [ 'Vector', 'MonoBook' ] );
 
+	$wgLocalisationCacheConf['storeDirectory'] = "$IP/cache/l10n";
+
 	# Do not show adbanners on this sites
 	$wgNoAdSites = [
 		'Hauptseite',

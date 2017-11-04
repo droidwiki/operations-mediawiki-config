@@ -94,5 +94,8 @@ EOT
 	return $file;
 }
 
+# Otherwise redis will timeout, needs investigation, though
+ini_set('default_socket_timeout', -1);
+
 # Run the script!
 require_once( getMWScriptWithArgs() );
