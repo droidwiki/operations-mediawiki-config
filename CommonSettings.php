@@ -1,192 +1,193 @@
 <?php
-	# DO NOT PUT PRIVATE INFORMATION HERE!
+# DO NOT PUT PRIVATE INFORMATION HERE!
 
-	# Protect against web entry
-	if ( !defined( 'MEDIAWIKI' ) ) {
-		exit;
-	}
+# Protect against web entry
+if ( !defined( 'MEDIAWIKI' ) ) {
+	exit;
+}
 
-	function wfApplyUserRightOverrides() {
-		global $groupOverrides, $wgGroupPermissions;
+function wfApplyUserRightOverrides() {
+	global $groupOverrides, $wgGroupPermissions;
 
-		// apply group overrides as aerly as possible
-		foreach ( $groupOverrides as $group => $permissions ) {
-			if ( !array_key_exists( $group, $wgGroupPermissions ) ) {
-				$wgGroupPermissions[$group] = [];
-			}
-			$wgGroupPermissions[$group] = $permissions + $wgGroupPermissions[$group];
+	// apply group overrides as aerly as possible
+	foreach ( $groupOverrides as $group => $permissions ) {
+		if ( !array_key_exists( $group, $wgGroupPermissions ) ) {
+			$wgGroupPermissions[$group] = [];
 		}
+		$wgGroupPermissions[$group] = $permissions + $wgGroupPermissions[$group];
 	}
+}
 
-	require_once __DIR__ . '/multiversion/MWMultiVersion.php';
-	require_once __DIR__ . '/logging.php';
+require_once __DIR__ . '/multiversion/MWMultiVersion.php';
+require_once __DIR__ . '/logging.php';
 
-	$multiversion = MWMultiVersion::getInstance();
+$multiversion = MWMultiVersion::getInstance();
 
-	# load PrivateSettings.php first
-	require_once __DIR__ . '/../private/PrivateSettings.php';
+# load PrivateSettings.php first
+require_once __DIR__ . '/../private/PrivateSettings.php';
 
-	# Helper function to load InitialiseSettings when wgConf is ready for initialisation
-	function wmfLoadInitialiseSettings( $conf ) {
-		require_once 'InitialiseSettings.php';
-	}
+# Helper function to load InitialiseSettings when wgConf is ready for initialisation
+function wmfLoadInitialiseSettings( $conf ) {
+	require_once 'InitialiseSettings.php';
+}
 
-	require_once __DIR__ . '/wgConf.php';
+require_once __DIR__ . '/wgConf.php';
 
-	wfApplyUserRightOverrides();
+wfApplyUserRightOverrides();
 
-	# Load ProfileSettings
-	require_once 'ProfileSettings.php';
+# Load ProfileSettings
+require_once 'ProfileSettings.php';
 
-	$wgDBname = $multiversion->getDBName();
+$wgDBname = $multiversion->getDBName();
 
-	require_once __DIR__ . '/db.php';
+require_once __DIR__ . '/db.php';
 
-	$wgShowHostnames = true;
+$wgShowHostnames = true;
 
-	$wgUsePathInfo = true;
-	$wgScriptExtension = '.php';
+$wgUsePathInfo = true;
+$wgScriptExtension = '.php';
 
-	$wgUseGzip = true;
+$wgUseGzip = true;
 
-	$wgStylePath = "$wgScriptPath/skins";
+$wgStylePath = "$wgScriptPath/skins";
 
-	$wgSMTP = [
-		'host'     => 'bits.go2tech.de',
-		'IDHost'   => 'droidwiki.de',
-		'port'     => 587,
-		'auth'     => true,
-		'username' => $wmgEmailUser,
-		'password' => $wmgEmailPassword,
+$wgSMTP = [
+	'host'     => 'bits.go2tech.de',
+	'IDHost'   => 'droidwiki.de',
+	'port'     => 587,
+	'auth'     => true,
+	'username' => $wmgEmailUser,
+	'password' => $wmgEmailPassword,
+];
+
+$wgEnableEmail = true;
+$wgEnableUserEmail = true;
+
+$wgEnotifUserTalk = false;
+$wgEnotifWatchlist = false;
+$wgEmailAuthentication = true;
+
+$wgDBprefix = '';
+$wgDBTableOptions = 'ENGINE=InnoDB, DEFAULT CHARSET=binary';
+
+$wgShellLocale = 'en_US.utf8';
+
+# Additional, alternative skins
+wfLoadSkins( [ 'Vector', 'MonoBook' ] );
+
+$wgLocalisationCacheConf['storeDirectory'] = "$IP/cache/l10n";
+
+# Do not show adbanners on this sites
+$wgNoAdSites = [
+	'Hauptseite',
+	'',
+	'Spezial:Anmelden',
+	'Spezial:GoogleCSE',
+	'Spezial:Raffle',
+	'DroidWiki:Impressum'
+];
+
+$wgDiff3 = "";
+
+# Autopromote user to emailconfirmed after he confirmed his email address
+$wgAutopromote['emailconfirmed'] = APCOND_EMAILCONFIRMED;
+
+# Disable new RC Feed
+$wgDefaultUserOptions['usenewrc'] = 0;
+
+$wgResourceLoaderMaxQueryLength = -1;
+
+$wgEnableUploads  = true;
+$wgAllowExternalImages = true;
+
+$wgFileExtensions = [
+	'png',
+	'gif',
+	'jpg',
+	'jpeg',
+	'pdf',
+	'pptx',
+	'zip',
+	'svg',
+	'ico',
+];
+
+# Enable subpages in the main namespace
+$wgNamespacesWithSubpages[NS_MAIN] = true;
+// ToDo: Remove in one of the next MW/wmf releases (gerrit #147229 or #154306)
+$wgNamespacesWithSubpages[NS_SPECIAL] = true;
+
+# Spam protection
+$wgEnableDnsBlacklist = true;
+$wgDnsBlacklistUrls = [
+	'xbl.spamhaus.org',
+	'opm.tornevall.org'
+];
+
+# Open links in new window
+$wgExternalLinkTarget = '_blank';
+
+# Allow DISPLAYTITLE Magic word
+$wgAllowDisplayTitle = true;
+
+# Do not restrict DISPLAYTITLE
+$wgRestrictDisplayTitle = false;
+
+# Performance things
+$wgResourceLoaderStorageEnabled = true;
+$wgMiserMode = true;
+
+# Add go2tech repository to Git viewer list
+$wgGitRepositoryViewers = array_merge( $wgGitRepositoryViewers,
+	[
+		'https://(?:[a-z0-9_\-]+@)gerrit.go2tech.de/(.*).git' =>
+			'https://gerrit.go2tech.de/%R/commit/%H',
+		'(?:[a-z0-9_\-]+@)?gerrit.go2tech.de:(.*).git' =>
+			'https://gerrit.go2tech.de/%R/commit/%H'
+	]
+);
+
+if ( $wmgUseParsoid ) {
+	$wgVirtualRestConfig['modules']['parsoid'] = [
+		'url' => 'http://37.120.178.25:8142',
+		'prefix' => $wgDBname, // deprecated
+		'domain' => $wgCanonicalServer,
+		'restbaseCompat' => false,
+		'forwardCookies' => $wmgParsoidForwardCookies,
 	];
+}
 
-	$wgEnableEmail = true;
-	$wgEnableUserEmail = true;
-
-	$wgEnotifUserTalk = false;
-	$wgEnotifWatchlist = false;
-	$wgEmailAuthentication = true;
-
-	$wgDBprefix = '';
-	$wgDBTableOptions = 'ENGINE=InnoDB, DEFAULT CHARSET=binary';
-
-	$wgShellLocale = 'en_US.utf8';
-
-	# Additional, alternative skins
-	wfLoadSkins( [ 'Vector', 'MonoBook' ] );
-
-	$wgLocalisationCacheConf['storeDirectory'] = "$IP/cache/l10n";
-
-	# Do not show adbanners on this sites
-	$wgNoAdSites = [
-		'Hauptseite',
-		'',
-		'Spezial:Anmelden',
-		'Spezial:GoogleCSE',
-		'Spezial:Raffle',
-		'DroidWiki:Impressum'
-	];
-
-	$wgDiff3 = "";
-
-	# Autopromote user to emailconfirmed after he confirmed his email address
-	$wgAutopromote['emailconfirmed'] = APCOND_EMAILCONFIRMED;
-
-	# Disable new RC Feed
-	$wgDefaultUserOptions['usenewrc'] = 0;
-
-	$wgResourceLoaderMaxQueryLength = -1;
-
-	$wgEnableUploads  = true;
-	$wgAllowExternalImages = true;
-
-	$wgFileExtensions = [
-		'png',
-		'gif',
-		'jpg',
-		'jpeg',
-		'pdf',
-		'pptx',
-		'zip',
-		'svg',
-		'ico',
-	];
-
-	# Enable subpages in the main namespace
-	$wgNamespacesWithSubpages[NS_MAIN] = true;
-	// ToDo: Remove in one of the next MW/wmf releases (gerrit #147229 or #154306)
-	$wgNamespacesWithSubpages[NS_SPECIAL] = true;
-
-	# Spam protection
-	$wgEnableDnsBlacklist = true;
-	$wgDnsBlacklistUrls = [
-		'xbl.spamhaus.org',
-		'opm.tornevall.org'
-	];
-
-	# Open links in new window
-	$wgExternalLinkTarget = '_blank';
-
-	# Allow DISPLAYTITLE Magic word
-	$wgAllowDisplayTitle = true;
-
-	# Do not restrict DISPLAYTITLE
-	$wgRestrictDisplayTitle = false;
-
-	# Performance things
-	$wgResourceLoaderStorageEnabled = true;
-	$wgMiserMode = true;
-
-	# Add go2tech repository to Git viewer list
-	$wgGitRepositoryViewers = array_merge( $wgGitRepositoryViewers,
-		[
-			'https://(?:[a-z0-9_\-]+@)gerrit.go2tech.de/(.*).git' =>
-				'https://gerrit.go2tech.de/%R/commit/%H',
-			'(?:[a-z0-9_\-]+@)?gerrit.go2tech.de:(.*).git' =>
-				'https://gerrit.go2tech.de/%R/commit/%H'
-		]
+if ( $wmgUseRestbase ) {
+	$wgVirtualRestConfig['modules']['restbase'] = array(
+		'url' => 'http://localhost:7231',
+		'domain' => $wmgRestbaseDomain,
+		'forwardCookies' => false,
+		'parsoidCompat' => false
 	);
+}
 
-	if ( $wmgUseParsoid ) {
-		$wgVirtualRestConfig['modules']['parsoid'] = [
-			'url' => 'http://37.120.178.25:8142',
-			'prefix' => $wgDBname, // deprecated
-			'domain' => $wgCanonicalServer,
-			'restbaseCompat' => false,
-			'forwardCookies' => $wmgParsoidForwardCookies,
-		];
-	}
+$wgGenerateThumbnailOnParse = false;
+if ( $wmgUseDroidWikiForeignRepo ) {
+	$wgUseSharedUploads = true;
+	$wgSharedUploadPath = 'https://www.droidwiki.org/w/images';
+	$wgSharedUploadDirectory = '/data/www/images/';
+	$wgHashedSharedUploadDirectory = true;
+	$wgFetchCommonsDescriptions = true;
+	$wgSharedUploadDBname = 'droidwikiwiki';
+	$wgSharedUploadDBprefix = '';
+	$wgRepositoryBaseUrl = 'https://www.droidwiki.org/wiki/File:';
+	$wgDBuser = $wmgDatabaseUser;
+	$wgDBpassword = $wmgDatabasePassword;
+	$wgUploadNavigationUrl = 'https://www.droidwiki.org/wiki/Special:Upload';
+	$wgEnableUploads = false;
+}
 
-	if ( $wmgUseRestbase ) {
-		$wgVirtualRestConfig['modules']['restbase'] = array(
-			'url' => 'http://localhost:7231',
-			'domain' => $wmgRestbaseDomain,
-			'forwardCookies' => false,
-			'parsoidCompat' => false
-		);
-	}
+require_once __DIR__ . '/ExtensionSetup.php';
 
-	$wgGenerateThumbnailOnParse = false;
-	if ( $wmgUseDroidWikiForeignRepo ) {
-		$wgUseSharedUploads = true;
-		$wgSharedUploadPath = 'https://www.droidwiki.org/w/images';
-		$wgSharedUploadDirectory = '/data/www/images/';
-		$wgHashedSharedUploadDirectory = true;
-		$wgFetchCommonsDescriptions = true;
-		$wgSharedUploadDBname = 'droidwikiwiki';
-		$wgSharedUploadDBprefix = '';
-		$wgRepositoryBaseUrl = 'https://www.droidwiki.org/wiki/File:';
-		$wgDBuser = $wmgDatabaseUser;
-		$wgDBpassword = $wmgDatabasePassword;
-		$wgUploadNavigationUrl = 'https://www.droidwiki.org/wiki/Special:Upload';
-		$wgEnableUploads = false;
-	}
+wfApplyUserRightOverrides();
 
-	require_once __DIR__ . '/ExtensionSetup.php';
+# THIS MUST BE AFTER ALL EXTENSIONS ARE INCLUDED
+#
+# REALLY ... we're not kidding here ... NO EXTENSIONS AFTER
+require __DIR__ . '/ExtensionMessages.php';
 
-	wfApplyUserRightOverrides();
-
-	# THIS MUST BE AFTER ALL EXTENSIONS ARE INCLUDED
-	#
-	# REALLY ... we're not kidding here ... NO EXTENSIONS AFTER
-	require __DIR__ . '/ExtensionMessages.php';

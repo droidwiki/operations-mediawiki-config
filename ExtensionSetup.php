@@ -150,22 +150,6 @@ if ( wfExtensionExists( "AbuseFilter" ) ) {
 	$wgGroupPermissions['sysop']['abusefilter-revert'] = true;
 }
 
-# Spam BL
-/*require_once "$IP/extensions/SpamBlacklist/SpamBlacklist.php";
-$wgSpamBlacklistFiles = array(
-	"http://droidwiki.de/index.php?title=Spam_blacklist&action=raw",
-	"http://droidwiki.de/index.php?title=MediaWiki:Spam-blacklist&action=raw"
-);
-
-# Title BL
-require_once "$IP/extensions/TitleBlacklist/TitleBlacklist.php";
-$wgTitleBlacklistSources = array(
-	array(
-		'type' => TBLSRC_URL,
-		'src'  => 'http://meta.wikimedia.org/w/index.php?title=Title_blacklist&action=raw',
-	),
-);*/
-
 # Stop Forum Spam
 if ( wfExtensionExists( "StopForumSpam" ) ) {
 	$wgSFSAPIKey = $wmgSFSAPIKey;
