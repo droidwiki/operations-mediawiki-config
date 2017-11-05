@@ -16,3 +16,5 @@ $wgConf->suffixes = $wgConf->wikis;
 $wgConf->loadFullData();
 $wgConf->extractAllGlobals( $multiversion->getWikiName() );
 
+$wgLocalDatabases =& $wgConf->getLocalDatabases();
+
