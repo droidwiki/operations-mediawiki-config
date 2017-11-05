@@ -185,3 +185,8 @@
 	require_once __DIR__ . '/ExtensionSetup.php';
 
 	wfApplyUserRightOverrides();
+
+	# THIS MUST BE AFTER ALL EXTENSIONS ARE INCLUDED
+	#
+	# REALLY ... we're not kidding here ... NO EXTENSIONS AFTER
+	require __DIR__ . '/ExtensionMessages.php';
