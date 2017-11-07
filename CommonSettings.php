@@ -35,9 +35,6 @@ require_once __DIR__ . '/wgConf.php';
 
 wfApplyUserRightOverrides();
 
-# Load ProfileSettings
-require_once 'ProfileSettings.php';
-
 $wgDBname = $multiversion->getDBName();
 
 require_once __DIR__ . '/db.php';
