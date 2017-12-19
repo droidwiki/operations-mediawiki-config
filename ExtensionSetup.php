@@ -55,7 +55,6 @@ $extToLoad = [
 	'GeoData',
 	'XenForoAuth',
 	'CiteThisPage',
-	'Flow',
 	'ContentTranslation',
 	'GlobalUsage',
 ];

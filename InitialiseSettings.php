@@ -421,11 +421,6 @@ $wgConf->settings = [
 		'default' => false,
 	],
 
-	'wmgUseFlow' => [
-		'default' => false,
-		'opswiki' => true,
-	],
-
 	// needed for Translate extension to change the language on-wiki
 	'wgPageLanguageUseDB' => [
 		'default' => false,
