@@ -104,16 +104,20 @@ function wfGetExtensionInformation( $name ) {
 
 # Configuration for ConfirmEdit
 if ( wfExtensionExists( "ConfirmEdit" ) ) {
+	if ( PHP_SAPI === 'cli' ) {
+		$wgMessagesDirs['ReCaptchaNoCaptcha'] = "$IP/extensions/ConfirmEdit/ReCaptchaNoCaptcha/i18n";
+		$wgMessagesDirs['FancyCaptcha'] = "$IP/extensions/ConfirmEdit/FancyCaptcha/i18n";
+	}
 	// The DroidWiki app can't handle client side JavaScript (on which reCaptcha is based on)
 	// Check, if the request is made via the api (and assume, that this is the app or any other client that
 	// needs machine readable format's) and use the FancyCaptcha plugin instead of reCaptcha.
 	if ( $_SERVER['SCRIPT_NAME'] !== '/api.php' && isset( $_GET['title'] ) && strpos( $_GET['title'], 'Captcha/image' ) === false ) {
-		require_once "$IP/extensions/ConfirmEdit/ReCaptchaNoCaptcha/ReCaptchaNoCaptcha.php";
+		require_once "$IP/extensions/ConfirmEdit/ReCaptchaNoCaptcha.php";
 		$wgReCaptchaSiteKey = $wmgReCaptchaSiteKey;
 		$wgReCaptchaSecretKey = $wmgReCaptchaSecretKey;
 		$wgCaptchaClass = 'ReCaptchaNoCaptcha';
 	} else {
-		require_once( "$IP/extensions/ConfirmEdit/FancyCaptcha.php" );
+		require_once "$IP/extensions/ConfirmEdit/FancyCaptcha.php";
 		$wgCaptchaDirectory = $wmgFancyCaptchaCaptchaDir;
 		$wgCaptchaSecret = $wmgFancyCaptchaSecretKey;
 		$wgCaptchaClass = 'FancyCaptcha';
@@ -122,16 +126,17 @@ if ( wfExtensionExists( "ConfirmEdit" ) ) {
 		$wgCaptchaStorageClass = 'CaptchaCacheStore';
 	}
 
+	# only emailconfirmed can skip captcha
 	$wgGroupPermissions['*']['skipcaptcha'] = false;
-	$wgGroupPermissions['user']['skipcaptcha'] = true;
-	$wgGroupPermissions['autoconfirmed']['skipcaptcha'] = true;
+	$wgGroupPermissions['user']['skipcaptcha'] = false;
+	$wgGroupPermissions['autoconfirmed']['skipcaptcha'] = false;
 	$wgGroupPermissions['bot']['skipcaptcha'] = false;
 	$wgGroupPermissions['sysop']['skipcaptcha'] = false;
 	$wgGroupPermissions['emailconfirmed']['skipcaptcha'] = true;
 	$ceAllowConfirmedEmail = true;
 
 	# Trigger for ConfirmEdit
-	$wgCaptchaTriggers['edit'] = false;
+	$wgCaptchaTriggers['edit'] = true;
 	$wgCaptchaTriggers['create'] = true;
 	$wgCaptchaTriggers['addurl'] = true;
 	$wgCaptchaTriggers['createaccount'] = true;
