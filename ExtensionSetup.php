@@ -57,6 +57,7 @@ $extToLoad = [
 	'CiteThisPage',
 	'ContentTranslation',
 	'GlobalUsage',
+	'Nuke',
 ];
 
 $extensionsToLoadWithExtensionregistration = [];
