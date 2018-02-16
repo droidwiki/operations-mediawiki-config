@@ -428,16 +428,23 @@ if ( $wmgUseWikibaseClient ) {
 
 	wfLoadExtension( 'WikibaseCreateLink' );
 
-	$wgWBClientSettings['entityNamespaces'] = [
-		'item' => WB_NS_ITEM,
-		'property' => WB_NS_PROPERTY
-	];
-	$wgWBClientSettings['siteGlobalID'] = substr( $wgDBname, 0, -4 );
-	$wgWBClientSettings['siteGroup'] = 'droidwiki';
 	$wgWBClientSettings['repoUrl'] = 'https://data.droidwiki.org';
 	$wgWBClientSettings['repoArticlePath'] = '/wiki/$1';
 	$wgWBClientSettings['repoScriptPath'] = '/w';
-	$wgWBClientSettings['repoDatabase'] = 'datawiki';
+	$wgWBClientSettings['repositories'] = [
+		'' => [
+			'repoDatabase' => 'datawiki',
+			'baseUri' => $wgWBClientSettings['repoUrl'] . '/entity',
+			'entityNamespaces' => [
+				'item' => WB_NS_ITEM,
+		                'property' => WB_NS_PROPERTY
+			],
+			'prefixMapping' => [ '' => '' ],
+		]
+	];
+
+	$wgWBClientSettings['siteGlobalID'] = substr( $wgDBname, 0, -4 );
+	$wgWBClientSettings['siteGroup'] = 'droidwiki';
 	$wgWBClientSettings['changesDatabase'] = 'datawiki';
 	$wgWBCLientSettings['injectRecentChanges'] = true;
 	$wgWBClientSettings['languageLinkSiteGroup'] = 'droidwiki';
