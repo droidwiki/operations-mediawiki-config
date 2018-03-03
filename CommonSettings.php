@@ -134,13 +134,9 @@ $wgRestrictDisplayTitle = false;
 $wgResourceLoaderStorageEnabled = true;
 $wgMiserMode = true;
 
-# Add go2tech repository to Git viewer list
 $wgGitRepositoryViewers = array_merge( $wgGitRepositoryViewers,
 	[
-		'https://(?:[a-z0-9_\-]+@)gerrit.go2tech.de/(.*).git' =>
-			'https://gerrit.go2tech.de/%R/commit/%H',
-		'(?:[a-z0-9_\-]+@)?gerrit.go2tech.de:(.*).git' =>
-			'https://gerrit.go2tech.de/%R/commit/%H'
+		'git@github.com:(.*).git' => 'https://github.com/%R/commit/%H'
 	]
 );
 
