@@ -434,7 +434,7 @@ if ( $wmgUseWikibaseClient ) {
 	$wgWBClientSettings['repositories'] = [
 		'' => [
 			'repoDatabase' => 'datawiki',
-			'baseUri' => $wgWBClientSettings['repoUrl'] . '/entity',
+			'baseUri' => $wgWBClientSettings['repoUrl'] . '/entity/',
 			'entityNamespaces' => [
 				'item' => WB_NS_ITEM,
 		                'property' => WB_NS_PROPERTY
