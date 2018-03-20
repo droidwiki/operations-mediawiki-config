@@ -2,6 +2,7 @@
 # DO NOT PUT PRIVATE INFORMATION HERE!
 
 $extToLoad = [
+	'AmazonPartnernet',
 	'AntiSpoof', # needed by AbuseFilter
 	'Cite', # ref-tags
 	'ParserFunctions',
@@ -12,12 +13,10 @@ $extToLoad = [
 	'MultimediaViewer',
 	'CommonsMetadata',
 	'CookieWarning',
-	'Dereferer',
 	'EmbedVideo', # Allows to embed YouTube videos into wikipages
 	'Disambiguator',
 	'DynamicPageList',
 	'Echo',
-	'CyanogenModDev',
 	'BetaFeatures',
 	'PageImages', # PageImages (needed by MobileFrontend and HoverCards)
 	'TextExtracts', # TextExtracts (needed by MobileFrontend and HoverCards)

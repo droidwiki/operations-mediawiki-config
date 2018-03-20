@@ -84,6 +84,8 @@ $wgNoAdSites = [
 	'DroidWiki:Impressum'
 ];
 
+$wgAmazonPartnernetPartnerID = 'droand-21';
+
 $wgDiff3 = "";
 
 # Autopromote user to emailconfirmed after he confirmed his email address
