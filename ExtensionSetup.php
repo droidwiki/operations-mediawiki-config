@@ -62,6 +62,9 @@ $phpEntrypointExtensions = [
 
 function shouldSkipLoadExtension( $name ) {
 	$useExtensionConfigName = 'wmgUse' . $name;
+
+	global $$useExtensionConfigName;
+
 	return isset( $$useExtensionConfigName ) && !$$useExtensionConfigName;
 }
 
