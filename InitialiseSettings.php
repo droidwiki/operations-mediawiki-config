@@ -292,18 +292,19 @@ $wgConf->settings = [
 	],
 
 	'wgRightsUrl' => [
+		'default' => 'https://creativecommons.org/licenses/by-sa/3.0/deed',
+		'droidwikiwiki' => 'https://creativecommons.org/licenses/by-sa/3.0/deed.de',
 		'opswiki' => null,
-		'default' => '//creativecommons.org/licenses/by-sa/3.0/',
 	],
 
 	'wgRightsText' => [
+		'default' =>  'Creative Commons Attribution/Share-Alike Lizenz 3.0',
 		'opswiki' => null,
-		'default' =>  '//creativecommons.org/licenses/by-sa/3.0/',
 	],
 
 	'wgRightsIcon' => [
-		'opswiki' => null,
 		'default' => '//creativecommons.org/images/public/somerights20.png',
+		'opswiki' => null,
 	],
 
 	'+wgObjectCaches' => [
