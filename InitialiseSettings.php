@@ -62,7 +62,7 @@ $wgConf->settings = [
 	],
 
 	'wgFavicon' => [
-		'default' => '/static/images/favicons/favicon_with_W.ico',
+		'default' => '/static/images/favicons/favicon.ico',
 	],
 
 	'wgEmergencyContact' => [
