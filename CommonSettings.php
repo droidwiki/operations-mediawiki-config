@@ -165,7 +165,7 @@ $wgGenerateThumbnailOnParse = false;
 if ( $wmgUseDroidWikiForeignRepo ) {
 	$wgUseSharedUploads = true;
 	$wgSharedUploadPath = 'https://www.droidwiki.org/w/images';
-	$wgSharedUploadDirectory = '/data/www/images/';
+	$wgSharedUploadDirectory = '/data/shareddata/images/';
 	$wgHashedSharedUploadDirectory = true;
 	$wgFetchCommonsDescriptions = true;
 	$wgSharedUploadDBname = 'droidwikiwiki';
