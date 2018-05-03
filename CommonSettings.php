@@ -154,7 +154,7 @@ if ( $wmgUseParsoid ) {
 
 if ( $wmgUseRestbase ) {
 	$wgVirtualRestConfig['modules']['restbase'] = array(
-		'url' => 'http://localhost:7231',
+		'url' => 'http://37.120.178.25:7231',
 		'domain' => $wmgRestbaseDomain,
 		'forwardCookies' => false,
 		'parsoidCompat' => false
@@ -165,7 +165,7 @@ $wgGenerateThumbnailOnParse = false;
 if ( $wmgUseDroidWikiForeignRepo ) {
 	$wgUseSharedUploads = true;
 	$wgSharedUploadPath = 'https://www.droidwiki.org/w/images';
-	$wgSharedUploadDirectory = '/data/shareddata/images/';
+	$wgSharedUploadDirectory = '/data/shareddata/mediawiki/images/';
 	$wgHashedSharedUploadDirectory = true;
 	$wgFetchCommonsDescriptions = true;
 	$wgSharedUploadDBname = 'droidwikiwiki';
