@@ -246,7 +246,7 @@ $wgConf->settings = [
 	],
 
 	'wgMemCachedServers' => [
-		'default' => [ '127.0.0.1:11211' ],
+		'default' => [ '37.120.178.25:11211', '188.68.49.74:11211' ],
 	],
 
 	'wgShowDebug' => [
