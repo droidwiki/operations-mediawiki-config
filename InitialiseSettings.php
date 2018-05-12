@@ -418,8 +418,9 @@ $wgConf->settings = [
 		'default' => true,
 	],
 
-	'wmgUseXenForoAuth' => [
-		'default' => false,
+	'wmgUseReadingLists' => [
+		'default' => true,
+		'opswiki' => false,
 	],
 
 	// needed for Translate extension to change the language on-wiki
@@ -459,12 +460,6 @@ $wgConf->settings = [
 	'wmgParsoidForwardCookies' => [
 		'default' => false,
 		'opswiki' => true,
-	],
-
-	'wmgUseContentTranslation' => [
-		'default' => false,
-		'droidwikiwiki' => true,
-		'endroidwikiwiki' => true,
 	],
 
 	'wmgUseDroidWikiForeignRepo' => [
