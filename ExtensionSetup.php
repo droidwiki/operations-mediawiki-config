@@ -232,6 +232,11 @@ $wgVisualEditorAvailableNamespaces = [
 	NS_CATEGORY_TALK => true,
 ];
 
+if ( $wmgVisualEditorAccessRESTbaseDirectly ) {
+	$wgVisualEditorRestbaseURL = '/api/v1/page/html/';
+	$wgVisualEditorFullRestbaseURL = "/api/";
+}
+
 $wgCookieWarningEnabled = true;
 $wgCookieWarningMoreUrl =
 	'https://www.droidwiki.org/DroidWiki:Impressum#Verwendung_von_Cookies_.28Cookie-Policy.29';

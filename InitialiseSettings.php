@@ -451,6 +451,12 @@ $wgConf->settings = [
 		'droidwikiwiki' => true,
 	],
 
+	'wmgVisualEditorAccessRESTbaseDirectly' => [
+		'default' => false,
+		'endroidwikiwiki' => true,
+		'droidwikiwiki' => true,
+	],
+
 	'wmgRestbaseDomain' => [
 		'default' => '',
 		'endroidwikiwiki' => 'en.droidwiki.org',
