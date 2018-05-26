@@ -255,7 +255,6 @@ $wgConf->settings = [
 
 	'wgShowExceptionDetails' => [
 		'default' => false,
-		'testdroidwiki' => true,
 	],
 
 	'wgShowSQLErrors' => [
@@ -269,7 +268,6 @@ $wgConf->settings = [
 
 	'wmgCirrusSearchPowerSpecialRandom' => [
 		'default' => false,
-		'testdroidwiki' => true,
 	],
 
 	'wgCacheDirectory' => [
@@ -314,6 +312,10 @@ $wgConf->settings = [
 		                'servers' => [ '37.120.178.25:6379' ],
 			],
 		],
+	],
+
+	'wgMainStash' => [
+		'default' => 'redis',
 	],
 
 	'wgJobTypeConf' => [
