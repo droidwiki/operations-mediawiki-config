@@ -47,7 +47,6 @@ $jsonEntrypointExtensions = [
 	'UserMerge',
 	'VisualEditor',
 	'WikiEditor',
-	'XenForoAuth',
 	'ReadingLists',
 ];
 
