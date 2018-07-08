@@ -74,16 +74,6 @@ wfLoadSkins( [ 'Vector', 'MonoBook' ] );
 
 $wgLocalisationCacheConf['storeDirectory'] = "$IP/cache/l10n";
 
-# Do not show adbanners on this sites
-$wgNoAdSites = [
-	'Hauptseite',
-	'',
-	'Spezial:Anmelden',
-	'Spezial:GoogleCSE',
-	'Spezial:Raffle',
-	'DroidWiki:Impressum'
-];
-
 $wgAmazonPartnernetPartnerID = 'droand-21';
 
 $wgDiff3 = "";

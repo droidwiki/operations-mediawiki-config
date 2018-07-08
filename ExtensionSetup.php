@@ -15,6 +15,7 @@ $jsonEntrypointExtensions = [
 	'ConfirmEdit',
 	'CookieWarning',
 	'Disambiguator',
+	'DroidWiki',
 	'Echo',
 	'Elastica',
 	'EmbedVideo', # Allows to embed YouTube videos into wikipages
@@ -175,8 +176,14 @@ $wgScribuntoUseGeSHi = true;
 $wgScribuntoUseCodeEditor = true;
 
 if ( $wmgUseDroidWiki ) {
-	require_once "$IP/extensions/DroidWiki/DroidWiki.php";
 	$wgDroidWikiAdDisallowedNamespaces = [ 120, 121, 122, 123 ];
+	$wgDroidWikiNoAdSites = [
+		'Hauptseite',
+		'',
+		'Spezial:Anmelden',
+		'DroidWiki:Impressum',
+		'DroidWiki:Datenschutz',
+	];
 }
 
 # Thanks
