@@ -94,12 +94,12 @@ if ( PHP_SAPI === 'cli' ) {
 // Check, if the request is made via the api (and assume, that this is the app or any other client that
 // needs machine readable format's) and use the FancyCaptcha plugin instead of reCaptcha.
 if ( $_SERVER['SCRIPT_NAME'] !== '/api.php' && isset( $_GET['title'] ) && strpos( $_GET['title'], 'Captcha/image' ) === false ) {
-	require_once "$IP/extensions/ConfirmEdit/ReCaptchaNoCaptcha.php";
+	wfLoadExtensions( [ 'ConfirmEdit/ReCaptchaNoCaptcha' ] );
 	$wgReCaptchaSiteKey = $wmgReCaptchaSiteKey;
 	$wgReCaptchaSecretKey = $wmgReCaptchaSecretKey;
 	$wgCaptchaClass = 'ReCaptchaNoCaptcha';
 } else {
-	require_once "$IP/extensions/ConfirmEdit/FancyCaptcha.php";
+	wfLoadExtensions( [ 'ConfirmEdit/FancyCaptcha' ] );
 	$wgCaptchaDirectory = $wmgFancyCaptchaCaptchaDir;
 	$wgCaptchaSecret = $wmgFancyCaptchaSecretKey;
 	$wgCaptchaClass = 'FancyCaptcha';
