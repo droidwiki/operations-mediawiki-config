@@ -29,7 +29,6 @@ $jsonEntrypointExtensions = [
 	'Interwiki',
 	'MobileFrontend',
 	'MultimediaViewer',
-	'MwEmbedSupport',
 	'Nuke',
 	'OATHAuth',
 	'OpenGraphMeta',
