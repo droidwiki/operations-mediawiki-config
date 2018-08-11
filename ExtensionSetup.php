@@ -444,3 +444,7 @@ if ( $wmgUseReadingLists ) {
 
 $wgGlobalUsageDatabase = 'droidwikiwiki';
 
+# UniversalLanguageSelector
+# Turn off geolocation service - T199106
+$wgULSGeoService = false;
+
