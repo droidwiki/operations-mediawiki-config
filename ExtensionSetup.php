@@ -27,6 +27,7 @@ $jsonEntrypointExtensions = [
 	'GoogleSiteLinksSearchBox',
 	'InputBox',
 	'Interwiki',
+	'LoginNotify',
 	'MobileFrontend',
 	'MultimediaViewer',
 	'Nuke',
