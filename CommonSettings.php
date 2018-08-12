@@ -49,8 +49,8 @@ $wgUseGzip = true;
 $wgStylePath = "$wgScriptPath/skins";
 
 $wgSMTP = [
-	'host'     => 'bits.go2tech.de',
-	'IDHost'   => 'droidwiki.de',
+	'host'     => 'mail.droidwiki.org',
+	'IDHost'   => 'mail.droidwiki.org',
 	'port'     => 587,
 	'auth'     => true,
 	'username' => $wmgEmailUser,
