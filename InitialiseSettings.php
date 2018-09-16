@@ -6,7 +6,6 @@ $wgConf->settings = [
 	'wgSitename' => [
 		'default' => 'Android Wiki',
 		'opswiki' => 'DroidWiki Operations',
-		'testdroidwiki' => 'Android Test-Wiki',
 		'datawiki' => 'DroidWiki Data',
 	],
 
@@ -84,7 +83,6 @@ $wgConf->settings = [
 		'droidwikiwiki' => '.droidwiki.org',
 		'datawiki' => '.droidwiki.org',
 		'endroidwikiwiki' => '.droidwiki.org',
-		'testdroidwiki' => '.go2tech.de',
 		'opswiki' => '.ops.go2tech.de',
 	],
 
@@ -128,22 +126,9 @@ $wgConf->settings = [
 				'delete' => true,
 				'patrol' => true,
 			],
-			'Testnutzer' => [],
 			'ipblock-exempt' => [
 				'ipblock-exempt' => true,
 			],
-		],
-		'+testdroidwiki' => [
-			'Autopatrol' => [
-				'autopatrol' => true,
-			],
-			'Moderator' => [
-				'autopatrol' => true,
-				'proxyunbannable' => true,
-				'delete' => true,
-				'patrol' => true,
-			],
-			'Testnutzer' => [],
 		],
 		'+opswiki' => [
 			'Operations' => [
