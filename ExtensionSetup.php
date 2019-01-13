@@ -43,6 +43,7 @@ $jsonEntrypointExtensions = [
 	'TemplateData',
 	'TemplateSandbox',
 	'TextExtracts', # TextExtracts (needed by MobileFrontend and HoverCards)
+	'TimedMediaHandler',
 	'Thanks',
 	'UniversalLanguageSelector',
 	'UserMerge',
@@ -55,7 +56,6 @@ $phpEntrypointExtensions = [
 	'CanonURL',
 	'CirrusSearch',
 	'LdapAuthentication',
-	'TimedMediaHandler',
 	'Translate',
 	'googleAnalytics',
 ];

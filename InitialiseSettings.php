@@ -141,6 +141,18 @@ $wgConf->settings = [
 	'groupOverrides' => [
 		// don't change the default value
 		'default' => [],
+		// allow emailconfirmed users to edit only, protect against massive spam
+		'endroidwikiwiki' => [
+			'*' => [
+				'edit' => false,
+			],
+			'user' => [
+				'edit' => false,
+			],
+			'emailconfirmed' => [
+				'edit' => true,
+			],
+		],
 		'droidwikiwiki' => [
 			'*' => [
 				'translate' => true,
@@ -153,6 +165,13 @@ $wgConf->settings = [
 		'datawiki' => [
 			'*' => [
 				'property-create' => false,
+				'edit' => false,
+			],
+			'user' => [
+				'edit' => false,
+			],
+			'emailconfirmed' => [
+				'edit' => true,
 			],
 			'sysop' => [
 				'property-create' => true,
