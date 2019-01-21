@@ -55,7 +55,6 @@ $jsonEntrypointExtensions = [
 $phpEntrypointExtensions = [
 	'CanonURL',
 	'CirrusSearch',
-	'LdapAuthentication',
 	'Translate',
 	'googleAnalytics',
 ];
@@ -253,58 +252,6 @@ $wgCitoidServiceUrl = 'https://go2tech.de/citoid/api';
 
 $wgGroupPermissions['sysop']['interwiki'] = true;
 
-if ( $wmgUseLdapAuthentication ) {
-	$wgAuth = new LdapAuthenticationPlugin();
-	$wgLDAPDomainNames = [
-		'go2tech.de',
-	];
-	$wgLDAPServerNames = [
-		'go2tech.de' => 'localhost',
-	];
-	$wgLDAPUseLocal = false;
-	$wgLDAPEncryptionType = [
-		'go2tech.de' => 'clear',
-	];
-	$wgLDAPPort = [
-		'go2tech.de' => 389,
-	];
-	$wgLDAPSearchAttributes = [
-		'go2tech.de' => 'uid',
-	];
-	$wgLDAPBaseDNs = [
-		'go2tech.de' => 'dc=go2tech,dc=de',
-	];
-	$wgLDAPWriterDN = [
-		'go2tech.de' => 'cn=mwldapwriter,ou=users,dc=go2tech,dc=de'
-	];
-	$wgLDAPWriterPassword = [
-		'go2tech.de' => $wmgLDAPWriterPassword,
-	];
-	$wgLDAPProxyAgent = [
-		'go2tech.de' => 'cn=mwldapwriter,ou=users,dc=go2tech,dc=de',
-	];
-	$wgLDAPProxyAgentPassword = [
-		'go2tech.de' => $wmgLDAPWriterPassword,
-	];
-	$wgLDAPMailPassword = [
-		'go2tech.de' => true
-	];
-	$wgLDAPPreferences = [
-		'go2tech.de' => [ 'email' => 'mail', 'realname' => 'displayName' ]
-	];
-	$wgLDAPUpdateLDAP = [
-		'go2tech.de' => true
-	];
-	$wgLDAPGroupUseFullDN = [ "go2tech.de" => false ];
-	$wgLDAPGroupObjectclass = [ "go2tech.de" => "posixgroup" ];
-	$wgLDAPGroupAttribute = [ "go2tech.de" => "memberuid" ];
-	$wgLDAPGroupSearchNestedGroups = [ "go2tech.de" => false ];
-	$wgLDAPGroupNameAttribute = [ "go2tech.de" => "cn" ];
-	$wgLDAPRequiredGroups = [ "go2tech.de" => [ "cn=opswiki,ou=Groups,dc=go2tech,dc=de" ] ];
-	$wgLDAPLowerCaseUsername = [
-		'go2tech.de' => true,
-	];
-}
 if ( $wmgUseTranslate ) {
 	$wgTranslateTranslationServices = [
 		'Yandexm' => [
