@@ -25,6 +25,7 @@ $jsonEntrypointExtensions = [
 	'GoogleAnalyticsTopPages',
 	'GoogleLogin',
 	'GoogleSiteLinksSearchBox',
+	'GoogleSiteSearch',
 	'InputBox',
 	'Interwiki',
 	'LoginNotify',
@@ -54,7 +55,6 @@ $jsonEntrypointExtensions = [
 
 $phpEntrypointExtensions = [
 	'CanonURL',
-	'CirrusSearch',
 	'Translate',
 	'googleAnalytics',
 ];
@@ -137,10 +137,8 @@ $wgGroupPermissions['sysop']['abusefilter-revert'] = true;
 $wgSFSAPIKey = $wmgSFSAPIKey;
 $wgPutIPinRC = true;
 
-# Elasticsearch
-$wgSearchType = 'CirrusSearch';
-$wgCirrusSearchPowerSpecialRandom = $wmgCirrusSearchPowerSpecialRandom;
-$wgCirrusSearchServers = [ '188.68.49.74' ];
+# GoogleSiteSearch
+$wgGoogleSiteSearchOnly = true;
 
 # WikiEditor/graphical Editor
 $wgDefaultUserOptions['usebetatoolbar'] = 1;
@@ -179,6 +177,7 @@ if ( $wmgUseDroidWiki ) {
 	$wgDroidWikiNoAdSites = [
 		'Hauptseite',
 		'',
+		'Spezial:Suche',
 		'Spezial:Anmelden',
 		'DroidWiki:Impressum',
 		'DroidWiki:Datenschutz',

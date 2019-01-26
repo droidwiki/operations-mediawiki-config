@@ -8,17 +8,13 @@ $wgLBFactoryConf = [
         'droidwikiwiki' => 's1',
         'datawiki' => 's1',
 	'endroidwikiwiki' => 's1',
-        'opswiki' => 's2',
+        'opswiki' => 's1',
 ],
 
 'sectionLoads' => [
         's1' => [
-                'db1001' => 70, # master
-                'db1002' => 30, # slave
-        ],
-        's2' => [
-                'db1001' => 0,   #master
-                'db1002' => 100, #slave
+                'db1001' => 50, # master
+                'db1002' => 50, # slave
         ],
 ],
 

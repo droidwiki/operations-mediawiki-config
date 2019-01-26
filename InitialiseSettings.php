@@ -270,10 +270,6 @@ $wgConf->settings = [
 		'opswiki' => [],
 	],
 
-	'wmgCirrusSearchPowerSpecialRandom' => [
-		'default' => false,
-	],
-
 	'wgCacheDirectory' => [
 		'default' => '/data/mediawiki/cache/',
 	],
@@ -478,5 +474,11 @@ $wgConf->settings = [
 		'default' => true,
 		'droidwikiwiki' => false,
 		'opswiki' => false,
+	],
+
+	'wgGoogleSiteSearchCSEID' => [
+		'droidwikiwiki' => 'partner-pub-4622825295514928:3613188011',
+		'endroidwikiwiki' => 'partner-pub-4622825295514928:7715837130',
+		'datawiki' => 'partner-pub-4622825295514928:8454451153',
 	],
 ];
