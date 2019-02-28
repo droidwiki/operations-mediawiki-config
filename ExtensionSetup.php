@@ -7,6 +7,7 @@ $jsonEntrypointExtensions = [
 	'AntiSpoof', # needed by AbuseFilter
 	'BetaFeatures',
 	'CentralNotice',
+	'CheckUser',
 	'Cite', # ref-tags
 	'CiteThisPage',
 	'Citoid',

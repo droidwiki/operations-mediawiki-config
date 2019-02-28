@@ -103,6 +103,8 @@ $wgConf->settings = [
 				'upload_by_url' => true,
 				// this should  be an own group "Translation admin"
 				'pagelang' => true,
+				'checkuser' => true,
+				'checkuser-log' => true,
 			],
 			'bureaucrat' => [
 				'userrights' => true,
@@ -145,12 +147,21 @@ $wgConf->settings = [
 		'endroidwikiwiki' => [
 			'*' => [
 				'edit' => false,
+				'createpage' => false,
 			],
 			'user' => [
 				'edit' => false,
+				'createpage' => false,
 			],
 			'emailconfirmed' => [
 				'edit' => true,
+				'createpage' => false,
+			],
+			'sysop' => [
+				'createpage' => true,
+			],
+			'pagecreator' => [
+				'createpage' => true,
 			],
 		],
 		'droidwikiwiki' => [
