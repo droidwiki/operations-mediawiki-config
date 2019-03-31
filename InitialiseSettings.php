@@ -105,6 +105,8 @@ $wgConf->settings = [
 				'pagelang' => true,
 				'checkuser' => true,
 				'checkuser-log' => true,
+				'gadgets-edit' => true,
+				'gadgets-definition-edit' => true,
 			],
 			'bureaucrat' => [
 				'userrights' => true,
