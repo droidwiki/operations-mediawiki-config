@@ -20,7 +20,6 @@ $jsonEntrypointExtensions = [
 	'Echo',
 	'Elastica',
 	'EmbedVideo', # Allows to embed YouTube videos into wikipages
-	'Gadgets',
 	'GeoData',
 	'GlobalUsage',
 	'GoogleAnalyticsTopPages',
