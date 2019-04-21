@@ -7,7 +7,7 @@ $wgLBFactoryConf = [
 'sectionsByDB' => [
         'droidwikiwiki' => 's1',
         'datawiki' => 's1',
-	'endroidwikiwiki' => 's1',
+        'endroidwikiwiki' => 's1',
         'opswiki' => 's1',
 ],
 
@@ -31,8 +31,8 @@ $wgLBFactoryConf = [
 ],
 
 'hostsByName' => [
-        'db1001' => '37.120.178.25', # do not remove or comment out
-        'db1002' => '188.68.49.74', # do not remove or comment out
+        'db1001' => '172.16.0.1', # do not remove or comment out
+        'db1002' => '172.16.0.2', # do not remove or comment out
 ],
 
 ];
