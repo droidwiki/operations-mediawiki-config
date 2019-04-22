@@ -261,7 +261,7 @@ $wgConf->settings = [
 	],
 
 	'wgMemCachedServers' => [
-		'default' => [ '172.16.0.1:11211', '172.16.0.2:11211' ],
+		'default' => [ 'donut.dwnet:11211', 'eclair.dwnet:11211' ],
 	],
 
 	'wgShowDebug' => [
@@ -320,7 +320,7 @@ $wgConf->settings = [
 		'default' => [
 			'redis' => [
 				'class' => 'RedisBagOStuff',
-		                'servers' => [ '172.16.0.1:6379' ],
+		                'servers' => [ 'donut.dwnet:6379' ],
 			],
 		],
 	],
@@ -333,7 +333,7 @@ $wgConf->settings = [
 		'droidwikiwiki' => [
 			'default' => [
 				'class' => 'JobQueueRedis',
-				'redisServer' => '172.16.0.1:6379',
+				'redisServer' => 'donut.dwnet:6379',
 				'redisConfig' => [],
 				'claimTTL' => 3600,
 				'daemonized' => true,
@@ -342,7 +342,7 @@ $wgConf->settings = [
 		'datawiki' => [
 			'default' => [
 				'class' => 'JobQueueRedis',
-				'redisServer' => '172.16.0.1:6379',
+				'redisServer' => 'donut.dwnet:6379',
 				'redisConfig' => [],
 				'claimTTL' => 3600,
 				'daemonized' => true,
@@ -351,7 +351,7 @@ $wgConf->settings = [
 		'endroidwikiwiki' => [
 			'default' => [
 				'class' => 'JobQueueRedis',
-				'redisServer' => '172.16.0.1:6379',
+				'redisServer' => 'donut.dwnet:6379',
 				'redisConfig' => [],
 				'claimTTL' => 3600,
 				'daemonized' => true,
@@ -363,7 +363,7 @@ $wgConf->settings = [
 		'droidwikiwiki' => [
 			'class'        => 'JobQueueAggregatorRedis',
 			'redisServers' => [
-				'172.16.0.1',
+				'donut.dwnet',
 			],
 			'redisConfig'  => [
 				'connectTimeout' => 2,
@@ -372,7 +372,7 @@ $wgConf->settings = [
 		'datawiki' => [
 			'class' => 'JobQueueAggregatorRedis',
 			'redisServers' => [
-				'172.16.0.1',
+				'donut.dwnet',
 			],
 			'redisConfig'  => [
 				'connectTimeout' => 2,
@@ -381,7 +381,7 @@ $wgConf->settings = [
 		'endroidwikiwiki' => [
 			'class' => 'JobQueueAggregatorRedis',
 			'redisServers' => [
-				'172.16.0.1',
+				'donut.dwnet',
 			],
 			'redisConfig'  => [
 				'connectTimeout' => 2,

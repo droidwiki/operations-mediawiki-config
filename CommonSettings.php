@@ -134,7 +134,7 @@ $wgGitRepositoryViewers = array_merge( $wgGitRepositoryViewers,
 
 if ( $wmgUseParsoid ) {
 	$wgVirtualRestConfig['modules']['parsoid'] = [
-		'url' => 'http://172.16.0.1:8142',
+		'url' => 'http://donut.dwnet:8142',
 		'prefix' => $wgDBname, // deprecated
 		'domain' => $wgCanonicalServer,
 		'restbaseCompat' => false,
@@ -144,7 +144,7 @@ if ( $wmgUseParsoid ) {
 
 if ( $wmgUseRestbase ) {
 	$wgVirtualRestConfig['modules']['restbase'] = array(
-		'url' => 'http://172.16.0.1:7231',
+		'url' => 'http://donut.dwnet:7231',
 		'domain' => $wmgRestbaseDomain,
 		'forwardCookies' => false,
 		'parsoidCompat' => false
