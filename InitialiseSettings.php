@@ -168,6 +168,10 @@ $wgConf->settings = [
 			'*' => [
 				'translate' => true,
 			],
+			'*' => [
+				'edit' => false,
+				'createpage' => false,
+			],
 			'sysop' => [
 				'pagetranslation' => true,
 				'translate-manage' => true,
