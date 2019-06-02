@@ -167,8 +167,6 @@ $wgConf->settings = [
 		'droidwikiwiki' => [
 			'*' => [
 				'translate' => true,
-			],
-			'*' => [
 				'edit' => false,
 				'createpage' => false,
 			],
