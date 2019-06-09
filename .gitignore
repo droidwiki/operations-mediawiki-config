@@ -1,3 +1,6 @@
-/multiversion/vendor/
 /composer.lock
 ExtensionMessages.php
+.idea
+*.iml
+composer
+vendor

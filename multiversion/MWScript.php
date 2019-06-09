@@ -30,8 +30,8 @@ function getMWScriptWithArgs() {
 	foreach ( $gids as $gid ) {
 		$info = posix_getgrgid( $gid );
 		if ( $info && in_array( $info['name'], [ 'wikidev', 'root' ] ) ) {
-			fwrite( STDERR, "Cannot run a MediaWiki script as a user in the " .
-				"group {$info['name']}\n" );
+			fwrite( STDERR,
+				"Cannot run a MediaWiki script as a user in the " . "group {$info['name']}\n" );
 			fwrite( STDERR, <<<EOT
 Maintenance scripts should generally be run using sudo -u apache which
 is available to all wikidev users.  Running a maintenance script as a
@@ -83,9 +83,9 @@ EOT
 	}
 
 	# MWScript.php should be in common/
-	require_once( __DIR__ . '/MWMultiVersion.php' );
+	require_once __DIR__ . '/MWMultiVersion.php';
 	$multiversion = MWMultiVersion::getInstanceForMaintenance();
-	$file = dirname( dirname( dirname( __DIR__ ) ) ) . "/main/" .$relFile;
+	$file = dirname( dirname( dirname( __DIR__ ) ) ) . "/main/" . $relFile;
 	if ( !file_exists( $file ) ) {
 		fwrite( STDERR, "The MediaWiki script file \"{$file}\" does not exist.\n" );
 		exit( 1 );
@@ -95,7 +95,7 @@ EOT
 }
 
 # Otherwise redis will timeout, needs investigation, though
-ini_set('default_socket_timeout', -1);
+ini_set( 'default_socket_timeout', - 1 );
 
 # Run the script!
-require_once( getMWScriptWithArgs() );
+require_once getMWScriptWithArgs();

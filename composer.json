@@ -9,14 +9,26 @@
 		"classmap-authoritative": true,
 		"optimize-autoloader": true,
 		"prepend-autoloader": false,
-		"vendor-dir": "multiversion/vendor"
+		"vendor-dir": "vendor"
 	},
 	"require-dev": {
-		"jakub-onderka/php-parallel-lint": "^0.9.2"
+		"jakub-onderka/php-parallel-lint": "0.9.2",
+		"mediawiki/mediawiki-codesniffer": "18.0.0",
+		"phpunit/phpunit": "4.8.36 || ^6.5",
+		"mediawiki/minus-x": "0.3.1"
 	},
 	"scripts": {
+		"lint": "parallel-lint --exclude vendor --ignore-fails .",
+		"phpcs": "phpcs -p -s",
+		"fix": [
+			"phpcbf",
+			"minus-x fix ."
+		],
 		"test": [
-			"parallel-lint . --exclude multiversion/vendor"
+			"composer lint",
+			"composer phpcs",
+			"phpunit",
+			"minus-x check ."
 		]
 	}
 }

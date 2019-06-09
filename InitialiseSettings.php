@@ -307,7 +307,7 @@ $wgConf->settings = [
 	],
 
 	'wgRightsText' => [
-		'default' =>  'Creative Commons Attribution/Share-Alike Lizenz 3.0',
+		'default' => 'Creative Commons Attribution/Share-Alike Lizenz 3.0',
 		'opswiki' => null,
 	],
 
@@ -320,7 +320,7 @@ $wgConf->settings = [
 		'default' => [
 			'redis' => [
 				'class' => 'RedisBagOStuff',
-		                'servers' => [ 'donut.dwnet:6379' ],
+				'servers' => [ 'donut.dwnet:6379' ],
 			],
 		],
 	],

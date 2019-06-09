@@ -93,7 +93,8 @@ if ( PHP_SAPI === 'cli' ) {
 // The DroidWiki app can't handle client side JavaScript (on which reCaptcha is based on)
 // Check, if the request is made via the api (and assume, that this is the app or any other client that
 // needs machine readable format's) and use the FancyCaptcha plugin instead of reCaptcha.
-if ( $_SERVER['SCRIPT_NAME'] !== '/api.php' && isset( $_GET['title'] ) && strpos( $_GET['title'], 'Captcha/image' ) === false ) {
+if ( $_SERVER['SCRIPT_NAME'] !== '/api.php' && isset( $_GET['title'] ) &&
+	strpos( $_GET['title'], 'Captcha/image' ) === false ) {
 	wfLoadExtensions( [ 'ConfirmEdit/ReCaptchaNoCaptcha' ] );
 	$wgReCaptchaSiteKey = $wmgReCaptchaSiteKey;
 	$wgReCaptchaSecretKey = $wmgReCaptchaSecretKey;
@@ -199,7 +200,6 @@ $wgGLShowKeepLogin = false;
 $wgGLForceKeepLogin = true;
 $wgGLAllowAccountCreation = true;
 
-
 # CentralNotice - 01.08.2014
 $wgCentralDBname = 'droidwikiwiki';
 if ( $multiversion->getDBName() === $wgCentralDBname ) {
@@ -208,7 +208,7 @@ if ( $multiversion->getDBName() === $wgCentralDBname ) {
 $wgCentralPagePath = "//www.droidwiki.org/w/index.php";
 $wgCentralSelectedBannerDispatcher = "//www.droidwiki.org/w/index.php?title=Special:BannerLoader";
 $wgNoticeProjects = [ 'droidwikiwiki', 'datawiki' ];
-$wgNoticeProject = $multiversion->getWikiName();
+$wgNoticeProject = $multiversion->getDBName();
 
 $wgGATPProfileId = $wmgGATPProfileId;
 $wgGATPKeyFileLocation = $wmgGATPKeyFileLocation;
@@ -287,7 +287,7 @@ if ( $wmgUseWikibaseRepo ) {
 
 	$wgWBRepoSettings['entityNamespaces'] = [
 		'item' => WB_NS_ITEM,
-		'property' => WB_NS_PROPERTY
+		'property' => WB_NS_PROPERTY,
 	];
 
 	// Tell Wikibase which namespace to use for which kind of entity
@@ -301,7 +301,7 @@ if ( $wmgUseWikibaseRepo ) {
 	$wgWBRepoSettings['siteLinkGroups'] = [
 		'droidwiki',
 		'wikipedia',
-		'special'
+		'special',
 	];
 	// these are the site_group codes as listed in the sites table
 	$wgWBRepoSettings['specialSiteLinkGroups'] = [ 'commons', 'wikidata' ];
@@ -339,13 +339,13 @@ if ( $wmgUseWikibaseClient ) {
 			'baseUri' => $wgWBClientSettings['repoUrl'] . '/entity/',
 			'entityNamespaces' => [
 				'item' => WB_NS_ITEM,
-		                'property' => WB_NS_PROPERTY
+				'property' => WB_NS_PROPERTY,
 			],
 			'prefixMapping' => [ '' => '' ],
-		]
+		],
 	];
 
-	$wgWBClientSettings['siteGlobalID'] = substr( $wgDBname, 0, -4 );
+	$wgWBClientSettings['siteGlobalID'] = substr( $wgDBname, 0, - 4 );
 	$wgWBClientSettings['siteGroup'] = 'droidwiki';
 	$wgWBClientSettings['changesDatabase'] = 'datawiki';
 	$wgWBCLientSettings['injectRecentChanges'] = true;
@@ -362,20 +362,23 @@ if ( $wmgUseWikibaseClient ) {
 	];
 
 	$wgWBClientSettings['repoSiteName'] = 'DroidWiki Data';
-	$wgWBClientSettings['otherProjectsLinks'] = [ 'wikidatawiki', 'commonswiki', 'dewiki', 'enwiki' ];
+	$wgWBClientSettings['otherProjectsLinks'] =
+		[ 'wikidatawiki', 'commonswiki', 'dewiki', 'enwiki' ];
 	$wgWBClientSettings['otherProjectsLinksByDefault'] = true;
 	$wgWBClientSettings['sendEchoNotification'] = true;
 
-	$wgHooks['WikibaseClientOtherProjectsSidebar'][] = function ( Wikibase\DataModel\Entity\ItemId $itemId, array &$sidebar ) {
-		foreach ( $sidebar as $id => &$group ) {
-			foreach ( $group as $siteId => &$attributes ) {
-				if ( isset( $attributes['hreflang'] ) ) {
-					$attributes['msg'] = $attributes['msg'] . '-' . $attributes['hreflang'];
+	$wgHooks['WikibaseClientOtherProjectsSidebar'][] =
+		function ( Wikibase\DataModel\Entity\ItemId $itemId, array &$sidebar ) {
+			foreach ( $sidebar as $id => &$group ) {
+				foreach ( $group as $siteId => &$attributes ) {
+					if ( isset( $attributes['hreflang'] ) ) {
+						$attributes['msg'] = $attributes['msg'] . '-' . $attributes['hreflang'];
+					}
 				}
 			}
-		}
-		return true;
-	};
+
+			return true;
+		};
 }
 
 if ( $wmgUseOATHAuth ) {
@@ -394,4 +397,3 @@ $wgGlobalUsageDatabase = 'droidwikiwiki';
 # UniversalLanguageSelector
 # Turn off geolocation service - T199106
 $wgULSGeoService = false;
-

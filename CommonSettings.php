@@ -143,12 +143,12 @@ if ( $wmgUseParsoid ) {
 }
 
 if ( $wmgUseRestbase ) {
-	$wgVirtualRestConfig['modules']['restbase'] = array(
+	$wgVirtualRestConfig['modules']['restbase'] = [
 		'url' => 'http://donut.dwnet:7231',
 		'domain' => $wmgRestbaseDomain,
 		'forwardCookies' => false,
 		'parsoidCompat' => false
-	);
+	];
 }
 
 $wgGenerateThumbnailOnParse = false;
@@ -175,4 +175,3 @@ wfApplyUserRightOverrides();
 #
 # REALLY ... we're not kidding here ... NO EXTENSIONS AFTER
 require __DIR__ . '/ExtensionMessages.php';
-

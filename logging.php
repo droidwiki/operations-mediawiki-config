@@ -1,62 +1,64 @@
 <?php
 
-$wgMWLoggerDefaultSpi = array(
-    'class' => '\\MediaWiki\\Logger\\MonologSpi',
-    'args' => array( array(
-        'loggers' => array(
-            '@default' => array(
-                'processors' => array( 'wiki', 'psr', 'pid', 'uid', 'web' ),
-                'handlers'   => array( 'default' ),
-            ),
-            'wfDebug' => array(
-                'handlers'   => array( 'default' ),
-                'processors' => array( 'psr' ),
-            ),
-            'profileoutput' => array(
-                'handlers'   => array( 'profiler' ),
-                'processors' => array( 'psr' ),
-            ),
-        ),
+$wgMWLoggerDefaultSpi = [
+	'class' => '\\MediaWiki\\Logger\\MonologSpi',
+	'args' => [
+		[
+			'loggers' => [
+				'@default' => [
+					'processors' => [ 'wiki', 'psr', 'pid', 'uid', 'web' ],
+					'handlers' => [ 'default' ],
+				],
+				'wfDebug' => [
+					'handlers' => [ 'default' ],
+					'processors' => [ 'psr' ],
+				],
+				'profileoutput' => [
+					'handlers' => [ 'profiler' ],
+					'processors' => [ 'psr' ],
+				],
+			],
 
-        'processors' => array(
-            'wiki' => array(
-                'class' => '\\MediaWiki\\Logger\\Monolog\\WikiProcessor',
-            ),
-            'psr' => array(
-                'class' => '\\Monolog\\Processor\\PsrLogMessageProcessor',
-            ),
-            'pid' => array(
-                'class' => '\\Monolog\\Processor\\ProcessIdProcessor',
-            ),
-            'uid' => array(
-                'class' => '\\Monolog\\Processor\\UidProcessor',
-            ),
-            'web' => array(
-                'class' => '\\Monolog\\Processor\\WebProcessor',
-            ),
-        ),
+			'processors' => [
+				'wiki' => [
+					'class' => '\\MediaWiki\\Logger\\Monolog\\WikiProcessor',
+				],
+				'psr' => [
+					'class' => '\\Monolog\\Processor\\PsrLogMessageProcessor',
+				],
+				'pid' => [
+					'class' => '\\Monolog\\Processor\\ProcessIdProcessor',
+				],
+				'uid' => [
+					'class' => '\\Monolog\\Processor\\UidProcessor',
+				],
+				'web' => [
+					'class' => '\\Monolog\\Processor\\WebProcessor',
+				],
+			],
 
-        'handlers' => array(
-            'default' => array(
-                'class' => '\\MediaWiki\\Logger\\Monolog\\LegacyHandler',
-                'args' => array( '/data/log/mediawiki/monolog-'.date('Ymd').'.log' ),
-                'formatter' => 'line',
-            ),
-            'profiler' => array(
-                'class' => '\\MediaWiki\\Logger\\Monolog\\LegacyHandler',
-                'args' => array( '/data/log/mediawiki/profiler-'.date('Ymd').'.log' ),
-                'formatter' => 'profiler',
-            ),
-        ),
+			'handlers' => [
+				'default' => [
+					'class' => '\\MediaWiki\\Logger\\Monolog\\LegacyHandler',
+					'args' => [ '/data/log/mediawiki/monolog-' . date( 'Ymd' ) . '.log' ],
+					'formatter' => 'line',
+				],
+				'profiler' => [
+					'class' => '\\MediaWiki\\Logger\\Monolog\\LegacyHandler',
+					'args' => [ '/data/log/mediawiki/profiler-' . date( 'Ymd' ) . '.log' ],
+					'formatter' => 'profiler',
+				],
+			],
 
-        'formatters' => array(
-            'line' => array(
-                'class' => '\\Monolog\\Formatter\\LineFormatter',
-            ),
-            'profiler' => array(
-                'class' => '\\Monolog\\Formatter\\LineFormatter',
-                'args' => array( "%datetime% %message%\n\n", null, true, true ),
-            ),
-        ),
-    ) ),
-);
+			'formatters' => [
+				'line' => [
+					'class' => '\\Monolog\\Formatter\\LineFormatter',
+				],
+				'profiler' => [
+					'class' => '\\Monolog\\Formatter\\LineFormatter',
+					'args' => [ "%datetime% %message%\n\n", null, true, true ],
+				],
+			],
+		],
+	],
+];
