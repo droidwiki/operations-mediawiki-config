@@ -53,6 +53,10 @@ $wgConf->settings = [
 		'droidwikiwiki' => 'https://dstatic.dev/droidwikiwiki/w/load.php',
 	],
 
+	'wgThumbnailScriptPath' => [
+		'droidwikiwiki' => 'https://dstatic.dev/droidwikiwiki/w/thumb.php',
+	],
+
 	'wgLogo' => [
 		// possible values:
 		// androide.png -> blank DroidWiki logo
