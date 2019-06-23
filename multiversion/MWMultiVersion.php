@@ -56,7 +56,7 @@ class MWMultiVersion {
 					' maintenance script, you should use getInstanceForMaintenance() instead of ' .
 					__METHOD__ );
 			}
-			self::$instance = self::factory( $_SERVER['SERVER_NAME'] );
+			self::$instance = self::factory( $_SERVER['SERVER_NAME'], $_GET['wiki'] );
 		}
 
 		return self::$instance;
@@ -73,7 +73,15 @@ class MWMultiVersion {
 		return self::$instance;
 	}
 
-	public static function factory( $serverName ) {
+	public static function factory( $serverName, $dbName = null ) {
+		if ( $serverName === 'dstatic.dev' ) {
+			if ( $dbName !== null ) {
+				$mwmv = new self();
+				$mwmv->setDBName( $dbName );
+				return $mwmv;
+			}
+			throw new InvalidArgumentException( 'static.dev without wikiname.' );
+		}
 		$mwmv = new self();
 		$mwmv->setServerName( $serverName )->loadDBFromServerName();
 
