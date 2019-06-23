@@ -63,14 +63,14 @@ $wgConf->settings = [
 		// androide_ch.png -> DroidWiki logo with christmas hat
 		// androide_cog.png -> black/white DroidWiki logo with half cog (opswiki)
 		'default' => '',
-		'droidwikiwiki' => '/static/images/project-logos/androide.png',
-		'endroidwikiwiki' => '/static/images/project-logos/androide.png',
-		'datawiki' => '/static/images/project-logos/androide.png',
-		"opswiki" => '/static/images/project-logos/androide_cog.png',
+		'droidwikiwiki' => 'https://dstatic.dev/static/images/project-logos/androide.png',
+		'endroidwikiwiki' => 'https://dstatic.dev/static/images/project-logos/androide.png',
+		'datawiki' => 'https://dstatic.dev/static/images/project-logos/androide.png',
+		"opswiki" => 'https://dstatic.dev/static/images/project-logos/androide_cog.png',
 	],
 
 	'wgFavicon' => [
-		'default' => '/static/images/favicons/favicon.ico',
+		'default' => 'https://dstatic.dev/static/images/favicons/favicon.ico',
 	],
 
 	'wgEmergencyContact' => [
