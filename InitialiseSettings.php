@@ -49,6 +49,10 @@ $wgConf->settings = [
 		'default' => '/w',
 	],
 
+	'wgLoadScript' => [
+		'droidwikiwiki' => 'https://dstatic.dev/droidwikiwiki/w/load.php',
+	],
+
 	'wgLogo' => [
 		// possible values:
 		// androide.png -> blank DroidWiki logo
