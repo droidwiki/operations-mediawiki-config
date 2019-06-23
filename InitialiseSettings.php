@@ -31,6 +31,7 @@ $wgConf->settings = [
 		'endroidwikiwiki' => 'https://en.droidwiki.org',
 		'opswiki' => '//ops.go2tech.de',
 		'datawiki' => 'https://data.droidwiki.org',
+		'dstatic' => 'https://dstatic.dev',
 	],
 
 	'wgCanonicalServer' => [
@@ -287,6 +288,7 @@ $wgConf->settings = [
 
 	'wgGitInfoCacheDirectory' => [
 		'droidwikiwiki' => '/data/mediawiki/main/cache/gitinfo',
+		'dstatic' => '/data/mediawiki/main/cache/gitinfo',
 		'datawiki' => '/data/mediawiki/main/cache/gitinfo',
 		'endroidwikiwiki' => '/data/mediawiki/main/cache/gitinfo',
 	],
@@ -393,6 +395,7 @@ $wgConf->settings = [
 	'wmgUseLdapAuthentication' => [
 		'default' => false,
 		'opswiki' => true,
+		'dstatic' => true,
 	],
 
 	'wmgUseGoogleLogin' => [
@@ -405,22 +408,26 @@ $wgConf->settings = [
 		'droidwikiwiki' => true,
 		'datawiki' => true,
 		'endroidwikiwiki' => true,
+		'dstatic' => true,
 	],
 
 	'wmgUseTranslate' => [
 		'default' => false,
 		'droidwikiwiki' => true,
+		'dstatic' => true,
 	],
 
 	'wmgUseWikibaseRepo' => [
 		'default' => false,
 		'datawiki' => true,
+		'dstatic' => true,
 	],
 
 	'wmgUseWikibaseClient' => [
 		'default' => false,
 		'droidwikiwiki' => true,
 		'endroidwikiwiki' => true,
+		'dstatic' => true,
 	],
 
 	'wmgUseDroidWiki' => [
@@ -440,18 +447,21 @@ $wgConf->settings = [
 	'wgPageLanguageUseDB' => [
 		'default' => false,
 		'droidwikiwiki' => true,
+		'dstatic' => true,
 	],
 
 	'wgSharedDB' => [
 		'default' => null,
 		'datawiki' => 'droidwikiwiki',
 		'endroidwikiwiki' => 'droidwikiwiki',
+		'dstatic' => 'droidwikiwiki',
 	],
 
 	'wgSharedTables' => [
 		'default' => [ 'user', 'user_properties' ],
 		'+datawiki' => [ 'user_google_user', 'user_xenforo_user', 'user_groups', 'oathauth_users' ],
 		'+endroidwikiwiki' => [ 'user_google_user', 'user_xenforo_user', 'user_groups', 'oathauth_users' ],
+		'+dstatic' => [ 'user_google_user', 'user_xenforo_user', 'user_groups', 'oathauth_users' ],
 	],
 
 	'wmgUseParsoid' => [
@@ -468,12 +478,14 @@ $wgConf->settings = [
 		'default' => false,
 		'endroidwikiwiki' => true,
 		'droidwikiwiki' => true,
+		'dstatic' => true,
 	],
 
 	'wmgRestbaseDomain' => [
 		'default' => '',
 		'endroidwikiwiki' => 'en.droidwiki.org',
 		'droidwikiwiki' => 'www.droidwiki.org',
+		'dstatic' => 'www.droidwiki.org',
 	],
 
 	'wmgParsoidForwardCookies' => [
@@ -485,6 +497,7 @@ $wgConf->settings = [
 		'default' => true,
 		'droidwikiwiki' => false,
 		'opswiki' => false,
+		'dstatic' => true,
 	],
 
 	'wgGoogleSiteSearchCSEID' => [
