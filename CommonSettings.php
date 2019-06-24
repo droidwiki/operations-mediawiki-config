@@ -84,8 +84,6 @@ $wgAutopromote['emailconfirmed'] = APCOND_EMAILCONFIRMED;
 # Disable new RC Feed
 $wgDefaultUserOptions['usenewrc'] = 0;
 
-$wgResourceLoaderMaxQueryLength = -1;
-
 $wgEnableUploads  = true;
 $wgAllowExternalImages = true;
 
@@ -125,6 +123,10 @@ $wgRestrictDisplayTitle = false;
 # Performance things
 $wgResourceLoaderStorageEnabled = true;
 $wgMiserMode = true;
+$wgResourceLoaderMaxage['unversioned'] = [
+	'server' => 30 * 60,
+	'client' => 30 * 60,
+];
 
 $wgGitRepositoryViewers = array_merge( $wgGitRepositoryViewers,
 	[
