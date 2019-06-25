@@ -171,6 +171,7 @@ if ( $wmgUseDroidWikiForeignRepo ) {
 
 if ( $wmgUseVarnish ) {
 	$wgUseCdn = true;
+	$wgCdnServersNoPurge = [ '172.16.0.1/16' ];
 	$wgCdnServers = [ '172.16.0.1:6081' ];
 	$wgUsePrivateIPs = true;
 }
