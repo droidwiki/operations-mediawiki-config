@@ -170,8 +170,8 @@ if ( $wmgUseDroidWikiForeignRepo ) {
 }
 
 if ( $wmgUseVarnish ) {
-	$wgUseSquid = true;
-	$wgSquidServers = [ '172.16.0.1' ];
+	$wgUseCdn = true;
+	$wgCdnServers = [ '172.16.0.1:6081' ];
 	$wgUsePrivateIPs = true;
 }
 
