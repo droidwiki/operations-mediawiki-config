@@ -513,4 +513,9 @@ $wgConf->settings = [
 		'endroidwikiwiki' => 'partner-pub-4622825295514928:7715837130',
 		'datawiki' => 'partner-pub-4622825295514928:8454451153',
 	],
+
+	'wmgUseVarnish' => [
+		'default' => false,
+		'droidwikiwiki' => true,
+	],
 ];

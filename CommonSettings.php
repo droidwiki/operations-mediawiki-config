@@ -169,6 +169,12 @@ if ( $wmgUseDroidWikiForeignRepo ) {
 	$wgEnableUploads = false;
 }
 
+if ( $wmgUseVarnish ) {
+	$wgUseSquid = true;
+	$wgSquidServers = [ '172.16.0.1' ];
+	$wgUsePrivateIPs = true;
+}
+
 require_once __DIR__ . '/ExtensionSetup.php';
 
 wfApplyUserRightOverrides();
