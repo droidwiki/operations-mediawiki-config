@@ -56,7 +56,8 @@ class MWMultiVersion {
 					' maintenance script, you should use getInstanceForMaintenance() instead of ' .
 					__METHOD__ );
 			}
-			self::$instance = self::factory( $_SERVER['SERVER_NAME'], $_GET['wiki'] );
+			$wiki = isset( $_GET['wiki'] ) ? $_GET['wiki'] : null;
+			self::$instance = self::factory( $_SERVER['SERVER_NAME'], $wiki );
 		}
 
 		return self::$instance;
