@@ -1,8 +1,7 @@
 dist: trusty
 language: php
 php:
-  - '7.0'
-  - nightly
+  - '7.2'
 
 install:
     # flags to pass to install
