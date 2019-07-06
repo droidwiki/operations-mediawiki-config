@@ -10,8 +10,7 @@ $wgMWLoggerDefaultSpi = [
 					'handlers' => [ 'default' ],
 				],
 				'wfDebug' => [
-					'handlers' => [ 'default' ],
-					'processors' => [ 'psr' ],
+					'handlers' => [ 'blackhole' ],
 				],
 				'profileoutput' => [
 					'handlers' => [ 'profiler' ],
@@ -47,6 +46,9 @@ $wgMWLoggerDefaultSpi = [
 					'class' => '\\MediaWiki\\Logger\\Monolog\\LegacyHandler',
 					'args' => [ '/data/log/mediawiki/profiler-' . date( 'Ymd' ) . '.log' ],
 					'formatter' => 'profiler',
+				],
+				'blackhole' => [
+					'class' => '\\Monolog\\Handler\\NullHandler',
 				],
 			],
 
