@@ -8,6 +8,7 @@ $jsonEntrypointExtensions = [
 	'BetaFeatures',
 	'CentralNotice',
 	'CheckUser',
+	'CirrusSearch',
 	'Cite', # ref-tags
 	'CiteThisPage',
 	'Citoid',
@@ -25,7 +26,6 @@ $jsonEntrypointExtensions = [
 	'GoogleAnalyticsTopPages',
 	'GoogleLogin',
 	'GoogleSiteLinksSearchBox',
-	'GoogleSiteSearch',
 	'InputBox',
 	'Interwiki',
 	'LoginNotify',
@@ -137,9 +137,6 @@ $wgGroupPermissions['sysop']['abusefilter-revert'] = true;
 # Stop Forum Spam
 $wgSFSAPIKey = $wmgSFSAPIKey;
 $wgPutIPinRC = true;
-
-# GoogleSiteSearch
-$wgGoogleSiteSearchOnly = true;
 
 # WikiEditor/graphical Editor
 $wgDefaultUserOptions['usebetatoolbar'] = 1;
@@ -397,3 +394,8 @@ $wgGlobalUsageDatabase = 'droidwikiwiki';
 # UniversalLanguageSelector
 # Turn off geolocation service - T199106
 $wgULSGeoService = false;
+
+# CirrusSearch
+$wgSearchType = 'CirrusSearch';
+$wgCirrusSearchServers = [ 'eclair.dwnet' ];
+
