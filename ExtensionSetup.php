@@ -398,4 +398,3 @@ $wgULSGeoService = false;
 # CirrusSearch
 $wgSearchType = 'CirrusSearch';
 $wgCirrusSearchServers = [ 'eclair.dwnet' ];
-
