@@ -104,13 +104,6 @@ $wgNamespacesWithSubpages[NS_MAIN] = true;
 // ToDo: Remove in one of the next MW/wmf releases (gerrit #147229 or #154306)
 $wgNamespacesWithSubpages[NS_SPECIAL] = true;
 
-# Spam protection
-$wgEnableDnsBlacklist = true;
-$wgDnsBlacklistUrls = [
-	'xbl.spamhaus.org',
-	'opm.tornevall.org'
-];
-
 # Open links in new window
 $wgExternalLinkTarget = '_blank';
 
