@@ -170,17 +170,15 @@ $wgScribuntoDefaultEngine = 'luastandalone';
 $wgScribuntoUseGeSHi = true;
 $wgScribuntoUseCodeEditor = true;
 
-if ( $wmgUseDroidWiki ) {
-	$wgDroidWikiAdDisallowedNamespaces = [ 120, 121, 122, 123 ];
-	$wgDroidWikiNoAdSites = [
-		'Hauptseite',
-		'',
-		'Spezial:Suche',
-		'Spezial:Anmelden',
-		'DroidWiki:Impressum',
-		'DroidWiki:Datenschutz',
-	];
-}
+$wgDroidWikiAdDisallowedNamespaces = [ 120, 121, 122, 123 ];
+$wgDroidWikiNoAdSites = [
+	'Hauptseite',
+	'',
+	'Spezial:Suche',
+	'Spezial:Anmelden',
+	'DroidWiki:Impressum',
+	'DroidWiki:Datenschutz',
+];
 
 # Thanks
 $wgIncludejQueryMigrate = true;
@@ -378,9 +376,7 @@ if ( $wmgUseWikibaseClient ) {
 		};
 }
 
-if ( $wmgUseOATHAuth ) {
-	$wgSharedTables[] = 'oathauth_users';
-}
+$wgSharedTables[] = 'oathauth_users';
 
 $wgGeoDataBackend = 'elastic';
 

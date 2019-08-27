@@ -39,14 +39,14 @@ $wgDBname = $multiversion->getDBName();
 
 require_once __DIR__ . '/db.php';
 
-$wgShowHostnames = true;
-
+$wgArticlePath = '/wiki/$1';
+$wgScriptPath = '/w';
 $wgUsePathInfo = true;
 $wgScriptExtension = '.php';
-
-$wgUseGzip = true;
-
 $wgStylePath = "$wgScriptPath/skins";
+
+$wgFavicon = '/static/images/favicons/favicon.ico';
+$wgLocaltimezone = 'Europe/Berlin';
 
 $wgSMTP = [
 	'host'     => 'mail.droidwiki.org',
@@ -67,12 +67,54 @@ $wgEmailAuthentication = true;
 $wgDBprefix = '';
 $wgDBTableOptions = 'ENGINE=InnoDB, DEFAULT CHARSET=binary';
 
+$wgShowDebug = false;
+$wgShowExceptionDetails = false;
+$wgShowSQLErrors = false;
+
 $wgShellLocale = 'en_US.utf8';
 
 # Additional, alternative skins
 wfLoadSkins( [ 'Vector', 'MonoBook' ] );
+$wgDefaultSkin = 'vector';
 
-$wgLocalisationCacheConf['storeDirectory'] = "$IP/cache/l10n";
+$wgLocalisationCacheConf = [
+	'class' => 'LocalisationCache',
+	'store' => 'detect',
+	'storeClass' => false,
+	'manualRecache' => true,
+	'storeDirectory' => "$IP/cache/l10n",
+];
+$wgCacheDirectory = '/data/mediawiki/cache/';
+$wgGitInfoCacheDirectory = '/data/mediawiki/main/cache/gitinfo';
+$wgMemCachedServers = [ '172.16.0.1:11211', '172.16.0.2:11211' ];
+$wgMainCacheType = CACHE_MEMCACHED;
+$wgParserCacheType = CACHE_MEMCACHED;
+$wgMessageCacheType = CACHE_MEMCACHED;
+$wgSessionCacheType = CACHE_MEMCACHED;
+$wgObjectCaches[] = [
+	'redis' => [
+		'class' => 'RedisBagOStuff',
+		'servers' => [ '172.16.0.1:6379' ],
+	],
+];
+$wgMainStash = 'redis';
+
+$wgJobTypeConf = [
+	'class' => 'JobQueueRedis',
+	'redisServer' => '172.16.0.1:6379',
+	'redisConfig' => [],
+	'claimTTL' => 3600,
+	'daemonized' => true,
+];
+$wgJobQueueAggregator = [
+	'class'        => 'JobQueueAggregatorRedis',
+	'redisServers' => [
+		'172.16.0.1',
+	],
+	'redisConfig'  => [
+		'connectTimeout' => 2,
+	],
+];
 
 $wgAmazonPartnernetPartnerID = 'droand-21';
 
@@ -85,8 +127,6 @@ $wgAutopromote['emailconfirmed'] = APCOND_EMAILCONFIRMED;
 $wgDefaultUserOptions['usenewrc'] = 0;
 
 $wgEnableUploads  = true;
-$wgAllowExternalImages = true;
-
 $wgFileExtensions = [
 	'png',
 	'gif',
@@ -98,23 +138,21 @@ $wgFileExtensions = [
 	'svg',
 	'ico',
 ];
+$wgMaxImageArea = 5e7;
+$wgSVGConverters = [
+	'ImageMagick' => '/usr/bin/convert $input -background transparent $output'
+];
+$wgSVGConverter = 'ImageMagick';
+$wgSVGConverterPath = '/usr/bin/';
 
 # Enable subpages in the main namespace
 $wgNamespacesWithSubpages[NS_MAIN] = true;
 // ToDo: Remove in one of the next MW/wmf releases (gerrit #147229 or #154306)
 $wgNamespacesWithSubpages[NS_SPECIAL] = true;
 
-# Open links in new window
-$wgExternalLinkTarget = '_blank';
-
-# Allow DISPLAYTITLE Magic word
 $wgAllowDisplayTitle = true;
-
-# Do not restrict DISPLAYTITLE
 $wgRestrictDisplayTitle = false;
 
-# Performance things
-$wgResourceLoaderStorageEnabled = true;
 $wgMiserMode = true;
 $wgResourceLoaderMaxage['unversioned'] = [
 	'server' => 24 * 60 * 60,
@@ -126,16 +164,6 @@ $wgGitRepositoryViewers = array_merge( $wgGitRepositoryViewers,
 		'git@github.com:(.*).git' => 'https://github.com/%R/commit/%H'
 	]
 );
-
-if ( $wmgUseParsoid ) {
-	$wgVirtualRestConfig['modules']['parsoid'] = [
-		'url' => 'http://donut.dwnet:8142',
-		'prefix' => $wgDBname, // deprecated
-		'domain' => $wgCanonicalServer,
-		'restbaseCompat' => false,
-		'forwardCookies' => $wmgParsoidForwardCookies,
-	];
-}
 
 if ( $wmgUseRestbase ) {
 	$wgVirtualRestConfig['modules']['restbase'] = [
