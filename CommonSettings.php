@@ -91,11 +91,9 @@ $wgMainCacheType = CACHE_MEMCACHED;
 $wgParserCacheType = CACHE_MEMCACHED;
 $wgMessageCacheType = CACHE_MEMCACHED;
 $wgSessionCacheType = CACHE_MEMCACHED;
-$wgObjectCaches[] = [
-	'redis' => [
-		'class' => 'RedisBagOStuff',
-		'servers' => [ '172.16.0.1:6379' ],
-	],
+$wgObjectCaches['redis'] = [
+	'class' => 'RedisBagOStuff',
+	'servers' => [ '172.16.0.1:6379' ],
 ];
 $wgMainStash = 'redis';
 
