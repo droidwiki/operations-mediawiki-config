@@ -7,7 +7,6 @@ $wgConf->wikis = [
 	'endroidwikiwiki',
 	'opswiki',
 	'datawiki',
-	'dstatic',
 ];
 
 $wgConf->suffixes = [ 'wiki' ];

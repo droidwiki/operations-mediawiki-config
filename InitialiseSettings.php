@@ -31,7 +31,6 @@ $wgConf->settings = [
 		'endroidwikiwiki' => 'https://en.droidwiki.org',
 		'opswiki' => '//ops.go2tech.de',
 		'datawiki' => 'https://data.droidwiki.org',
-		'dstatic' => 'https://dstatic.dev',
 	],
 
 	'wgCanonicalServer' => [
@@ -49,28 +48,20 @@ $wgConf->settings = [
 		'default' => '/w',
 	],
 
-	'wgLoadScript' => [
-		'droidwikiwiki' => 'https://dstatic.dev/droidwikiwiki/w/load.php',
-	],
-
-	'wgThumbnailScriptPath' => [
-		'droidwikiwiki' => 'https://dstatic.dev/droidwikiwiki/w/thumb.php',
-	],
-
 	'wgLogo' => [
 		// possible values:
 		// androide.png -> blank DroidWiki logo
 		// androide_ch.png -> DroidWiki logo with christmas hat
 		// androide_cog.png -> black/white DroidWiki logo with half cog (opswiki)
 		'default' => '',
-		'droidwikiwiki' => 'https://dstatic.dev/static/images/project-logos/androide.png',
-		'endroidwikiwiki' => 'https://dstatic.dev/static/images/project-logos/androide.png',
-		'datawiki' => 'https://dstatic.dev/static/images/project-logos/androide.png',
-		"opswiki" => 'https://dstatic.dev/static/images/project-logos/androide_cog.png',
+		'droidwikiwiki' => '/static/images/project-logos/androide.png',
+		'endroidwikiwiki' => '/static/images/project-logos/androide.png',
+		'datawiki' => '/static/images/project-logos/androide.png',
+		"opswiki" => '/static/images/project-logos/androide_cog.png',
 	],
 
 	'wgFavicon' => [
-		'default' => 'https://dstatic.dev/static/images/favicons/favicon.ico',
+		'default' => '/static/images/favicons/favicon.ico',
 	],
 
 	'wgEmergencyContact' => [
@@ -296,7 +287,6 @@ $wgConf->settings = [
 
 	'wgGitInfoCacheDirectory' => [
 		'droidwikiwiki' => '/data/mediawiki/main/cache/gitinfo',
-		'dstatic' => '/data/mediawiki/main/cache/gitinfo',
 		'datawiki' => '/data/mediawiki/main/cache/gitinfo',
 		'endroidwikiwiki' => '/data/mediawiki/main/cache/gitinfo',
 	],
@@ -403,7 +393,6 @@ $wgConf->settings = [
 	'wmgUseLdapAuthentication' => [
 		'default' => false,
 		'opswiki' => true,
-		'dstatic' => true,
 	],
 
 	'wmgUseGoogleLogin' => [
@@ -416,26 +405,22 @@ $wgConf->settings = [
 		'droidwikiwiki' => true,
 		'datawiki' => true,
 		'endroidwikiwiki' => true,
-		'dstatic' => true,
 	],
 
 	'wmgUseTranslate' => [
 		'default' => false,
 		'droidwikiwiki' => true,
-		'dstatic' => true,
 	],
 
 	'wmgUseWikibaseRepo' => [
 		'default' => false,
 		'datawiki' => true,
-		'dstatic' => true,
 	],
 
 	'wmgUseWikibaseClient' => [
 		'default' => false,
 		'droidwikiwiki' => true,
 		'endroidwikiwiki' => true,
-		'dstatic' => true,
 	],
 
 	'wmgUseDroidWiki' => [
@@ -455,21 +440,18 @@ $wgConf->settings = [
 	'wgPageLanguageUseDB' => [
 		'default' => false,
 		'droidwikiwiki' => true,
-		'dstatic' => true,
 	],
 
 	'wgSharedDB' => [
 		'default' => null,
 		'datawiki' => 'droidwikiwiki',
 		'endroidwikiwiki' => 'droidwikiwiki',
-		'dstatic' => 'droidwikiwiki',
 	],
 
 	'wgSharedTables' => [
 		'default' => [ 'user', 'user_properties' ],
 		'+datawiki' => [ 'user_google_user', 'user_xenforo_user', 'user_groups', 'oathauth_users' ],
 		'+endroidwikiwiki' => [ 'user_google_user', 'user_xenforo_user', 'user_groups', 'oathauth_users' ],
-		'+dstatic' => [ 'user_google_user', 'user_xenforo_user', 'user_groups', 'oathauth_users' ],
 	],
 
 	'wmgUseParsoid' => [
@@ -486,14 +468,12 @@ $wgConf->settings = [
 		'default' => false,
 		'endroidwikiwiki' => true,
 		'droidwikiwiki' => true,
-		'dstatic' => true,
 	],
 
 	'wmgRestbaseDomain' => [
 		'default' => '',
 		'endroidwikiwiki' => 'en.droidwiki.org',
 		'droidwikiwiki' => 'www.droidwiki.org',
-		'dstatic' => 'www.droidwiki.org',
 	],
 
 	'wmgParsoidForwardCookies' => [
@@ -505,7 +485,6 @@ $wgConf->settings = [
 		'default' => true,
 		'droidwikiwiki' => false,
 		'opswiki' => false,
-		'dstatic' => true,
 	],
 
 	'wgGoogleSiteSearchCSEID' => [

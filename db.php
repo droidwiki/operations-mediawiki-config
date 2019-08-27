@@ -9,7 +9,6 @@ $wgLBFactoryConf = [
 		'datawiki' => 's1',
 		'endroidwikiwiki' => 's1',
 		'opswiki' => 's1',
-		'dstaticwiki' => 's1',
 	],
 
 	'sectionLoads' => [
