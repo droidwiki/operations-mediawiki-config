@@ -97,21 +97,12 @@ $wgObjectCaches['redis'] = [
 ];
 $wgMainStash = 'redis';
 
-$wgJobTypeConf = [
+$wgJobTypeConf['default'] = [
 	'class' => 'JobQueueRedis',
 	'redisServer' => '172.16.0.1:6379',
 	'redisConfig' => [],
 	'claimTTL' => 3600,
 	'daemonized' => true,
-];
-$wgJobQueueAggregator = [
-	'class'        => 'JobQueueAggregatorRedis',
-	'redisServers' => [
-		'172.16.0.1',
-	],
-	'redisConfig'  => [
-		'connectTimeout' => 2,
-	],
 ];
 
 $wgAmazonPartnernetPartnerID = 'droand-21';
