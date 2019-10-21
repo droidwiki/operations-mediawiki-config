@@ -60,11 +60,9 @@ $phpEntrypointExtensions = [
 ];
 
 function shouldSkipLoadExtension( $name ) {
-	$useExtensionConfigName = 'wmgUse' . $name;
+	$shouldSkip = $GLOBALS['wmgUse' . $name];
 
-	global $$useExtensionConfigName;
-
-	return isset( $$useExtensionConfigName ) && !$$useExtensionConfigName;
+	return isset( $shouldSkip ) && !$shouldSkip;
 }
 
 foreach ( $phpEntrypointExtensions as $name ) {

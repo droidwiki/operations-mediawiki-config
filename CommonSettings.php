@@ -7,10 +7,10 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 }
 
 function wfApplyUserRightOverrides() {
-	global $groupOverrides, $wgGroupPermissions;
+	global $wgGroupOverrides, $wgGroupPermissions;
 
 	// apply group overrides as aerly as possible
-	foreach ( $groupOverrides as $group => $permissions ) {
+	foreach ( $wgGroupOverrides as $group => $permissions ) {
 		if ( !array_key_exists( $group, $wgGroupPermissions ) ) {
 			$wgGroupPermissions[$group] = [];
 		}

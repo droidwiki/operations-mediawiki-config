@@ -116,7 +116,7 @@ $wgConf->settings = [
 		],
 	],
 
-	'groupOverrides' => [
+	'wgGroupOverrides' => [
 		// don't change the default value
 		'default' => [],
 		// allow emailconfirmed users to edit only, protect against massive spam
