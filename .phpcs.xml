@@ -41,6 +41,6 @@
     </rule>
 
     <exclude-pattern>\.git/</exclude-pattern>
-    <exclude-pattern>vendor/</exclude-pattern>
+    <exclude-pattern>vendor</exclude-pattern>
     <exclude-pattern>docroot/</exclude-pattern>
 </ruleset>
