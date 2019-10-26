@@ -143,10 +143,7 @@ $wgAllowDisplayTitle = true;
 $wgRestrictDisplayTitle = false;
 
 $wgMiserMode = true;
-$wgResourceLoaderMaxage['unversioned'] = [
-	'server' => 24 * 60 * 60,
-	'client' => 24 * 60 * 60,
-];
+$wgResourceLoaderMaxage['unversioned'] = 24 * 60 * 60;
 
 $wgGitRepositoryViewers = array_merge( $wgGitRepositoryViewers,
 	[
