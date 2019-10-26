@@ -70,6 +70,7 @@ $wgDBTableOptions = 'ENGINE=InnoDB, DEFAULT CHARSET=binary';
 $wgShowDebug = false;
 $wgShowExceptionDetails = false;
 $wgShowSQLErrors = false;
+$wgShowHostnames = true;
 
 $wgShellLocale = 'en_US.utf8';
 
