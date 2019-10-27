@@ -6,18 +6,6 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 	exit;
 }
 
-function wfApplyUserRightOverrides() {
-	global $wgGroupOverrides, $wgGroupPermissions;
-
-	// apply group overrides as aerly as possible
-	foreach ( $wgGroupOverrides as $group => $permissions ) {
-		if ( !array_key_exists( $group, $wgGroupPermissions ) ) {
-			$wgGroupPermissions[$group] = [];
-		}
-		$wgGroupPermissions[$group] = $permissions + $wgGroupPermissions[$group];
-	}
-}
-
 require_once __DIR__ . '/multiversion/MWMultiVersion.php';
 require_once __DIR__ . '/logging.php';
 
@@ -33,11 +21,16 @@ function wmfLoadInitialiseSettings( $conf ) {
 
 require_once __DIR__ . '/wgConf.php';
 
-wfApplyUserRightOverrides();
-
 $wgDBname = $multiversion->getDBName();
 
 require_once __DIR__ . '/db.php';
+
+foreach ( $wgGroupOverrides as $group => $permissions ) {
+	if ( !array_key_exists( $group, $wgGroupPermissions ) ) {
+		$wgGroupPermissions[$group] = [];
+	}
+	$wgGroupPermissions[$group] = $permissions + $wgGroupPermissions[$group];
+}
 
 $wgArticlePath = '/wiki/$1';
 $wgScriptPath = '/w';
@@ -188,8 +181,6 @@ if ( $wmgUseVarnish ) {
 }
 
 require_once __DIR__ . '/ExtensionSetup.php';
-
-wfApplyUserRightOverrides();
 
 # THIS MUST BE AFTER ALL EXTENSIONS ARE INCLUDED
 #
