@@ -90,7 +90,6 @@ $wgCacheDirectory = '/data/mediawiki/cache/';
 $wgGitInfoCacheDirectory = '/data/mediawiki/main/cache/gitinfo';
 $wgMemCachedServers = [ '172.16.0.1:11211', '172.16.0.2:11211' ];
 $wgMainCacheType = CACHE_MEMCACHED;
-$wgParserCacheType = CACHE_MEMCACHED;
 $wgMessageCacheType = CACHE_MEMCACHED;
 $wgSessionCacheType = CACHE_MEMCACHED;
 $wgObjectCaches['redis'] = [
@@ -98,6 +97,9 @@ $wgObjectCaches['redis'] = [
 	'servers' => [ '172.16.0.1:6379' ],
 ];
 $wgMainStash = 'redis';
+
+$wgParserCacheType = CACHE_DB;
+$wgParserCacheExpireTime = 86400 * 30; // 30 days
 
 $wgJobTypeConf['default'] = [
 	'class' => 'JobQueueRedis',
