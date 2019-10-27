@@ -94,6 +94,7 @@ $wgMainStash = 'redis';
 $wgParserCacheType = CACHE_DB;
 $wgParserCacheExpireTime = 86400 * 30; // 30 days
 
+$wgJobRunRate = 0;
 $wgJobTypeConf['default'] = [
 	'class' => 'JobQueueRedis',
 	'redisServer' => '172.16.0.1:6379',
