@@ -111,7 +111,7 @@ $wgGroupPermissions['autoconfirmed']['skipcaptcha'] = false;
 $wgGroupPermissions['bot']['skipcaptcha'] = false;
 $wgGroupPermissions['sysop']['skipcaptcha'] = false;
 $wgGroupPermissions['emailconfirmed']['skipcaptcha'] = true;
-$ceAllowConfirmedEmail = true;
+$wgAllowConfirmedEmail = true;
 
 # Trigger for ConfirmEdit
 $wgCaptchaTriggers['edit'] = true;
