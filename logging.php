@@ -80,6 +80,7 @@ $wmgMonologChannels = [
 	'ldap' => 'warning',
 	'Linter' => 'debug',
 	'LocalFile' => 'debug',
+	'localisation' => 'info',
 	'localhost' => 'debug',
 	'LockManager' => 'warning',
 	'logging' => 'debug',
