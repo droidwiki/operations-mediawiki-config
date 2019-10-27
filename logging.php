@@ -16,7 +16,7 @@ $wmgMonologChannels = [
 	'api-feature-usage' => 'debug',
 	'api-readonly' => 'debug',
 	'api-request' => [
-		'udp2log' => 'error',
+		'level' => 'error',
 		'buffer' => true,
 	],
 	'api-warning' => 'debug',
