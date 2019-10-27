@@ -153,7 +153,7 @@ $wgMobileFrontendLogo = "{$wgScriptPath}/static/images/project-logos/androide.pn
 $wgMFAutodetectMobileView = true;
 $wgMFEnableBeta = true;
 $wgMFSpecialCaseMainPage = true;
-$wgMFAllowNonJavaScriptEditing = true;
+$wgMFAdvancedMobileContributions = true;
 
 if ( $wmgUseWikibaseClient ) {
 	$wgMFUseWikibaseDescription = true;
