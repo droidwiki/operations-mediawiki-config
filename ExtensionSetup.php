@@ -154,6 +154,7 @@ $wgMFAutodetectMobileView = true;
 $wgMFEnableBeta = true;
 $wgMFSpecialCaseMainPage = true;
 $wgMFAdvancedMobileContributions = true;
+$wgMFCollapseSectionsByDefault = false;
 
 if ( $wmgUseWikibaseClient ) {
 	$wgMFUseWikibaseDescription = true;
