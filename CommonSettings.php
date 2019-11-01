@@ -69,7 +69,7 @@ $wgShowHostnames = true;
 $wgShellLocale = 'en_US.utf8';
 
 # Additional, alternative skins
-wfLoadSkins( [ 'Vector', 'MonoBook' ] );
+wfLoadSkins( [ 'Vector', 'Timeless' ] );
 $wgDefaultSkin = 'vector';
 
 $wgLocalisationCacheConf = [
