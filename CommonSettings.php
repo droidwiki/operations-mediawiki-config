@@ -32,8 +32,6 @@ foreach ( $wgGroupOverrides as $group => $permissions ) {
 	$wgGroupPermissions[$group] = $permissions + $wgGroupPermissions[$group];
 }
 
-$wgReadOnly = "We are upgrading our database system. In order to not risk any data without having to shutdown the DroidWiki completely, we decided to put it into read-only mode only. The DroidWiki will be back in some minutes. Thanks for your understanding..";
-
 $wgArticlePath = '/wiki/$1';
 $wgScriptPath = '/w';
 $wgUsePathInfo = true;
