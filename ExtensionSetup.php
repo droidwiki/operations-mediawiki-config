@@ -36,6 +36,7 @@ $jsonEntrypointExtensions = [
 	'OpenGraphMeta',
 	'PageImages', # PageImages (needed by MobileFrontend and HoverCards)
 	'ParserFunctions',
+	'PasswordlessLogin',
 	'Popups',
 	'QuickSearchLookup',
 	'Scribunto',
@@ -390,3 +391,6 @@ $wgULSGeoService = false;
 # CirrusSearch
 $wgSearchType = 'CirrusSearch';
 $wgCirrusSearchServers = [ 'eclair.dwnet' ];
+
+$wgPLFirebaseAccessToken = $wmgPLFirebaseAccessToken;
+$wgPLEnableApiVerification = true;
