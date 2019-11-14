@@ -394,3 +394,4 @@ $wgCirrusSearchServers = [ 'eclair.dwnet' ];
 
 $wgPLFirebaseAccessToken = $wmgPLFirebaseAccessToken;
 $wgPLEnableApiVerification = true;
+$wgPLFirebaseSenderId = '829317666886';
