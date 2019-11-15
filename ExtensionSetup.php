@@ -6,7 +6,6 @@ $jsonEntrypointExtensions = [
 	'AmazonPartnernet',
 	'AntiSpoof', # needed by AbuseFilter
 	'BetaFeatures',
-	'CentralNotice',
 	'CheckUser',
 	'CirrusSearch',
 	'Cite', # ref-tags
@@ -191,16 +190,6 @@ $wgGLShowRight = true;
 $wgGLShowKeepLogin = false;
 $wgGLForceKeepLogin = true;
 $wgGLAllowAccountCreation = true;
-
-# CentralNotice - 01.08.2014
-$wgCentralDBname = 'droidwikiwiki';
-if ( $multiversion->getDBName() === $wgCentralDBname ) {
-	$wgNoticeInfrastructure = true;
-}
-$wgCentralPagePath = "//www.droidwiki.org/w/index.php";
-$wgCentralSelectedBannerDispatcher = "//www.droidwiki.org/w/index.php?title=Special:BannerLoader";
-$wgNoticeProjects = [ 'droidwikiwiki', 'datawiki' ];
-$wgNoticeProject = $multiversion->getDBName();
 
 $wgGATPProfileId = $wmgGATPProfileId;
 $wgGATPKeyFileLocation = $wmgGATPKeyFileLocation;
