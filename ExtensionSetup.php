@@ -1,6 +1,9 @@
 <?php
 # DO NOT PUT PRIVATE INFORMATION HERE!
 
+# Additional, alternative skins
+wfLoadSkins( [ 'Vector', 'Timeless' ] );
+
 $jsonEntrypointExtensions = [
 	'AbuseFilter',
 	'AmazonPartnernet',

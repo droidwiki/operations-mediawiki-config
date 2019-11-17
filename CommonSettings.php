@@ -67,9 +67,6 @@ $wgShowSQLErrors = false;
 $wgShowHostnames = true;
 
 $wgShellLocale = 'en_US.utf8';
-
-# Additional, alternative skins
-wfLoadSkins( [ 'Vector', 'Timeless' ] );
 $wgDefaultSkin = 'vector';
 
 $wgLocalisationCacheConf = [
