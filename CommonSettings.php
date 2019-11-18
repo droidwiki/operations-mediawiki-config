@@ -142,7 +142,8 @@ $wgResourceLoaderMaxage['unversioned'] = 24 * 60 * 60;
 
 $wgGitRepositoryViewers = array_merge( $wgGitRepositoryViewers,
 	[
-		'git@github.com:(.*).git' => 'https://github.com/%R/commit/%H'
+		'git@github.com:(.*).git' => 'https://github.com/%R/commit/%H',
+		'https://github.com/(.*).git' => 'https://github.com/%R/commit/%H',
 	]
 );
 
