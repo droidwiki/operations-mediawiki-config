@@ -171,6 +171,21 @@ if ( $wmgUseDroidWikiForeignRepo ) {
 	$wgEnableUploads = false;
 }
 
+if ( $wmgUseInstantCommons ) {
+	$wgForeignFileRepos[] = [
+		'class' => ForeignAPIRepo::class,
+		'name' => 'wikimediacommons',
+		'apibase' => 'https://commons.wikimedia.org/w/api.php',
+		'url' => 'https://upload.wikimedia.org/wikipedia/commons',
+		'thumbUrl' => 'https://upload.wikimedia.org/wikipedia/commons/thumb',
+		'hashLevels' => 2,
+		'transformVia404' => true,
+		'fetchDescription' => true,
+		'descriptionCacheExpiry' => 7 * 24 * 60 * 60,
+		'apiThumbCacheExpiry' => 7 * 24 * 60 * 60,
+	];
+}
+
 if ( $wmgUseVarnish ) {
 	$wgUseCdn = true;
 	$wgCdnServersNoPurge = [ '172.16.0.1/16' ];

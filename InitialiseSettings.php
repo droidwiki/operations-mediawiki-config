@@ -194,7 +194,7 @@ $wgConf->settings = [
 		'droidwikiwiki' => true,
 	],
 
-	'wgUseInstantCommons' => [
+	'wmgUseInstantCommons' => [
 		'default' => true,
 		'opswiki' => false,
 	],
