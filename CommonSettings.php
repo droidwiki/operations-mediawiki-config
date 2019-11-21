@@ -144,6 +144,7 @@ $wgGitRepositoryViewers = array_merge( $wgGitRepositoryViewers,
 	[
 		'git@github.com:(.*).git' => 'https://github.com/%R/commit/%H',
 		'https://github.com/(.*).git' => 'https://github.com/%R/commit/%H',
+		'https://gerrit.wikimedia.org/r/(.*).git' => 'https://gerrit.wikimedia.org/g/%R/+/%H',
 	]
 );
 
