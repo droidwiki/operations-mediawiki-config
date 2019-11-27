@@ -6,6 +6,7 @@ wfLoadSkins( [ 'Vector', 'Timeless' ] );
 
 $jsonEntrypointExtensions = [
 	'AbuseFilter',
+	'AcceleratedMobilePages',
 	'AmazonPartnernet',
 	'AntiSpoof', # needed by AbuseFilter
 	'BetaFeatures',
