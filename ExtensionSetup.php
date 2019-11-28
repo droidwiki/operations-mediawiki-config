@@ -28,7 +28,6 @@ $jsonEntrypointExtensions = [
 	'GlobalUsage',
 	'GoogleAnalyticsTopPages',
 	'GoogleLogin',
-	'GoogleSiteLinksSearchBox',
 	'InputBox',
 	'Interwiki',
 	'LoginNotify',
