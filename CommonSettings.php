@@ -53,6 +53,7 @@ $wgSMTP = [
 
 $wgEnableEmail = true;
 $wgEnableUserEmail = true;
+$wgEnableRestAPI = true;
 
 $wgEnotifUserTalk = false;
 $wgEnotifWatchlist = false;
