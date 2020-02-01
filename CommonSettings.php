@@ -129,6 +129,7 @@ $wgSVGConverters = [
 ];
 $wgSVGConverter = 'ImageMagick';
 $wgSVGConverterPath = '/usr/bin/';
+$wgNativeImageLazyLoading = true;
 
 # Enable subpages in the main namespace
 $wgNamespacesWithSubpages[NS_MAIN] = true;
