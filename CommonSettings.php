@@ -192,7 +192,7 @@ if ( $wmgUseInstantCommons ) {
 
 if ( $wmgUseVarnish ) {
 	$wgUseCdn = true;
-	$wgCdnServersNoPurge = [ '172.16.0.1/16' ];
+	$wgCdnServersNoPurge = [ '172.16.0.1/16', '10.0.0.0/16' ];
 	$wgCdnServers = [ '172.16.0.1:6081' ];
 	$wgUsePrivateIPs = true;
 }
