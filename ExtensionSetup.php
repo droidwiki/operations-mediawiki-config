@@ -166,6 +166,7 @@ if ( $wmgUseWikibaseClient ) {
 
 # Scribunto
 $wgScribuntoDefaultEngine = 'luastandalone';
+$wgScribuntoEngineConf['luastandalone']['luaPath'] = '/usr/bin/lua';
 $wgScribuntoUseGeSHi = true;
 $wgScribuntoUseCodeEditor = true;
 
