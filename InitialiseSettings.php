@@ -316,7 +316,7 @@ $wgConf->settings = [
 	],
 
 	'wmgUseVarnish' => [
-		'default' => false,
-		'droidwikiwiki' => true,
+		'default' => true,
+		'opswiki' => false,
 	],
 ];
