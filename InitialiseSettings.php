@@ -77,7 +77,7 @@ $wgConf->settings = [
 			],
 			'sysop' => [
 				'upload_by_url' => true,
-				// this should  be an own group "Translation admin"
+				// this should be an own group "Translation admin"
 				'pagelang' => true,
 				'checkuser' => true,
 				'checkuser-log' => true,
@@ -153,14 +153,14 @@ $wgConf->settings = [
 			'*' => [
 				'property-create' => false,
 				'edit' => false,
-                'createpage' => false,
+				'createpage' => false,
 			],
 			'user' => [
 				'edit' => false,
 			],
 			'emailconfirmed' => [
 				'edit' => true,
-                'createpage' => true,
+				'createpage' => true,
 			],
 			'sysop' => [
 				'property-create' => true,
