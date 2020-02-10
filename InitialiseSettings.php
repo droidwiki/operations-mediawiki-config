@@ -131,7 +131,7 @@ $wgConf->settings = [
 			],
 			'emailconfirmed' => [
 				'edit' => true,
-				'createpage' => false,
+				'createpage' => true,
 			],
 			'sysop' => [
 				'createpage' => true,
@@ -153,12 +153,14 @@ $wgConf->settings = [
 			'*' => [
 				'property-create' => false,
 				'edit' => false,
+                'createpage' => false,
 			],
 			'user' => [
 				'edit' => false,
 			],
 			'emailconfirmed' => [
 				'edit' => true,
+                'createpage' => true,
 			],
 			'sysop' => [
 				'property-create' => true,
