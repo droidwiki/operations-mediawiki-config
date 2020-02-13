@@ -382,7 +382,7 @@ $wgULSGeoService = false;
 
 # CirrusSearch
 $wgSearchType = 'CirrusSearch';
-$wgCirrusSearchServers = [ 'eclair.dwnet' ];
+$wgCirrusSearchServers = [ '172.16.0.2' ];
 
 $wgPLFirebaseAccessToken = $wmgPLFirebaseAccessToken;
 $wgPLEnableApiVerification = true;
