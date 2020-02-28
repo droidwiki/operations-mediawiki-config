@@ -152,7 +152,7 @@ $wgGitRepositoryViewers = array_merge( $wgGitRepositoryViewers,
 
 if ( $wmgUseRestbase ) {
 	$wgVirtualRestConfig['modules']['restbase'] = [
-		'url' => 'http://donut.dwnet:7231',
+		'url' => 'http://restbase:7231',
 		'domain' => $wmgRestbaseDomain,
 		'forwardCookies' => false,
 		'parsoidCompat' => false
