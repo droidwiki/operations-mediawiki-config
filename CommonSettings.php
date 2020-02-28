@@ -193,7 +193,7 @@ if ( $wmgUseInstantCommons ) {
 if ( $wmgUseVarnish ) {
 	$wgUseCdn = true;
 	$wgCdnServersNoPurge = [ '172.16.0.1/16', '10.0.0.0/16' ];
-	$wgCdnServers = [ 'donut.dwnet:6081', 'eclair.dwnet:6081' ];
+	$wgCdnServers = [ 'cache:80' ];
 	$wgUsePrivateIPs = true;
 }
 
