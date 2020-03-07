@@ -70,13 +70,10 @@ $wgShowHostnames = true;
 $wgShellLocale = 'en_US.utf8';
 $wgDefaultSkin = 'vector';
 
-$wgLocalisationCacheConf = [
-	'class' => 'LocalisationCache',
-	'store' => 'detect',
-	'storeClass' => false,
-	'manualRecache' => true,
-	'storeDirectory' => "$IP/cache/l10n",
-];
+$wgLocalisationCacheConf['storeClass'] = LCStoreCDB::class;
+$wgLocalisationCacheConf['storeDirectory'] = "$IP/cache/l10n";
+$wgLocalisationCacheConf['manualRecache'] = true;
+
 $wgCacheDirectory = '/data/mediawiki/cache/';
 $wgGitInfoCacheDirectory = '/data/mediawiki/main/cache/gitinfo';
 $wgMemCachedServers = [ 'memcached:11211' ];
