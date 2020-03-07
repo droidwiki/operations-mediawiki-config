@@ -70,7 +70,7 @@ $wgShowHostnames = true;
 $wgShellLocale = 'en_US.utf8';
 $wgDefaultSkin = 'vector';
 
-$wgLocalisationCacheConf['storeClass'] = LCStoreCDB::class;
+$wgLocalisationCacheConf['storeClass'] = LCStoreStaticArray::class;
 $wgLocalisationCacheConf['storeDirectory'] = "$IP/cache/l10n";
 $wgLocalisationCacheConf['manualRecache'] = true;
 
