@@ -77,7 +77,7 @@ $wgLocalisationCacheConf['manualRecache'] = true;
 $wgCacheDirectory = '/data/mediawiki/cache/';
 $wgGitInfoCacheDirectory = '/data/mediawiki/main/cache/gitinfo';
 function toMemcachedServer( $server ) {
-    return $server . ':11211';
+	return $server . ':11211';
 }
 $wgMemCachedServers = array_map( 'toMemcachedServer', gethostbynamel( 'tasks.memcached' ) );
 $wgMainCacheType = CACHE_MEMCACHED;
