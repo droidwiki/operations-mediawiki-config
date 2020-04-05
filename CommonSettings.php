@@ -7,9 +7,11 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 }
 
 require_once __DIR__ . '/multiversion/MWMultiVersion.php';
+require_once __DIR__ . '/ServiceDiscovery.php';
 require_once __DIR__ . '/logging.php';
 
 $multiversion = MWMultiVersion::getInstance();
+$services = new ServiceDiscovery();
 
 # load PrivateSettings.php first
 require_once __DIR__ . '/../private/PrivateSettings.php';
@@ -76,10 +78,7 @@ $wgLocalisationCacheConf['manualRecache'] = true;
 
 $wgCacheDirectory = '/data/mediawiki/cache/';
 $wgGitInfoCacheDirectory = '/data/mediawiki/main/cache/gitinfo';
-function toMemcachedServer( $server ) {
-	return $server . ':11211';
-}
-$wgMemCachedServers = array_map( 'toMemcachedServer', gethostbynamel( 'tasks.memcached' ) );
+$wgMemCachedServers = $services->memcached();
 $wgMainCacheType = CACHE_MEMCACHED;
 $wgMessageCacheType = CACHE_MEMCACHED;
 $wgSessionCacheType = CACHE_MEMCACHED;
@@ -193,7 +192,7 @@ if ( $wmgUseInstantCommons ) {
 if ( $wmgUseVarnish ) {
 	$wgUseCdn = true;
 	$wgCdnServersNoPurge = [ '172.16.0.1/16', '10.0.0.0/16' ];
-	$wgCdnServers = [ 'cache:80' ];
+	$wgCdnServers = $services->varnish();
 	$wgUsePrivateIPs = true;
 }
 
