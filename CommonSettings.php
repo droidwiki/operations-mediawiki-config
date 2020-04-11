@@ -149,6 +149,8 @@ $wgGitRepositoryViewers = array_merge( $wgGitRepositoryViewers,
 	]
 );
 
+$wgDisableOutputCompression = true;
+
 if ( $wmgUseRestbase ) {
 	$wgVirtualRestConfig['modules']['restbase'] = [
 		'url' => 'http://restbase:7231',
