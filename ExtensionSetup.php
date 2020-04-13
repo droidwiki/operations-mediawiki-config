@@ -387,3 +387,7 @@ $wgCirrusSearchServers = [ '172.16.0.2' ];
 $wgPLFirebaseAccessToken = $wmgPLFirebaseAccessToken;
 $wgPLEnableApiVerification = true;
 $wgPLFirebaseSenderId = '829317666886';
+
+# UserMerge
+// Workaround for https://phabricator.wikimedia.org/T241839 / https://phabricator.wikimedia.org/T238632
+$wgReservedUsernames[] = 'Anonymous';
