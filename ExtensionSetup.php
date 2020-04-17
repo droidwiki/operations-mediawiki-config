@@ -85,27 +85,12 @@ wfLoadExtensions( $extensionsToLoadWithExtensionregistration );
 # Configuration for ConfirmEdit
 if ( PHP_SAPI === 'cli' ) {
 	$wgMessagesDirs['ReCaptchaNoCaptcha'] = "$IP/extensions/ConfirmEdit/ReCaptchaNoCaptcha/i18n";
-	$wgMessagesDirs['FancyCaptcha'] = "$IP/extensions/ConfirmEdit/FancyCaptcha/i18n";
 }
 
-// The DroidWiki app can't handle client side JavaScript (on which reCaptcha is based on)
-// Check, if the request is made via the api (and assume, that this is the app or any other client that
-// needs machine readable format's) and use the FancyCaptcha plugin instead of reCaptcha.
-if ( $_SERVER['SCRIPT_NAME'] !== '/api.php' && isset( $_GET['title'] ) &&
-	strpos( $_GET['title'], 'Captcha/image' ) === false ) {
-	wfLoadExtensions( [ 'ConfirmEdit/ReCaptchaNoCaptcha' ] );
-	$wgReCaptchaSiteKey = $wmgReCaptchaSiteKey;
-	$wgReCaptchaSecretKey = $wmgReCaptchaSecretKey;
-	$wgCaptchaClass = 'ReCaptchaNoCaptcha';
-} else {
-	wfLoadExtensions( [ 'ConfirmEdit/FancyCaptcha' ] );
-	$wgCaptchaDirectory = $wmgFancyCaptchaCaptchaDir;
-	$wgCaptchaSecret = $wmgFancyCaptchaSecretKey;
-	$wgCaptchaClass = 'FancyCaptcha';
-	// in order to work with clients other then web browsers, the CAPTCHA information needs to be
-	// stored in th cache, instead of in the session (which is the default).
-	$wgCaptchaStorageClass = 'CaptchaCacheStore';
-}
+wfLoadExtensions( [ 'ConfirmEdit/ReCaptchaNoCaptcha' ] );
+$wgReCaptchaSiteKey = $wmgReCaptchaSiteKey;
+$wgReCaptchaSecretKey = $wmgReCaptchaSecretKey;
+$wgCaptchaClass = 'ReCaptchaNoCaptcha';
 
 # only emailconfirmed can skip captcha
 $wgGroupPermissions['*']['skipcaptcha'] = false;
