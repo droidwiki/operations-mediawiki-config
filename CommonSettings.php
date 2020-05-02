@@ -162,17 +162,23 @@ if ( $wmgUseRestbase ) {
 
 $wgGenerateThumbnailOnParse = false;
 if ( $wmgUseDroidWikiForeignRepo ) {
-	$wgUseSharedUploads = true;
 	$wgSharedUploadPath = 'https://www.droidwiki.org/w/images';
 	$wgSharedUploadDirectory = '/data/shareddata/mediawiki/images/';
-	$wgHashedSharedUploadDirectory = true;
-	$wgFetchCommonsDescriptions = true;
-	$wgSharedUploadDBname = 'droidwikiwiki';
-	$wgSharedUploadDBprefix = '';
 	$wgRepositoryBaseUrl = 'https://www.droidwiki.org/wiki/File:';
-	$wgDBserver = '172.16.0.1';
-	$wgDBuser = $wmgDatabaseUser;
-	$wgDBpassword = $wmgDatabasePassword;
+	$wgFetchCommonsDescriptions = true;
+	$wgForeignFileRepos[] = [
+		'class' => ForeignDBViaLBRepo::class,
+		'name' => 'shared',
+		'directory' => $wgSharedUploadDirectory,
+		'url' => $wgSharedUploadPath,
+		'wiki' => 'droidwikiwiki',
+		'hashLevels' => 2,
+		'thumbScriptUrl' => $wgSharedThumbnailScriptPath,
+		'transformVia404' => !$wgGenerateThumbnailOnParse,
+		'hasSharedCache' => $wgCacheSharedUploads,
+		'descBaseUrl' => $wgRepositoryBaseUrl,
+		'fetchDescription' => $wgFetchCommonsDescriptions,
+	];
 	$wgUploadNavigationUrl = 'https://www.droidwiki.org/wiki/Special:Upload';
 	$wgEnableUploads = false;
 }
