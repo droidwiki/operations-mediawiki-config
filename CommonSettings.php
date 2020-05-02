@@ -196,6 +196,7 @@ if ( $wmgUseInstantCommons ) {
 
 if ( $wmgUseVarnish ) {
 	$wgUseCdn = true;
+	$wgCdnMaxAge = 2678400; // 31 days
 	$wgCdnServers = $services->varnish();
 	$wgUsePrivateIPs = true;
 }
