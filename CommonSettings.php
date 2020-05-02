@@ -170,6 +170,7 @@ if ( $wmgUseDroidWikiForeignRepo ) {
 	$wgSharedUploadDBname = 'droidwikiwiki';
 	$wgSharedUploadDBprefix = '';
 	$wgRepositoryBaseUrl = 'https://www.droidwiki.org/wiki/File:';
+	$wgDBserver = '172.16.0.1';
 	$wgDBuser = $wmgDatabaseUser;
 	$wgDBpassword = $wmgDatabasePassword;
 	$wgUploadNavigationUrl = 'https://www.droidwiki.org/wiki/Special:Upload';
