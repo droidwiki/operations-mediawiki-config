@@ -15,9 +15,16 @@ class ServiceDiscovery {
 		return $this->discover( $serviceName, '80' );
 	}
 
+	public function nginx( $serviceName = 'frontend-proxy' ) {
+		return $this->discover( $serviceName, null );
+	}
+
 	private function discover( $service, $port ) {
 		return array_map( function ( $server ) use ( $port ) {
-			return $server . ':' . $port;
+			if ( $port !== null ) {
+				 return $server . ':' . $port;
+			}
+			return $server;
 		}, gethostbynamel( $this->prefix . $service ) );
 	}
 }

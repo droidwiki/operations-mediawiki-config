@@ -18,4 +18,12 @@ class ServiceDiscoveryTest extends PHPUnit\Framework\TestCase {
 
 		$this->assertEquals( [ '127.0.0.1:80' ], $result );
 	}
+
+	public function testDiscoversNginx() {
+		$services = new ServiceDiscovery( '' );
+
+		$result = $services->nginx( 'localhost' );
+
+		$this->assertEquals( [ '127.0.0.1' ], $result );
+	}
 }
