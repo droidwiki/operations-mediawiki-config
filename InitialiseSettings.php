@@ -62,14 +62,6 @@ $wgConf->settings = [
 		'opswiki' => 'info@go2tech.de',
 	],
 
-	'wgCookieDomain' => [
-		'default' => '',
-		'droidwikiwiki' => '.droidwiki.org',
-		'datawiki' => '.droidwiki.org',
-		'endroidwikiwiki' => '.droidwiki.org',
-		'opswiki' => '.ops.go2tech.de',
-	],
-
 	'+wgGroupPermissions' => [
 		'default' => [
 			'emailconfirmed' => [
@@ -203,11 +195,6 @@ $wgConf->settings = [
 
 	'wgSVGConverter' => [
 		'default' => 'ImageMagick',
-	],
-
-	'wgSessionsInObjectCache' => [
-		'default' => true,
-		'opswiki' => false,
 	],
 
 	'wgCrossSiteAJAXdomains' => [
