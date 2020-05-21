@@ -198,7 +198,7 @@ if ( $wmgUseVarnish ) {
 	$wgUseCdn = true;
 	$wgCdnMaxAge = 2678400; // 31 days
 	$wgCdnServers = $services->varnish();
-	$wgCdnServersNoPurge = $services->nginx();
+	$wgCdnServersNoPurge = [ '10.0.0.0/16' ];
 	$wgUsePrivateIPs = true;
 }
 
