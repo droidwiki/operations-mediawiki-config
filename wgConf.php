@@ -16,4 +16,4 @@ $wgConf->suffixes = $wgConf->wikis;
 $wgConf->loadFullData();
 $wgConf->extractAllGlobals( $multiversion->getDBName() );
 
-$wgLocalDatabases =& $wgConf->getLocalDatabases();
+$wgLocalDatabases = $wgConf->getLocalDatabases();
