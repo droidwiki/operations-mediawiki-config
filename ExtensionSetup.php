@@ -261,7 +261,7 @@ if ( $wmgUseWikibaseRepo ) {
 
 	// Tell Wikibase which namespace to use for which kind of entity
 	// Make sure we use the same keys on repo and clients, so we can share cached objects.
-	$wgWBRepoSettings['sharedCacheKeyPrefix'] = $wgDBname . ':WBL/' . rawurlencode( WBL_VERSION );
+	$wgWBRepoSettings['sharedCacheKeyPrefix'] = $wgDBname . ':WBL/';
 	// NOTE: no need to set up $wgNamespaceContentModels, Wikibase will do that automatically based on $wgWBRepoSettings
 	// Tell MediaWIki to search the item namespace
 	$wgNamespacesToBeSearchedDefault[WB_NS_ITEM] = true;
