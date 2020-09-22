@@ -2,8 +2,7 @@
 	"name": "droidwiki/mediawiki-config",
 	"description": "MediaWiki configuration for DroidWiki.",
 	"require": {
-		"mongofill/mongofill": "dev-master",
-		"perftools/xhgui": "dev-master"
+		"mongofill/mongofill": "dev-master"
 	},
 	"config": {
 		"classmap-authoritative": true,
