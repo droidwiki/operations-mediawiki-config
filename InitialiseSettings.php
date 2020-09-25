@@ -56,7 +56,12 @@ $wgConf->settings = [
 	],
 
 	'wmgSiteLogoWordmark' => [
-		'default' => null,
+		'default' => [
+			'src' => '/static/images/project-logos/wordmark.svg',
+			'width' => 150,
+			'height' => 40,
+		],
+		'opswiki' => null,
 	],
 
 	'wgEmergencyContact' => [
