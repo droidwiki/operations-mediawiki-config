@@ -56,7 +56,7 @@ $wgConf->settings = [
 	],
 
 	'wmgSiteLogoWordmark' => [
-		'default' => '',
+		'default' => null,
 	],
 
 	'wgEmergencyContact' => [
