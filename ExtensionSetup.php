@@ -4,6 +4,9 @@
 # Additional, alternative skins
 wfLoadSkins( [ 'Vector', 'Timeless' ] );
 $wgVectorIsSearchInHeader = true;
+$wgVectorDefaultSkinVersion = '2';
+$wgVectorDefaultSkinVersionForExistingAccounts = '1';
+$wgVectorDefaultSkinVersionForNewAccounts = '2';
 
 $jsonEntrypointExtensions = [
 	'AbuseFilter',
