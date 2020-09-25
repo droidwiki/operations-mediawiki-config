@@ -3,6 +3,7 @@
 
 # Additional, alternative skins
 wfLoadSkins( [ 'Vector', 'Timeless' ] );
+$wgVectorIsSearchInHeader = true;
 
 $jsonEntrypointExtensions = [
 	'AbuseFilter',
@@ -189,7 +190,6 @@ $wgTemplateDataUseGUI = true;
 
 # VisualEditor
 $wgDefaultUserOptions['visualeditor-enable'] = 1;
-$wgVisualEditorSupportedSkins = [ 'vector', 'apex', 'monobook', 'minerva' ];
 $wgVisualEditorEnableWikitext = true;
 $wgVisualEditorEnableDiffPage = true;
 $wgVisualEditorAvailableNamespaces = [
