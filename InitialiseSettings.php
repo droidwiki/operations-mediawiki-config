@@ -59,18 +59,6 @@ $wgConf->settings = [
 		'default' => '',
 	],
 
-	'wgLogo' => [
-		// possible values:
-		// androide.png -> blank DroidWiki logo
-		// androide_ch.png -> DroidWiki logo with christmas hat
-		// androide_cog.png -> black/white DroidWiki logo with half cog (opswiki)
-		'default' => '',
-		'droidwikiwiki' => '/static/images/project-logos/androide.png',
-		'endroidwikiwiki' => '/static/images/project-logos/androide.png',
-		'datawiki' => '/static/images/project-logos/androide.png',
-		"opswiki" => '/static/images/project-logos/androide_cog.png',
-	],
-
 	'wgEmergencyContact' => [
 		'default' => 'info@droidwiki.org',
 		'opswiki' => 'info@go2tech.de',
