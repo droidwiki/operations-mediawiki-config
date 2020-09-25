@@ -40,6 +40,25 @@ $wgConf->settings = [
 		'datawiki' => 'https://data.droidwiki.org',
 	],
 
+	'wmgSiteLogo1x' => [
+		'default' => '',
+		'droidwikiwiki' => '/static/images/project-logos/androide.png',
+		'endroidwikiwiki' => '/static/images/project-logos/androide.png',
+		'datawiki' => '/static/images/project-logos/androide.png',
+		"opswiki" => '/static/images/project-logos/androide_cog.png',
+	],
+
+	'wmgSiteLogoIcon' => [
+		'default' => '',
+		'droidwikiwiki' => '/static/images/project-logos/androide_icon.svg',
+		'endroidwikiwiki' => '/static/images/project-logos/androide_icon.svg',
+		'datawiki' => '/static/images/project-logos/androide_icon.svg',
+	],
+
+	'wmgSiteLogoWordmark' => [
+		'default' => '',
+	],
+
 	'wgLogo' => [
 		// possible values:
 		// androide.png -> blank DroidWiki logo

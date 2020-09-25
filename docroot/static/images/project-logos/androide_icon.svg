@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-147 -70 294 345">
+    <clipPath id="cut-off-bottom">
+        <rect x="-147" y="-70" width="294" height="115"/>
+    </clipPath>
+    <g fill="#a4c639">
+        <use stroke-width="3" xlink:href="#b" stroke="#0c0c0c"/>
+        <g transform="scale(-1,1)" stroke="#0c0c0c" stroke-width="1.5">
+            <rect rx="6.5" transform="rotate(29)" height="86" width="13" y="-86" x="14"/>
+        </g>
+        <g stroke="#0c0c0c" stroke-width="1.5">
+            <rect rx="6.5" transform="rotate(29)" height="86" width="13" y="-86" x="14"/>
+        </g>
+        <g id="b">
+            <ellipse cy="41" rx="91" ry="84" clip-path="url(#cut-off-bottom)" />
+        </g>
+    </g>
+    <g stroke="#0c0c0c" stroke-width="1.5" fill="#FFF">
+        <path d="m-91 44.5h182"/>
+        <circle cx="-42" r="4"/>
+        <circle cx="42" r="4"/>
+    </g>
+</svg>

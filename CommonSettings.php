@@ -72,6 +72,16 @@ $wgShowHostnames = true;
 $wgShellLocale = 'en_US.utf8';
 $wgDefaultSkin = 'vector';
 
+$wgLogos = [
+	'1x' => $wmgSiteLogo1x ?? null,
+	'1.5x' => $wmgSiteLogo1_5x ?? null,
+	'2x' => $wmgSiteLogo2x ?? null,
+	'icon' => $wmgSiteLogoIcon ?? null,
+	'wordmark' => $wmgSiteLogoWordmark ?? null,
+	'tagline' => $wmgSiteLogoTagline ?? null,
+	'variants' => $wmgSiteLogoVariants ?? null,
+];
+
 $wgLocalisationCacheConf['storeClass'] = LCStoreStaticArray::class;
 $wgLocalisationCacheConf['storeDirectory'] = "$IP/cache/l10n";
 $wgLocalisationCacheConf['manualRecache'] = true;
