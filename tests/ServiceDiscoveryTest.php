@@ -26,4 +26,12 @@ class ServiceDiscoveryTest extends PHPUnit\Framework\TestCase {
 
 		$this->assertEquals( [ '127.0.0.1' ], $result );
 	}
+
+	public function testDiscoversRedis() {
+		$services = new ServiceDiscovery( '' );
+
+		$result = $services->redis( 'localhost' );
+
+		$this->assertEquals( [ '127.0.0.1:6379' ], $result );
+	}
 }

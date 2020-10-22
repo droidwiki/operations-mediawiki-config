@@ -94,7 +94,7 @@ $wgMessageCacheType = CACHE_MEMCACHED;
 $wgSessionCacheType = CACHE_MEMCACHED;
 $wgObjectCaches['redis'] = [
 	'class' => 'RedisBagOStuff',
-	'servers' => [ '172.16.0.1:6379' ],
+	'servers' => $services->redis(),
 ];
 $wgMainStash = 'redis';
 
@@ -104,7 +104,7 @@ $wgParserCacheExpireTime = 86400 * 30; // 30 days
 $wgJobRunRate = 0;
 $wgJobTypeConf['default'] = [
 	'class' => 'JobQueueRedis',
-	'redisServer' => '172.16.0.1:6379',
+	'redisServer' => $services->redis()[0],
 	'redisConfig' => [],
 	'claimTTL' => 3600,
 	'daemonized' => true,

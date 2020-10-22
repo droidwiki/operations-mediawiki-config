@@ -19,6 +19,10 @@ class ServiceDiscovery {
 		return $this->discover( $serviceName, null );
 	}
 
+	public function redis( $serviceName = 'redis' ) {
+		return $this->discover( $serviceName, '6379' );
+	}
+
 	private function discover( $service, $port ) {
 		return array_map( function ( $server ) use ( $port ) {
 			if ( $port !== null ) {
