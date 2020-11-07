@@ -7,6 +7,7 @@ $wgVectorIsSearchInHeader = true;
 $wgVectorDefaultSkinVersion = '2';
 $wgVectorDefaultSkinVersionForExistingAccounts = '1';
 $wgVectorDefaultSkinVersionForNewAccounts = '2';
+$wgVectorDefaultSidebarVisibleForAnonymousUser = true;
 
 $jsonEntrypointExtensions = [
 	'AbuseFilter',
