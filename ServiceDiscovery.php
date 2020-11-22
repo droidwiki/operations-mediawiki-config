@@ -24,11 +24,16 @@ class ServiceDiscovery {
 	}
 
 	private function discover( $service, $port ) {
+	    $ipAddresses = gethostbynamel( $this->prefix . $service );
+	    if ( $ipAddresses === false ) {
+	        return [];
+        }
+
 		return array_map( function ( $server ) use ( $port ) {
 			if ( $port !== null ) {
 				 return $server . ':' . $port;
 			}
 			return $server;
-		}, gethostbynamel( $this->prefix . $service ) );
+		}, $ipAddresses );
 	}
 }
