@@ -24,10 +24,10 @@ class ServiceDiscovery {
 	}
 
 	private function discover( $service, $port ) {
-	    $ipAddresses = gethostbynamel( $this->prefix . $service );
-	    if ( $ipAddresses === false ) {
-	        return [];
-        }
+		$ipAddresses = gethostbynamel( $this->prefix . $service );
+		if ( $ipAddresses === false ) {
+			return [];
+    	}
 
 		return array_map( function ( $server ) use ( $port ) {
 			if ( $port !== null ) {
