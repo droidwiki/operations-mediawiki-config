@@ -27,7 +27,7 @@ class ServiceDiscovery {
 		$ipAddresses = gethostbynamel( $this->prefix . $service );
 		if ( $ipAddresses === false ) {
 			return [];
-    	}
+		}
 
 		return array_map( function ( $server ) use ( $port ) {
 			if ( $port !== null ) {

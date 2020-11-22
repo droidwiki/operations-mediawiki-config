@@ -180,7 +180,7 @@ $wmgMonologConfig = [
 	'handlers' => [
 		'default' => [
 			'class' => '\\MediaWiki\\Logger\\Monolog\\LegacyHandler',
-			'args' => ['php://stdout'],
+			'args' => [ 'php://stdout' ],
 			'formatter' => 'line',
 		],
 		'blackhole' => [
@@ -226,7 +226,7 @@ foreach ( $wmgMonologChannels as $channel => $opts ) {
 			$wmgMonologConfig['handlers'][$leveledLogger] = [
 				'class' => '\\MediaWiki\\Logger\\Monolog\\LegacyHandler',
 				'args' => [
-                    'php://stdout',
+					'php://stdout',
 					false,
 					$opts['level'],
 				],
