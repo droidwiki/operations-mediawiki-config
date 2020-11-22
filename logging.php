@@ -146,8 +146,6 @@ $wmgMonologChannels = [
 	'XMP' => 'warning',
 ];
 
-$todaysLoggingFile = '/data/log/mediawiki/monolog-' . date( 'Ymd' ) . '.log';
-
 // Post construction calls to make for new Logger instances
 $wmgMonologLoggerCalls = [
 	// T116550 - Requires Monolog > 1.17.2
@@ -182,7 +180,7 @@ $wmgMonologConfig = [
 	'handlers' => [
 		'default' => [
 			'class' => '\\MediaWiki\\Logger\\Monolog\\LegacyHandler',
-			'args' => [ $todaysLoggingFile ],
+			'args' => ['php://stdout'],
 			'formatter' => 'line',
 		],
 		'blackhole' => [
@@ -228,7 +226,7 @@ foreach ( $wmgMonologChannels as $channel => $opts ) {
 			$wmgMonologConfig['handlers'][$leveledLogger] = [
 				'class' => '\\MediaWiki\\Logger\\Monolog\\LegacyHandler',
 				'args' => [
-					$todaysLoggingFile,
+                    'php://stdout',
 					false,
 					$opts['level'],
 				],
