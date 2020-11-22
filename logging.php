@@ -28,6 +28,7 @@ $wmgMonologChannels = [
 	'BounceHandler' => 'error',
 	'Bug58676' => 'error',
 	'captcha' => 'error',
+	'cookie' => 'error',
 	'CentralNotice' => 'error',
 	'CirrusSearch' => 'error',
 	'cirrussearch-request' => [
