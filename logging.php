@@ -73,6 +73,7 @@ $wmgMonologChannels = [
 	'LoginNotify' => 'error',
 	'memcached' => 'error',
 	'message-format' => 'error',
+    'MessageCache' => 'error',
 	'MessageCacheError' => 'error',
 	'mobile' => 'error',
 	'objectcache' => 'warning',
@@ -177,7 +178,7 @@ foreach ( $wmgMonologChannels as $channel => $opts ) {
 	}
 	$opts = is_array( $opts ) ? $opts : [ 'level' => $opts ];
 	$opts = array_merge( [
-		'level' => 'debug',
+		'level' => 'error',
 		'sample' => false,
 		'buffer' => false,
 	], $opts );
