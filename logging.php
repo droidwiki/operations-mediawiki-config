@@ -73,7 +73,11 @@ $wmgMonologConfig = [
 	'handlers' => [
 		'default' => [
 			'class' => '\\MediaWiki\\Logger\\Monolog\\LegacyHandler',
-			'args' => [ 'php://stdout' ],
+			'args' => [
+				'php://stdout',
+				false,
+				'warning',
+			],
 			'formatter' => 'line',
 		],
 		'blackhole' => [
