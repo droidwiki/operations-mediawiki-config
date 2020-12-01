@@ -142,6 +142,8 @@ $wgGoogleAnalyticsIgnoreBots = $wmgGoogleAnalyticsIgnoreBots;
 
 # MobileFrontend
 wfLoadSkin( 'MinervaNeue' );
+# temporarz enable site notices to show CookieWarning banner until T269173 is resolved
+$wgMinervaEnableSiteNotice = true;
 $wgMobileFrontendLogo = "{$wgScriptPath}/static/images/project-logos/androide.png";
 $wgMFAutodetectMobileView = true;
 $wgMFEnableBeta = true;
