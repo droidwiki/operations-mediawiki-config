@@ -22,19 +22,6 @@ class MWMultiVersionTest extends PHPUnit\Framework\TestCase {
 	}
 
 	/**
-	 * @expectedException InvalidArgumentException
-	 */
-	public function testFailsOnDstaticWithoutDbname() {
-		MWMultiversion::factory( 'dstatic.dev' );
-	}
-
-	public function testOnDstatic() {
-		$version = MWMultiversion::factory( 'dstatic.dev', 'droidwikiwiki' );
-
-		$this->assertEquals( 'droidwikiwiki', $version->getDBName() );
-	}
-
-	/**
 	 * @dataProvider provideServerName
 	 */
 	public function testFactory( $expected, $serverName ) {
