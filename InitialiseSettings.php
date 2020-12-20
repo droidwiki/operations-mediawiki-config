@@ -7,12 +7,14 @@ $wgConf->settings = [
 		'default' => 'Android Wiki',
 		'opswiki' => 'DroidWiki Operations',
 		'datawiki' => 'DroidWiki Data',
+		'armakothwiki' => 'armakoth.wiki',
 	],
 
 	'wgMetaNamespace' => [
 		'default' => 'DroidWiki',
 		'opswiki' => 'Project',
 		'datawiki' => 'Data',
+		'armakothwiki' => 'Project',
 	],
 
 	'+wgNamespaceContentModels' => [
@@ -24,6 +26,7 @@ $wgConf->settings = [
 	'wgLanguageCode' => [
 		'default' => 'de',
 		'endroidwikiwiki' => 'en',
+		'armakothwiki' => 'en',
 	],
 
 	'wgServer' => [
@@ -31,6 +34,7 @@ $wgConf->settings = [
 		'endroidwikiwiki' => 'https://en.droidwiki.org',
 		'opswiki' => 'https://ops.go2tech.de',
 		'datawiki' => 'https://data.droidwiki.org',
+		'armakothwiki' => 'https://www.armakoth.wiki',
 	],
 
 	'wgCanonicalServer' => [
@@ -38,6 +42,7 @@ $wgConf->settings = [
 		'endroidwikiwiki' => 'https://en.droidwiki.org',
 		'opswiki' => 'http://ops.go2tech.de',
 		'datawiki' => 'https://data.droidwiki.org',
+		'armakothwiki' => 'https://www.armakoth.wiki',
 	],
 
 	'wmgSiteLogo1x' => [
@@ -46,6 +51,7 @@ $wgConf->settings = [
 		'endroidwikiwiki' => '/static/images/project-logos/androide.png',
 		'datawiki' => '/static/images/project-logos/androide.png',
 		"opswiki" => '/static/images/project-logos/androide_cog.png',
+		"armakothwiki" => '/static/images/project-logos/koth.png',
 	],
 
 	'wmgSiteLogoIcon' => [
@@ -53,6 +59,7 @@ $wgConf->settings = [
 		'droidwikiwiki' => '/static/images/project-logos/androide_icon.svg',
 		'endroidwikiwiki' => '/static/images/project-logos/androide_icon.svg',
 		'datawiki' => '/static/images/project-logos/androide_icon.svg',
+		"armakothwiki" => '/static/images/project-logos/koth_icon.png',
 	],
 
 	'wmgSiteLogoWordmark' => [
@@ -62,16 +69,24 @@ $wgConf->settings = [
 			'height' => 40,
 		],
 		'opswiki' => null,
+		'armakoth' => null,
+	],
+
+	'wgFavicon' => [
+		'default' => '/static/images/favicons/favicon.ico',
+		'armakothwiki' => '/static/images/favicons/koth.png',
 	],
 
 	'wgEmergencyContact' => [
 		'default' => 'info@droidwiki.org',
 		'opswiki' => 'info@go2tech.de',
+		'armakoth' => 'info@armakoth.wiki',
 	],
 
 	'wgPasswordSender' => [
 		'default' => 'info@droidwiki.org',
 		'opswiki' => 'info@go2tech.de',
+		'armakoth' => 'info@armakoth.wiki',
 	],
 
 	'+wgGroupPermissions' => [
@@ -93,7 +108,6 @@ $wgConf->settings = [
 				'deleterevision' => true,
 				'suppressrevision' => true,
 				'deletelogentry' => true,
-				'deleterevision' => true,
 				'suppressionlog' => true,
 				'hideuser' => true,
 			],
@@ -210,7 +224,7 @@ $wgConf->settings = [
 	],
 
 	'wgCrossSiteAJAXdomains' => [
-		'default' => [ '*.droidwiki.de', '*.droidwiki.org' ],
+		'default' => [ '*.droidwiki.org' ],
 		'opswiki' => [],
 	],
 
@@ -226,7 +240,7 @@ $wgConf->settings = [
 	],
 
 	'wgRightsIcon' => [
-		'default' => '//creativecommons.org/images/public/somerights20.png',
+		'default' => 'https://creativecommons.org/images/public/somerights20.png',
 		'opswiki' => null,
 	],
 
@@ -246,6 +260,7 @@ $wgConf->settings = [
 		'droidwikiwiki' => true,
 		'datawiki' => true,
 		'endroidwikiwiki' => true,
+		'armakothwiki' => true,
 	],
 
 	'wmgUseTranslate' => [
@@ -279,30 +294,35 @@ $wgConf->settings = [
 		'default' => null,
 		'datawiki' => 'droidwikiwiki',
 		'endroidwikiwiki' => 'droidwikiwiki',
+		'armakothwiki' => 'droidwikiwiki',
 	],
 
 	'wgSharedTables' => [
 		'default' => [ 'user', 'user_properties' ],
 		'+datawiki' => [ 'user_google_user', 'user_xenforo_user', 'user_groups', 'oathauth_users' ],
 		'+endroidwikiwiki' => [ 'user_google_user', 'user_xenforo_user', 'user_groups', 'oathauth_users' ],
+		'+armakothwiki' => [ 'user_google_user', 'user_groups', 'oathauth_users' ],
 	],
 
 	'wmgUseRestbase' => [
 		'default' => false,
 		'endroidwikiwiki' => true,
 		'droidwikiwiki' => true,
+		'armakothwiki' => true,
 	],
 
 	'wmgVisualEditorAccessRESTbaseDirectly' => [
 		'default' => false,
 		'endroidwikiwiki' => true,
 		'droidwikiwiki' => true,
+		'armakothwiki' => true,
 	],
 
 	'wmgRestbaseDomain' => [
 		'default' => '',
 		'endroidwikiwiki' => 'en.droidwiki.org',
 		'droidwikiwiki' => 'www.droidwiki.org',
+		'armakothwiki' => 'www.armakoth.wiki',
 	],
 
 	'wmgParsoidForwardCookies' => [
@@ -314,6 +334,7 @@ $wgConf->settings = [
 		'default' => true,
 		'droidwikiwiki' => false,
 		'opswiki' => false,
+		'armakothwiki' => false,
 	],
 
 	'wmgUseVarnish' => [

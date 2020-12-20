@@ -41,7 +41,6 @@ $wgScriptExtension = '.php';
 $wgStylePath = "$wgScriptPath/skins";
 $wgEnableCanonicalServerLink = true;
 
-$wgFavicon = '/static/images/favicons/favicon.ico';
 $wgLocaltimezone = 'Europe/Berlin';
 
 $wgSMTP = [

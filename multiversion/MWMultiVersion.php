@@ -75,14 +75,6 @@ class MWMultiVersion {
 	}
 
 	public static function factory( $serverName, $dbName = null ) {
-		if ( $serverName === 'dstatic.dev' ) {
-			if ( $dbName !== null ) {
-				$mwmv = new self();
-				$mwmv->setDBName( $dbName );
-				return $mwmv;
-			}
-			throw new InvalidArgumentException( 'static.dev without wikiname.' );
-		}
 		$mwmv = new self();
 		$mwmv->setServerName( $serverName )->loadDBFromServerName();
 
