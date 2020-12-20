@@ -25,7 +25,7 @@ class MWMultiVersionTest extends PHPUnit\Framework\TestCase {
 	 * @dataProvider provideServerName
 	 */
 	public function testFactory( $expected, $serverName ) {
-		$version = MWMultiversion::factory( $serverName, 'anyWikiName' );
+		$version = MWMultiversion::factory( $serverName );
 
 		$this->assertEquals( $expected, $version->getDBName() );
 	}
@@ -37,6 +37,8 @@ class MWMultiVersionTest extends PHPUnit\Framework\TestCase {
 			[ 'endroidwikiwiki', 'en.droidwiki.org' ],
 			[ 'datawiki', 'data.droidwiki.org' ],
 			[ 'opswiki', 'ops.go2tech.de' ],
+			[ 'armakothwiki', 'armakoth.wiki' ],
+			[ 'armakothwiki', 'www.armakoth.wiki' ],
 		];
 	}
 

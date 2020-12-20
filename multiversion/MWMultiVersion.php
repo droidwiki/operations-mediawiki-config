@@ -57,7 +57,7 @@ class MWMultiVersion {
 					__METHOD__ );
 			}
 			$wiki = isset( $_GET['wiki'] ) ? $_GET['wiki'] : null;
-			self::$instance = self::factory( $_SERVER['SERVER_NAME'], $wiki );
+			self::$instance = self::factory( $_SERVER['SERVER_NAME'] );
 		}
 
 		return self::$instance;
@@ -74,7 +74,7 @@ class MWMultiVersion {
 		return self::$instance;
 	}
 
-	public static function factory( $serverName, $dbName = null ) {
+	public static function factory( $serverName ) {
 		$mwmv = new self();
 		$mwmv->setServerName( $serverName )->loadDBFromServerName();
 
