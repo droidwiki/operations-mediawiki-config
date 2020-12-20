@@ -59,7 +59,6 @@ $wgConf->settings = [
 		'droidwikiwiki' => '/static/images/project-logos/androide_icon.svg',
 		'endroidwikiwiki' => '/static/images/project-logos/androide_icon.svg',
 		'datawiki' => '/static/images/project-logos/androide_icon.svg',
-		"armakothwiki" => '/static/images/project-logos/koth_icon.png',
 	],
 
 	'wmgSiteLogoWordmark' => [
@@ -69,7 +68,11 @@ $wgConf->settings = [
 			'height' => 40,
 		],
 		'opswiki' => null,
-		'armakoth' => null,
+		'armakothwiki' => [
+			'src' => '/static/images/project-logos/koth_icon.png',
+			'width' => 169,
+			'height' => 40,
+		],
 	],
 
 	'wgFavicon' => [
