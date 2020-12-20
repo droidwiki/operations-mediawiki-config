@@ -301,7 +301,7 @@ $wgConf->settings = [
 	],
 
 	'wgSharedTables' => [
-		'default' => [ 'user', 'user_properties' ],
+		'default' => [ 'user', 'user_properties', 'actor' ],
 		'+datawiki' => [ 'user_google_user', 'user_xenforo_user', 'user_groups', 'oathauth_users' ],
 		'+endroidwikiwiki' => [ 'user_google_user', 'user_xenforo_user', 'user_groups', 'oathauth_users' ],
 		'+armakothwiki' => [ 'user_google_user', 'user_groups', 'oathauth_users' ],
