@@ -55,7 +55,7 @@ $wgConf->settings = [
 	],
 
 	'wmgSiteLogoIcon' => [
-		'default' => '',
+		'default' => null,
 		'droidwikiwiki' => '/static/images/project-logos/androide_icon.svg',
 		'endroidwikiwiki' => '/static/images/project-logos/androide_icon.svg',
 		'datawiki' => '/static/images/project-logos/androide_icon.svg',
