@@ -307,6 +307,14 @@ $wgConf->settings = [
 		'+armakothwiki' => [ 'user_google_user', 'user_groups', 'oathauth_users' ],
 	],
 
+	'wgDroidWikiGoogleAnalyticsMeasurementId' => [
+		'default' => '',
+		'droidwikiwiki' => 'G-2CX5WMT6B3',
+		'endroidwikiwiki' => 'G-E2F5D2Z6X9',
+		'datawiki' => 'G-MKR49V7X28',
+		'armakothwiki' => 'G-HTLV6XG918',
+	],
+
 	'wmgUseRestbase' => [
 		'default' => false,
 		'endroidwikiwiki' => true,

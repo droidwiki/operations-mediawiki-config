@@ -163,7 +163,6 @@ $wgScribuntoUseGeSHi = true;
 $wgScribuntoUseCodeEditor = true;
 
 # DroidWiki
-$wgDroidWikiGoogleAnalyticsMeasurementId = 'G-2CX5WMT6B3';
 $wgDroidWikiAdDisallowedNamespaces = [ 120, 121, 122, 123 ];
 $wgDroidWikiNoAdSites = [
 	'Hauptseite',
