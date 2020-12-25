@@ -7,7 +7,7 @@ $wgConf->settings = [
 		'default' => 'Android Wiki',
 		'opswiki' => 'DroidWiki Operations',
 		'datawiki' => 'DroidWiki Data',
-		'armakothwiki' => 'armakoth.wiki',
+		'armakothwiki' => 'ArmA 3 King of the Hill Wiki',
 	],
 
 	'wgMetaNamespace' => [
