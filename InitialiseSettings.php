@@ -315,6 +315,11 @@ $wgConf->settings = [
 		'armakothwiki' => 'G-HTLV6XG918',
 	],
 
+	'wgDroidWikiCloudFlareWebAnalyticsToken' => [
+		'default' => null,
+		'droidwikiwiki' => '076c2830980149c689611e3526a28db6',
+	],
+
 	'wmgUseRestbase' => [
 		'default' => false,
 		'endroidwikiwiki' => true,
