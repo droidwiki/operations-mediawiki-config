@@ -136,9 +136,9 @@ $wgDefaultUserOptions['wikieditor-preview'] = 0;
 $wgCodeEditorEnableCore = true;
 
 # Add Google-Analytics
-$wgGoogleAnalyticsAccount = $wmgGoogleAnalyticsAccount;
-$wgGoogleAnalyticsIgnoreSysops = $wmgGoogleAnalyticsIgnoreSysops;
-$wgGoogleAnalyticsIgnoreBots = $wmgGoogleAnalyticsIgnoreBots;
+$wgGoogleAnalyticsAccount = "UA-21207284-8";
+$wgGoogleAnalyticsIgnoreSysops = false;
+$wgGoogleAnalyticsIgnoreBots = false;
 
 # MobileFrontend
 wfLoadSkin( 'MinervaNeue' );
