@@ -1,9 +1,6 @@
 {
 	"name": "droidwiki/mediawiki-config",
 	"description": "MediaWiki configuration for DroidWiki.",
-	"require": {
-		"mongofill/mongofill": "dev-master"
-	},
 	"config": {
 		"classmap-authoritative": true,
 		"optimize-autoloader": true,
@@ -12,9 +9,9 @@
 	},
 	"require-dev": {
 		"jakub-onderka/php-parallel-lint": "1.0.0",
-		"mediawiki/mediawiki-codesniffer": "24.0.0",
-		"phpunit/phpunit": "4.8.36 || ^6.5",
-		"mediawiki/minus-x": "0.3.1"
+		"mediawiki/mediawiki-codesniffer": "29.0.0",
+		"phpunit/phpunit": "^8.5",
+		"mediawiki/minus-x": "1.0.0"
 	},
 	"scripts": {
 		"lint": "parallel-lint --exclude vendor --ignore-fails .",
