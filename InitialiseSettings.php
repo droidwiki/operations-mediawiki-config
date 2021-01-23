@@ -318,6 +318,9 @@ $wgConf->settings = [
 	'wgDroidWikiCloudFlareWebAnalyticsToken' => [
 		'default' => null,
 		'droidwikiwiki' => '076c2830980149c689611e3526a28db6',
+		'endroidwikiwiki' => '0ff69d63ca77470b814c5f8bcb9da458',
+		'datawiki' => '237a781942414bdb9ea7cb78a44c7ecb',
+		'armakothwiki' => 'bab12a8ce79d495ca780591883087609',
 	],
 
 	'wmgUseRestbase' => [
