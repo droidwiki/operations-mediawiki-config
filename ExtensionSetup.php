@@ -197,14 +197,6 @@ $wgTemplateDataUseGUI = true;
 
 # VisualEditor
 wfLoadExtension( 'Parsoid', 'vendor/wikimedia/parsoid/extension.json' );
-$wgVirtualRestConfig['modules']['parsoid'] = [
-	'url' => 'http://nginx/w/rest.php',
-	'prefix' => $wgDBname,
-	'domain' => $wgCanonicalServer,
-	'forwardCookies' => $wmgParsoidForwardCookies,
-	'restbaseCompat' => false
-];
-
 $wgDefaultUserOptions['visualeditor-enable'] = 1;
 $wgVisualEditorEnableWikitext = true;
 $wgVisualEditorEnableDiffPage = true;
