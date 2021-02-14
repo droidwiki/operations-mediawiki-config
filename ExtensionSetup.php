@@ -196,6 +196,8 @@ $wgGATPServiceAccountName = $wmgGATPServiceAccountName;
 $wgTemplateDataUseGUI = true;
 
 # VisualEditor
+wfLoadExtension( 'Parsoid', 'vendor/wikimedia/parsoid/extension.json' );
+
 $wgDefaultUserOptions['visualeditor-enable'] = 1;
 $wgVisualEditorEnableWikitext = true;
 $wgVisualEditorEnableDiffPage = true;

@@ -164,8 +164,7 @@ if ( $wmgUseRestbase ) {
 	$wgVirtualRestConfig['modules']['restbase'] = [
 		'url' => 'http://restbase:7231',
 		'domain' => $wmgRestbaseDomain,
-		'forwardCookies' => false,
-		'parsoidCompat' => false
+		'forwardCookies' => false
 	];
 }
 
