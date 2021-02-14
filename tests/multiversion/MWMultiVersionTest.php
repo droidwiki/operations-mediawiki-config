@@ -6,7 +6,7 @@ class MWMultiVersionTest extends PHPUnit\Framework\TestCase {
 
 	private $backedUpArgv;
 
-	protected function tearDown() {
+	protected function tearDown(): void {
 		global $argv;
 
 		MWMultiversion::destroySingleton();
@@ -14,7 +14,7 @@ class MWMultiVersionTest extends PHPUnit\Framework\TestCase {
 		parent::tearDown();
 	}
 
-	protected function setUp() {
+	protected function setUp(): void {
 		global $argv;
 
 		parent::setUp();
