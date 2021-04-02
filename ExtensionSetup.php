@@ -13,6 +13,7 @@ $wgVectorWvuiSearchOptions = [
 	'showThumbnail' => true,
 	'showDescription' => true,
 ];
+$wgVectorLanguageInHeader = true;
 
 $jsonEntrypointExtensions = [
 	'AbuseFilter',
