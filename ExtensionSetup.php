@@ -8,6 +8,11 @@ $wgVectorDefaultSkinVersion = '2';
 $wgVectorDefaultSkinVersionForExistingAccounts = '1';
 $wgVectorDefaultSkinVersionForNewAccounts = '2';
 $wgVectorDefaultSidebarVisibleForAnonymousUser = true;
+$wgVectorUseWvuiSearch = true;
+$wgVectorWvuiSearchOptions = [
+	'showThumbnail' => true,
+	'showDescription' => true,
+];
 
 $jsonEntrypointExtensions = [
 	'AbuseFilter',
