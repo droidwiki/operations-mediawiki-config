@@ -8,12 +8,22 @@ $wgVectorDefaultSkinVersion = '2';
 $wgVectorDefaultSkinVersionForExistingAccounts = '1';
 $wgVectorDefaultSkinVersionForNewAccounts = '2';
 $wgVectorDefaultSidebarVisibleForAnonymousUser = true;
-$wgVectorUseWvuiSearch = true;
 $wgVectorWvuiSearchOptions = [
 	'showThumbnail' => true,
 	'showDescription' => true,
 ];
-$wgVectorLanguageInHeader = true;
+$wgVectorLanguageInHeader = [
+	'logged_in' => true,
+	'logged_out' => true,
+];
+$wgVectorConsolidateUserLinks = [
+	'logged_in' => true,
+	'logged_out' => true,
+];
+$wgVectorStickyHeader = [
+	'logged_in' => true,
+	'logged_out' => true,
+];
 
 $jsonEntrypointExtensions = [
 	'AbuseFilter',
