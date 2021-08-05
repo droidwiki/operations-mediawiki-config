@@ -258,6 +258,21 @@ define( 'WB_NS_ITEM_TALK', $wmgWikibaseBaseNs + 1 );
 define( 'WB_NS_PROPERTY', $wmgWikibaseBaseNs + 2 );
 define( 'WB_NS_PROPERTY_TALK', $wmgWikibaseBaseNs + 3 );
 
+if ( $wmgUseWikibaseRepo || $wmgUseWikibaseClient ) {
+	$wbRepoUrl = 'https://data.droidwiki.org';
+	$entitySources = [
+		'datawiki' => [
+			'repoDatabase' => 'datawiki',
+			'baseUri' => $wbRepoUrl . '/entity/',
+			'entityNamespaces' => [
+				'item' => WB_NS_ITEM,
+				'property' => WB_NS_PROPERTY,
+			],
+			'prefixMapping' => [ '' => '' ],
+		],
+	];
+}
+
 if ( $wmgUseWikibaseRepo ) {
 	$wgEnableWikibaseRepo = true;
 	require_once "$IP/extensions/Wikibase/repo/Wikibase.php";
@@ -272,6 +287,8 @@ if ( $wmgUseWikibaseRepo ) {
 		'item' => WB_NS_ITEM,
 		'property' => WB_NS_PROPERTY,
 	];
+	$wgWBRepoSettings['entitySources'] = $entitySources;
+	$wgWBRepoSettings['localEntitySourceName'] = 'datawiki';
 
 	// Tell Wikibase which namespace to use for which kind of entity
 	// Make sure we use the same keys on repo and clients, so we can share cached objects.
@@ -313,35 +330,21 @@ if ( $wmgUseWikibaseClient ) {
 
 	wfLoadExtension( 'WikibaseCreateLink' );
 
-	$wgWBClientSettings['repoUrl'] = 'https://data.droidwiki.org';
+	$wgWBClientSettings['repoUrl'] = $wbRepoUrl;
 	$wgWBClientSettings['repoArticlePath'] = '/wiki/$1';
 	$wgWBClientSettings['repoScriptPath'] = '/w';
-	$wgWBClientSettings['repositories'] = [
-		'' => [
-			'repoDatabase' => 'datawiki',
-			'baseUri' => $wgWBClientSettings['repoUrl'] . '/entity/',
-			'entityNamespaces' => [
-				'item' => WB_NS_ITEM,
-				'property' => WB_NS_PROPERTY,
-			],
-			'prefixMapping' => [ '' => '' ],
-		],
-	];
+	$wgWBClientSettings['entitySources'] = $entitySources;
+	$wgWBClientSettings['itemAndPropertySourceName'] = 'datawiki';
 
 	$wgWBClientSettings['siteGlobalID'] = substr( $wgDBname, 0, - 4 );
 	$wgWBClientSettings['siteGroup'] = 'droidwiki';
 	$wgWBClientSettings['changesDatabase'] = 'datawiki';
-	$wgWBCLientSettings['injectRecentChanges'] = true;
+	$wgWBClientSettings['injectRecentChanges'] = true;
 	$wgWBClientSettings['languageLinkSiteGroup'] = 'droidwiki';
 
-	$wgWBClientSettings['repoNamespaces'] = [
-		'item' => 'Item',
-		'property' => 'Property',
-	];
-
 	$wgWBClientSettings['entityNamespaces'] = [
-		'item' => $wmgWikibaseBaseNs,
-		'property' => $wmgWikibaseBaseNs + 2,
+		'item' => WB_NS_ITEM,
+		'property' => WB_NS_PROPERTY,
 	];
 
 	$wgWBClientSettings['repoSiteName'] = 'DroidWiki Data';
