@@ -270,6 +270,8 @@ if ( $wmgUseWikibaseRepo || $wmgUseWikibaseClient ) {
 			],
 			'prefixMapping' => [ '' => '' ],
 			'interwikiPrefix' => 'd',
+			'rdfNodeNamespacePrefix' => 'ddw',
+			'rdfPredicateNamespacePrefix' => '',
 		],
 	];
 }
