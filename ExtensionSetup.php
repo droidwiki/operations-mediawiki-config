@@ -269,6 +269,7 @@ if ( $wmgUseWikibaseRepo || $wmgUseWikibaseClient ) {
 				'property' => WB_NS_PROPERTY,
 			],
 			'prefixMapping' => [ '' => '' ],
+			'interwikiPrefix' => 'd',
 		],
 	];
 }
