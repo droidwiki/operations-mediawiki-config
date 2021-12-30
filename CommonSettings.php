@@ -101,13 +101,6 @@ $wgParserCacheType = 'db-replicated';
 $wgParserCacheExpireTime = 86400 * 30; // 30 days
 
 $wgJobRunRate = 0;
-$wgJobTypeConf['default'] = [
-	'class' => 'JobQueueRedis',
-	'redisServer' => $services->redis()[0],
-	'redisConfig' => [],
-	'claimTTL' => 3600,
-	'daemonized' => true,
-];
 
 $wgAmazonPartnernetPartnerID = 'droand-21';
 
