@@ -205,7 +205,7 @@ if ( $wmgUseVarnish ) {
 }
 
 if ( isset( $_SERVER['HTTP_X_DEBUG_SERVER'] ) ) {
-	var_dump('X-Forwarded-For: ', $_SERVER['HTTP_X_FORWARDED_FOR']);
+	var_dump( 'X-Forwarded-For: ', $_SERVER['HTTP_X_FORWARDED_FOR'] );
 }
 
 require_once __DIR__ . '/ExtensionSetup.php';
