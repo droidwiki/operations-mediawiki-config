@@ -12,7 +12,7 @@ class ServiceDiscovery {
 	}
 
 	public function varnish( $serviceName = 'cache' ) {
-		return $this->discover( $serviceName, '80' );
+		return $this->discover( $serviceName, null );
 	}
 
 	public function nginx( $serviceName = 'frontend-proxy' ) {
