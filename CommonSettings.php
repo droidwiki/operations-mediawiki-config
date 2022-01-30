@@ -204,12 +204,6 @@ if ( $wmgUseVarnish ) {
 	$wgUsePrivateIPs = true;
 }
 
-if ( isset( $_SERVER['HTTP_X_DEBUG_SERVER'] ) ) {
-	$stdout = fopen( 'php://stdout', 'w' );
-	fwrite( $stdout, 'X-Forwarded-For: ' . $_SERVER['HTTP_X_FORWARDED_FOR'] );
-	fclose( $stdout );
-}
-
 require_once __DIR__ . '/ExtensionSetup.php';
 
 # THIS MUST BE AFTER ALL EXTENSIONS ARE INCLUDED
