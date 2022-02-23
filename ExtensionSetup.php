@@ -72,7 +72,6 @@ $jsonEntrypointExtensions = [
 	'TimedMediaHandler',
 	'Translate',
 	'UniversalLanguageSelector',
-	'UserMerge',
 	'VisualEditor',
 	'WikiEditor',
 	'ReadingLists',
@@ -239,8 +238,6 @@ $wgCookieWarningEnabled = true;
 $wgCookieWarningMoreUrl =
 	'https://www.droidwiki.org/DroidWiki:Impressum#Verwendung_von_Cookies_.28Cookie-Policy.29';
 
-$wgGroupPermissions['bureaucrat']['usermerge'] = true;
-
 $wgCitoidServiceUrl = 'https://go2tech.de/citoid/api';
 
 $wgGroupPermissions['sysop']['interwiki'] = true;
@@ -403,6 +400,5 @@ $wgPLFirebaseAccessToken = $wmgPLFirebaseAccessToken;
 $wgPLEnableApiVerification = true;
 $wgPLFirebaseSenderId = '829317666886';
 
-# UserMerge
-// Workaround for https://phabricator.wikimedia.org/T241839 / https://phabricator.wikimedia.org/T238632
+# Originally reserved by UserMerge, but is now undeployed. Prevent new users to claim this name now
 $wgReservedUsernames[] = 'Anonymous';
