@@ -200,7 +200,7 @@ if ( $wmgUseVarnish ) {
 	$wgCdnMaxAge = 2678400; // 31 days
 	$wgCdnServers = $services->varnish();
 	// eclair.dwnet, donut.dwnet
-	$wgCdnServersNoPurge = [ '10.0.6.12', '10.0.6.36' ];
+	$wgCdnServersNoPurge = [ '10.0.6.0/24' ];
 	$wgUsePrivateIPs = true;
 }
 
