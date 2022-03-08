@@ -4,6 +4,7 @@
 # Additional, alternative skins
 wfLoadSkins( [ 'Vector', 'Timeless' ] );
 $wgVectorIsSearchInHeader = true;
+$wgVectorSkinMigrationMode = false;
 $wgVectorDefaultSkinVersion = '2';
 $wgVectorDefaultSkinVersionForExistingAccounts = '1';
 $wgVectorDefaultSkinVersionForNewAccounts = '2';
