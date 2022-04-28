@@ -69,7 +69,7 @@ $wgShowSQLErrors = false;
 $wgShowHostnames = true;
 
 $wgShellLocale = 'en_US.utf8';
-$wgDefaultSkin = 'vector';
+$wgDefaultSkin = 'vector-2022';
 
 $wgLogos = [
 	'1x' => $wmgSiteLogo1x ?? null,
