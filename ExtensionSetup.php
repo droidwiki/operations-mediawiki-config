@@ -6,6 +6,7 @@ wfLoadSkins( [ 'Vector', 'Timeless' ] );
 $wgVectorDefaultSkinVersionForExistingAccounts = '1';
 $wgVectorDefaultSkinVersionForNewAccounts = '2';
 $wgVectorDefaultSidebarVisibleForAnonymousUser = true;
+$wgVectorTableOfContents = true;
 $wgVectorWvuiSearchOptions = [
 	'showThumbnail' => true,
 	'showDescription' => true,
