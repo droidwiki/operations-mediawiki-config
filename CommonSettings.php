@@ -153,6 +153,14 @@ $wgGitRepositoryViewers = array_merge( $wgGitRepositoryViewers,
 
 $wgDisableOutputCompression = true;
 
+$wgEnableDnsBlacklist = true;
+$wgApplyIpBlocksToXff = true;
+$wgDnsBlacklistUrls = [
+	'all.s5h.net.',
+	'dnsbl.sorbs.net.',
+	'xbl.spamhaus.org.',
+];
+
 if ( $wmgUseRestbase ) {
 	$wgVirtualRestConfig['modules']['restbase'] = [
 		'url' => 'http://restbase:7231',
