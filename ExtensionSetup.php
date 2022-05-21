@@ -69,6 +69,7 @@ $jsonEntrypointExtensions = [
 	'TextExtracts', # TextExtracts (needed by MobileFrontend and HoverCards)
 	'Thanks',
 	'TimedMediaHandler',
+	'TorBlock',
 	'Translate',
 	'UniversalLanguageSelector',
 	'VisualEditor',
@@ -401,3 +402,10 @@ $wgPLFirebaseSenderId = '829317666886';
 
 # Originally reserved by UserMerge, but is now undeployed. Prevent new users to claim this name now
 $wgReservedUsernames[] = 'Anonymous';
+
+# TorBlock
+$wgTorAutoConfirmAge = 90 * 86400;
+$wgTorAutoConfirmCount = 100;
+$wgTorDisableAdminBlocks = false;
+$wgTorTagChanges = false;
+$wgGroupPermissions['user']['torunblocked'] = false;
