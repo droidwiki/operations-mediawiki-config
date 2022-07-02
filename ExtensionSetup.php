@@ -7,6 +7,11 @@ $wgVectorDefaultSkinVersionForExistingAccounts = '1';
 $wgVectorDefaultSkinVersionForNewAccounts = '2';
 $wgVectorDefaultSidebarVisibleForAnonymousUser = true;
 $wgVectorTableOfContents = true;
+$wgVectorTitleAboveTabs = true;
+$wgVectorStickyHeaderEdit = [
+	'logged_in' => true,
+	'logged_out' => true,
+];
 $wgVectorWvuiSearchOptions = [
 	'showThumbnail' => true,
 	'showDescription' => true,
