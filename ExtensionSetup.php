@@ -290,7 +290,7 @@ if ( $wmgUseWikibaseRepo || $wmgUseWikibaseClient ) {
 
 if ( $wmgUseWikibaseRepo ) {
 	$wgEnableWikibaseRepo = true;
-	require_once "$IP/extensions/Wikibase/repo/Wikibase.php";
+	wfLoadExtension( 'WikibaseRepository', "$IP/extensions/Wikibase/extension-repo.json" );
 
 	// Register extra namespaces.
 	$wgExtraNamespaces[WB_NS_ITEM] = 'Item';
@@ -341,8 +341,7 @@ if ( $wmgUseWikibaseRepo ) {
 
 if ( $wmgUseWikibaseClient ) {
 	$wgEnableWikibaseClient = true;
-	require_once "$IP/extensions/Wikibase/client/WikibaseClient.php";
-
+	wfLoadExtension( 'WikibaseClient', "$IP/extensions/Wikibase/extension-client.json" );
 	wfLoadExtension( 'WikibaseCreateLink' );
 
 	$wgWBClientSettings['repoUrl'] = $wbRepoUrl;
