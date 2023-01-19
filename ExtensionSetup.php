@@ -350,7 +350,7 @@ if ( $wmgUseWikibaseClient ) {
 	$wgWBClientSettings['entitySources'] = $entitySources;
 	$wgWBClientSettings['itemAndPropertySourceName'] = 'datawiki';
 
-	$wgWBClientSettings['siteGlobalID'] = substr( $wgDBname, 0, - 4 );
+	$wgWBClientSettings['siteGlobalID'] = substr( $wgDBname, 0, -4 );
 	$wgWBClientSettings['siteGroup'] = 'droidwiki';
 	$wgWBClientSettings['changesDatabase'] = 'datawiki';
 	$wgWBClientSettings['injectRecentChanges'] = true;
@@ -368,7 +368,7 @@ if ( $wmgUseWikibaseClient ) {
 	$wgWBClientSettings['sendEchoNotification'] = true;
 
 	$wgHooks['WikibaseClientOtherProjectsSidebar'][] =
-		function ( Wikibase\DataModel\Entity\ItemId $itemId, array &$sidebar ) {
+		static function ( Wikibase\DataModel\Entity\ItemId $itemId, array &$sidebar ) {
 			foreach ( $sidebar as $id => &$group ) {
 				foreach ( $group as $siteId => &$attributes ) {
 					if ( isset( $attributes['hreflang'] ) ) {

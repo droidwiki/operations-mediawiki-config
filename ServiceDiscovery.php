@@ -29,7 +29,7 @@ class ServiceDiscovery {
 			return [];
 		}
 
-		return array_map( function ( $server ) use ( $port ) {
+		return array_map( static function ( $server ) use ( $port ) {
 			if ( $port !== null ) {
 				 return $server . ':' . $port;
 			}

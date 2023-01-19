@@ -142,7 +142,7 @@ foreach ( $wmgMonologChannels as $channel => $opts ) {
 				$wmgMonologConfig['handlers'][$sampledHandler] = [
 					'class' => '\\Monolog\\Handler\\SamplingHandler',
 					'args' => [
-						function () use ( $handlerName ) {
+						static function () use ( $handlerName ) {
 							return LoggerFactory::getProvider()->getHandler( $handlerName );
 						},
 						$sample,
@@ -161,7 +161,7 @@ foreach ( $wmgMonologChannels as $channel => $opts ) {
 				$wmgMonologConfig['handlers'][$bufferedHandler] = [
 					'class' => '\\MediaWiki\\Logger\\Monolog\\BufferHandler',
 					'args' => [
-						function () use ( $handlerName ) {
+						static function () use ( $handlerName ) {
 							return LoggerFactory::getProvider()->getHandler( $handlerName );
 						},
 					],
@@ -178,7 +178,7 @@ foreach ( $wmgMonologChannels as $channel => $opts ) {
 			$wmgMonologConfig['handlers'][$failureGroupHandler] = [
 				'class' => '\\Monolog\\Handler\\WhatFailureGroupHandler',
 				'args' => [
-					function () use ( $handlers ) {
+					static function () use ( $handlers ) {
 						$provider = LoggerFactory::getProvider();
 
 						return array_map( [ $provider, 'getHandler' ], $handlers );
