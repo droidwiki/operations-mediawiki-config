@@ -115,7 +115,7 @@ if ( PHP_SAPI === 'cli' ) {
 wfLoadExtensions( [ 'ConfirmEdit/ReCaptchaNoCaptcha' ] );
 $wgReCaptchaSiteKey = $wmgReCaptchaSiteKey;
 $wgReCaptchaSecretKey = $wmgReCaptchaSecretKey;
-$wgCaptchaClass = 'ReCaptchaNoCaptcha';
+$wgCaptchaClass = 'MediaWiki\\Extension\\ConfirmEdit\\ReCaptchaNoCaptcha\\ReCaptchaNoCaptcha';
 
 # only emailconfirmed can skip captcha
 $wgGroupPermissions['*']['skipcaptcha'] = false;
