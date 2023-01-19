@@ -8,10 +8,10 @@
 		"vendor-dir": "vendor"
 	},
 	"require-dev": {
-		"jakub-onderka/php-parallel-lint": "1.0.0",
-		"mediawiki/mediawiki-codesniffer": "29.0.0",
-		"phpunit/phpunit": "^8.5",
-		"mediawiki/minus-x": "1.0.0"
+		"php-parallel-lint/php-parallel-lint": "^1.3.2",
+		"mediawiki/mediawiki-codesniffer": "^40.0.1",
+		"phpunit/phpunit": "^9.5",
+		"mediawiki/minus-x": "1.1.1"
 	},
 	"scripts": {
 		"lint": "parallel-lint --exclude vendor --ignore-fails .",
