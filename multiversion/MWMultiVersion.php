@@ -52,11 +52,8 @@ class MWMultiVersion {
 	public static function getInstance() {
 		if ( !self::$instance ) {
 			if ( !isset( $_SERVER['SERVER_NAME'] ) ) {
-				throw new LogicException( 'Could not determine server name. If you run a' .
-					' maintenance script, you should use getInstanceForMaintenance() instead of ' .
-					__METHOD__ );
+				self::error( 'Could not determine server name.' );
 			}
-			$wiki = isset( $_GET['wiki'] ) ? $_GET['wiki'] : null;
 			self::$instance = self::factory( $_SERVER['SERVER_NAME'] );
 		}
 
