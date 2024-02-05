@@ -14,8 +14,8 @@ $wgLBFactoryConf = [
 
 	'sectionLoads' => [
 		's1' => [
-			'db1001' => 100, # master
-			'db1002' => 0, # slave
+			'db1001' => 0, # master
+			'db1002' => 50, # slave
 		],
 	],
 
