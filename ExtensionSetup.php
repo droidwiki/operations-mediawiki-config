@@ -63,7 +63,6 @@ $jsonEntrypointExtensions = [
 	'OpenGraphMeta',
 	'PageImages', # PageImages (needed by MobileFrontend and HoverCards)
 	'ParserFunctions',
-	'PasswordlessLogin',
 	'Popups',
 	'QuickSearchLookup',
 	'Scribunto',
