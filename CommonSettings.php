@@ -97,7 +97,7 @@ $wgObjectCaches['redis'] = [
 ];
 $wgMainStash = 'redis';
 
-$wgParserCacheType = 'db-replicated';
+$wgParserCacheType = CACHE_DB;
 $wgParserCacheExpireTime = 86400 * 30; // 30 days
 
 $wgJobRunRate = 0;
