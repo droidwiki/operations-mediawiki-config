@@ -36,7 +36,6 @@ $jsonEntrypointExtensions = [
 	'AntiSpoof', # needed by AbuseFilter
 	'BetaFeatures',
 	'CheckUser',
-	'CirrusSearch',
 	'Cite', # ref-tags
 	'CiteThisPage',
 	'Citoid',
@@ -47,9 +46,7 @@ $jsonEntrypointExtensions = [
 	'Disambiguator',
 	'DroidWiki',
 	'Echo',
-	'Elastica',
 	'EmbedVideo', # Allows to embed YouTube videos into wikipages
-	'GeoData',
 	'GlobalUsage',
 	'GoogleAnalyticsTopPages',
 	'GoogleLogin',
@@ -382,8 +379,6 @@ if ( $wmgUseWikibaseClient ) {
 
 $wgSharedTables[] = 'oathauth_users';
 
-$wgGeoDataBackend = 'elastic';
-
 if ( $wmgUseReadingLists ) {
 	$wgReadingListsDatabase = 'droidwikiwiki';
 	$wgReadingListsCentralWiki = 'droidwikiwiki';
@@ -394,10 +389,6 @@ $wgGlobalUsageDatabase = 'droidwikiwiki';
 # UniversalLanguageSelector
 # Turn off geolocation service - T199106
 $wgULSGeoService = false;
-
-# CirrusSearch
-$wgSearchType = 'CirrusSearch';
-$wgCirrusSearchServers = [ '172.16.0.2' ];
 
 $wgPLFirebaseAccessToken = $wmgPLFirebaseAccessToken;
 $wgPLEnableApiVerification = true;
