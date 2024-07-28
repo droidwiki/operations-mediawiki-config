@@ -330,23 +330,11 @@ $wgConf->settings = [
 		'armakothwiki' => true,
 	],
 
-	'wmgVisualEditorAccessRESTbaseDirectly' => [
-		'default' => false,
-		'endroidwikiwiki' => true,
-		'droidwikiwiki' => true,
-		'armakothwiki' => true,
-	],
-
 	'wmgRestbaseDomain' => [
 		'default' => '',
 		'endroidwikiwiki' => 'en.droidwiki.org',
 		'droidwikiwiki' => 'www.droidwiki.org',
 		'armakothwiki' => 'www.armakoth.wiki',
-	],
-
-	'wmgParsoidForwardCookies' => [
-		'default' => false,
-		'opswiki' => true,
 	],
 
 	'wmgUseDroidWikiForeignRepo' => [

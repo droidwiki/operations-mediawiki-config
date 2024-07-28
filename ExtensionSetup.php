@@ -38,7 +38,6 @@ $jsonEntrypointExtensions = [
 	'CheckUser',
 	'Cite', # ref-tags
 	'CiteThisPage',
-	'Citoid',
 	'CodeEditor',
 	'CommonsMetadata',
 	'ConfirmEdit',
@@ -73,7 +72,6 @@ $jsonEntrypointExtensions = [
 	'TorBlock',
 	'Translate',
 	'UniversalLanguageSelector',
-	'VisualEditor',
 	'WikiEditor',
 	'ReadingLists',
 ];
@@ -211,35 +209,9 @@ $wgGATPServiceAccountName = $wmgGATPServiceAccountName;
 # TemplateData
 $wgTemplateDataUseGUI = true;
 
-# VisualEditor
-wfLoadExtension( 'Parsoid', "$IP/vendor/wikimedia/parsoid/extension.json" );
-$wgDefaultUserOptions['visualeditor-enable'] = 1;
-$wgVisualEditorEnableWikitext = true;
-$wgVisualEditorEnableDiffPage = true;
-$wgVisualEditorAvailableNamespaces = [
-	NS_TALK => true,
-	NS_USER => true,
-	NS_USER_TALK => true,
-	NS_PROJECT => true,
-	NS_PROJECT_TALK => true,
-	NS_FILE => true,
-	NS_FILE_TALK => true,
-	NS_HELP => true,
-	NS_HELP_TALK => true,
-	NS_CATEGORY => true,
-	NS_CATEGORY_TALK => true,
-];
-
-if ( $wmgVisualEditorAccessRESTbaseDirectly ) {
-	$wgVisualEditorRestbaseURL = '/api/v1/page/html/';
-	$wgVisualEditorFullRestbaseURL = "/api/";
-}
-
 $wgCookieWarningEnabled = true;
 $wgCookieWarningMoreUrl =
 	'https://www.droidwiki.org/DroidWiki:Impressum#Verwendung_von_Cookies_.28Cookie-Policy.29';
-
-$wgCitoidServiceUrl = 'https://go2tech.de/citoid/api';
 
 $wgGroupPermissions['sysop']['interwiki'] = true;
 
